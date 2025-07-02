@@ -8,11 +8,20 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { useEffect, useRef, useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
-import type { GenerateAdCopyOutput } from '@/ai/flows/generate-ad-copy';
+import type { GenerateAdCopyOutput, GenerateAdCopyInput } from '@/ai/flows/generate-ad-copy';
 import { Loader2 } from 'lucide-react';
 import { CopyResults } from './copy-results';
 
-const initialState = {
+type ResultState = {
+    variations: GenerateAdCopyOutput['variations'];
+    originalInput: GenerateAdCopyInput;
+} | null;
+
+const initialState: {
+  message: string;
+  data: ResultState;
+  errors: any;
+} = {
   message: '',
   data: null,
   errors: {},
@@ -31,7 +40,7 @@ function SubmitButton() {
 export function CopyGeneratorForm() {
   const [state, formAction] = useFormState(handleCopyGeneration, initialState);
   const { toast } = useToast();
-  const [result, setResult] = useState<GenerateAdCopyOutput | null>(null);
+  const [result, setResult] = useState<ResultState>(null);
 
   useEffect(() => {
     if (state.message && state.message !== 'Copy generation complete.') {
@@ -83,7 +92,11 @@ export function CopyGeneratorForm() {
       </form>
       {result && (
         <div className="mt-8 pt-8 border-t">
-            <CopyResults results={result} />
+            <CopyResults 
+                variations={result.variations} 
+                productName={result.originalInput.productName}
+                productDescription={result.originalInput.productDescription}
+            />
         </div>
       )}
     </div>
