@@ -28,9 +28,11 @@ export function AppSidebar() {
   return (
     <Sidebar variant="sidebar" collapsible="icon">
       <SidebarHeader>
-        <Button variant="ghost" size="icon" className="h-10 w-10 shrink-0 rounded-full">
-            <Bot className="size-5" />
-        </Button>
+        <Link href="/" aria-label="Home">
+          <Button variant="ghost" size="icon" className="h-10 w-10 shrink-0 rounded-full">
+              <Bot className="size-5" />
+          </Button>
+        </Link>
       </SidebarHeader>
       <SidebarContent>
         <SidebarMenu>
