@@ -24,7 +24,7 @@ export function AppSidebar() {
     { href: '/finder', label: 'Product Finder', icon: Trophy },
     { href: '/trends', label: 'Market Trends', icon: LineChart },
     { href: '/spy', label: 'Competitor Spy', icon: Binoculars },
-    { href: '/generate', label: 'Generate Copy', icon: FileText },
+    { href: '/generate', label: 'Generate Ad', icon: FileText },
     { href: '/analyze', label: 'Analyze Ad', icon: Sparkles },
   ];
 

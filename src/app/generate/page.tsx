@@ -11,15 +11,15 @@ export default function GenerateCopyPage() {
                         <FileText className="h-4 w-4" />
                         <span>Powered by GenAI</span>
                     </div>
-                    <h1 className="text-4xl font-bold font-headline tracking-tight">Ad Copy Generator</h1>
+                    <h1 className="text-4xl font-bold font-headline tracking-tight">Ad Concept Generator</h1>
                     <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
-                        Craft high-converting ad copy in seconds. Provide your product details and let our AI generate compelling options for you.
+                        Craft high-converting ad concepts in seconds. Provide your product details and let our AI generate compelling options for you, complete with visuals and audio.
                     </p>
                 </header>
                 <Card className="shadow-lg">
                     <CardHeader>
-                        <CardTitle>Generate New Ad Copy</CardTitle>
-                        <CardDescription>Describe your product and target audience. The AI will generate three complete ad concepts, each with its own unique text and visual.</CardDescription>
+                        <CardTitle>Generate New Ad Concepts</CardTitle>
+                        <CardDescription>Describe your product and target audience. The AI will generate three complete ad concepts, each with its own unique text, visual, and audio.</CardDescription>
                     </CardHeader>
                     <CardContent>
                         <CopyGeneratorForm />
