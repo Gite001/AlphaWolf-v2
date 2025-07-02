@@ -3,6 +3,7 @@ import './globals.css';
 import { SidebarProvider, Sidebar, SidebarInset } from '@/components/ui/sidebar';
 import { AppSidebar } from '@/components/layout/app-sidebar';
 import { Toaster } from '@/components/ui/toaster';
+import { AppFooter } from '@/components/layout/footer';
 
 export const metadata: Metadata = {
   title: 'AdInsights',
@@ -25,8 +26,9 @@ export default function RootLayout({
         <SidebarProvider>
           <div className="flex min-h-screen">
             <AppSidebar />
-            <div className="flex-1">
+            <div className="flex-1 flex flex-col">
               <SidebarInset>{children}</SidebarInset>
+              <AppFooter />
             </div>
           </div>
         </SidebarProvider>
