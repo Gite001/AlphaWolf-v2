@@ -40,9 +40,9 @@ export function DashboardSummary({ stats, engagementData }: DashboardSummaryProp
                 <CardHeader>
                     <CardTitle className="flex items-center gap-2">
                         <Sparkles className="h-5 w-5 text-primary" />
-                        <span>AI-Powered Summary</span>
+                        <span>Résumé par l'IA</span>
                     </CardTitle>
-                    <CardDescription>Your personal analyst is reviewing the data...</CardDescription>
+                    <CardDescription>Votre analyste personnel examine les données...</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
                     <Skeleton className="h-4 w-full" />
@@ -62,9 +62,9 @@ export function DashboardSummary({ stats, engagementData }: DashboardSummaryProp
                 <CardHeader>
                     <CardTitle className="flex items-center gap-2 text-destructive">
                         <AlertCircle className="h-5 w-5" />
-                        <span>Analysis Failed</span>
+                        <span>L'analyse a échoué</span>
                     </CardTitle>
-                    <CardDescription className="text-destructive/80">Could not generate the AI summary.</CardDescription>
+                    <CardDescription className="text-destructive/80">Impossible de générer le résumé par l'IA.</CardDescription>
                 </CardHeader>
                 <CardContent>
                     <p className="text-sm text-muted-foreground">{error}</p>
@@ -78,12 +78,12 @@ export function DashboardSummary({ stats, engagementData }: DashboardSummaryProp
             <CardHeader>
                 <CardTitle className="flex items-center gap-2 font-headline">
                     <Sparkles className="h-6 w-6 text-primary" />
-                    <span>AI-Powered Summary</span>
+                    <span>Résumé par l'IA</span>
                 </CardTitle>
                 <CardDescription>{summary}</CardDescription>
             </CardHeader>
             <CardContent>
-                <h4 className="font-semibold mb-3">Actionable Insights:</h4>
+                <h4 className="font-semibold mb-3">Conseils Stratégiques :</h4>
                 <ul className="space-y-2">
                     {insights?.map((insight, index) => (
                         <li key={index} className="flex items-start gap-3">

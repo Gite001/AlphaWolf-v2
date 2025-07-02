@@ -33,7 +33,7 @@ function SubmitButton() {
   return (
     <Button type="submit" disabled={pending} className="w-full">
       {pending ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
-      Generate Copy
+      Générer les Textes
     </Button>
   );
 }
@@ -52,15 +52,15 @@ export function CopyGeneratorForm() {
     if (state.message && state.message !== 'Copy generation complete.') {
       toast({
         variant: 'destructive',
-        title: 'Error',
+        title: 'Erreur',
         description: state.message,
       });
     }
     if (state.data) {
       setResult(state.data);
       toast({
-        title: 'Success!',
-        description: 'Your new ad copy is ready.',
+        title: 'Succès !',
+        description: 'Vos nouveaux textes publicitaires sont prêts.',
       });
     }
   }, [state, toast]);
@@ -71,26 +71,26 @@ export function CopyGeneratorForm() {
     <div>
       <form ref={formRef} action={formAction} className="space-y-6">
         <div className="space-y-2">
-          <Label htmlFor="productName">Product Name</Label>
-          <Input id="productName" name="productName" placeholder="e.g., The All-Day Comfort Sneaker" required defaultValue={productName} />
+          <Label htmlFor="productName">Nom du Produit</Label>
+          <Input id="productName" name="productName" placeholder="ex: La Basket Confort Quotidien" required defaultValue={productName} />
           {state.errors?.productName && <p className="text-sm text-destructive">{state.errors.productName[0]}</p>}
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="targetAudience">Target Audience</Label>
-          <Input id="targetAudience" name="targetAudience" placeholder="e.g., Urban commuters, fitness enthusiasts" required />
+          <Label htmlFor="targetAudience">Audience Cible</Label>
+          <Input id="targetAudience" name="targetAudience" placeholder="ex: Navetteurs urbains, amateurs de fitness" required />
           {state.errors?.targetAudience && <p className="text-sm text-destructive">{state.errors.targetAudience[0]}</p>}
         </div>
         
         <div className="space-y-2">
-          <Label htmlFor="productDescription">Product Description</Label>
-          <Textarea id="productDescription" name="productDescription" placeholder="Describe the key features and benefits of your product..." rows={4} required defaultValue={productDescription} />
+          <Label htmlFor="productDescription">Description du Produit</Label>
+          <Textarea id="productDescription" name="productDescription" placeholder="Décrivez les caractéristiques clés et les avantages de votre produit..." rows={4} required defaultValue={productDescription} />
           {state.errors?.productDescription && <p className="text-sm text-destructive">{state.errors.productDescription[0]}</p>}
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="keywords">Keywords</Label>
-          <Input id="keywords" name="keywords" placeholder="e.g., sustainable, lightweight, stylish (comma-separated)" defaultValue={keywords}/>
+          <Label htmlFor="keywords">Mots-clés</Label>
+          <Input id="keywords" name="keywords" placeholder="ex: durable, léger, stylé (séparés par des virgules)" defaultValue={keywords}/>
           {state.errors?.keywords && <p className="text-sm text-destructive">{state.errors.keywords[0]}</p>}
         </div>
 

@@ -9,17 +9,17 @@ export default function GenerateCopyPage() {
                 <header className="mb-8 text-center">
                     <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium mb-4">
                         <FileText className="h-4 w-4" />
-                        <span>Powered by GenAI</span>
+                        <span>Piloté par GenAI</span>
                     </div>
-                    <h1 className="text-4xl font-bold font-headline tracking-tight">Ad Concept Generator</h1>
+                    <h1 className="text-4xl font-bold font-headline tracking-tight">Générateur de Concepts Publicitaires</h1>
                     <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
-                        Craft high-converting ad concepts in seconds. Provide your product details and let our AI generate compelling options for you, complete with visuals and audio.
+                        Créez des concepts publicitaires à haute conversion en quelques secondes. Fournissez les détails de votre produit et laissez notre IA générer des options convaincantes pour vous, avec visuels et audio.
                     </p>
                 </header>
                 <Card className="shadow-lg">
                     <CardHeader>
-                        <CardTitle>Generate New Ad Concepts</CardTitle>
-                        <CardDescription>Describe your product and target audience. The AI will generate three complete ad concepts, each with its own unique text, visual, and audio.</CardDescription>
+                        <CardTitle>Générer de Nouveaux Concepts Publicitaires</CardTitle>
+                        <CardDescription>Décrivez votre produit et votre audience cible. L'IA générera trois concepts publicitaires complets, chacun avec son propre texte, visuel et audio uniques.</CardDescription>
                     </CardHeader>
                     <CardContent>
                         <CopyGeneratorForm />

@@ -7,20 +7,20 @@ export function QuickActions() {
     const actions = [
         {
             href: '/finder',
-            label: 'Find Winning Products',
-            description: 'Let AI analyze our ad database for hot products.',
+            label: 'Trouver des Produits Gagnants',
+            description: 'Laissez l\'IA analyser notre base de données publicitaires.',
             icon: Trophy
         },
         {
             href: '/spy',
-            label: 'Spy on Competitors',
-            description: "Deconstruct a competitor's ad or product page.",
+            label: 'Espionner les Concurrents',
+            description: "Déconstruisez la page d'un concurrent.",
             icon: Binoculars
         },
         {
             href: '/generate',
-            label: 'Generate Ad Concepts',
-            description: 'Instantly create complete ad copy and visuals.',
+            label: 'Générer des Concepts Publicitaires',
+            description: 'Créez instantanément des textes et visuels complets.',
             icon: FileText
         },
     ];
@@ -28,8 +28,8 @@ export function QuickActions() {
     return (
         <Card>
             <CardHeader>
-                <CardTitle>Wolf Pack Actions</CardTitle>
-                <CardDescription>Launch your next hunt for winning products.</CardDescription>
+                <CardTitle>Actions de la Meute</CardTitle>
+                <CardDescription>Lancez votre prochaine chasse aux produits gagnants.</CardDescription>
             </CardHeader>
             <CardContent className="flex flex-col gap-4">
                 {actions.map((action) => (

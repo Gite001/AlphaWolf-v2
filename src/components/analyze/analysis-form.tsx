@@ -23,7 +23,7 @@ function SubmitButton() {
   return (
     <Button type="submit" disabled={pending} className="w-full">
       {pending ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
-      Analyze Performance
+      Analyser la Performance
     </Button>
   );
 }
@@ -41,15 +41,15 @@ export function AnalysisForm() {
     if (state.message && state.message !== 'Analysis complete.') {
       toast({
         variant: 'destructive',
-        title: 'Error',
+        title: 'Erreur',
         description: state.message,
       });
     }
     if (state.data) {
       setResult(state.data);
       toast({
-        title: 'Success!',
-        description: 'Your ad analysis is ready.',
+        title: 'Succès !',
+        description: 'Votre analyse publicitaire est prête.',
       });
     }
   }, [state, toast]);
@@ -76,25 +76,25 @@ export function AnalysisForm() {
       <form ref={formRef} action={formAction} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="space-y-2">
-            <Label htmlFor="productType">Product Type</Label>
-            <Input id="productType" name="productType" placeholder="e.g., Skincare, Apparel, Gadgets" required />
+            <Label htmlFor="productType">Type de Produit</Label>
+            <Input id="productType" name="productType" placeholder="ex: Soins de la peau, Vêtements" required />
             {state.errors?.productType && <p className="text-sm text-destructive">{state.errors.productType[0]}</p>}
           </div>
           <div className="space-y-2">
-            <Label htmlFor="targetAudience">Target Audience</Label>
-            <Input id="targetAudience" name="targetAudience" placeholder="e.g., Young professionals, Parents, Students" required />
+            <Label htmlFor="targetAudience">Audience Cible</Label>
+            <Input id="targetAudience" name="targetAudience" placeholder="ex: Jeunes professionnels, Parents" required />
             {state.errors?.targetAudience && <p className="text-sm text-destructive">{state.errors.targetAudience[0]}</p>}
           </div>
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="adText">Ad Text / Copy</Label>
-          <Textarea id="adText" name="adText" placeholder="Enter the full text content of your ad..." rows={5} required />
+          <Label htmlFor="adText">Texte de la Publicité</Label>
+          <Textarea id="adText" name="adText" placeholder="Saisissez le contenu textuel complet de votre publicité..." rows={5} required />
           {state.errors?.adText && <p className="text-sm text-destructive">{state.errors.adText[0]}</p>}
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="adVisual">Ad Visual</Label>
+          <Label htmlFor="adVisual">Visuel de la Publicité</Label>
           <div 
             className="relative border-2 border-dashed border-muted-foreground/50 rounded-lg p-6 text-center cursor-pointer hover:border-primary"
             onClick={() => fileInputRef.current?.click()}
@@ -102,12 +102,12 @@ export function AnalysisForm() {
             <Input ref={fileInputRef} id="adVisual" name="adVisual" type="file" className="hidden" accept="image/*" onChange={handleFileChange} required />
             {preview ? (
               // eslint-disable-next-line @next/next/no-img-element
-              <img src={preview} alt="Ad preview" className="max-h-48 mx-auto rounded-md" />
+              <img src={preview} alt="Aperçu de la publicité" className="max-h-48 mx-auto rounded-md" />
             ) : (
               <div className="text-muted-foreground">
                 <Upload className="mx-auto h-12 w-12" />
-                <p className="mt-2">Click to upload or drag and drop</p>
-                <p className="text-xs">PNG, JPG, GIF up to 4MB</p>
+                <p className="mt-2">Cliquez pour télécharger ou glissez-déposez</p>
+                <p className="text-xs">PNG, JPG, GIF jusqu'à 4MB</p>
               </div>
             )}
             {fileName && <p className="text-sm mt-2 font-medium">{fileName}</p>}

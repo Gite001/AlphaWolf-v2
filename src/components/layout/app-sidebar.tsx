@@ -19,13 +19,13 @@ export function AppSidebar() {
   const pathname = usePathname();
 
   const menuItems = [
-    { href: '/', label: 'Home', icon: Home },
-    { href: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
-    { href: '/finder', label: 'Product Finder', icon: Trophy },
-    { href: '/trends', label: 'Market Trends', icon: LineChart },
-    { href: '/spy', label: 'Competitor Spy', icon: Binoculars },
-    { href: '/generate', label: 'Generate Ad', icon: FileText },
-    { href: '/analyze', label: 'Analyze Ad', icon: Sparkles },
+    { href: '/', label: 'Accueil', icon: Home },
+    { href: '/dashboard', label: 'Tableau de bord', icon: LayoutDashboard },
+    { href: '/finder', label: 'Découverte Produits', icon: Trophy },
+    { href: '/trends', label: 'Tendances Marché', icon: LineChart },
+    { href: '/spy', label: 'Espion Concurrent', icon: Binoculars },
+    { href: '/generate', label: 'Générer Publicité', icon: FileText },
+    { href: '/analyze', label: 'Analyser Publicité', icon: Sparkles },
   ];
 
   return (

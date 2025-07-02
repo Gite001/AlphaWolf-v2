@@ -10,8 +10,8 @@ export default function DashboardPage() {
   return (
     <div className="flex flex-col gap-8 p-4 md:p-8">
       <header>
-        <h1 className="text-3xl font-bold font-headline tracking-tight">Command Center</h1>
-        <p className="text-muted-foreground">Your AI-powered marketing dashboard.</p>
+        <h1 className="text-3xl font-bold font-headline tracking-tight">Centre de Commande</h1>
+        <p className="text-muted-foreground">Votre tableau de bord marketing piloté par l'IA.</p>
       </header>
       
       <DashboardSummary stats={stats} engagementData={engagementData} />

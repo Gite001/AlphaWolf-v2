@@ -23,7 +23,7 @@ function SubmitButton() {
   return (
     <Button type="submit" disabled={pending} className="w-full">
       {pending ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
-      Analyze Now
+      Analyser maintenant
     </Button>
   );
 }
@@ -37,7 +37,7 @@ export function MarketSnapshot() {
     if (state.message && !state.data) {
       toast({
         variant: 'destructive',
-        title: 'Error',
+        title: 'Erreur',
         description: state.message,
       });
     }
@@ -51,19 +51,19 @@ export function MarketSnapshot() {
   return (
     <Card>
         <CardHeader>
-            <CardTitle>Market Snapshot</CardTitle>
-            <CardDescription>Get a quick analysis of any product category.</CardDescription>
+            <CardTitle>Aperçu du Marché</CardTitle>
+            <CardDescription>Obtenez une analyse rapide de n'importe quelle catégorie de produits.</CardDescription>
         </CardHeader>
         <CardContent>
             <form ref={formRef} action={formAction} className="space-y-4">
                 <div className="space-y-2">
-                    <Label htmlFor="productCategoryDashboard">Product Category</Label>
-                    <Input id="productCategoryDashboard" name="productCategory" placeholder="e.g., Home Fitness Equipment" required />
+                    <Label htmlFor="productCategoryDashboard">Catégorie de Produit</Label>
+                    <Input id="productCategoryDashboard" name="productCategory" placeholder="ex: Équipement de fitness à domicile" required />
                     {state.errors?.productCategory && <p className="text-sm text-destructive">{state.errors.productCategory[0]}</p>}
                 </div>
                 <div className="space-y-2">
-                    <Label htmlFor="regionDashboard">Region / Market</Label>
-                    <Input id="regionDashboard" name="region" placeholder="e.g., USA" required />
+                    <Label htmlFor="regionDashboard">Région / Marché</Label>
+                    <Input id="regionDashboard" name="region" placeholder="ex: France" required />
                     {state.errors?.region && <p className="text-sm text-destructive">{state.errors.region[0]}</p>}
                 </div>
                 <SubmitButton />

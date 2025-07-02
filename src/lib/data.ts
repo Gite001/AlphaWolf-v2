@@ -3,30 +3,30 @@ import { BarChart, Target, TrendingUp, Users } from 'lucide-react';
 
 export const stats: Stat[] = [
   {
-    title: 'Total Ads Tracked',
+    title: 'Publicités Suivies',
     value: '12,405',
     change: '+12.5%',
     changeType: 'increase',
     icon: BarChart,
   },
   {
-    title: 'Winning Products',
+    title: 'Produits Gagnants',
     value: '237',
     change: '+3.2%',
     changeType: 'increase',
     icon: Target,
   },
   {
-    title: 'Top Engagement',
+    title: 'Engagement Supérieur',
     value: '89.7%',
     change: '-1.8%',
     changeType: 'decrease',
     icon: TrendingUp,
   },
   {
-    title: 'New Competitors',
+    title: 'Nouveaux Concurrents',
     value: '15',
-    change: '+5 since last week',
+    change: '+5 depuis la semaine dernière',
     changeType: 'increase',
     icon: Users,
   },
@@ -124,11 +124,11 @@ export const ads: Ad[] = [
 ];
 
 export const engagementData: EngagementData[] = [
-  { date: 'Mon', Facebook: 2200, Instagram: 3400, TikTok: 4500, Pinterest: 1200 },
-  { date: 'Tue', Facebook: 2500, Instagram: 3600, TikTok: 4800, Pinterest: 1500 },
-  { date: 'Wed', Facebook: 2800, Instagram: 3800, TikTok: 5200, Pinterest: 1700 },
-  { date: 'Thu', Facebook: 3100, Instagram: 4100, TikTok: 5500, Pinterest: 1900 },
-  { date: 'Fri', Facebook: 3400, Instagram: 4400, TikTok: 6000, Pinterest: 2100 },
-  { date: 'Sat', Facebook: 3700, Instagram: 4700, TikTok: 6500, Pinterest: 2400 },
-  { date: 'Sun', Facebook: 4000, Instagram: 5000, TikTok: 7000, Pinterest: 2600 },
+  { date: 'Lun', Facebook: 2200, Instagram: 3400, TikTok: 4500, Pinterest: 1200 },
+  { date: 'Mar', Facebook: 2500, Instagram: 3600, TikTok: 4800, Pinterest: 1500 },
+  { date: 'Mer', Facebook: 2800, Instagram: 3800, TikTok: 5200, Pinterest: 1700 },
+  { date: 'Jeu', Facebook: 3100, Instagram: 4100, TikTok: 5500, Pinterest: 1900 },
+  { date: 'Ven', Facebook: 3400, Instagram: 4400, TikTok: 6000, Pinterest: 2100 },
+  { date: 'Sam', Facebook: 3700, Instagram: 4700, TikTok: 6500, Pinterest: 2400 },
+  { date: 'Dim', Facebook: 4000, Instagram: 5000, TikTok: 7000, Pinterest: 2600 },
 ];

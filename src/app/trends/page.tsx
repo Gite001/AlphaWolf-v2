@@ -9,17 +9,17 @@ export default function TrendsPage() {
                 <header className="mb-8 text-center">
                     <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium mb-4">
                         <LineChart className="h-4 w-4" />
-                        <span>Powered by GenAI</span>
+                        <span>Piloté par GenAI</span>
                     </div>
-                    <h1 className="text-4xl font-bold font-headline tracking-tight">Market Trend Analysis</h1>
+                    <h1 className="text-4xl font-bold font-headline tracking-tight">Analyse des Tendances du Marché</h1>
                     <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
-                        Discover the most sought-after products in any category. Enter a product category and region to get an AI-powered market analysis.
+                        Découvrez les produits les plus recherchés dans n'importe quelle catégorie. Saisissez une catégorie de produits et une région pour obtenir une analyse de marché pilotée par l'IA.
                     </p>
                 </header>
                 <Card className="shadow-lg">
                     <CardHeader>
-                        <CardTitle>Analyze Market Trends</CardTitle>
-                        <CardDescription>Tell the AI what product category and region you're interested in. It will return a market summary, trending products, and strategic advice.</CardDescription>
+                        <CardTitle>Analyser les Tendances du Marché</CardTitle>
+                        <CardDescription>Indiquez à l'IA la catégorie de produits et la région qui vous intéressent. Elle vous fournira un résumé du marché, les produits tendances et des conseils stratégiques.</CardDescription>
                     </CardHeader>
                     <CardContent>
                         <TrendsForm />
@@ -30,12 +30,12 @@ export default function TrendsPage() {
                     <CardHeader className="flex-row gap-4 items-center">
                         <Info className="h-6 w-6 text-primary" />
                         <div>
-                            <CardTitle className="text-lg">How does this work?</CardTitle>
+                            <CardTitle className="text-lg">Comment ça marche ?</CardTitle>
                         </div>
                     </CardHeader>
                     <CardContent>
                         <p className="text-sm text-muted-foreground">
-                            The AI leverages its vast training on public web data up to its last update. By analyzing countless articles, product listings, and consumer discussions, it identifies patterns and synthesizes information to provide strategic insights on market trends, popular products, and potential risks. It does not access real-time sales data.
+                            L'IA s'appuie sur sa vaste formation sur les données publiques du web jusqu'à sa dernière mise à jour. En analysant d'innombrables articles, listes de produits et discussions de consommateurs, elle identifie des schémas et synthétise des informations pour fournir des aperçus stratégiques sur les tendances du marché, les produits populaires et les risques potentiels. Elle n'accède pas aux données de vente en temps réel.
                         </p>
                     </CardContent>
                 </Card>

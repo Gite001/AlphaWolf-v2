@@ -8,20 +8,20 @@ export default function HomePage() {
   const features = [
     {
       icon: <Trophy className="h-8 w-8 text-primary" />,
-      title: 'Winning Product Finder',
-      description: 'Our AI wolf scours our ad database to pinpoint trending products and the strategies making them successful.',
+      title: 'Découverte de Produits Gagnants',
+      description: "Notre loup IA parcourt notre base de données publicitaires pour dénicher les produits tendances et les stratégies qui les font réussir.",
       link: '/finder',
     },
     {
       icon: <Binoculars className="h-8 w-8 text-primary" />,
-      title: 'Competitor Spy',
-      description: "Deconstruct any competitor's ad or product page. Get their marketing angle, weaknesses, and counter-strategies.",
+      title: 'Espion Concurrent',
+      description: "Déconstruisez la publicité ou la page produit de n'importe quel concurrent. Obtenez leur angle marketing, leurs faiblesses et des contre-stratégies.",
       link: '/spy',
     },
     {
       icon: <FileText className="h-8 w-8 text-primary" />,
-      title: 'Instant Ad Concepts',
-      description: 'Generate complete, high-converting ad concepts—compelling copy paired with custom AI visuals—in seconds.',
+      title: 'Concepts Publicitaires Instantanés',
+      description: 'Générez des concepts publicitaires complets et à haute conversion — un texte convaincant associé à des visuels IA personnalisés — en quelques secondes.',
       link: '/generate',
     },
   ];
@@ -35,14 +35,14 @@ export default function HomePage() {
             <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
               <div className="flex flex-col justify-center space-y-4 text-center lg:text-left">
                 <h1 className="text-4xl font-bold font-headline tracking-tighter sm:text-5xl md:text-6xl text-foreground">
-                  The Future of Ad Creation is Here
+                  Le Futur de la Création Publicitaire est Ici
                 </h1>
                 <p className="max-w-[600px] text-muted-foreground md:text-xl">
-                  AdInsights combines cutting-edge AI with market analysis to help you create winning ad campaigns faster than ever before.
+                  AdInsights combine l'IA de pointe avec l'analyse de marché pour vous aider à créer des campagnes publicitaires gagnantes plus rapidement que jamais.
                 </p>
                 <Button asChild size="lg" className="mt-8 w-full sm:w-fit">
                   <Link href="/dashboard">
-                    Go to Dashboard <ArrowRight className="ml-2 h-5 w-5" />
+                    Aller au Tableau de Bord <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
               </div>
@@ -62,9 +62,9 @@ export default function HomePage() {
         <section id="features" className="w-full py-16 md:py-24 bg-background">
           <div className="container px-4 md:px-6">
             <div className="text-center max-w-2xl mx-auto mb-12">
-              <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-4xl">All-in-One Marketing Intelligence</h2>
+              <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-4xl">Intelligence Marketing Tout-en-Un</h2>
               <p className="mt-4 text-muted-foreground md:text-lg">
-                From initial idea to performance analysis, AdInsights is your strategic partner.
+                De l'idée initiale à l'analyse des performances, AdInsights est votre partenaire stratégique.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -79,7 +79,7 @@ export default function HomePage() {
                   </CardContent>
                   <Button variant="outline" asChild>
                     <Link href={feature.link}>
-                      Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                      En savoir plus <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
                 </Card>
@@ -93,15 +93,15 @@ export default function HomePage() {
             <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
                 <div className="space-y-3">
                     <h2 className="text-3xl font-bold font-headline tracking-tighter md:text-4xl/tight">
-                        Ready to Revolutionize Your Ads?
+                        Prêt à Révolutionner Vos Publicités ?
                     </h2>
                     <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                        Stop guessing and start creating data-driven, AI-powered campaigns that convert.
+                        Arrêtez de deviner et commencez à créer des campagnes basées sur les données et l'IA qui convertissent.
                     </p>
                 </div>
                 <div className="mx-auto w-full max-w-sm space-y-2">
                     <Button asChild size="lg" className="w-full">
-                        <Link href="/dashboard">Get Started for Free</Link>
+                        <Link href="/dashboard">Commencez Gratuitement</Link>
                     </Button>
                 </div>
             </div>

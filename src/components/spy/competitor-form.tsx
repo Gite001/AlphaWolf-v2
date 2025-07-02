@@ -22,7 +22,7 @@ function SubmitButton() {
   return (
     <Button type="submit" disabled={pending} className="w-full">
       {pending ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
-      Analyze Competitor
+      Analyser le Concurrent
     </Button>
   );
 }
@@ -36,15 +36,15 @@ export function CompetitorForm() {
     if (state.message && state.message !== 'Competitor analysis complete.') {
       toast({
         variant: 'destructive',
-        title: 'Error',
+        title: 'Erreur',
         description: state.message,
       });
     }
     if (state.data) {
       setResult(state.data);
       toast({
-        title: 'Success!',
-        description: 'The competitor analysis is ready.',
+        title: 'Succès !',
+        description: "L'analyse du concurrent est prête.",
       });
     }
   }, [state, toast]);
@@ -55,8 +55,8 @@ export function CompetitorForm() {
     <div>
       <form ref={formRef} action={formAction} className="space-y-6">
         <div className="space-y-2">
-            <Label htmlFor="url">Competitor URL</Label>
-            <Input id="url" name="url" placeholder="https://www.competitor.com/product-page" required type="url" />
+            <Label htmlFor="url">URL du Concurrent</Label>
+            <Input id="url" name="url" placeholder="https://www.concurrent.com/page-produit" required type="url" />
             {state.errors?.url && <p className="text-sm text-destructive">{state.errors.url[0]}</p>}
         </div>
         <SubmitButton />

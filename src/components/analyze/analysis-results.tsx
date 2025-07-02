@@ -12,10 +12,10 @@ export function AnalysisResults({ results }: AnalysisResultsProps) {
 
   return (
     <div className="space-y-6 animate-in fade-in duration-500">
-        <h2 className="text-2xl font-bold font-headline text-center">Analysis Results</h2>
+        <h2 className="text-2xl font-bold font-headline text-center">Résultats de l'Analyse</h2>
       <Card>
         <CardHeader>
-          <CardTitle>Engagement Estimate</CardTitle>
+          <CardTitle>Estimation de l'Engagement</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="flex items-center gap-4">
@@ -30,7 +30,7 @@ export function AnalysisResults({ results }: AnalysisResultsProps) {
         <Card>
           <CardHeader className="flex flex-row items-center gap-2">
             <CheckCircle2 className="h-6 w-6 text-green-500" />
-            <CardTitle>Strengths</CardTitle>
+            <CardTitle>Forces</CardTitle>
           </CardHeader>
           <CardContent>
             <p className="text-sm text-muted-foreground">{results.strengths}</p>
@@ -39,7 +39,7 @@ export function AnalysisResults({ results }: AnalysisResultsProps) {
         <Card>
           <CardHeader className="flex flex-row items-center gap-2">
             <AlertTriangle className="h-6 w-6 text-yellow-500" />
-            <CardTitle>Weaknesses</CardTitle>
+            <CardTitle>Faiblesses</CardTitle>
           </CardHeader>
           <CardContent>
             <p className="text-sm text-muted-foreground">{results.weaknesses}</p>

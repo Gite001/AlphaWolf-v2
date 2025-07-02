@@ -20,8 +20,8 @@ export function EngagementChart({ data }: EngagementChartProps) {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Engagement Overview</CardTitle>
-        <CardDescription>Weekly ad engagement across platforms</CardDescription>
+        <CardTitle>Aperçu de l'Engagement</CardTitle>
+        <CardDescription>Engagement publicitaire hebdomadaire par plateforme</CardDescription>
       </CardHeader>
       <CardContent>
         <ChartContainer config={chartConfig} className="min-h-[200px] w-full">
@@ -32,7 +32,6 @@ export function EngagementChart({ data }: EngagementChartProps) {
               tickLine={false}
               tickMargin={10}
               axisLine={false}
-              tickFormatter={(value) => value.slice(0, 3)}
             />
             <YAxis />
             <ChartTooltip content={<ChartTooltipContent />} />

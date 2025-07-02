@@ -10,14 +10,14 @@ export function TrendsResults({ results }: TrendsResultsProps) {
   return (
     <div className="space-y-8 animate-in fade-in duration-500">
       <div>
-        <h2 className="text-2xl font-bold font-headline text-center mb-2">Market Analysis Results</h2>
+        <h2 className="text-2xl font-bold font-headline text-center mb-2">Résultats de l'Analyse de Marché</h2>
         <p className="text-center text-muted-foreground">{results.marketSummary}</p>
       </div>
 
       <Card>
         <CardHeader className="flex flex-row items-center gap-2">
             <TrendingUp className="h-6 w-6 text-primary" />
-            <CardTitle>Trending Products</CardTitle>
+            <CardTitle>Produits en Tendance</CardTitle>
         </CardHeader>
         <CardContent>
             <div className="space-y-4">
@@ -35,7 +35,7 @@ export function TrendsResults({ results }: TrendsResultsProps) {
         <Card>
           <CardHeader className="flex flex-row items-center gap-2">
             <Target className="h-6 w-6 text-green-500" />
-            <CardTitle>Opportunities</CardTitle>
+            <CardTitle>Opportunités</CardTitle>
           </CardHeader>
           <CardContent>
             <p className="text-sm text-muted-foreground">{results.opportunities}</p>
@@ -45,7 +45,7 @@ export function TrendsResults({ results }: TrendsResultsProps) {
         <Card>
           <CardHeader className="flex flex-row items-center gap-2">
             <ShieldAlert className="h-6 w-6 text-yellow-500" />
-            <CardTitle>Risks & Considerations</CardTitle>
+            <CardTitle>Risques & Considérations</CardTitle>
           </CardHeader>
           <CardContent>
             <p className="text-sm text-muted-foreground">{results.risks}</p>

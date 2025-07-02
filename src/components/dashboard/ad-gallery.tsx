@@ -37,13 +37,13 @@ export function AdGallery({ ads }: AdGalleryProps) {
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="font-headline">Ad Library</CardTitle>
-        <CardDescription>Browse successful ads for inspiration and competitor insights.</CardDescription>
+        <CardTitle className="font-headline">Bibliothèque de Publicités</CardTitle>
+        <CardDescription>Parcourez des publicités à succès pour vous inspirer et analyser la concurrence.</CardDescription>
         <div className="flex flex-col md:flex-row gap-2 pt-4">
           <div className="relative flex-1">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <Input
-              placeholder="Search by keyword..."
+              placeholder="Rechercher par mot-clé..."
               className="pl-10"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
@@ -51,10 +51,10 @@ export function AdGallery({ ads }: AdGalleryProps) {
           </div>
           <Select value={platform} onValueChange={setPlatform}>
             <SelectTrigger className="w-full md:w-[180px]">
-              <SelectValue placeholder="Platform" />
+              <SelectValue placeholder="Plateforme" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="all">All Platforms</SelectItem>
+              <SelectItem value="all">Toutes les plateformes</SelectItem>
               <SelectItem value="Facebook">Facebook</SelectItem>
               <SelectItem value="Instagram">Instagram</SelectItem>
               <SelectItem value="TikTok">TikTok</SelectItem>
@@ -74,7 +74,7 @@ export function AdGallery({ ads }: AdGalleryProps) {
                     format(dateRange.from, 'LLL dd, y')
                   )
                 ) : (
-                  <span>Pick a date</span>
+                  <span>Choisir une date</span>
                 )}
               </Button>
             </PopoverTrigger>
@@ -98,8 +98,8 @@ export function AdGallery({ ads }: AdGalleryProps) {
           </div>
         ) : (
           <div className="text-center py-16 text-muted-foreground">
-            <p className="text-lg font-semibold">No Ads Found</p>
-            <p>Try adjusting your search filters.</p>
+            <p className="text-lg font-semibold">Aucune publicité trouvée</p>
+            <p>Essayez d'ajuster vos filtres de recherche.</p>
           </div>
         )}
       </CardContent>

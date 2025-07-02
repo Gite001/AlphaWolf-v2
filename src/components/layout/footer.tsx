@@ -20,14 +20,14 @@ export function AppFooter() {
             <span className="font-bold text-lg text-foreground">AdInsights</span>
           </div>
           <div className="text-center md:text-left text-sm text-muted-foreground">
-            <p>&copy; {year} AdInsights. All rights reserved.</p>
+            <p>&copy; {year} AdInsights. Tous droits réservés.</p>
           </div>
           <div className="flex gap-6">
             <Link href="/terms" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-              Terms of Service
+              Conditions d'Utilisation
             </Link>
             <Link href="/privacy" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-              Privacy Policy
+              Politique de Confidentialité
             </Link>
           </div>
         </div>

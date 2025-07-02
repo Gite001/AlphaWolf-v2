@@ -8,7 +8,7 @@ import { AppHeader } from '@/components/layout/app-header';
 
 export const metadata: Metadata = {
   title: 'AdInsights',
-  description: 'Collect, analyze, and visualize e-commerce ads to identify winning products.',
+  description: 'Collectez, analysez et visualisez les publicités e-commerce pour identifier les produits gagnants.',
 };
 
 export default function RootLayout({
@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="fr" className="dark">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

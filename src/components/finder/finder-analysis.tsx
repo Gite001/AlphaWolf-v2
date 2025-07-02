@@ -38,9 +38,9 @@ export function FinderAnalysis() {
                     <CardHeader>
                         <CardTitle className="flex items-center gap-2">
                             <Bot className="h-5 w-5 text-primary animate-pulse" />
-                            <span>AI Wolf is Hunting...</span>
+                            <span>Le loup IA est à la chasse...</span>
                         </CardTitle>
-                        <CardDescription>Analyzing thousands of data points to find the gold.</CardDescription>
+                        <CardDescription>Analyse de milliers de points de données pour trouver de l'or.</CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
                         <Skeleton className="h-4 w-full" />
@@ -60,13 +60,13 @@ export function FinderAnalysis() {
                     <CardHeader>
                         <CardTitle className="flex items-center gap-2 text-destructive">
                             <AlertCircle className="h-5 w-5" />
-                            <span>Analysis Failed</span>
+                            <span>L'analyse a échoué</span>
                         </CardTitle>
-                        <CardDescription className="text-destructive/80">Could not generate the analysis.</CardDescription>
+                        <CardDescription className="text-destructive/80">Impossible de générer l'analyse.</CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
                         <p className="text-sm text-muted-foreground">{error}</p>
-                        <Button onClick={runAnalysis}>Try Again</Button>
+                        <Button onClick={runAnalysis}>Réessayer</Button>
                     </CardContent>
                 </Card>
             )

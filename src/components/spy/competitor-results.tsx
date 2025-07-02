@@ -11,14 +11,14 @@ export function CompetitorResults({ results }: CompetitorResultsProps) {
   return (
     <div className="space-y-8 animate-in fade-in duration-500">
       <div>
-        <h2 className="text-2xl font-bold font-headline text-center mb-4">Analysis for: {results.productName}</h2>
+        <h2 className="text-2xl font-bold font-headline text-center mb-4">Analyse pour : {results.productName}</h2>
       </div>
 
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Target className="h-6 w-6 text-primary" />
-            <span>Estimated Performance</span>
+            <span>Performance Estimée</span>
           </CardTitle>
           <CardDescription>{results.estimatedPerformance.reasoning}</CardDescription>
         </CardHeader>
@@ -34,7 +34,7 @@ export function CompetitorResults({ results }: CompetitorResultsProps) {
         <Card>
             <CardHeader className="flex flex-row items-center gap-2">
                 <User className="h-6 w-6 text-primary" />
-                <CardTitle>Target Audience</CardTitle>
+                <CardTitle>Audience Cible</CardTitle>
             </CardHeader>
             <CardContent>
                 <p className="text-sm text-muted-foreground">{results.targetAudience}</p>
@@ -43,7 +43,7 @@ export function CompetitorResults({ results }: CompetitorResultsProps) {
         <Card>
             <CardHeader className="flex flex-row items-center gap-2">
                 <Megaphone className="h-6 w-6 text-primary" />
-                <CardTitle>Marketing Angle</CardTitle>
+                <CardTitle>Angle Marketing</CardTitle>
             </CardHeader>
             <CardContent>
                 <p className="text-sm text-muted-foreground">{results.marketingAngle}</p>
@@ -55,7 +55,7 @@ export function CompetitorResults({ results }: CompetitorResultsProps) {
         <Card>
           <CardHeader className="flex flex-row items-center gap-2">
             <CheckCircle2 className="h-6 w-6 text-green-500" />
-            <CardTitle>Strengths</CardTitle>
+            <CardTitle>Forces</CardTitle>
           </CardHeader>
           <CardContent>
             <ul className="space-y-2 list-disc pl-5 text-sm text-muted-foreground">
@@ -66,7 +66,7 @@ export function CompetitorResults({ results }: CompetitorResultsProps) {
         <Card>
           <CardHeader className="flex flex-row items-center gap-2">
             <AlertTriangle className="h-6 w-6 text-yellow-500" />
-            <CardTitle>Weaknesses</CardTitle>
+            <CardTitle>Faiblesses</CardTitle>
           </CardHeader>
           <CardContent>
             <ul className="space-y-2 list-disc pl-5 text-sm text-muted-foreground">
@@ -79,7 +79,7 @@ export function CompetitorResults({ results }: CompetitorResultsProps) {
        <Card>
         <CardHeader className="flex flex-row items-center gap-2">
             <ShieldCheck className="h-6 w-6 text-blue-500" />
-            <CardTitle>Recommended Counter-Strategies</CardTitle>
+            <CardTitle>Contre-Stratégies Recommandées</CardTitle>
         </CardHeader>
         <CardContent>
             <div className="space-y-3">
