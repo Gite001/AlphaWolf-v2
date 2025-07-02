@@ -1,4 +1,7 @@
+'use client';
+
 import Image from 'next/image';
+import { useState, useEffect } from 'react';
 import type { Ad } from '@/lib/types';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -19,6 +22,13 @@ const platformIcons = {
 };
 
 export function AdCard({ ad }: AdCardProps) {
+  const [formattedDate, setFormattedDate] = useState('');
+
+  useEffect(() => {
+    // This runs only on the client, after hydration, avoiding the mismatch.
+    setFormattedDate(new Date(ad.date).toLocaleDateString());
+  }, [ad.date]);
+
   return (
     <Card className="overflow-hidden group transition-all hover:shadow-lg hover:-translate-y-1">
       <div className="relative">
@@ -44,7 +54,7 @@ export function AdCard({ ad }: AdCardProps) {
       </div>
       <CardContent className="p-4">
         <h3 className="font-semibold font-headline truncate">{ad.title}</h3>
-        <p className="text-sm text-muted-foreground">{new Date(ad.date).toLocaleDateString()}</p>
+        <p className="text-sm text-muted-foreground h-5">{formattedDate}</p>
         
         <div className="flex justify-between items-center mt-4">
           <Popover>
