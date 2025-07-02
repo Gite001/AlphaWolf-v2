@@ -6,6 +6,7 @@ import { Lightbulb, Package, BarChart, RefreshCw, FileText } from 'lucide-react'
 import { Button } from '../ui/button';
 import Link from 'next/link';
 import { useI18n } from '@/hooks/use-i18n';
+import { CategoryPerformanceChart } from './category-performance-chart';
 
 type FinderResultsProps = {
   results: FindWinningProductsOutput;
@@ -25,6 +26,8 @@ export function FinderResults({ results, onRerun }: FinderResultsProps) {
             <CardDescription className="text-base">{results.marketOverview}</CardDescription>
         </CardHeader>
       </Card>
+
+      <CategoryPerformanceChart data={results.winningCategories} />
 
       <div>
         <h2 className="text-2xl font-bold font-headline text-center mb-4">{t('FinderResults.winningCategories.title')}</h2>

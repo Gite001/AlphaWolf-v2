@@ -383,5 +383,13 @@
   "SpyPage.howItWorks": {
     "title": "How does it work?",
     "description": "The AI draws upon its vast knowledge base of public web data to identify patterns, trends, and strategic insights. It analyzes the content, structure, and likely audience of the provided URL based on information learned during its training. It does not perform live browsing or access private data."
+  },
+  "PlatformDistributionChart": {
+    "title": "Engagement Distribution",
+    "description": "Total engagement share by platform for the week."
+  },
+  "CategoryPerformanceChart": {
+    "title": "Winning Category Performance",
+    "description": "Average AI-estimated performance score for each identified category."
   }
 }

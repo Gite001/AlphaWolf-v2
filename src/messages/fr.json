@@ -383,5 +383,13 @@
   "SpyPage.howItWorks": {
     "title": "Comment ça marche ?",
     "description": "L'IA s'appuie sur sa vaste base de connaissances de données publiques du web pour identifier des schémas, des tendances et des perspectives stratégiques. Elle analyse le contenu, la structure et l'audience probable de l'URL fournie en se basant sur les informations apprises lors de sa formation. Elle n'effectue pas de navigation en direct ni n'accède à des données privées."
+  },
+  "PlatformDistributionChart": {
+    "title": "Distribution de l'Engagement",
+    "description": "Part de l'engagement total par plateforme pour la semaine."
+  },
+  "CategoryPerformanceChart": {
+    "title": "Performance des Catégories Gagnantes",
+    "description": "Score de performance moyen estimé par l'IA pour chaque catégorie identifiée."
   }
 }

@@ -27,6 +27,7 @@ const WinningProductCategorySchema = z.object({
     categoryName: z.string().describe('The name of the winning product category.'),
     analysis: z.string().describe('A brief analysis explaining why this category is performing well, based on the provided ad data.'),
     actionableAdvice: z.string().describe('A concrete piece of advice for a marketer looking to enter this category.'),
+    averageScore: z.number().min(0).max(100).describe('The average performance score of all ads identified within this category, rounded to the nearest integer.'),
 });
 
 const FindWinningProductsOutputSchema = z.object({
@@ -62,6 +63,7 @@ Based on your analysis, provide:
     -   Provide a clear **Category Name**.
     -   Write a brief **Analysis** explaining *why* this category seems to be successful, referencing the ad data.
     -   Give one piece of **Actionable Advice** for someone wanting to sell in this category.
+    -   Calculate and provide the **Average Score**, which is the mathematical average of the scores of all ads you've grouped into this category. Round it to the nearest integer.
 
 Focus your analysis exclusively on the data provided. Do not use external knowledge. Your response must be in valid JSON format and in the requested language ({{{locale}}}).
 `,

@@ -7,6 +7,7 @@ import { ads, engagementData, stats } from "@/lib/data";
 import { DashboardSummary } from "@/components/dashboard/dashboard-summary";
 import { getTranslations } from "@/lib/utils";
 import { cookies } from "next/headers";
+import { PlatformDistributionChart } from "@/components/dashboard/platform-distribution-chart";
 
 export default async function DashboardPage() {
   const locale = cookies().get('locale')?.value;
@@ -29,6 +30,7 @@ export default async function DashboardPage() {
         </div>
         <div className="lg:col-span-2 flex flex-col gap-8">
             <QuickActions />
+            <PlatformDistributionChart data={engagementData} />
             <MarketSnapshot />
         </div>
       </div>
