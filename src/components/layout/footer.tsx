@@ -3,8 +3,11 @@
 import Link from 'next/link';
 import { Bot } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import { useI18n } from '@/hooks/use-i18n';
+import { LanguageSwitcher } from './language-switcher';
 
 export function AppFooter() {
+  const { t } = useI18n();
   const [year, setYear] = useState(new Date().getFullYear());
 
   useEffect(() => {
@@ -20,15 +23,16 @@ export function AppFooter() {
             <span className="font-bold text-lg text-foreground">AdInsights</span>
           </div>
           <div className="text-center md:text-left text-sm text-muted-foreground">
-            <p>&copy; {year} AdInsights. Tous droits réservés.</p>
+            <p>&copy; {year} AdInsights. {t('Footer.rightsReserved')}</p>
           </div>
-          <div className="flex gap-6">
+          <div className="flex items-center gap-6">
             <Link href="/terms" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-              Conditions d'Utilisation
+              {t('Footer.terms')}
             </Link>
             <Link href="/privacy" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-              Politique de Confidentialité
+              {t('Footer.privacy')}
             </Link>
+            <LanguageSwitcher />
           </div>
         </div>
       </div>

@@ -1,0 +1,387 @@
+
+{
+  "Metadata": {
+    "title": "AdInsights",
+    "description": "Collectez, analysez et visualisez les publicités e-commerce pour identifier les produits gagnants."
+  },
+  "Shared": {
+    "poweredByAi": "Piloté par GenAI"
+  },
+  "Toast": {
+    "errorTitle": "Erreur",
+    "successTitle": "Succès !"
+  },
+  "LanguageSwitcher": {
+    "toggle": "Changer de langue"
+  },
+  "Footer": {
+    "rightsReserved": "Tous droits réservés.",
+    "terms": "Conditions d'Utilisation",
+    "privacy": "Politique de Confidentialité"
+  },
+  "AppSidebar": {
+    "home": "Accueil",
+    "dashboard": "Tableau de bord",
+    "productFinder": "Découverte Produits",
+    "marketTrends": "Tendances Marché",
+    "competitorSpy": "Espion Concurrent",
+    "generateAd": "Générer Publicité",
+    "analyzeAd": "Analyser Publicité"
+  },
+  "HomePage": {
+    "hero": {
+      "title": "Le Futur de la Création Publicitaire est Ici",
+      "subtitle": "AdInsights combine l'IA de pointe avec l'analyse de marché pour vous aider à créer des campagnes publicitaires gagnantes plus rapidement que jamais.",
+      "cta": "Aller au Tableau de Bord"
+    },
+    "features": {
+      "title": "Intelligence Marketing Tout-en-Un",
+      "subtitle": "De l'idée initiale à l'analyse des performances, AdInsights est votre partenaire stratégique.",
+      "learnMore": "En savoir plus",
+      "winnerDiscovery": {
+        "title": "Découverte de Produits Gagnants",
+        "description": "Notre loup IA parcourt notre base de données publicitaires pour dénicher les produits tendances et les stratégies qui les font réussir."
+      },
+      "competitorSpy": {
+        "title": "Espion Concurrent",
+        "description": "Déconstruisez la publicité ou la page produit de n'importe quel concurrent. Obtenez leur angle marketing, leurs faiblesses et des contre-stratégies."
+      },
+      "instantConcepts": {
+        "title": "Concepts Publicitaires Instantanés",
+        "description": "Générez des concepts publicitaires complets et à haute conversion — un texte convaincant associé à des visuels IA personnalisés — en quelques secondes."
+      }
+    },
+    "cta": {
+      "title": "Prêt à Révolutionner Vos Publicités ?",
+      "subtitle": "Arrêtez de deviner et commencez à créer des campagnes basées sur les données et l'IA qui convertissent.",
+      "button": "Commencez Gratuitement"
+    }
+  },
+  "DashboardPage": {
+    "title": "Centre de Commande",
+    "description": "Votre tableau de bord marketing piloté par l'IA."
+  },
+  "FinderPage": {
+    "title": "Découverte de Produits Gagnants",
+    "description": "Laissez notre IA analyser notre bibliothèque complète de publicités suivies pour identifier les catégories de produits les plus performantes et découvrir les tendances qui animent leur succès."
+  },
+  "TrendsPage": {
+    "title": "Analyse des Tendances du Marché",
+    "description": "Découvrez les produits les plus recherchés dans n'importe quelle catégorie. Saisissez une catégorie de produits et une région pour obtenir une analyse de marché pilotée par l'IA.",
+    "form": {
+        "title": "Analyser les Tendances du Marché",
+        "description": "Indiquez à l'IA la catégorie de produits et la région qui vous intéressent. Elle vous fournira un résumé du marché, les produits tendances et des conseils stratégiques."
+    },
+    "howItWorks": {
+        "title": "Comment ça marche ?",
+        "description": "L'IA s'appuie sur sa vaste formation sur les données publiques du web jusqu'à sa dernière mise à jour. En analysant d'innombrables articles, listes de produits et discussions de consommateurs, elle identifie des schémas et synthétise des informations pour fournir des aperçus stratégiques sur les tendances du marché, les produits populaires et les risques potentiels. Elle n'accède pas aux données de vente en temps réel."
+    }
+  },
+  "SpyPage": {
+    "title": "Espion Concurrent",
+    "description": "Déconstruisez les stratégies marketing de vos concurrents. Saisissez l'URL d'une publicité ou d'une page produit et obtenez une analyse détaillée de leur approche, pilotée par l'IA.",
+    "form": {
+        "title": "Analyser l'URL d'un Concurrent",
+        "description": "Fournissez un lien direct vers la publicité ou la page produit d'un concurrent. L'IA déconstruira sa stratégie et vous proposera des moyens de la contrer."
+    },
+    "howItWorks": {
+        "title": "Comment ça marche ?",
+        "description": "L'IA s'appuie sur sa vaste base de connaissances de données publiques du web pour identifier des schémas, des tendances et des perspectives stratégiques. Elle analyse le contenu, la structure et l'audience probable de l'URL fournie en se basant sur les informations apprises lors de sa formation. Elle n'effectue pas de navigation en direct ni n'accède à des données privées."
+    }
+  },
+  "GeneratePage": {
+    "title": "Générateur de Concepts Publicitaires",
+    "description": "Créez des concepts publicitaires à haute conversion en quelques secondes. Fournissez les détails de votre produit et laissez notre IA générer des options convaincantes pour vous, avec visuels et audio.",
+    "form": {
+        "title": "Générer de Nouveaux Concepts Publicitaires",
+        "description": "Décrivez votre produit et votre audience cible. L'IA générera trois concepts publicitaires complets, chacun avec son propre texte, visuel et audio uniques."
+    }
+  },
+  "AnalyzePage": {
+    "title": "Analyse de Performance Publicitaire",
+    "description": "Obtenez une analyse par IA de votre création publicitaire. Téléchargez votre visuel, fournissez les détails, et recevez un score d'engagement estimé ainsi que des retours exploitables.",
+    "form": {
+        "title": "Analyser une Nouvelle Publicité",
+        "description": "Fournissez les détails de votre publicité ci-dessous. L'IA analysera le texte, le visuel et le ciblage pour vous donner une estimation de performance et des suggestions d'amélioration."
+    }
+  },
+    "PrivacyPage": {
+    "title": "Politique de Confidentialité",
+    "lastUpdated": "Dernière mise à jour :",
+    "intro": "Cette Politique de Confidentialité décrit Nos politiques et procédures sur la collecte, l'utilisation et la divulgation de Vos informations lorsque Vous utilisez le Service et Vous informe de Vos droits à la vie privée et de la manière dont la loi Vous protège.",
+    "collection": {
+        "title": "Collecte et Utilisation de Vos Données Personnelles",
+        "types": {
+            "title": "Types de Données Collectées",
+            "content": "Lors de l'utilisation de Notre Service, Nous pouvons Vous demander de Nous fournir certaines informations personnellement identifiables qui peuvent être utilisées pour Vous contacter ou Vous identifier. Les informations personnellement identifiables peuvent inclure, mais ne sont pas limitées à : Adresse e-mail, Prénom et nom, Données d'utilisation."
+        }
+    },
+    "usage": {
+        "title": "Utilisation de Vos Données Personnelles",
+        "content": "La Société peut utiliser les Données Personnelles aux fins suivantes : Fournir et maintenir notre Service, y compris pour surveiller l'utilisation de notre Service. Gérer Votre Compte : pour gérer Votre inscription en tant qu'utilisateur du Service."
+    },
+    "security": {
+        "title": "Sécurité de Vos Données Personnelles",
+        "content": "La sécurité de Vos Données Personnelles est importante pour Nous, mais n'oubliez pas qu'aucune méthode de transmission sur Internet ou méthode de stockage électronique n'est 100% sécurisée. Bien que Nous nous efforcions d'utiliser des moyens commercialement acceptables pour protéger Vos Données Personnelles, Nous ne pouvons garantir leur sécurité absolue."
+    },
+    "contact": {
+        "title": "Contactez-Nous",
+        "content": "Si vous avez des questions sur cette Politique de Confidentialité, Vous pouvez nous contacter par e-mail."
+    }
+  },
+  "TermsPage": {
+    "title": "Conditions d'Utilisation",
+    "lastUpdated": "Dernière mise à jour :",
+    "intro": "Veuillez lire attentivement ces conditions d'utilisation avant d'utiliser Notre Service.",
+    "interpretation": {
+        "title": "Interprétation et Définitions",
+        "subtitle": "Interprétation",
+        "content": "Les mots dont la première lettre est en majuscule ont des significations définies dans les conditions suivantes. Les définitions suivantes auront la même signification, qu'elles apparaissent au singulier ou au pluriel."
+    },
+    "acknowledgement": {
+        "title": "Reconnaissance",
+        "content1": "Ce sont les Conditions d'Utilisation régissant l'utilisation de ce Service et l'accord qui opère entre Vous et la Société. Ces Conditions d'Utilisation définissent les droits et obligations de tous les utilisateurs concernant l'utilisation du Service.",
+        "content2": "Votre accès et votre utilisation du Service sont conditionnés par Votre acceptation et Votre respect de ces Conditions d'Utilisation. Ces Conditions d'Utilisation s'appliquent à tous les visiteurs, utilisateurs et autres personnes qui accèdent ou utilisent le Service."
+    },
+    "links": {
+        "title": "Liens vers d'Autres Sites Web",
+        "content1": "Notre Service peut contenir des liens vers des sites web ou des services tiers qui ne sont pas détenus ou contrôlés par la Société.",
+        "content2": "La Société n'a aucun contrôle sur, et n'assume aucune responsabilité pour, le contenu, les politiques de confidentialité ou les pratiques des sites web ou services tiers. Vous reconnaissez et acceptez en outre que la Société ne sera pas responsable, directement ou indirectement, de tout dommage ou perte causé ou présumé être causé par ou en relation avec l'utilisation ou la confiance accordée à un tel contenu, biens ou services disponibles sur ou via de tels sites web ou services."
+    },
+    "disclaimer": {
+        "title": "Exclusion de Garantie \"TEL QUEL\" et \"TEL QUE DISPONIBLE\"",
+        "content": "Le Service vous est fourni \"TEL QUEL\" et \"TEL QUE DISPONIBLE\" et avec tous les défauts et vices sans garantie d'aucune sorte. Dans la mesure maximale permise par la loi applicable, la Société, en son propre nom et au nom de ses Affiliés et de ses et leurs concédants de licence et fournisseurs de services respectifs, décline expressément toute garantie, qu'elle soit expresse, implicite, légale ou autre, en ce qui concerne le Service..."
+    },
+    "contact": {
+        "title": "Contactez-Nous",
+        "content": "Si vous avez des questions sur ces Conditions d'Utilisation, vous pouvez nous contacter par e-mail."
+    }
+  },
+  "Stats": {
+    "trackedAds": "Publicités Suivies",
+    "winningProducts": "Produits Gagnants",
+    "topEngagement": "Engagement Supérieur",
+    "newCompetitors": "Nouveaux Concurrents",
+    "changeText": "+{count} depuis la semaine dernière"
+  },
+  "AdGallery": {
+    "title": "Bibliothèque de Publicités",
+    "description": "Parcourez des publicités à succès pour vous inspirer et analyser la concurrence.",
+    "searchPlaceholder": "Rechercher par mot-clé...",
+    "platform": "Plateforme",
+    "allPlatforms": "Toutes les plateformes",
+    "pickDate": "Choisir une date",
+    "noAds": {
+      "title": "Aucune publicité trouvée",
+      "description": "Essayez d'ajuster vos filtres de recherche."
+    }
+  },
+  "EngagementChart": {
+    "title": "Aperçu de l'Engagement",
+    "description": "Engagement publicitaire hebdomadaire par plateforme"
+  },
+  "QuickActions": {
+    "title": "Actions de la Meute",
+    "description": "Lancez votre prochaine chasse aux produits gagnants.",
+    "finder": {
+        "label": "Trouver des Produits Gagnants",
+        "description": "Laissez l'IA analyser notre base de données publicitaires."
+    },
+    "spy": {
+        "label": "Espionner les Concurrents",
+        "description": "Déconstruisez la page d'un concurrent."
+    },
+    "generate": {
+        "label": "Générer des Concepts Publicitaires",
+        "description": "Créez instantanément des textes et visuels complets."
+    }
+  },
+  "MarketSnapshot": {
+    "title": "Aperçu du Marché",
+    "description": "Obtenez une analyse rapide de n'importe quelle catégorie de produits.",
+    "productCategory": {
+        "label": "Catégorie de Produit",
+        "placeholder": "ex: Équipement de fitness à domicile"
+    },
+    "region": {
+        "label": "Région / Marché",
+        "placeholder": "ex: France"
+    },
+    "submitButton": "Analyser maintenant"
+  },
+  "DashboardSummary": {
+    "unknownError": "Une erreur inconnue est survenue.",
+    "loading": {
+        "title": "Résumé par l'IA",
+        "description": "Votre analyste personnel examine les données..."
+    },
+    "error": {
+        "title": "L'analyse a échoué",
+        "description": "Impossible de générer le résumé par l'IA."
+    },
+    "results": {
+        "title": "Résumé par l'IA",
+        "strategicTips": "Conseils Stratégiques :"
+    }
+  },
+  "AnalysisForm": {
+    "submitButton": "Analyser la Performance",
+    "toast": {
+        "successDescription": "Votre analyse publicitaire est prête."
+    },
+    "productType": {
+        "label": "Type de Produit",
+        "placeholder": "ex: Soins de la peau, Vêtements"
+    },
+    "targetAudience": {
+        "label": "Audience Cible",
+        "placeholder": "ex: Jeunes professionnels, Parents"
+    },
+    "adText": {
+        "label": "Texte de la Publicité",
+        "placeholder": "Saisissez le contenu textuel complet de votre publicité..."
+    },
+    "adVisual": {
+        "label": "Visuel de la Publicité",
+        "alt": "Aperçu de la publicité",
+        "uploadText": "Cliquez pour télécharger ou glissez-déposez",
+        "uploadHint": "PNG, JPG, GIF jusqu'à 4MB"
+    }
+  },
+  "AnalysisResults": {
+    "title": "Résultats de l'Analyse",
+    "engagementEstimate": {
+      "title": "Estimation de l'Engagement"
+    },
+    "strengths": {
+      "title": "Forces"
+    },
+    "weaknesses": {
+      "title": "Faiblesses"
+    },
+    "suggestions": {
+      "title": "Suggestions"
+    }
+  },
+  "FinderAnalysis": {
+    "unknownError": "Une erreur inconnue est survenue.",
+    "loading": {
+        "title": "Le loup IA est à la chasse...",
+        "description": "Analyse de milliers de points de données pour trouver de l'or."
+    },
+    "error": {
+        "title": "L'analyse a échoué",
+        "description": "Impossible de générer l'analyse.",
+        "retryButton": "Réessayer"
+    }
+  },
+  "FinderResults": {
+    "marketOverview": {
+      "title": "Aperçu du Marché"
+    },
+    "winningCategories": {
+      "title": "Meilleures Catégories Gagnantes"
+    },
+    "analysis": {
+      "title": "Analyse :"
+    },
+    "strategicTip": {
+      "title": "Conseil Stratégique"
+    },
+    "generateAdButton": "Générer un Concept Publicitaire",
+    "rerunButton": "Relancer l'Analyse"
+  },
+  "CopyGeneratorForm": {
+    "submitButton": "Générer les Textes",
+    "toast": {
+        "successDescription": "Vos nouveaux textes publicitaires sont prêts."
+    },
+    "productName": {
+        "label": "Nom du Produit",
+        "placeholder": "ex: La Basket Confort Quotidien"
+    },
+    "targetAudience": {
+        "label": "Audience Cible",
+        "placeholder": "ex: Navetteurs urbains, amateurs de fitness"
+    },
+    "productDescription": {
+        "label": "Description du Produit",
+        "placeholder": "Décrivez les caractéristiques clés et les avantages de votre produit..."
+    },
+    "keywords": {
+        "label": "Mots-clés",
+        "placeholder": "ex: durable, léger, stylé (séparés par des virgules)"
+    }
+  },
+  "CopyResults": {
+    "title": "Concepts Publicitaires Générés",
+    "imageAlt": "Visuel généré par IA pour {headline}",
+    "imageFailed": "Échec de la Génération du Visuel",
+    "audioNotSupported": "Votre navigateur ne supporte pas l'élément audio.",
+    "toast": {
+        "copied": "Copié dans le presse-papiers !",
+        "copyFailedTitle": "Échec de la copie",
+        "copyFailedDescription": "Impossible de copier le texte dans le presse-papiers."
+    },
+    "copyButton": {
+        "copy": "Copier le Texte",
+        "copied": "Copié !"
+    }
+  },
+  "CompetitorForm": {
+    "submitButton": "Analyser le Concurrent",
+    "toast": {
+        "successDescription": "L'analyse du concurrent est prête."
+    },
+    "url": {
+        "label": "URL du Concurrent"
+    }
+  },
+  "CompetitorResults": {
+    "title": "Analyse pour : {productName}",
+    "estimatedPerformance": {
+        "title": "Performance Estimée"
+    },
+    "targetAudience": {
+        "title": "Audience Cible"
+    },
+    "marketingAngle": {
+        "title": "Angle Marketing"
+    },
+    "strengths": {
+        "title": "Forces"
+    },
+    "weaknesses": {
+        "title": "Faiblesses"
+    },
+    "counterStrategies": {
+        "title": "Contre-Stratégies Recommandées"
+    }
+  },
+  "TrendsForm": {
+    "submitButton": "Analyser les Tendances",
+    "toast": {
+        "successDescription": "Votre analyse de marché est prête."
+    },
+    "productCategory": {
+        "label": "Catégorie de Produit",
+        "placeholder": "ex: Articles de maison durables"
+    },
+    "region": {
+        "label": "Région / Marché",
+        "placeholder": "ex: Amérique du Nord, Europe"
+    }
+  },
+  "TrendsResults": {
+    "title": "Résultats de l'Analyse de Marché",
+    "trendingProducts": {
+        "title": "Produits en Tendance"
+    },
+    "opportunities": {
+        "title": "Opportunités"
+    },
+    "risks": {
+        "title": "Risques & Considérations"
+    }
+  }
+}

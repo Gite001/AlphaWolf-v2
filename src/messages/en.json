@@ -1,0 +1,387 @@
+
+{
+  "Metadata": {
+    "title": "AdInsights",
+    "description": "Collect, analyze, and visualize e-commerce ads to identify winning products."
+  },
+  "Shared": {
+    "poweredByAi": "Powered by GenAI"
+  },
+  "Toast": {
+    "errorTitle": "Error",
+    "successTitle": "Success!"
+  },
+  "LanguageSwitcher": {
+    "toggle": "Toggle language"
+  },
+  "Footer": {
+    "rightsReserved": "All rights reserved.",
+    "terms": "Terms of Use",
+    "privacy": "Privacy Policy"
+  },
+  "AppSidebar": {
+    "home": "Home",
+    "dashboard": "Dashboard",
+    "productFinder": "Product Finder",
+    "marketTrends": "Market Trends",
+    "competitorSpy": "Competitor Spy",
+    "generateAd": "Generate Ad",
+    "analyzeAd": "Analyze Ad"
+  },
+  "HomePage": {
+    "hero": {
+      "title": "The Future of Ad Creation is Here",
+      "subtitle": "AdInsights combines cutting-edge AI with market analysis to help you create winning ad campaigns faster than ever.",
+      "cta": "Go to Dashboard"
+    },
+    "features": {
+      "title": "All-in-One Marketing Intelligence",
+      "subtitle": "From initial idea to performance analysis, AdInsights is your strategic partner.",
+      "learnMore": "Learn more",
+      "winnerDiscovery": {
+        "title": "Winning Product Discovery",
+        "description": "Our AI wolf scours our ad database to unearth trending products and the strategies that make them succeed."
+      },
+      "competitorSpy": {
+        "title": "Competitor Spy",
+        "description": "Deconstruct any competitor's ad or product page. Get their marketing angle, weaknesses, and counter-strategies."
+      },
+      "instantConcepts": {
+        "title": "Instant Ad Concepts",
+        "description": "Generate complete, high-converting ad concepts—compelling copy paired with custom AI visuals—in seconds."
+      }
+    },
+    "cta": {
+      "title": "Ready to Revolutionize Your Ads?",
+      "subtitle": "Stop guessing and start creating data-driven, AI-powered campaigns that convert.",
+      "button": "Get Started for Free"
+    }
+  },
+  "DashboardPage": {
+    "title": "Command Center",
+    "description": "Your AI-powered marketing dashboard."
+  },
+  "FinderPage": {
+    "title": "Winning Product Discovery",
+    "description": "Let our AI analyze our comprehensive library of tracked ads to identify top-performing product categories and uncover the trends driving their success."
+  },
+  "TrendsPage": {
+    "title": "Market Trend Analysis",
+    "description": "Discover the most sought-after products in any category. Enter a product category and region to get an AI-driven market analysis.",
+    "form": {
+        "title": "Analyze Market Trends",
+        "description": "Tell the AI which product category and region you're interested in. It will provide a market summary, trending products, and strategic advice."
+    },
+    "howItWorks": {
+        "title": "How does it work?",
+        "description": "The AI leverages its vast training on public web data up to its last update. By analyzing countless articles, product listings, and consumer discussions, it identifies patterns and synthesizes information to provide strategic insights on market trends, popular products, and potential risks. It does not access real-time sales data."
+    }
+  },
+  "SpyPage": {
+    "title": "Competitor Spy",
+    "description": "Deconstruct your competitors' marketing strategies. Enter an ad or product page URL and get a detailed, AI-powered analysis of their approach.",
+    "form": {
+        "title": "Analyze a Competitor's URL",
+        "description": "Provide a direct link to a competitor's ad or product page. The AI will deconstruct their strategy and give you ways to counter it."
+    },
+    "howItWorks": {
+        "title": "How does it work?",
+        "description": "The AI draws upon its vast knowledge base of public web data to identify patterns, trends, and strategic insights. It analyzes the content, structure, and likely audience of the provided URL based on information learned during its training. It does not perform live browsing or access private data."
+    }
+  },
+  "GeneratePage": {
+    "title": "Ad Concept Generator",
+    "description": "Create high-conversion ad concepts in seconds. Provide your product details and let our AI generate compelling options for you, complete with visuals and audio.",
+    "form": {
+        "title": "Generate New Ad Concepts",
+        "description": "Describe your product and target audience. The AI will generate three complete ad concepts, each with its own unique copy, visual, and audio."
+    }
+  },
+  "AnalyzePage": {
+    "title": "Ad Performance Analysis",
+    "description": "Get an AI-powered analysis of your ad creative. Upload your visual, provide the details, and receive an estimated engagement score and actionable feedback.",
+    "form": {
+        "title": "Analyze a New Ad",
+        "description": "Provide the details of your ad below. The AI will analyze the copy, visual, and targeting to give you a performance estimate and suggestions for improvement."
+    }
+  },
+  "PrivacyPage": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated:",
+    "intro": "This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.",
+    "collection": {
+        "title": "Collecting and Using Your Personal Data",
+        "types": {
+            "title": "Types of Data Collected",
+            "content": "While using Our Service, We may ask You to provide Us with certain personally identifiable information that can be used to contact or identify You. Personally identifiable information may include, but is not limited to: Email address, First name and last name, Usage Data."
+        }
+    },
+    "usage": {
+        "title": "Use of Your Personal Data",
+        "content": "The Company may use Personal Data for the following purposes: To provide and maintain our Service, including to monitor the usage of our Service. To manage Your Account: to manage Your registration as a user of the Service."
+    },
+    "security": {
+        "title": "Security of Your Personal Data",
+        "content": "The security of Your Personal Data is important to Us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While We strive to use commercially acceptable means to protect Your Personal Data, We cannot guarantee its absolute security."
+    },
+    "contact": {
+        "title": "Contact Us",
+        "content": "If you have any questions about this Privacy Policy, You can contact us by email."
+    }
+  },
+  "TermsPage": {
+    "title": "Terms of Use",
+    "lastUpdated": "Last updated:",
+    "intro": "Please read these terms and conditions carefully before using Our Service.",
+    "interpretation": {
+        "title": "Interpretation and Definitions",
+        "subtitle": "Interpretation",
+        "content": "The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural."
+    },
+    "acknowledgement": {
+        "title": "Acknowledgment",
+        "content1": "These are the Terms and Conditions governing the use of this Service and the agreement that operates between You and the Company. These Terms and Conditions set out the rights and obligations of all users regarding the use of the Service.",
+        "content2": "Your access to and use of the Service is conditioned on Your acceptance of and compliance with these Terms and Conditions. These Terms and Conditions apply to all visitors, users and others who access or use the Service."
+    },
+    "links": {
+        "title": "Links to Other Websites",
+        "content1": "Our Service may contain links to third-party web sites or services that are not owned or controlled by the Company.",
+        "content2": "The Company has no control over, and assumes no responsibility for, the content, privacy policies, or practices of any third party web sites or services. You further acknowledge and agree that the Company shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with the use of or reliance on any such content, goods or services available on or through any such web sites or services."
+    },
+    "disclaimer": {
+        "title": "'AS IS' and 'AS AVAILABLE' Disclaimer",
+        "content": "The Service is provided to You 'AS IS' and 'AS AVAILABLE' and with all faults and defects without warranty of any kind. To the maximum extent permitted under applicable law, the Company, on its own behalf and on behalf of its Affiliates and its and their respective licensors and service providers, expressly disclaims all warranties, whether express, implied, statutory or otherwise, with respect to the Service..."
+    },
+    "contact": {
+        "title": "Contact Us",
+        "content": "If you have any questions about these Terms of Use, You can contact us by email."
+    }
+  },
+  "Stats": {
+    "trackedAds": "Tracked Ads",
+    "winningProducts": "Winning Products",
+    "topEngagement": "Top Engagement",
+    "newCompetitors": "New Competitors",
+    "changeText": "+{count} since last week"
+  },
+  "AdGallery": {
+    "title": "Ad Library",
+    "description": "Browse successful ads for inspiration and competitive analysis.",
+    "searchPlaceholder": "Search by keyword...",
+    "platform": "Platform",
+    "allPlatforms": "All Platforms",
+    "pickDate": "Pick a date",
+    "noAds": {
+      "title": "No Ads Found",
+      "description": "Try adjusting your search filters."
+    }
+  },
+  "EngagementChart": {
+    "title": "Engagement Snapshot",
+    "description": "Weekly ad engagement by platform"
+  },
+  "QuickActions": {
+    "title": "Pack Actions",
+    "description": "Launch your next hunt for winning products.",
+    "finder": {
+        "label": "Find Winning Products",
+        "description": "Let AI analyze our ad database."
+    },
+    "spy": {
+        "label": "Spy on Competitors",
+        "description": "Deconstruct a competitor's page."
+    },
+    "generate": {
+        "label": "Generate Ad Concepts",
+        "description": "Instantly create full copy and visuals."
+    }
+  },
+  "MarketSnapshot": {
+    "title": "Market Snapshot",
+    "description": "Get a quick analysis of any product category.",
+    "productCategory": {
+        "label": "Product Category",
+        "placeholder": "e.g., Home fitness equipment"
+    },
+    "region": {
+        "label": "Region / Market",
+        "placeholder": "e.g., USA"
+    },
+    "submitButton": "Analyze Now"
+  },
+  "DashboardSummary": {
+    "unknownError": "An unknown error occurred.",
+    "loading": {
+        "title": "AI Summary",
+        "description": "Your personal analyst is crunching the data..."
+    },
+    "error": {
+        "title": "Analysis Failed",
+        "description": "Could not generate the AI summary."
+    },
+    "results": {
+        "title": "AI Summary",
+        "strategicTips": "Strategic Tips:"
+    }
+  },
+  "AnalysisForm": {
+    "submitButton": "Analyze Performance",
+    "toast": {
+        "successDescription": "Your ad analysis is ready."
+    },
+    "productType": {
+        "label": "Product Type",
+        "placeholder": "e.g., Skincare, Apparel"
+    },
+    "targetAudience": {
+        "label": "Target Audience",
+        "placeholder": "e.g., Young professionals, Parents"
+    },
+    "adText": {
+        "label": "Ad Text",
+        "placeholder": "Enter the full text content of your ad..."
+    },
+    "adVisual": {
+        "label": "Ad Visual",
+        "alt": "Ad preview",
+        "uploadText": "Click to upload or drag and drop",
+        "uploadHint": "PNG, JPG, GIF up to 4MB"
+    }
+  },
+  "AnalysisResults": {
+    "title": "Analysis Results",
+    "engagementEstimate": {
+      "title": "Engagement Estimate"
+    },
+    "strengths": {
+      "title": "Strengths"
+    },
+    "weaknesses": {
+      "title": "Weaknesses"
+    },
+    "suggestions": {
+      "title": "Suggestions"
+    }
+  },
+  "FinderAnalysis": {
+    "unknownError": "An unknown error occurred.",
+    "loading": {
+        "title": "AI wolf is on the hunt...",
+        "description": "Analyzing thousands of data points to find gold."
+    },
+    "error": {
+        "title": "Analysis Failed",
+        "description": "Could not generate analysis.",
+        "retryButton": "Retry"
+    }
+  },
+  "FinderResults": {
+    "marketOverview": {
+      "title": "Market Overview"
+    },
+    "winningCategories": {
+      "title": "Top Winning Categories"
+    },
+    "analysis": {
+      "title": "Analysis:"
+    },
+    "strategicTip": {
+      "title": "Strategic Tip"
+    },
+    "generateAdButton": "Generate Ad Concept",
+    "rerunButton": "Rerun Analysis"
+  },
+  "CopyGeneratorForm": {
+    "submitButton": "Generate Concepts",
+    "toast": {
+        "successDescription": "Your new ad concepts are ready."
+    },
+    "productName": {
+        "label": "Product Name",
+        "placeholder": "e.g., The Everyday Comfort Sneaker"
+    },
+    "targetAudience": {
+        "label": "Target Audience",
+        "placeholder": "e.g., Urban commuters, fitness enthusiasts"
+    },
+    "productDescription": {
+        "label": "Product Description",
+        "placeholder": "Describe the key features and benefits of your product..."
+    },
+    "keywords": {
+        "label": "Keywords",
+        "placeholder": "e.g., durable, lightweight, stylish (comma-separated)"
+    }
+  },
+  "CopyResults": {
+    "title": "Generated Ad Concepts",
+    "imageAlt": "AI-generated visual for {headline}",
+    "imageFailed": "Visual Generation Failed",
+    "audioNotSupported": "Your browser does not support the audio element.",
+    "toast": {
+        "copied": "Copied to clipboard!",
+        "copyFailedTitle": "Copy Failed",
+        "copyFailedDescription": "Could not copy text to clipboard."
+    },
+    "copyButton": {
+        "copy": "Copy Text",
+        "copied": "Copied!"
+    }
+  },
+  "CompetitorForm": {
+    "submitButton": "Analyze Competitor",
+    "toast": {
+        "successDescription": "The competitor analysis is ready."
+    },
+    "url": {
+        "label": "Competitor URL"
+    }
+  },
+  "CompetitorResults": {
+    "title": "Analysis for: {productName}",
+    "estimatedPerformance": {
+        "title": "Estimated Performance"
+    },
+    "targetAudience": {
+        "title": "Target Audience"
+    },
+    "marketingAngle": {
+        "title": "Marketing Angle"
+    },
+    "strengths": {
+        "title": "Strengths"
+    },
+    "weaknesses": {
+        "title": "Weaknesses"
+    },
+    "counterStrategies": {
+        "title": "Recommended Counter-Strategies"
+    }
+  },
+  "TrendsForm": {
+    "submitButton": "Analyze Trends",
+    "toast": {
+        "successDescription": "Your market analysis is ready."
+    },
+    "productCategory": {
+        "label": "Product Category",
+        "placeholder": "e.g., Sustainable home goods"
+    },
+    "region": {
+        "label": "Region / Market",
+        "placeholder": "e.g., North America, Europe"
+    }
+  },
+  "TrendsResults": {
+    "title": "Market Analysis Results",
+    "trendingProducts": {
+        "title": "Trending Products"
+    },
+    "opportunities": {
+        "title": "Opportunities"
+    },
+    "risks": {
+        "title": "Risks & Considerations"
+    }
+  }
+}

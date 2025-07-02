@@ -3,25 +3,28 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowRight, Trophy, Binoculars, FileText } from 'lucide-react';
 import Image from 'next/image';
+import { getTranslations } from '@/hooks/use-i18n';
 
-export default function HomePage() {
+export default async function HomePage() {
+  const t = await getTranslations();
+
   const features = [
     {
       icon: <Trophy className="h-8 w-8 text-primary" />,
-      title: 'Découverte de Produits Gagnants',
-      description: "Notre loup IA parcourt notre base de données publicitaires pour dénicher les produits tendances et les stratégies qui les font réussir.",
+      title: t('HomePage.features.winnerDiscovery.title'),
+      description: t('HomePage.features.winnerDiscovery.description'),
       link: '/finder',
     },
     {
       icon: <Binoculars className="h-8 w-8 text-primary" />,
-      title: 'Espion Concurrent',
-      description: "Déconstruisez la publicité ou la page produit de n'importe quel concurrent. Obtenez leur angle marketing, leurs faiblesses et des contre-stratégies.",
+      title: t('HomePage.features.competitorSpy.title'),
+      description: t('HomePage.features.competitorSpy.description'),
       link: '/spy',
     },
     {
       icon: <FileText className="h-8 w-8 text-primary" />,
-      title: 'Concepts Publicitaires Instantanés',
-      description: 'Générez des concepts publicitaires complets et à haute conversion — un texte convaincant associé à des visuels IA personnalisés — en quelques secondes.',
+      title: t('HomePage.features.instantConcepts.title'),
+      description: t('HomePage.features.instantConcepts.description'),
       link: '/generate',
     },
   ];
@@ -35,14 +38,14 @@ export default function HomePage() {
             <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
               <div className="flex flex-col justify-center space-y-4 text-center lg:text-left">
                 <h1 className="text-4xl font-bold font-headline tracking-tighter sm:text-5xl md:text-6xl text-foreground">
-                  Le Futur de la Création Publicitaire est Ici
+                  {t('HomePage.hero.title')}
                 </h1>
                 <p className="max-w-[600px] text-muted-foreground md:text-xl">
-                  AdInsights combine l'IA de pointe avec l'analyse de marché pour vous aider à créer des campagnes publicitaires gagnantes plus rapidement que jamais.
+                  {t('HomePage.hero.subtitle')}
                 </p>
                 <Button asChild size="lg" className="mt-8 w-full sm:w-fit">
                   <Link href="/dashboard">
-                    Aller au Tableau de Bord <ArrowRight className="ml-2 h-5 w-5" />
+                    {t('HomePage.hero.cta')} <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
               </div>
@@ -62,9 +65,9 @@ export default function HomePage() {
         <section id="features" className="w-full py-16 md:py-24 bg-background">
           <div className="container px-4 md:px-6">
             <div className="text-center max-w-2xl mx-auto mb-12">
-              <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-4xl">Intelligence Marketing Tout-en-Un</h2>
+              <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-4xl">{t('HomePage.features.title')}</h2>
               <p className="mt-4 text-muted-foreground md:text-lg">
-                De l'idée initiale à l'analyse des performances, AdInsights est votre partenaire stratégique.
+                {t('HomePage.features.subtitle')}
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -79,7 +82,7 @@ export default function HomePage() {
                   </CardContent>
                   <Button variant="outline" asChild>
                     <Link href={feature.link}>
-                      En savoir plus <ArrowRight className="ml-2 h-4 w-4" />
+                      {t('HomePage.features.learnMore')} <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
                 </Card>
@@ -93,15 +96,15 @@ export default function HomePage() {
             <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
                 <div className="space-y-3">
                     <h2 className="text-3xl font-bold font-headline tracking-tighter md:text-4xl/tight">
-                        Prêt à Révolutionner Vos Publicités ?
+                        {t('HomePage.cta.title')}
                     </h2>
                     <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                        Arrêtez de deviner et commencez à créer des campagnes basées sur les données et l'IA qui convertissent.
+                        {t('HomePage.cta.subtitle')}
                     </p>
                 </div>
                 <div className="mx-auto w-full max-w-sm space-y-2">
                     <Button asChild size="lg" className="w-full">
-                        <Link href="/dashboard">Commencez Gratuitement</Link>
+                        <Link href="/dashboard">{t('HomePage.cta.button')}</Link>
                     </Button>
                 </div>
             </div>

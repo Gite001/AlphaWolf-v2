@@ -4,6 +4,7 @@ import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from 'recharts';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { ChartContainer, ChartTooltip, ChartTooltipContent, ChartLegend, ChartLegendContent, type ChartConfig } from '@/components/ui/chart';
 import type { EngagementData } from '@/lib/types';
+import { useI18n } from '@/hooks/use-i18n';
 
 const chartConfig = {
   Facebook: { label: 'Facebook', color: 'hsl(var(--chart-1))' },
@@ -17,11 +18,12 @@ type EngagementChartProps = {
 };
 
 export function EngagementChart({ data }: EngagementChartProps) {
+  const { t } = useI18n();
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Aperçu de l'Engagement</CardTitle>
-        <CardDescription>Engagement publicitaire hebdomadaire par plateforme</CardDescription>
+        <CardTitle>{t('EngagementChart.title')}</CardTitle>
+        <CardDescription>{t('EngagementChart.description')}</CardDescription>
       </CardHeader>
       <CardContent>
         <ChartContainer config={chartConfig} className="min-h-[200px] w-full">

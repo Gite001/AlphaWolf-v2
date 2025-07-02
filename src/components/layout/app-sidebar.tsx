@@ -14,18 +14,20 @@ import { Button } from '@/components/ui/button';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { LayoutDashboard, Sparkles, FileText, Bot, LineChart, Home, Binoculars, Trophy } from 'lucide-react';
+import { useI18n } from '@/hooks/use-i18n';
 
 export function AppSidebar() {
   const pathname = usePathname();
+  const { t } = useI18n();
 
   const menuItems = [
-    { href: '/', label: 'Accueil', icon: Home },
-    { href: '/dashboard', label: 'Tableau de bord', icon: LayoutDashboard },
-    { href: '/finder', label: 'Découverte Produits', icon: Trophy },
-    { href: '/trends', label: 'Tendances Marché', icon: LineChart },
-    { href: '/spy', label: 'Espion Concurrent', icon: Binoculars },
-    { href: '/generate', label: 'Générer Publicité', icon: FileText },
-    { href: '/analyze', label: 'Analyser Publicité', icon: Sparkles },
+    { href: '/', label: t('AppSidebar.home'), icon: Home },
+    { href: '/dashboard', label: t('AppSidebar.dashboard'), icon: LayoutDashboard },
+    { href: '/finder', label: t('AppSidebar.productFinder'), icon: Trophy },
+    { href: '/trends', label: t('AppSidebar.marketTrends'), icon: LineChart },
+    { href: '/spy', label: t('AppSidebar.competitorSpy'), icon: Binoculars },
+    { href: '/generate', label: t('AppSidebar.generateAd'), icon: FileText },
+    { href: '/analyze', label: t('AppSidebar.analyzeAd'), icon: Sparkles },
   ];
 
   return (
@@ -43,7 +45,7 @@ export function AppSidebar() {
             <SidebarMenuItem key={item.href}>
               <Link href={item.href}>
                 <SidebarMenuButton
-                  isActive={pathname === item.href}
+                  isActive={pathname.endsWith(item.href)}
                   tooltip={{
                     children: item.label,
                   }}

@@ -8,8 +8,10 @@ import { Skeleton } from '../ui/skeleton';
 import { AlertCircle, Bot } from 'lucide-react';
 import { FinderResults } from './finder-results';
 import { Button } from '../ui/button';
+import { useI18n } from '@/hooks/use-i18n';
 
 export function FinderAnalysis() {
+    const { t } = useI18n();
     const [result, setResult] = useState<FindWinningProductsOutput | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
@@ -22,7 +24,7 @@ export function FinderAnalysis() {
         if (response.data) {
             setResult(response.data);
         } else {
-            setError(response.error || 'An unknown error occurred.');
+            setError(response.error || t('FinderAnalysis.unknownError'));
         }
         setLoading(false);
     }
@@ -38,9 +40,9 @@ export function FinderAnalysis() {
                     <CardHeader>
                         <CardTitle className="flex items-center gap-2">
                             <Bot className="h-5 w-5 text-primary animate-pulse" />
-                            <span>Le loup IA est à la chasse...</span>
+                            <span>{t('FinderAnalysis.loading.title')}</span>
                         </CardTitle>
-                        <CardDescription>Analyse de milliers de points de données pour trouver de l'or.</CardDescription>
+                        <CardDescription>{t('FinderAnalysis.loading.description')}</CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
                         <Skeleton className="h-4 w-full" />
@@ -60,13 +62,13 @@ export function FinderAnalysis() {
                     <CardHeader>
                         <CardTitle className="flex items-center gap-2 text-destructive">
                             <AlertCircle className="h-5 w-5" />
-                            <span>L'analyse a échoué</span>
+                            <span>{t('FinderAnalysis.error.title')}</span>
                         </CardTitle>
-                        <CardDescription className="text-destructive/80">Impossible de générer l'analyse.</CardDescription>
+                        <CardDescription className="text-destructive/80">{t('FinderAnalysis.error.description')}</CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
                         <p className="text-sm text-muted-foreground">{error}</p>
-                        <Button onClick={runAnalysis}>Réessayer</Button>
+                        <Button onClick={runAnalysis}>{t('FinderAnalysis.error.retryButton')}</Button>
                     </CardContent>
                 </Card>
             )

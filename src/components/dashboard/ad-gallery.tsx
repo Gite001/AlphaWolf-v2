@@ -11,16 +11,21 @@ import { AdCard } from './ad-card';
 import { Search, Calendar as CalendarIcon } from 'lucide-react';
 import type { DateRange } from 'react-day-picker';
 import { format } from 'date-fns';
+import { fr, enUS } from 'date-fns/locale';
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from '../ui/card';
+import { useI18n } from '@/hooks/use-i18n';
 
 type AdGalleryProps = {
   ads: Ad[];
 };
 
 export function AdGallery({ ads }: AdGalleryProps) {
+  const { t, locale } = useI18n();
   const [searchTerm, setSearchTerm] = useState('');
   const [platform, setPlatform] = useState('all');
   const [dateRange, setDateRange] = useState<DateRange | undefined>();
+
+  const dateLocale = locale === 'fr' ? fr : enUS;
 
   const filteredAds = useMemo(() => {
     return ads.filter((ad) => {
@@ -37,13 +42,13 @@ export function AdGallery({ ads }: AdGalleryProps) {
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="font-headline">Bibliothèque de Publicités</CardTitle>
-        <CardDescription>Parcourez des publicités à succès pour vous inspirer et analyser la concurrence.</CardDescription>
+        <CardTitle className="font-headline">{t('AdGallery.title')}</CardTitle>
+        <CardDescription>{t('AdGallery.description')}</CardDescription>
         <div className="flex flex-col md:flex-row gap-2 pt-4">
           <div className="relative flex-1">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <Input
-              placeholder="Rechercher par mot-clé..."
+              placeholder={t('AdGallery.searchPlaceholder')}
               className="pl-10"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
@@ -51,10 +56,10 @@ export function AdGallery({ ads }: AdGalleryProps) {
           </div>
           <Select value={platform} onValueChange={setPlatform}>
             <SelectTrigger className="w-full md:w-[180px]">
-              <SelectValue placeholder="Plateforme" />
+              <SelectValue placeholder={t('AdGallery.platform')} />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="all">Toutes les plateformes</SelectItem>
+              <SelectItem value="all">{t('AdGallery.allPlatforms')}</SelectItem>
               <SelectItem value="Facebook">Facebook</SelectItem>
               <SelectItem value="Instagram">Instagram</SelectItem>
               <SelectItem value="TikTok">TikTok</SelectItem>
@@ -68,13 +73,13 @@ export function AdGallery({ ads }: AdGalleryProps) {
                 {dateRange?.from ? (
                   dateRange.to ? (
                     <>
-                      {format(dateRange.from, 'LLL dd, y')} - {format(dateRange.to, 'LLL dd, y')}
+                      {format(dateRange.from, 'LLL dd, y', { locale: dateLocale })} - {format(dateRange.to, 'LLL dd, y', { locale: dateLocale })}
                     </>
                   ) : (
-                    format(dateRange.from, 'LLL dd, y')
+                    format(dateRange.from, 'LLL dd, y', { locale: dateLocale })
                   )
                 ) : (
-                  <span>Choisir une date</span>
+                  <span>{t('AdGallery.pickDate')}</span>
                 )}
               </Button>
             </PopoverTrigger>
@@ -84,6 +89,7 @@ export function AdGallery({ ads }: AdGalleryProps) {
                 selected={dateRange}
                 onSelect={setDateRange}
                 initialFocus
+                locale={dateLocale}
               />
             </PopoverContent>
           </Popover>
@@ -98,8 +104,8 @@ export function AdGallery({ ads }: AdGalleryProps) {
           </div>
         ) : (
           <div className="text-center py-16 text-muted-foreground">
-            <p className="text-lg font-semibold">Aucune publicité trouvée</p>
-            <p>Essayez d'ajuster vos filtres de recherche.</p>
+            <p className="text-lg font-semibold">{t('AdGallery.noAds.title')}</p>
+            <p>{t('AdGallery.noAds.description')}</p>
           </div>
         )}
       </CardContent>

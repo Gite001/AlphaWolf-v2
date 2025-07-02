@@ -5,13 +5,15 @@ import { QuickActions } from "@/components/dashboard/quick-actions";
 import { StatsCards } from "@/components/dashboard/stats-cards";
 import { ads, engagementData, stats } from "@/lib/data";
 import { DashboardSummary } from "@/components/dashboard/dashboard-summary";
+import { getTranslations } from "@/hooks/use-i18n";
 
-export default function DashboardPage() {
+export default async function DashboardPage() {
+  const t = await getTranslations();
   return (
     <div className="flex flex-col gap-8 p-4 md:p-8">
       <header>
-        <h1 className="text-3xl font-bold font-headline tracking-tight">Centre de Commande</h1>
-        <p className="text-muted-foreground">Votre tableau de bord marketing piloté par l'IA.</p>
+        <h1 className="text-3xl font-bold font-headline tracking-tight">{t('DashboardPage.title')}</h1>
+        <p className="text-muted-foreground">{t('DashboardPage.description')}</p>
       </header>
       
       <DashboardSummary stats={stats} engagementData={engagementData} />

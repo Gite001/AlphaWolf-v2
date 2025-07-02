@@ -2,25 +2,27 @@ import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { FileText, ArrowRight, Binoculars, Trophy } from 'lucide-react';
+import { getTranslations } from '@/hooks/use-i18n';
 
-export function QuickActions() {
+export async function QuickActions() {
+    const t = await getTranslations();
     const actions = [
         {
             href: '/finder',
-            label: 'Trouver des Produits Gagnants',
-            description: 'Laissez l\'IA analyser notre base de données publicitaires.',
+            label: t('QuickActions.finder.label'),
+            description: t('QuickActions.finder.description'),
             icon: Trophy
         },
         {
             href: '/spy',
-            label: 'Espionner les Concurrents',
-            description: "Déconstruisez la page d'un concurrent.",
+            label: t('QuickActions.spy.label'),
+            description: t('QuickActions.spy.description'),
             icon: Binoculars
         },
         {
             href: '/generate',
-            label: 'Générer des Concepts Publicitaires',
-            description: 'Créez instantanément des textes et visuels complets.',
+            label: t('QuickActions.generate.label'),
+            description: t('QuickActions.generate.description'),
             icon: FileText
         },
     ];
@@ -28,8 +30,8 @@ export function QuickActions() {
     return (
         <Card>
             <CardHeader>
-                <CardTitle>Actions de la Meute</CardTitle>
-                <CardDescription>Lancez votre prochaine chasse aux produits gagnants.</CardDescription>
+                <CardTitle>{t('QuickActions.title')}</CardTitle>
+                <CardDescription>{t('QuickActions.description')}</CardDescription>
             </CardHeader>
             <CardContent className="flex flex-col gap-4">
                 {actions.map((action) => (

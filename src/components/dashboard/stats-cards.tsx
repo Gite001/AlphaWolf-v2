@@ -2,15 +2,25 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import type { Stat } from "@/lib/types";
 import { ArrowDown, ArrowUp } from "lucide-react";
+import { getTranslations } from "@/hooks/use-i18n";
 
 type StatsCardsProps = {
   stats: Stat[];
 };
 
-export function StatsCards({ stats }: StatsCardsProps) {
+export async function StatsCards({ stats }: StatsCardsProps) {
+  const t = await getTranslations();
+  
+  const translatedStats: Stat[] = [
+    { ...stats[0], title: t('Stats.trackedAds') },
+    { ...stats[1], title: t('Stats.winningProducts') },
+    { ...stats[2], title: t('Stats.topEngagement') },
+    { ...stats[3], title: t('Stats.newCompetitors'), change: t('Stats.changeText', { count: 5 }) },
+  ];
+
   return (
     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-      {stats.map((stat) => (
+      {translatedStats.map((stat) => (
         <Card key={stat.title}>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">{stat.title}</CardTitle>

@@ -6,6 +6,7 @@ import { getDashboardSummary } from '@/app/dashboard/actions';
 import type { Stat, EngagementData } from '@/lib/types';
 import { Skeleton } from '../ui/skeleton';
 import { Lightbulb, Sparkles, AlertCircle } from 'lucide-react';
+import { useI18n } from '@/hooks/use-i18n';
 
 type DashboardSummaryProps = {
     stats: Stat[];
@@ -13,6 +14,7 @@ type DashboardSummaryProps = {
 };
 
 export function DashboardSummary({ stats, engagementData }: DashboardSummaryProps) {
+    const { t } = useI18n();
     const [summary, setSummary] = useState<string | null>(null);
     const [insights, setInsights] = useState<string[] | null>(null);
     const [loading, setLoading] = useState(true);
@@ -27,12 +29,12 @@ export function DashboardSummary({ stats, engagementData }: DashboardSummaryProp
                 setSummary(result.data.summary);
                 setInsights(result.data.insights);
             } else {
-                setError(result.error || 'An unknown error occurred.');
+                setError(result.error || t('DashboardSummary.unknownError'));
             }
             setLoading(false);
         }
         fetchSummary();
-    }, [stats, engagementData]);
+    }, [stats, engagementData, t]);
 
     if (loading) {
         return (
@@ -40,9 +42,9 @@ export function DashboardSummary({ stats, engagementData }: DashboardSummaryProp
                 <CardHeader>
                     <CardTitle className="flex items-center gap-2">
                         <Sparkles className="h-5 w-5 text-primary" />
-                        <span>Résumé par l'IA</span>
+                        <span>{t('DashboardSummary.loading.title')}</span>
                     </CardTitle>
-                    <CardDescription>Votre analyste personnel examine les données...</CardDescription>
+                    <CardDescription>{t('DashboardSummary.loading.description')}</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
                     <Skeleton className="h-4 w-full" />
@@ -62,9 +64,9 @@ export function DashboardSummary({ stats, engagementData }: DashboardSummaryProp
                 <CardHeader>
                     <CardTitle className="flex items-center gap-2 text-destructive">
                         <AlertCircle className="h-5 w-5" />
-                        <span>L'analyse a échoué</span>
+                        <span>{t('DashboardSummary.error.title')}</span>
                     </CardTitle>
-                    <CardDescription className="text-destructive/80">Impossible de générer le résumé par l'IA.</CardDescription>
+                    <CardDescription className="text-destructive/80">{t('DashboardSummary.error.description')}</CardDescription>
                 </CardHeader>
                 <CardContent>
                     <p className="text-sm text-muted-foreground">{error}</p>
@@ -78,12 +80,12 @@ export function DashboardSummary({ stats, engagementData }: DashboardSummaryProp
             <CardHeader>
                 <CardTitle className="flex items-center gap-2 font-headline">
                     <Sparkles className="h-6 w-6 text-primary" />
-                    <span>Résumé par l'IA</span>
+                    <span>{t('DashboardSummary.results.title')}</span>
                 </CardTitle>
                 <CardDescription>{summary}</CardDescription>
             </CardHeader>
             <CardContent>
-                <h4 className="font-semibold mb-3">Conseils Stratégiques :</h4>
+                <h4 className="font-semibold mb-3">{t('DashboardSummary.results.strategicTips')}</h4>
                 <ul className="space-y-2">
                     {insights?.map((insight, index) => (
                         <li key={index} className="flex items-start gap-3">

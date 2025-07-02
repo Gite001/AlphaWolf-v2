@@ -10,6 +10,7 @@ import { useToast } from '@/hooks/use-toast';
 import type { AnalyzeMarketTrendsOutput } from '@/ai/flows/analyze-market-trends';
 import { Loader2 } from 'lucide-react';
 import { TrendsResults } from './trends-results';
+import { useI18n } from '@/hooks/use-i18n';
 
 const initialState = {
   message: '',
@@ -19,10 +20,11 @@ const initialState = {
 
 function SubmitButton() {
   const { pending } = useFormStatus();
+  const { t } = useI18n();
   return (
     <Button type="submit" disabled={pending} className="w-full">
       {pending ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
-      Analyser les Tendances
+      {t('TrendsForm.submitButton')}
     </Button>
   );
 }
@@ -30,24 +32,25 @@ function SubmitButton() {
 export function TrendsForm() {
   const [state, formAction] = useActionState(handleTrendsAnalysis, initialState);
   const { toast } = useToast();
+  const { t } = useI18n();
   const [result, setResult] = useState<AnalyzeMarketTrendsOutput | null>(null);
 
   useEffect(() => {
     if (state.message && state.message !== 'Market analysis complete.') {
       toast({
         variant: 'destructive',
-        title: 'Erreur',
+        title: t('Toast.errorTitle'),
         description: state.message,
       });
     }
     if (state.data) {
       setResult(state.data);
       toast({
-        title: 'Succès !',
-        description: 'Votre analyse de marché est prête.',
+        title: t('Toast.successTitle'),
+        description: t('TrendsForm.toast.successDescription'),
       });
     }
-  }, [state, toast]);
+  }, [state, toast, t]);
   
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -56,13 +59,13 @@ export function TrendsForm() {
       <form ref={formRef} action={formAction} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="space-y-2">
-            <Label htmlFor="productCategory">Catégorie de Produit</Label>
-            <Input id="productCategory" name="productCategory" placeholder="ex: Articles de maison durables" required />
+            <Label htmlFor="productCategory">{t('TrendsForm.productCategory.label')}</Label>
+            <Input id="productCategory" name="productCategory" placeholder={t('TrendsForm.productCategory.placeholder')} required />
             {state.errors?.productCategory && <p className="text-sm text-destructive">{state.errors.productCategory[0]}</p>}
           </div>
           <div className="space-y-2">
-            <Label htmlFor="region">Région / Marché</Label>
-            <Input id="region" name="region" placeholder="ex: Amérique du Nord, Europe" required />
+            <Label htmlFor="region">{t('TrendsForm.region.label')}</Label>
+            <Input id="region" name="region" placeholder={t('TrendsForm.region.placeholder')} required />
             {state.errors?.region && <p className="text-sm text-destructive">{state.errors.region[0]}</p>}
           </div>
         </div>

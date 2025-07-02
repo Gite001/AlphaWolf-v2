@@ -1,24 +1,28 @@
+'use client';
+
 import type { AnalyzeCompetitorAdOutput } from '@/ai/flows/analyze-competitor-ad';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Target, CheckCircle2, AlertTriangle, ShieldCheck, User, Megaphone } from 'lucide-react';
 import { Progress } from '@/components/ui/progress';
+import { useI18n } from '@/hooks/use-i18n';
 
 type CompetitorResultsProps = {
   results: AnalyzeCompetitorAdOutput;
 };
 
 export function CompetitorResults({ results }: CompetitorResultsProps) {
+  const { t } = useI18n();
   return (
     <div className="space-y-8 animate-in fade-in duration-500">
       <div>
-        <h2 className="text-2xl font-bold font-headline text-center mb-4">Analyse pour : {results.productName}</h2>
+        <h2 className="text-2xl font-bold font-headline text-center mb-4">{t('CompetitorResults.title', { productName: results.productName })}</h2>
       </div>
 
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Target className="h-6 w-6 text-primary" />
-            <span>Performance Estimée</span>
+            <span>{t('CompetitorResults.estimatedPerformance.title')}</span>
           </CardTitle>
           <CardDescription>{results.estimatedPerformance.reasoning}</CardDescription>
         </CardHeader>
@@ -34,7 +38,7 @@ export function CompetitorResults({ results }: CompetitorResultsProps) {
         <Card>
             <CardHeader className="flex flex-row items-center gap-2">
                 <User className="h-6 w-6 text-primary" />
-                <CardTitle>Audience Cible</CardTitle>
+                <CardTitle>{t('CompetitorResults.targetAudience.title')}</CardTitle>
             </CardHeader>
             <CardContent>
                 <p className="text-sm text-muted-foreground">{results.targetAudience}</p>
@@ -43,7 +47,7 @@ export function CompetitorResults({ results }: CompetitorResultsProps) {
         <Card>
             <CardHeader className="flex flex-row items-center gap-2">
                 <Megaphone className="h-6 w-6 text-primary" />
-                <CardTitle>Angle Marketing</CardTitle>
+                <CardTitle>{t('CompetitorResults.marketingAngle.title')}</CardTitle>
             </CardHeader>
             <CardContent>
                 <p className="text-sm text-muted-foreground">{results.marketingAngle}</p>
@@ -55,7 +59,7 @@ export function CompetitorResults({ results }: CompetitorResultsProps) {
         <Card>
           <CardHeader className="flex flex-row items-center gap-2">
             <CheckCircle2 className="h-6 w-6 text-green-500" />
-            <CardTitle>Forces</CardTitle>
+            <CardTitle>{t('CompetitorResults.strengths.title')}</CardTitle>
           </CardHeader>
           <CardContent>
             <ul className="space-y-2 list-disc pl-5 text-sm text-muted-foreground">
@@ -66,7 +70,7 @@ export function CompetitorResults({ results }: CompetitorResultsProps) {
         <Card>
           <CardHeader className="flex flex-row items-center gap-2">
             <AlertTriangle className="h-6 w-6 text-yellow-500" />
-            <CardTitle>Faiblesses</CardTitle>
+            <CardTitle>{t('CompetitorResults.weaknesses.title')}</CardTitle>
           </CardHeader>
           <CardContent>
             <ul className="space-y-2 list-disc pl-5 text-sm text-muted-foreground">
@@ -79,7 +83,7 @@ export function CompetitorResults({ results }: CompetitorResultsProps) {
        <Card>
         <CardHeader className="flex flex-row items-center gap-2">
             <ShieldCheck className="h-6 w-6 text-blue-500" />
-            <CardTitle>Contre-Stratégies Recommandées</CardTitle>
+            <CardTitle>{t('CompetitorResults.counterStrategies.title')}</CardTitle>
         </CardHeader>
         <CardContent>
             <div className="space-y-3">
