@@ -13,6 +13,7 @@ import {z} from 'genkit';
 
 const AnalyzeCompetitorAdInputSchema = z.object({
   url: z.string().url().describe('The URL of the competitor’s product page or ad.'),
+  locale: z.enum(['en', 'fr']).optional().default('en').describe('The language for the output.'),
 });
 export type AnalyzeCompetitorAdInput = z.infer<typeof AnalyzeCompetitorAdInputSchema>;
 
@@ -42,6 +43,8 @@ const prompt = ai.definePrompt({
   output: {schema: AnalyzeCompetitorAdOutputSchema},
   prompt: `You are a world-class marketing intelligence analyst and competitor research expert. Your task is to analyze the provided URL and deconstruct the marketing strategy behind it.
 
+**Your response must be in the following language: {{{locale}}}.**
+
 **Target URL:** {{{url}}}
 
 Act as if you have fully crawled and analyzed the content of this page. Based on the URL and your vast knowledge of e-commerce, advertising, and marketing:
@@ -54,7 +57,7 @@ Act as if you have fully crawled and analyzed the content of this page. Based on
 6.  **Propose Counter-Strategies:** Based on their strategy, suggest concrete and actionable ways a competitor could differentiate themselves and win market share.
 7.  **Estimate Performance:** Based on all available information, provide an estimated performance score from 0 to 100, and a brief reasoning for that score. This score should reflect its potential to convert and engage its target audience.
 
-Provide a comprehensive analysis structured according to the output schema. Your response must be in valid JSON format.
+Provide a comprehensive analysis structured according to the output schema. Your response must be in valid JSON format and in the requested language ({{{locale}}}).
 `,
 });
 

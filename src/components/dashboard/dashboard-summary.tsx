@@ -14,7 +14,7 @@ type DashboardSummaryProps = {
 };
 
 export function DashboardSummary({ stats, engagementData }: DashboardSummaryProps) {
-    const { t } = useI18n();
+    const { t, locale } = useI18n();
     const [summary, setSummary] = useState<string | null>(null);
     const [insights, setInsights] = useState<string[] | null>(null);
     const [loading, setLoading] = useState(true);
@@ -24,7 +24,7 @@ export function DashboardSummary({ stats, engagementData }: DashboardSummaryProp
         async function fetchSummary() {
             setLoading(true);
             setError(null);
-            const result = await getDashboardSummary(stats, engagementData);
+            const result = await getDashboardSummary(stats, engagementData, locale);
             if (result.data) {
                 setSummary(result.data.summary);
                 setInsights(result.data.insights);
@@ -34,7 +34,7 @@ export function DashboardSummary({ stats, engagementData }: DashboardSummaryProp
             setLoading(false);
         }
         fetchSummary();
-    }, [stats, engagementData, t]);
+    }, [stats, engagementData, t, locale]);
 
     if (loading) {
         return (

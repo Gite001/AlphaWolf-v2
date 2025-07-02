@@ -8,6 +8,7 @@ const formSchema = z.object({
   productDescription: z.string().min(10, 'Product description must be at least 10 characters.'),
   targetAudience: z.string().min(3, 'Target audience is required.'),
   keywords: z.string().optional(),
+  locale: z.enum(['en', 'fr']),
 });
 
 export async function handleCopyGeneration(prevState: any, formData: FormData) {
@@ -17,6 +18,7 @@ export async function handleCopyGeneration(prevState: any, formData: FormData) {
       productDescription: formData.get('productDescription'),
       targetAudience: formData.get('targetAudience'),
       keywords: formData.get('keywords'),
+      locale: formData.get('locale'),
     });
 
     if (!validatedFields.success) {

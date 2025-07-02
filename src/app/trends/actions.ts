@@ -6,6 +6,7 @@ import { z } from "zod";
 const formSchema = z.object({
   productCategory: z.string().min(3, 'Product category is required.'),
   region: z.string().min(2, 'Region is required.'),
+  locale: z.enum(['en', 'fr']),
 });
 
 export async function handleTrendsAnalysis(prevState: any, formData: FormData) {
@@ -13,6 +14,7 @@ export async function handleTrendsAnalysis(prevState: any, formData: FormData) {
     const validatedFields = formSchema.safeParse({
       productCategory: formData.get('productCategory'),
       region: formData.get('region'),
+      locale: formData.get('locale'),
     });
 
     if (!validatedFields.success) {

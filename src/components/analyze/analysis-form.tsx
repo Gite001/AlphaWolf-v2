@@ -33,7 +33,7 @@ function SubmitButton() {
 export function AnalysisForm() {
   const [state, formAction] = useActionState(handleAnalysis, initialState);
   const { toast } = useToast();
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [preview, setPreview] = useState<string | null>(null);
   const [fileName, setFileName] = useState<string>('');
@@ -77,6 +77,7 @@ export function AnalysisForm() {
   return (
     <div>
       <form ref={formRef} action={formAction} className="space-y-6">
+        <input type="hidden" name="locale" value={locale} />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="space-y-2">
             <Label htmlFor="productType">{t('AnalysisForm.productType.label')}</Label>

@@ -3,7 +3,7 @@
 import { findWinningProducts } from "@/ai/flows/find-winning-products";
 import { ads } from "@/lib/data";
 
-export async function getWinningProductsAnalysis() {
+export async function getWinningProductsAnalysis(locale: 'en' | 'fr' = 'en') {
   try {
     // In a real app, you'd fetch this from a database.
     // Here, we're using mock data.
@@ -12,7 +12,8 @@ export async function getWinningProductsAnalysis() {
         title: ad.title,
         platform: ad.platform,
         score: ad.engagement.score,
-      }))
+      })),
+      locale,
     };
     
     const result = await findWinningProducts(analysisInput);

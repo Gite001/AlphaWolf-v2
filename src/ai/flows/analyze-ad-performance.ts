@@ -20,6 +20,7 @@ const AnalyzeAdPerformanceInputSchema = z.object({
     ),
   targetAudience: z.string().describe('The target audience of the ad.'),
   productType: z.string().describe('The type of product being advertised.'),
+  locale: z.enum(['en', 'fr']).optional().default('en').describe('The language for the output.'),
 });
 export type AnalyzeAdPerformanceInput = z.infer<typeof AnalyzeAdPerformanceInputSchema>;
 
@@ -50,6 +51,8 @@ const prompt = ai.definePrompt({
   output: {schema: AnalyzeAdPerformanceOutputSchema},
   prompt: `You are an expert in advertising analysis. You will analyze the performance of an ad based on its text, visual, target audience, and product type.
 
+**Your response must be in the following language: {{{locale}}}.**
+
 Ad Text: {{{adText}}}
 Ad Visual: {{media url=adVisualDataUri}}
 Target Audience: {{{targetAudience}}}
@@ -68,7 +71,7 @@ Based on your analysis, provide the following:
 - The weaknesses of the ad.
 - Suggestions for improving the ad.
 
-Your response must be in valid JSON format.
+Your response must be in valid JSON format and in the requested language ({{{locale}}}).
 `,
 });
 

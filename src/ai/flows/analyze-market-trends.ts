@@ -14,6 +14,7 @@ import {z} from 'genkit';
 const AnalyzeMarketTrendsInputSchema = z.object({
   productCategory: z.string().describe('The product category to analyze.'),
   region: z.string().describe('The geographical region for the analysis (e.g., USA, Europe).'),
+  locale: z.enum(['en', 'fr']).optional().default('en').describe('The language for the output.'),
 });
 export type AnalyzeMarketTrendsInput = z.infer<typeof AnalyzeMarketTrendsInputSchema>;
 
@@ -42,6 +43,8 @@ const prompt = ai.definePrompt({
   output: {schema: AnalyzeMarketTrendsOutputSchema},
   prompt: `You are a world-class market research analyst specializing in e-commerce trends. Your task is to analyze the current market for the given product category and region to identify the most sought-after products.
 
+**Your response must be in the following language: {{{locale}}}.**
+
 Product Category: {{{productCategory}}}
 Region: {{{region}}}
 
@@ -51,7 +54,7 @@ Based on your knowledge of current consumer behavior, social media trends, and m
 3.  **Opportunities:** Highlight key opportunities for new e-commerce sellers. This could involve underserved niches, new technologies, or marketing angles.
 4.  **Risks:** Point out potential risks, such as high competition, market saturation, or changing consumer preferences.
 
-Structure your response according to the output schema. Your response must be in valid JSON format.
+Structure your response according to the output schema. Your response must be in valid JSON format and in the requested language ({{{locale}}}).
 `,
 });
 

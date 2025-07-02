@@ -11,7 +11,7 @@ import { Button } from '../ui/button';
 import { useI18n } from '@/hooks/use-i18n';
 
 export function FinderAnalysis() {
-    const { t } = useI18n();
+    const { t, locale } = useI18n();
     const [result, setResult] = useState<FindWinningProductsOutput | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
@@ -20,7 +20,7 @@ export function FinderAnalysis() {
         setLoading(true);
         setError(null);
         setResult(null);
-        const response = await getWinningProductsAnalysis();
+        const response = await getWinningProductsAnalysis(locale);
         if (response.data) {
             setResult(response.data);
         } else {
@@ -31,7 +31,8 @@ export function FinderAnalysis() {
 
     useEffect(() => {
         runAnalysis();
-    }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [locale]);
 
     const renderContent = () => {
         if (loading) {

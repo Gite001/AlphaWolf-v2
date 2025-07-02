@@ -16,6 +16,7 @@ const GenerateAdCopyInputSchema = z.object({
   productDescription: z.string().describe('A brief description of the product.'),
   targetAudience: z.string().describe('The target audience for the ad.'),
   keywords: z.string().describe('Comma-separated keywords to include.'),
+  locale: z.enum(['en', 'fr']).optional().default('en').describe('The language for the output.'),
 });
 export type GenerateAdCopyInput = z.infer<typeof GenerateAdCopyInputSchema>;
 
@@ -47,6 +48,8 @@ const textGenerationPrompt = ai.definePrompt({
   input: {schema: GenerateAdCopyInputSchema},
   output: {schema: z.object({ variations: z.array(AdCopyVariationSchema) })},
   prompt: `You are an expert copywriter and creative director specializing in high-converting ads for e-commerce. Generate 3 compelling ad copy variations based on the following product information.
+
+**The ad copy (headline, body, cta) must be in the following language: {{{locale}}}.**
 
 Product Name: {{{productName}}}
 Product Description: {{{productDescription}}}

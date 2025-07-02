@@ -5,12 +5,14 @@ import { z } from "zod";
 
 const formSchema = z.object({
   url: z.string().url({ message: "Please enter a valid URL." }),
+  locale: z.enum(['en', 'fr']),
 });
 
 export async function handleCompetitorAnalysis(prevState: any, formData: FormData) {
   try {
     const validatedFields = formSchema.safeParse({
       url: formData.get('url'),
+      locale: formData.get('locale'),
     });
 
     if (!validatedFields.success) {

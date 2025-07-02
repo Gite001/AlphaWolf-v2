@@ -32,7 +32,7 @@ function SubmitButton() {
 export function TrendsForm() {
   const [state, formAction] = useActionState(handleTrendsAnalysis, initialState);
   const { toast } = useToast();
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
   const [result, setResult] = useState<AnalyzeMarketTrendsOutput | null>(null);
 
   useEffect(() => {
@@ -57,6 +57,7 @@ export function TrendsForm() {
   return (
     <div>
       <form ref={formRef} action={formAction} className="space-y-6">
+        <input type="hidden" name="locale" value={locale} />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="space-y-2">
             <Label htmlFor="productCategory">{t('TrendsForm.productCategory.label')}</Label>

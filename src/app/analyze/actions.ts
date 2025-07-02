@@ -8,6 +8,7 @@ const formSchema = z.object({
   targetAudience: z.string().min(3, 'Target audience is required.'),
   productType: z.string().min(3, 'Product type is required.'),
   adVisual: z.instanceof(File).refine(file => file.size > 0, 'Ad visual is required.'),
+  locale: z.enum(['en', 'fr']),
 });
 
 export async function handleAnalysis(prevState: any, formData: FormData) {
@@ -17,6 +18,7 @@ export async function handleAnalysis(prevState: any, formData: FormData) {
       targetAudience: formData.get('targetAudience'),
       productType: formData.get('productType'),
       adVisual: formData.get('adVisual'),
+      locale: formData.get('locale'),
     });
 
     if (!validatedFields.success) {

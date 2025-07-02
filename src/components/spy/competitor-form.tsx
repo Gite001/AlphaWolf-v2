@@ -32,7 +32,7 @@ function SubmitButton() {
 export function CompetitorForm() {
   const [state, formAction] = useActionState(handleCompetitorAnalysis, initialState);
   const { toast } = useToast();
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
   const [result, setResult] = useState<AnalyzeCompetitorAdOutput | null>(null);
 
   useEffect(() => {
@@ -57,6 +57,7 @@ export function CompetitorForm() {
   return (
     <div>
       <form ref={formRef} action={formAction} className="space-y-6">
+        <input type="hidden" name="locale" value={locale} />
         <div className="space-y-2">
             <Label htmlFor="url">{t('CompetitorForm.url.label')}</Label>
             <Input id="url" name="url" placeholder="https://www.competitor.com/product-page" required type="url" />

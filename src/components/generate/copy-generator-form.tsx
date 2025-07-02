@@ -43,7 +43,7 @@ function SubmitButton() {
 export function CopyGeneratorForm() {
   const [state, formAction] = useActionState(handleCopyGeneration, initialState);
   const { toast } = useToast();
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
   const [result, setResult] = useState<ResultState>(null);
   const searchParams = useSearchParams();
   
@@ -73,6 +73,7 @@ export function CopyGeneratorForm() {
   return (
     <div>
       <form ref={formRef} action={formAction} className="space-y-6">
+        <input type="hidden" name="locale" value={locale} />
         <div className="space-y-2">
           <Label htmlFor="productName">{t('CopyGeneratorForm.productName.label')}</Label>
           <Input id="productName" name="productName" placeholder={t('CopyGeneratorForm.productName.placeholder')} required defaultValue={productName} />

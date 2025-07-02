@@ -19,6 +19,7 @@ const AdDataSchema = z.object({
 
 const FindWinningProductsInputSchema = z.object({
   ads: z.array(AdDataSchema).describe('A list of ad data objects, each with a title, platform, and engagement score.'),
+  locale: z.enum(['en', 'fr']).optional().default('en').describe('The language for the output.'),
 });
 export type FindWinningProductsInput = z.infer<typeof FindWinningProductsInputSchema>;
 
@@ -46,6 +47,8 @@ const prompt = ai.definePrompt({
   output: {schema: FindWinningProductsOutputSchema},
   prompt: `You are a master e-commerce strategist and data scientist. You have been given a list of recently tracked ads with their performance scores. Your task is to analyze this data to identify "winning" product categories and the underlying trends driving their success.
 
+**You must generate your response in the following language: {{{locale}}}.**
+
 **Ad Data:**
 {{#each ads}}
 - Title: "{{title}}", Platform: {{platform}}, Score: {{score}}
@@ -60,7 +63,7 @@ Based on your analysis, provide:
     -   Write a brief **Analysis** explaining *why* this category seems to be successful, referencing the ad data.
     -   Give one piece of **Actionable Advice** for someone wanting to sell in this category.
 
-Focus your analysis exclusively on the data provided. Do not use external knowledge. Your response must be in valid JSON format.
+Focus your analysis exclusively on the data provided. Do not use external knowledge. Your response must be in valid JSON format and in the requested language ({{{locale}}}).
 `,
 });
 

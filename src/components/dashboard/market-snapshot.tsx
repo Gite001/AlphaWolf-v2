@@ -33,7 +33,7 @@ function SubmitButton() {
 export function MarketSnapshot() {
   const [state, formAction] = useActionState(handleTrendsAnalysis, initialState);
   const { toast } = useToast();
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
   const [result, setResult] = useState<AnalyzeMarketTrendsOutput | null>(null);
 
   useEffect(() => {
@@ -59,6 +59,7 @@ export function MarketSnapshot() {
         </CardHeader>
         <CardContent>
             <form ref={formRef} action={formAction} className="space-y-4">
+                <input type="hidden" name="locale" value={locale} />
                 <div className="space-y-2">
                     <Label htmlFor="productCategoryDashboard">{t('MarketSnapshot.productCategory.label')}</Label>
                     <Input id="productCategoryDashboard" name="productCategory" placeholder={t('MarketSnapshot.productCategory.placeholder')} required />
