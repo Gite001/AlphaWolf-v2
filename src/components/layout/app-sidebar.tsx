@@ -13,8 +13,9 @@ import {
 import { Button } from '@/components/ui/button';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-import { LayoutDashboard, Sparkles, FileText, Bot, LineChart, Home, Binoculars, Trophy } from 'lucide-react';
+import { LayoutDashboard, Sparkles, FileText, LineChart, Home, Binoculars, Trophy } from 'lucide-react';
 import { useI18n } from '@/hooks/use-i18n';
+import { Logo } from '../logo';
 
 export function AppSidebar() {
   const pathname = usePathname();
@@ -33,9 +34,9 @@ export function AppSidebar() {
   return (
     <Sidebar variant="sidebar" collapsible="icon">
       <SidebarHeader>
-        <Link href="/" aria-label="Home">
+        <Link href="/" aria-label="Home" className="group">
           <Button variant="ghost" size="icon" className="h-10 w-10 shrink-0 rounded-full">
-              <Bot className="size-5" />
+              <Logo className="size-6 transition-transform duration-300 group-hover:scale-110" />
           </Button>
         </Link>
       </SidebarHeader>
