@@ -2,7 +2,6 @@
 
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 import { setCookie } from 'cookies-next';
-import { headers } from 'next/headers';
 import fr from '@/messages/fr.json';
 import en from '@/messages/en.json';
 
@@ -45,14 +44,14 @@ export const I18nProvider = ({ children, initialLocale }: { children: ReactNode;
       }
     }
     
-    let Cpp_string = result || key;
+    let text = result || key;
     if (params) {
         Object.keys(params).forEach(pKey => {
-            Cpp_string = Cpp_string.replace(`{${pKey}}`, String(params[pKey]));
+            text = text.replace(`{${pKey}}`, String(params[pKey]));
         });
     }
 
-    return Cpp_string;
+    return text;
   };
   
   return (
@@ -69,35 +68,3 @@ export const useI18n = () => {
   }
   return context;
 };
-
-export const getTranslations = async () => {
-    const cookieStore = headers();
-    const locale = cookieStore.get('cookie')?.split('; ').find(row => row.startsWith('locale='))?.split('=')[1] || 'fr';
-    const dict = messages[locale as 'fr' | 'en'];
-
-    return (key: string, params?: { [key: string]: string | number }) => {
-        const keys = key.split('.');
-        let result = dict;
-        for (const k of keys) {
-            result = result?.[k];
-            if (result === undefined) {
-                let fallbackResult = messages['en'];
-                for (const fk of keys) {
-                    fallbackResult = fallbackResult?.[fk];
-                     if (fallbackResult === undefined) return key;
-                }
-                result = fallbackResult;
-                break;
-            }
-        }
-        
-        let Cpp_string = result || key;
-        if (params) {
-            Object.keys(params).forEach(pKey => {
-                Cpp_string = Cpp_string.replace(`{${pKey}}`, String(params[pKey]));
-            });
-        }
-
-        return Cpp_string;
-    }
-}

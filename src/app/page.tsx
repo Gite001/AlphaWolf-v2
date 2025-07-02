@@ -3,10 +3,12 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowRight, Trophy, Binoculars, FileText } from 'lucide-react';
 import Image from 'next/image';
-import { getTranslations } from '@/hooks/use-i18n';
+import { getTranslations } from '@/lib/utils';
+import { cookies } from 'next/headers';
 
 export default async function HomePage() {
-  const t = await getTranslations();
+  const locale = cookies().get('locale')?.value;
+  const t = getTranslations(locale);
 
   const features = [
     {

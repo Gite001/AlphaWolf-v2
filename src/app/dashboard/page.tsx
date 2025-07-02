@@ -5,10 +5,12 @@ import { QuickActions } from "@/components/dashboard/quick-actions";
 import { StatsCards } from "@/components/dashboard/stats-cards";
 import { ads, engagementData, stats } from "@/lib/data";
 import { DashboardSummary } from "@/components/dashboard/dashboard-summary";
-import { getTranslations } from "@/hooks/use-i18n";
+import { getTranslations } from "@/lib/utils";
+import { cookies } from "next/headers";
 
 export default async function DashboardPage() {
-  const t = await getTranslations();
+  const locale = cookies().get('locale')?.value;
+  const t = getTranslations(locale);
   return (
     <div className="flex flex-col gap-8 p-4 md:p-8">
       <header>

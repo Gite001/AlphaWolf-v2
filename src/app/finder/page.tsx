@@ -1,10 +1,12 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Trophy } from "lucide-react";
 import { FinderAnalysis } from "@/components/finder/finder-analysis";
-import { getTranslations } from "@/hooks/use-i18n";
+import { getTranslations } from "@/lib/utils";
+import { cookies } from "next/headers";
 
 export default async function FinderPage() {
-    const t = await getTranslations();
+    const locale = cookies().get('locale')?.value;
+    const t = getTranslations(locale);
     return (
         <div className="p-4 md:p-8">
             <div className="max-w-4xl mx-auto">

@@ -2,14 +2,16 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import type { Stat } from "@/lib/types";
 import { ArrowDown, ArrowUp } from "lucide-react";
-import { getTranslations } from "@/hooks/use-i18n";
+import { getTranslations } from "@/lib/utils";
+import { cookies } from "next/headers";
 
 type StatsCardsProps = {
   stats: Stat[];
 };
 
 export async function StatsCards({ stats }: StatsCardsProps) {
-  const t = await getTranslations();
+  const locale = cookies().get('locale')?.value;
+  const t = getTranslations(locale);
   
   const translatedStats: Stat[] = [
     { ...stats[0], title: t('Stats.trackedAds') },

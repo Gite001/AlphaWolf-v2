@@ -7,32 +7,16 @@ import { AppFooter } from '@/components/layout/footer';
 import { AppHeader } from '@/components/layout/app-header';
 import { I18nProvider } from '@/hooks/use-i18n';
 import { cookies } from 'next/headers';
+import { getTranslations } from '@/lib/utils';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations();
+  const locale = cookies().get('locale')?.value;
+  const t = getTranslations(locale);
   return {
     title: t('Metadata.title'),
     description: t('Metadata.description'),
   };
 }
-
-const getTranslations = async () => {
-    // This is a simplified server-side fetcher for metadata
-    const cookieStore = cookies();
-    const locale = cookieStore.get('locale')?.value || 'fr';
-    const messages = locale === 'en' ? await import('@/messages/en.json') : await import('@/messages/fr.json');
-    
-    return (key: string) => {
-        const keys = key.split('.');
-        let result = messages.default;
-        for (const k of keys) {
-            result = result?.[k];
-            if (result === undefined) return key;
-        }
-        return result || key;
-    };
-};
-
 
 export default function RootLayout({
   children,

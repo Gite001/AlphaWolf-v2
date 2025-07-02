@@ -1,10 +1,12 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Binoculars, Info } from "lucide-react";
 import { CompetitorForm } from "@/components/spy/competitor-form";
-import { getTranslations } from "@/hooks/use-i18n";
+import { getTranslations } from "@/lib/utils";
+import { cookies } from "next/headers";
 
 export default async function SpyPage() {
-    const t = await getTranslations();
+    const locale = cookies().get('locale')?.value;
+    const t = getTranslations(locale);
     return (
         <div className="p-4 md:p-8">
             <div className="max-w-4xl mx-auto">

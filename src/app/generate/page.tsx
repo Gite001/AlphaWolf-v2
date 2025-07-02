@@ -1,10 +1,12 @@
 import { CopyGeneratorForm } from "@/components/generate/copy-generator-form";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { getTranslations } from "@/hooks/use-i18n";
+import { getTranslations } from "@/lib/utils";
 import { FileText } from "lucide-react";
+import { cookies } from "next/headers";
 
 export default async function GenerateCopyPage() {
-    const t = await getTranslations();
+    const locale = cookies().get('locale')?.value;
+    const t = getTranslations(locale);
     return (
         <div className="p-4 md:p-8">
             <div className="max-w-4xl mx-auto">
