@@ -60,9 +60,7 @@ Based on your analysis, provide:
     -   Write a brief **Analysis** explaining *why* this category seems to be successful, referencing the ad data.
     -   Give one piece of **Actionable Advice** for someone wanting to sell in this category.
 
-Focus your analysis exclusively on the data provided. Do not use external knowledge.
-
-{{output descriptions=true}}
+Focus your analysis exclusively on the data provided. Do not use external knowledge. Your response must be in valid JSON format.
 `,
 });
 

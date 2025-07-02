@@ -54,9 +54,7 @@ Act as if you have fully crawled and analyzed the content of this page. Based on
 6.  **Propose Counter-Strategies:** Based on their strategy, suggest concrete and actionable ways a competitor could differentiate themselves and win market share.
 7.  **Estimate Performance:** Based on all available information, provide an estimated performance score from 0 to 100, and a brief reasoning for that score. This score should reflect its potential to convert and engage its target audience.
 
-Provide a comprehensive analysis structured according to the output schema.
-
-{{output descriptions=true}}
+Provide a comprehensive analysis structured according to the output schema. Your response must be in valid JSON format.
 `,
 });
 

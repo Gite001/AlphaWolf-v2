@@ -59,9 +59,7 @@ For each variation, provide:
 3. A strong call to action (CTA).
 4. A detailed, photorealistic 'visualPrompt' for an image generation AI to create a matching ad visual. Do not include any text in the visual description.
 
-The tone should be engaging and tailored to the specified target audience. Ensure the keywords are naturally integrated.
-
-{{output descriptions=true}}
+The tone should be engaging and tailored to the specified target audience. Ensure the keywords are naturally integrated. Your response must be in valid JSON format.
 `,
 });
 

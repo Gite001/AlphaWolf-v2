@@ -72,7 +72,7 @@ Based on this data, provide:
 1.  A concise **summary** (2-3 sentences) of the overall performance. What is the big picture?
 2.  A list of 2-3 **actionable insights**. These should be specific, practical recommendations the user can act on. For example, "Double down on TikTok as it's showing the highest growth" or "The 'Smart Home' category is outperforming others, consider a new ad for this niche."
 
-{{output descriptions=true}}
+Your response must be in valid JSON format.
 `,
 });
 

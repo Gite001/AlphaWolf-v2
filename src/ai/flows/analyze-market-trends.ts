@@ -51,9 +51,7 @@ Based on your knowledge of current consumer behavior, social media trends, and m
 3.  **Opportunities:** Highlight key opportunities for new e-commerce sellers. This could involve underserved niches, new technologies, or marketing angles.
 4.  **Risks:** Point out potential risks, such as high competition, market saturation, or changing consumer preferences.
 
-Structure your response according to the output schema.
-
-{{output descriptions=true}}
+Structure your response according to the output schema. Your response must be in valid JSON format.
 `,
 });
 

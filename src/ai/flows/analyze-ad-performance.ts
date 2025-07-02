@@ -68,7 +68,7 @@ Based on your analysis, provide the following:
 - The weaknesses of the ad.
 - Suggestions for improving the ad.
 
-{{output descriptions=true}}
+Your response must be in valid JSON format.
 `,
 });
 
