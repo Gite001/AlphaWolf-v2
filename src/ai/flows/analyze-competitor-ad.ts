@@ -20,6 +20,10 @@ export const AnalyzeCompetitorAdOutputSchema = z.object({
   productName: z.string().describe("The likely name of the product being advertised."),
   targetAudience: z.string().describe("An analysis of the likely target audience."),
   marketingAngle: z.string().describe("A summary of the primary marketing angle or value proposition being used."),
+  estimatedPerformance: z.object({
+      score: z.number().min(0).max(100).describe("An estimated performance score from 0 to 100, where 100 is a top-performing ad or page."),
+      reasoning: z.string().describe("A brief explanation for the estimated performance score, based on the page content and marketing angle.")
+  }).describe("An estimation of the ad's or page's likely performance."),
   strengths: z.array(z.string()).describe("A list of key strengths in their marketing approach."),
   weaknesses: z.array(z.string()).describe("A list of potential weaknesses or missed opportunities."),
   counterStrategies: z.array(z.string()).describe("A list of actionable counter-strategies or ways to differentiate."),
@@ -48,6 +52,7 @@ Act as if you have fully crawled and analyzed the content of this page. Based on
 4.  **Pinpoint Strengths:** What are they doing exceptionally well in their messaging, visuals, or offer?
 5.  **Find Weaknesses:** Where are the gaps? What are they failing to address? Are there any missed opportunities?
 6.  **Propose Counter-Strategies:** Based on their strategy, suggest concrete and actionable ways a competitor could differentiate themselves and win market share.
+7.  **Estimate Performance:** Based on all available information, provide an estimated performance score from 0 to 100, and a brief reasoning for that score. This score should reflect its potential to convert and engage its target audience.
 
 Provide a comprehensive analysis structured according to the output schema.
 

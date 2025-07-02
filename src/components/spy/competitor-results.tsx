@@ -1,6 +1,7 @@
 import type { AnalyzeCompetitorAdOutput } from '@/ai/flows/analyze-competitor-ad';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Target, CheckCircle2, AlertTriangle, ShieldCheck, User, Megaphone } from 'lucide-react';
+import { Progress } from '@/components/ui/progress';
 
 type CompetitorResultsProps = {
   results: AnalyzeCompetitorAdOutput;
@@ -10,8 +11,24 @@ export function CompetitorResults({ results }: CompetitorResultsProps) {
   return (
     <div className="space-y-8 animate-in fade-in duration-500">
       <div>
-        <h2 className="text-2xl font-bold font-headline text-center mb-2">Analysis for: {results.productName}</h2>
+        <h2 className="text-2xl font-bold font-headline text-center mb-4">Analysis for: {results.productName}</h2>
       </div>
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <Target className="h-6 w-6 text-primary" />
+            <span>Estimated Performance</span>
+          </CardTitle>
+          <CardDescription>{results.estimatedPerformance.reasoning}</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="flex items-center gap-4">
+            <Progress value={results.estimatedPerformance.score} className="h-3 flex-1" />
+            <span className="text-lg font-bold text-primary">{results.estimatedPerformance.score} / 100</span>
+          </div>
+        </CardContent>
+      </Card>
 
       <div className="grid md:grid-cols-2 gap-6">
         <Card>
