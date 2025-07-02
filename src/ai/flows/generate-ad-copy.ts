@@ -9,6 +9,7 @@
 
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
+import { generateAudioAd } from './generate-audio-ad';
 
 export const GenerateAdCopyInputSchema = z.object({
   productName: z.string().describe('The name of the product.'),
@@ -31,7 +32,8 @@ const GenerateAdCopyOutputSchema = z.object({
     body: z.string(),
     cta: z.string(),
     imageUrl: z.string().nullable().describe('The data URI of the generated ad visual. Null if generation failed.'),
-  })).describe('An array of 3 ad copy variations, each with a generated visual.'),
+    audioUrl: z.string().nullable().describe('The data URI of the generated ad audio. Null if generation failed.'),
+  })).describe('An array of 3 ad copy variations, each with a generated visual and audio.'),
 });
 export type GenerateAdCopyOutput = z.infer<typeof GenerateAdCopyOutputSchema>;
 
@@ -77,36 +79,40 @@ const generateAdCopyFlow = ai.defineFlow(
         throw new Error('Could not generate ad copy variations.');
     }
 
-    // 2. Generate images in parallel for each variation
-    const variationsWithImages = await Promise.all(
+    // 2. Generate images and audio in parallel for each variation
+    const variationsWithMedia = await Promise.all(
         textOutput.variations.map(async (variation) => {
-            try {
-                const { media } = await ai.generate({
+            const [imageResult, audioResult] = await Promise.allSettled([
+                ai.generate({
                     model: 'googleai/gemini-2.0-flash-preview-image-generation',
                     prompt: `A professional, photorealistic advertisement image for a product. The ad aesthetic is: ${variation.visualPrompt}`,
                     config: {
                         responseModalities: ['TEXT', 'IMAGE'],
                     },
-                });
+                }),
+                generateAudioAd(variation.body),
+            ]);
 
-                return {
-                    headline: variation.headline,
-                    body: variation.body,
-                    cta: variation.cta,
-                    imageUrl: media?.url || null,
-                };
-            } catch (e) {
-                console.error(`Image generation failed for headline "${variation.headline}":`, e);
-                return {
-                    headline: variation.headline,
-                    body: variation.body,
-                    cta: variation.cta,
-                    imageUrl: null, // Return null on failure for this specific image
-                };
+            const imageUrl = imageResult.status === 'fulfilled' ? imageResult.value.media?.url ?? null : null;
+            if (imageResult.status === 'rejected') {
+                console.error(`Image generation failed for headline "${variation.headline}":`, imageResult.reason);
             }
+
+            const audioUrl = audioResult.status === 'fulfilled' ? audioResult.value.audioUrl : null;
+            if (audioResult.status === 'rejected') {
+                console.error(`Audio generation failed for headline "${variation.headline}":`, audioResult.reason);
+            }
+
+            return {
+                headline: variation.headline,
+                body: variation.body,
+                cta: variation.cta,
+                imageUrl,
+                audioUrl,
+            };
         })
     );
 
-    return { variations: variationsWithImages };
+    return { variations: variationsWithMedia };
   }
 );

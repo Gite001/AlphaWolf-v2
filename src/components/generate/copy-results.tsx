@@ -10,9 +10,11 @@ import { useState } from 'react';
 
 type CopyResultsProps = {
   variations: GenerateAdCopyOutput['variations'];
+  productName: string;
+  productDescription: string;
 };
 
-export function CopyResults({ variations }: CopyResultsProps) {
+export function CopyResults({ variations, productName, productDescription }: CopyResultsProps) {
     
   return (
     <div className="space-y-6 animate-in fade-in duration-500">
@@ -25,6 +27,7 @@ export function CopyResults({ variations }: CopyResultsProps) {
                     body={variation.body} 
                     cta={variation.cta}
                     imageUrl={variation.imageUrl}
+                    audioUrl={variation.audioUrl}
                 />
             ))}
         </div>
@@ -32,7 +35,7 @@ export function CopyResults({ variations }: CopyResultsProps) {
   );
 }
 
-function VariationCard({ headline, body, cta, imageUrl }: { headline: string; body: string; cta: string, imageUrl: string | null }) {
+function VariationCard({ headline, body, cta, imageUrl, audioUrl }: { headline: string; body: string; cta: string, imageUrl: string | null, audioUrl: string | null }) {
     const { toast } = useToast();
     const [copied, setCopied] = useState(false);
     
@@ -66,6 +69,16 @@ function VariationCard({ headline, body, cta, imageUrl }: { headline: string; bo
             </CardHeader>
             <CardContent className="flex-grow">
                 <p className="text-muted-foreground whitespace-pre-wrap">{body}</p>
+                
+                {audioUrl && (
+                    <div className="mt-4">
+                        <audio controls className="w-full h-10">
+                            <source src={audioUrl} type="audio/wav" />
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                )}
+
                 <p className="text-primary font-semibold mt-4">{cta}</p>
             </CardContent>
             <CardFooter>
