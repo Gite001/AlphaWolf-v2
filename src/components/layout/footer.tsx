@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { useI18n } from '@/hooks/use-i18n';
-import { LanguageSwitcher } from './language-switcher';
 import { Logo } from '../logo';
 
 export function AppFooter() {
@@ -32,7 +31,6 @@ export function AppFooter() {
             <Link href="/privacy" className="text-sm text-muted-foreground hover:text-primary transition-colors">
               {t('Footer.privacy')}
             </Link>
-            <LanguageSwitcher />
           </div>
         </div>
       </div>
