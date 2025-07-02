@@ -13,13 +13,14 @@ import {
 import { Button } from '@/components/ui/button';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-import { LayoutDashboard, Sparkles, FileText, Bot, LineChart } from 'lucide-react';
+import { LayoutDashboard, Sparkles, FileText, Bot, LineChart, Home } from 'lucide-react';
 
 export function AppSidebar() {
   const pathname = usePathname();
 
   const menuItems = [
-    { href: '/', label: 'Dashboard', icon: LayoutDashboard },
+    { href: '/', label: 'Home', icon: Home },
+    { href: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
     { href: '/analyze', label: 'Analyze Ad', icon: Sparkles },
     { href: '/generate', label: 'Generate Copy', icon: FileText },
     { href: '/trends', label: 'Market Trends', icon: LineChart },
