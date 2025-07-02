@@ -11,10 +11,10 @@ import {z} from 'genkit';
 import wav from 'wav';
 import {googleAI} from '@genkit-ai/googleai';
 
-export const GenerateAudioAdInputSchema = z.string();
+const GenerateAudioAdInputSchema = z.string();
 export type GenerateAudioAdInput = z.infer<typeof GenerateAudioAdInputSchema>;
 
-export const GenerateAudioAdOutputSchema = z.object({
+const GenerateAudioAdOutputSchema = z.object({
   audioUrl: z.string().describe('The data URI of the generated audio file.'),
 });
 export type GenerateAudioAdOutput = z.infer<typeof GenerateAudioAdOutputSchema>;

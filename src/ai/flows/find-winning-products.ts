@@ -17,7 +17,7 @@ const AdDataSchema = z.object({
   score: z.number(),
 });
 
-export const FindWinningProductsInputSchema = z.object({
+const FindWinningProductsInputSchema = z.object({
   ads: z.array(AdDataSchema).describe('A list of ad data objects, each with a title, platform, and engagement score.'),
 });
 export type FindWinningProductsInput = z.infer<typeof FindWinningProductsInputSchema>;
@@ -28,7 +28,7 @@ const WinningProductCategorySchema = z.object({
     actionableAdvice: z.string().describe('A concrete piece of advice for a marketer looking to enter this category.'),
 });
 
-export const FindWinningProductsOutputSchema = z.object({
+const FindWinningProductsOutputSchema = z.object({
   marketOverview: z.string().describe('A high-level summary of the key patterns observed in the top-performing ads.'),
   winningCategories: z.array(WinningProductCategorySchema).describe('A list of the top 3-5 winning product categories identified from the data.'),
 });

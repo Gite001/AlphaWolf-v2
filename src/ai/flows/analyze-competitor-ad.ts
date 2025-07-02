@@ -11,12 +11,12 @@
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
 
-export const AnalyzeCompetitorAdInputSchema = z.object({
+const AnalyzeCompetitorAdInputSchema = z.object({
   url: z.string().url().describe('The URL of the competitor’s product page or ad.'),
 });
 export type AnalyzeCompetitorAdInput = z.infer<typeof AnalyzeCompetitorAdInputSchema>;
 
-export const AnalyzeCompetitorAdOutputSchema = z.object({
+const AnalyzeCompetitorAdOutputSchema = z.object({
   productName: z.string().describe("The likely name of the product being advertised."),
   targetAudience: z.string().describe("An analysis of the likely target audience."),
   marketingAngle: z.string().describe("A summary of the primary marketing angle or value proposition being used."),

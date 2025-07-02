@@ -11,7 +11,7 @@ import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
 import { generateAudioAd } from './generate-audio-ad';
 
-export const GenerateAdCopyInputSchema = z.object({
+const GenerateAdCopyInputSchema = z.object({
   productName: z.string().describe('The name of the product.'),
   productDescription: z.string().describe('A brief description of the product.'),
   targetAudience: z.string().describe('The target audience for the ad.'),
