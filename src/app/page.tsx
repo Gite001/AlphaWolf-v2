@@ -5,6 +5,7 @@ import { ArrowRight, Trophy, Binoculars, FileText } from 'lucide-react';
 import Image from 'next/image';
 import { getTranslations } from '@/lib/utils';
 import { cookies } from 'next/headers';
+import { Logo } from '@/components/logo';
 
 export default async function HomePage() {
   const locale = cookies().get('locale')?.value;
@@ -52,7 +53,7 @@ export default async function HomePage() {
                 </Button>
               </div>
               <Image
-                src="https://placehold.co/600x400.png"
+                src="/images/hero-dashboard.png"
                 width="600"
                 height="400"
                 alt="Hero"
