@@ -63,7 +63,7 @@
   },
   "FinderPage": {
     "title": "Découverte de Produits Gagnants",
-    "description": "Laissez notre IA analyser notre bibliothèque complète de publicités suivies pour identifier les catégories de produits les plus performantes et découvrir les tendances qui animent leur succès."
+    "description": "Laissez notre IA analyser notre bibliothèque de publicités pour identifier les catégories de produits les plus performantes et découvrir les tendances qui animent leur succès. C'est l'outil idéal pour trouver votre prochain marché à conquérir."
   },
   "TrendsPage": {
     "title": "Analyse des Tendances du Marché",
@@ -79,15 +79,7 @@
   },
   "SpyPage": {
     "title": "Espion Concurrent",
-    "description": "Déconstruisez les stratégies marketing de vos concurrents. Saisissez l'URL d'une publicité ou d'une page produit et obtenez une analyse détaillée de leur approche, pilotée par l'IA.",
-    "form": {
-        "title": "Analyser l'URL d'un Concurrent",
-        "description": "Fournissez un lien direct vers la publicité ou la page produit d'un concurrent. L'IA déconstruira sa stratégie et vous proposera des moyens de la contrer."
-    },
-    "howItWorks": {
-        "title": "Comment ça marche ?",
-        "description": "L'IA s'appuie sur sa vaste base de connaissances de données publiques du web pour identifier des schémas, des tendances et des perspectives stratégiques. Elle analyse le contenu, la structure et l'audience probable de l'URL fournie en se basant sur les informations apprises lors de sa formation. Elle n'effectue pas de navigation en direct ni n'accède à des données privées."
-    }
+    "description": "Déconstruisez la stratégie marketing d'un concurrent spécifique. Entrez l'URL de son annonce ou de sa page produit pour obtenir une analyse détaillée de son approche et des contre-stratégies efficaces."
   },
   "GeneratePage": {
     "title": "Générateur de Concepts Publicitaires",
@@ -383,5 +375,13 @@
     "risks": {
         "title": "Risques & Considérations"
     }
+  },
+  "SpyPage.form": {
+    "title": "Analyser un Concurrent Spécifique",
+    "description": "Fournissez un lien direct vers la publicité ou la page produit d'un concurrent. L'IA déconstruira sa stratégie et vous proposera des moyens de la contrer."
+  },
+  "SpyPage.howItWorks": {
+    "title": "Comment ça marche ?",
+    "description": "L'IA s'appuie sur sa vaste base de connaissances de données publiques du web pour identifier des schémas, des tendances et des perspectives stratégiques. Elle analyse le contenu, la structure et l'audience probable de l'URL fournie en se basant sur les informations apprises lors de sa formation. Elle n'effectue pas de navigation en direct ni n'accède à des données privées."
   }
 }

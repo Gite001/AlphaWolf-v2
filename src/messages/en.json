@@ -63,7 +63,7 @@
   },
   "FinderPage": {
     "title": "Winning Product Discovery",
-    "description": "Let our AI analyze our comprehensive library of tracked ads to identify top-performing product categories and uncover the trends driving their success."
+    "description": "Let our AI analyze our ad library to identify top-performing product categories and uncover the trends driving their success. This is the ideal tool to find your next market to conquer."
   },
   "TrendsPage": {
     "title": "Market Trend Analysis",
@@ -79,15 +79,7 @@
   },
   "SpyPage": {
     "title": "Competitor Spy",
-    "description": "Deconstruct your competitors' marketing strategies. Enter an ad or product page URL and get a detailed, AI-powered analysis of their approach.",
-    "form": {
-        "title": "Analyze a Competitor's URL",
-        "description": "Provide a direct link to a competitor's ad or product page. The AI will deconstruct their strategy and give you ways to counter it."
-    },
-    "howItWorks": {
-        "title": "How does it work?",
-        "description": "The AI draws upon its vast knowledge base of public web data to identify patterns, trends, and strategic insights. It analyzes the content, structure, and likely audience of the provided URL based on information learned during its training. It does not perform live browsing or access private data."
-    }
+    "description": "Deconstruct a specific competitor's marketing strategy. Enter their ad or product page URL to get a detailed analysis of their approach and effective counter-strategies."
   },
   "GeneratePage": {
     "title": "Ad Concept Generator",
@@ -383,5 +375,13 @@
     "risks": {
         "title": "Risks & Considerations"
     }
+  },
+  "SpyPage.form": {
+    "title": "Analyze a Specific Competitor",
+    "description": "Provide a direct link to a competitor's ad or product page. The AI will deconstruct their strategy and give you ways to counter it."
+  },
+  "SpyPage.howItWorks": {
+    "title": "How does it work?",
+    "description": "The AI draws upon its vast knowledge base of public web data to identify patterns, trends, and strategic insights. It analyzes the content, structure, and likely audience of the provided URL based on information learned during its training. It does not perform live browsing or access private data."
   }
 }
