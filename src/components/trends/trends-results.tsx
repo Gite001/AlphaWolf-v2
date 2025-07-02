@@ -39,6 +39,7 @@ export function TrendsResults({ results }: TrendsResultsProps) {
           </CardHeader>
           <CardContent>
             <p className="text-sm text-muted-foreground">{results.opportunities}</p>
+
           </CardContent>
         </Card>
         <Card>
