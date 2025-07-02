@@ -36,7 +36,7 @@ export function AppSidebar() {
       <SidebarHeader>
         <Link href="/" aria-label="Home" className="group">
           <Button variant="ghost" size="icon" className="h-10 w-10 shrink-0 rounded-full">
-              <Logo className="size-8 transition-transform duration-300 group-hover:scale-110" />
+              <Logo className="size-9 transition-transform duration-300 group-hover:scale-110" />
           </Button>
         </Link>
       </SidebarHeader>

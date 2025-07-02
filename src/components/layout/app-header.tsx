@@ -12,7 +12,7 @@ export function AppHeader() {
       <div className="flex items-center gap-4 md:hidden">
         <SidebarTrigger />
         <Link href="/" className="flex items-center gap-2 font-semibold group">
-            <Logo className="h-8 w-8 text-primary transition-transform duration-300 group-hover:scale-110" />
+            <Logo className="h-10 w-10 text-primary transition-transform duration-300 group-hover:scale-110" />
             <span className="">AdInsights</span>
         </Link>
       </div>

@@ -7,7 +7,7 @@ type LogoProps = {
 
 export const Logo = ({ className }: LogoProps) => {
     return (
-        <div className={cn('relative h-8 w-8', className)}>
+        <div className={cn('relative', className)}>
             <Image
                 src="/images/logo.png"
                 alt="AdInsights Logo"
