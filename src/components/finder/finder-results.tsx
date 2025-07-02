@@ -1,7 +1,8 @@
 import type { FindWinningProductsOutput } from '@/ai/flows/find-winning-products';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
-import { Lightbulb, Package, BarChart, RefreshCw } from 'lucide-react';
+import { Lightbulb, Package, BarChart, RefreshCw, FileText } from 'lucide-react';
 import { Button } from '../ui/button';
+import Link from 'next/link';
 
 type FinderResultsProps = {
   results: FindWinningProductsOutput;
@@ -27,14 +28,14 @@ export function FinderResults({ results, onRerun }: FinderResultsProps) {
 
       <div className="space-y-6">
         {results.winningCategories.map((category, index) => (
-            <Card key={index} className="shadow-md">
+            <Card key={index} className="shadow-md flex flex-col">
                 <CardHeader>
                     <CardTitle className="flex items-center gap-3">
                         <Package className="h-7 w-7 text-primary" />
                         <span className="text-2xl font-headline">{category.categoryName}</span>
                     </CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-4">
+                <CardContent className="space-y-4 flex-grow">
                     <div>
                         <h4 className="font-semibold mb-1 text-muted-foreground">Analysis:</h4>
                         <p className="text-sm">{category.analysis}</p>
@@ -47,6 +48,14 @@ export function FinderResults({ results, onRerun }: FinderResultsProps) {
                         <p className="text-sm">{category.actionableAdvice}</p>
                     </div>
                 </CardContent>
+                <CardFooter>
+                    <Button asChild className="w-full">
+                        <Link href={`/generate?productName=${encodeURIComponent(category.categoryName)}&productDescription=${encodeURIComponent(category.analysis)}&keywords=${encodeURIComponent(category.categoryName)}`}>
+                            <FileText className="mr-2 h-4 w-4" />
+                            Generate Ad Concept
+                        </Link>
+                    </Button>
+                </CardFooter>
             </Card>
         ))}
       </div>

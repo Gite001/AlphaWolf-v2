@@ -11,6 +11,7 @@ import { useToast } from '@/hooks/use-toast';
 import type { GenerateAdCopyOutput, GenerateAdCopyInput } from '@/ai/flows/generate-ad-copy';
 import { Loader2 } from 'lucide-react';
 import { CopyResults } from './copy-results';
+import { useSearchParams } from 'next/navigation';
 
 type ResultState = {
     variations: GenerateAdCopyOutput['variations'];
@@ -41,6 +42,11 @@ export function CopyGeneratorForm() {
   const [state, formAction] = useActionState(handleCopyGeneration, initialState);
   const { toast } = useToast();
   const [result, setResult] = useState<ResultState>(null);
+  const searchParams = useSearchParams();
+  
+  const productName = searchParams.get('productName') || '';
+  const productDescription = searchParams.get('productDescription') || '';
+  const keywords = searchParams.get('keywords') || '';
 
   useEffect(() => {
     if (state.message && state.message !== 'Copy generation complete.') {
@@ -66,7 +72,7 @@ export function CopyGeneratorForm() {
       <form ref={formRef} action={formAction} className="space-y-6">
         <div className="space-y-2">
           <Label htmlFor="productName">Product Name</Label>
-          <Input id="productName" name="productName" placeholder="e.g., The All-Day Comfort Sneaker" required />
+          <Input id="productName" name="productName" placeholder="e.g., The All-Day Comfort Sneaker" required defaultValue={productName} />
           {state.errors?.productName && <p className="text-sm text-destructive">{state.errors.productName[0]}</p>}
         </div>
 
@@ -78,13 +84,13 @@ export function CopyGeneratorForm() {
         
         <div className="space-y-2">
           <Label htmlFor="productDescription">Product Description</Label>
-          <Textarea id="productDescription" name="productDescription" placeholder="Describe the key features and benefits of your product..." rows={4} required />
+          <Textarea id="productDescription" name="productDescription" placeholder="Describe the key features and benefits of your product..." rows={4} required defaultValue={productDescription} />
           {state.errors?.productDescription && <p className="text-sm text-destructive">{state.errors.productDescription[0]}</p>}
         </div>
 
         <div className="space-y-2">
           <Label htmlFor="keywords">Keywords</Label>
-          <Input id="keywords" name="keywords" placeholder="e.g., sustainable, lightweight, stylish (comma-separated)" />
+          <Input id="keywords" name="keywords" placeholder="e.g., sustainable, lightweight, stylish (comma-separated)" defaultValue={keywords}/>
           {state.errors?.keywords && <p className="text-sm text-destructive">{state.errors.keywords[0]}</p>}
         </div>
 
