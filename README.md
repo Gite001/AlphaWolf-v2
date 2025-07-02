@@ -86,12 +86,16 @@ Obtenez un retour objectif et piloté par l'IA sur votre propre travail créatif
 
 ## Pour Commencer
 
+Pour lancer l'application sur votre machine locale, suivez ces étapes. Ces commandes doivent être exécutées depuis le répertoire racine de votre projet.
+
 1.  **Installer les dépendances :**
+    La commande `npm install` lit le fichier `package.json` à la racine du projet et installe toutes les bibliothèques et outils nécessaires (comme Next.js, React, etc.). Vous n'avez pas besoin de spécifier le nom de l'application, `npm` le sait déjà en se basant sur votre emplacement.
     ```bash
     npm install
     ```
 
 2.  **Lancer le serveur de développement :**
+    Cette commande démarre l'application en mode développement.
     ```bash
     npm run dev
     ```
