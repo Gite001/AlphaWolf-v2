@@ -1,28 +1,28 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowRight, Sparkles, FileText, LineChart } from 'lucide-react';
+import { ArrowRight, Trophy, Binoculars, FileText } from 'lucide-react';
 import Image from 'next/image';
 
 export default function HomePage() {
   const features = [
     {
-      icon: <Sparkles className="h-8 w-8 text-primary" />,
-      title: 'AI-Powered Ad Analysis',
-      description: 'Predict ad performance before you spend a dime. Get engagement scores, strengths, weaknesses, and suggestions.',
-      link: '/analyze',
+      icon: <Trophy className="h-8 w-8 text-primary" />,
+      title: 'Winning Product Finder',
+      description: 'Our AI wolf scours our ad database to pinpoint trending products and the strategies making them successful.',
+      link: '/finder',
+    },
+    {
+      icon: <Binoculars className="h-8 w-8 text-primary" />,
+      title: 'Competitor Spy',
+      description: "Deconstruct any competitor's ad or product page. Get their marketing angle, weaknesses, and counter-strategies.",
+      link: '/spy',
     },
     {
       icon: <FileText className="h-8 w-8 text-primary" />,
-      title: 'Instant Ad Copy & Visuals',
-      description: 'Generate high-converting ad copy and stunning visuals in seconds. Beat creative block forever.',
+      title: 'Instant Ad Concepts',
+      description: 'Generate complete, high-converting ad concepts—compelling copy paired with custom AI visuals—in seconds.',
       link: '/generate',
-    },
-    {
-      icon: <LineChart className="h-8 w-8 text-primary" />,
-      title: 'Uncover Market Trends',
-      description: 'Analyze market data to identify trending products, untapped opportunities, and potential risks.',
-      link: '/trends',
     },
   ];
 

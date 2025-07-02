@@ -1,35 +1,35 @@
 import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Sparkles, FileText, LineChart, ArrowRight } from 'lucide-react';
+import { FileText, ArrowRight, Binoculars, Trophy } from 'lucide-react';
 
 export function QuickActions() {
     const actions = [
         {
-            href: '/analyze',
-            label: 'Analyze Ad Performance',
-            description: 'Get an AI-powered analysis of your ad creative.',
-            icon: Sparkles
+            href: '/finder',
+            label: 'Find Winning Products',
+            description: 'Let AI analyze our ad database for hot products.',
+            icon: Trophy
+        },
+        {
+            href: '/spy',
+            label: 'Spy on Competitors',
+            description: "Deconstruct a competitor's ad or product page.",
+            icon: Binoculars
         },
         {
             href: '/generate',
-            label: 'Generate Ad Copy',
-            description: 'Craft high-converting ad copy in seconds.',
+            label: 'Generate Ad Concepts',
+            description: 'Instantly create complete ad copy and visuals.',
             icon: FileText
-        },
-        {
-            href: '/trends',
-            label: 'Research Market Trends',
-            description: 'Discover trending products and opportunities.',
-            icon: LineChart
         },
     ];
 
     return (
         <Card>
             <CardHeader>
-                <CardTitle>Quick Actions</CardTitle>
-                <CardDescription>Jumpstart your next winning campaign.</CardDescription>
+                <CardTitle>Wolf Pack Actions</CardTitle>
+                <CardDescription>Launch your next hunt for winning products.</CardDescription>
             </CardHeader>
             <CardContent className="flex flex-col gap-4">
                 {actions.map((action) => (
