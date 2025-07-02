@@ -1,6 +1,6 @@
 import { TrendsForm } from "@/components/trends/trends-form";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { LineChart } from "lucide-react";
+import { Info, LineChart } from "lucide-react";
 
 export default function TrendsPage() {
     return (
@@ -23,6 +23,20 @@ export default function TrendsPage() {
                     </CardHeader>
                     <CardContent>
                         <TrendsForm />
+                    </CardContent>
+                </Card>
+                
+                <Card className="mt-8 bg-secondary/50 border-dashed">
+                    <CardHeader className="flex-row gap-4 items-center">
+                        <Info className="h-6 w-6 text-primary" />
+                        <div>
+                            <CardTitle className="text-lg">How does this work?</CardTitle>
+                        </div>
+                    </CardHeader>
+                    <CardContent>
+                        <p className="text-sm text-muted-foreground">
+                            The AI leverages its vast training on public web data up to its last update. By analyzing countless articles, product listings, and consumer discussions, it identifies patterns and synthesizes information to provide strategic insights on market trends, popular products, and potential risks. It does not access real-time sales data.
+                        </p>
                     </CardContent>
                 </Card>
             </div>

@@ -1,5 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Binoculars } from "lucide-react";
+import { Binoculars, Info } from "lucide-react";
 import { CompetitorForm } from "@/components/spy/competitor-form";
 
 export default function SpyPage() {
@@ -23,6 +23,20 @@ export default function SpyPage() {
                     </CardHeader>
                     <CardContent>
                         <CompetitorForm />
+                    </CardContent>
+                </Card>
+
+                <Card className="mt-8 bg-secondary/50 border-dashed">
+                    <CardHeader className="flex-row gap-4 items-center">
+                        <Info className="h-6 w-6 text-primary" />
+                        <div>
+                            <CardTitle className="text-lg">How does this work?</CardTitle>
+                        </div>
+                    </CardHeader>
+                    <CardContent>
+                        <p className="text-sm text-muted-foreground">
+                            The AI leverages its vast knowledge base of public web data to identify patterns, trends, and strategic insights. It analyzes the content, structure, and likely audience of the provided URL based on information learned during its training. It does not perform live browsing or access private data.
+                        </p>
                     </CardContent>
                 </Card>
             </div>
