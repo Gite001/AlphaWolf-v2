@@ -69,7 +69,7 @@ Obtenez un retour objectif et piloté par l'IA sur votre propre travail créatif
 
 - **Bilingue (Français/Anglais) :** L'interface et les réponses de l'IA sont entièrement bilingues. Changez de langue à tout moment depuis l'en-tête de l'application.
 - **Visualisation des Données :** Des graphiques clairs et pertinents vous aident à interpréter rapidement les tendances et les performances.
-- **Personnalisable :** Utilisez vos propres images pour les publicités et le tableau de bord pour une expérience entièrement immersive.
+- **Personnalisable :** Utilisez votre propre logo et vos propres images pour les publicités pour une expérience entièrement immersive.
 
 ---
 
@@ -97,7 +97,6 @@ Obtenez un retour objectif et piloté par l'IA sur votre propre travail créatif
     ```
     L'application sera disponible sur `http://localhost:9002`.
 
-3.  **(Optionnel) Personnaliser les images :**
-    -   Créez un dossier `public` à la racine du projet.
-    -   À l'intérieur, créez un dossier `images`.
-    -   Placez-y vos propres images (ex: `hero-dashboard.png`, `ad-sweater.png`, etc.) en respectant les noms de fichiers utilisés dans le code.
+3.  **(Optionnel) Personnaliser l'application :**
+    -   **Logo :** Pour utiliser votre propre logo, il vous suffit de placer un fichier nommé `logo.png` dans le dossier `public/images`. La taille recommandée est 128x128 pixels ou plus.
+    -   **Images :** Pour utiliser vos propres visuels publicitaires, placez-les dans le dossier `public/images` en vous assurant que les noms de fichiers correspondent à ceux utilisés dans le code (ex: `hero-dashboard.png`, `ad-sweater.png`, etc.).
