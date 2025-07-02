@@ -19,7 +19,7 @@ export function AppSidebar() {
   const pathname = usePathname();
 
   const menuItems = [
-    { href: '/', label: 'Dashboard', icon: LayoutDashboard },
+    { href: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
     { href: '/analyze', label: 'Analyze Ad', icon: Sparkles },
     { href: '/generate', label: 'Generate Copy', icon: FileText },
     { href: '/trends', label: 'Market Trends', icon: LineChart },
