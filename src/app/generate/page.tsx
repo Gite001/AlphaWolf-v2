@@ -19,7 +19,7 @@ export default function GenerateCopyPage() {
                 <Card className="shadow-lg">
                     <CardHeader>
                         <CardTitle>Generate New Ad Copy</CardTitle>
-                        <CardDescription>Fill out the form below to get started.</CardDescription>
+                        <CardDescription>Describe your product and target audience. The AI will generate three complete ad concepts, each with its own unique text and visual.</CardDescription>
                     </CardHeader>
                     <CardContent>
                         <CopyGeneratorForm />

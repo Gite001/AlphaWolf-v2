@@ -19,7 +19,7 @@ export default function SpyPage() {
                 <Card className="shadow-lg">
                     <CardHeader>
                         <CardTitle>Analyze Competitor URL</CardTitle>
-                        <CardDescription>Enter a URL to begin your analysis.</CardDescription>
+                        <CardDescription>Provide a direct link to a competitor's ad or product page. The AI will deconstruct their strategy and give you ways to counter it.</CardDescription>
                     </CardHeader>
                     <CardContent>
                         <CompetitorForm />

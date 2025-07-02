@@ -19,7 +19,7 @@ export default function AnalyzePage() {
                 <Card className="shadow-lg">
                     <CardHeader>
                         <CardTitle>Analyze New Ad</CardTitle>
-                        <CardDescription>Fill out the form below to begin your analysis.</CardDescription>
+                        <CardDescription>Provide the details of your ad below. The AI will analyze the text, visual, and targeting to give you a performance estimate and improvement suggestions.</CardDescription>
                     </CardHeader>
                     <CardContent>
                         <AnalysisForm />

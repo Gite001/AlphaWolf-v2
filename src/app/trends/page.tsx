@@ -19,7 +19,7 @@ export default function TrendsPage() {
                 <Card className="shadow-lg">
                     <CardHeader>
                         <CardTitle>Analyze Market Trends</CardTitle>
-                        <CardDescription>Fill out the form below to discover winning products.</CardDescription>
+                        <CardDescription>Tell the AI what product category and region you're interested in. It will return a market summary, trending products, and strategic advice.</CardDescription>
                     </CardHeader>
                     <CardContent>
                         <TrendsForm />
