@@ -4,6 +4,7 @@ import { MarketSnapshot } from "@/components/dashboard/market-snapshot";
 import { QuickActions } from "@/components/dashboard/quick-actions";
 import { StatsCards } from "@/components/dashboard/stats-cards";
 import { ads, engagementData, stats } from "@/lib/data";
+import { DashboardSummary } from "@/components/dashboard/dashboard-summary";
 
 export default function DashboardPage() {
   return (
@@ -12,6 +13,8 @@ export default function DashboardPage() {
         <h1 className="text-3xl font-bold font-headline tracking-tight">Command Center</h1>
         <p className="text-muted-foreground">Your AI-powered marketing dashboard.</p>
       </header>
+      
+      <DashboardSummary stats={stats} engagementData={engagementData} />
       
       <StatsCards stats={stats} />
       
