@@ -11,7 +11,7 @@ export default function SpyPage() {
                         <Binoculars className="h-4 w-4" />
                         <span>Powered by GenAI</span>
                     </div>
-                    <h1 className="text-4xl font-bold font-headline tracking-tight">Competitor Analysis</h1>
+                    <h1 className="text-4xl font-bold font-headline tracking-tight">Competitor Spy</h1>
                     <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
                         Deconstruct your competitors' marketing strategies. Enter a URL to an ad or product page and get an AI-powered breakdown of their approach.
                     </p>
