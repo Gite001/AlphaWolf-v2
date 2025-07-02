@@ -5,34 +5,29 @@ export const Logo = ({ className, ...props }: SVGProps<SVGSVGElement>) => (
     <svg
         viewBox="0 0 50 50"
         xmlns="http://www.w3.org/2000/svg"
-        className={cn('h-6 w-6', className)}
+        className={cn('h-8 w-8', className)}
         {...props}
     >
-        <g fill="none" strokeWidth="3">
+        <g fill="none" strokeWidth="2.5">
             <path 
-                d="M25 2 L5 15 V35 L25 48 L45 35 V15 L25 2 Z" 
+                d="M25 4 L5 16 L10 32 L25 46 L40 32 L45 16 Z" 
                 stroke="hsl(var(--primary))" 
                 className="transition-all"
                 fill="hsl(var(--primary))"
-                fillOpacity="0.1"
+                fillOpacity="0.15"
             />
             <path 
-                d="M14 32 L20 26 L25 31 L31 25 L36 30" 
+                d="M16 28 L22 22 L28 28 L34 22" 
                 stroke="hsl(var(--accent))" 
                 strokeLinecap="round" 
                 strokeLinejoin="round" 
                 className="transition-all"
+                strokeWidth="3"
             />
             <path 
-                d="M25 10 V19" 
+                d="M25 35 L25 46" 
                 stroke="hsl(var(--primary))" 
                 strokeLinecap="round"
-            />
-             <path 
-                d="M18 15 L25 19 L32 15" 
-                stroke="hsl(var(--primary))" 
-                strokeLinecap="round"
-                strokeLinejoin="round"
             />
         </g>
     </svg>

@@ -8,7 +8,7 @@ Cette application exploite la puissance de l'IA Gemini de Google via Genkit pour
 
 ## La Philosophie Fondamentale : Penser Comme un Loup
 
-Un loup ne fait pas que réagir ; il anticipe, élabore des stratégies et chasse. AdInsights est construit sur cette philosophie. Il vous permet de dépasser les simples tâches de commerce électronique et d'adopter un état d'esprit de prédateur dans le paysage marketing. Notre logo, un loup stylisé intégrant un graphique de croissance, incarne cette fusion de l'instinct et de l'analyse.
+Un loup ne fait pas que réagir ; il anticipe, élabore des stratégies et chasse. AdInsights est construit sur cette philosophie. Il vous permet de dépasser les simples tâches de commerce électronique et d'adopter un état d'esprit de prédateur dans le paysage marketing. Notre logo, une tête de loup affirmée intégrant un graphique de croissance, incarne cette fusion de l'instinct prédateur et de l'analyse de données.
 
 ---
 
