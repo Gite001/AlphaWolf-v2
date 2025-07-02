@@ -1,7 +1,6 @@
 'use server';
 
 import { generateAdCopy } from "@/ai/flows/generate-ad-copy";
-import { generateAdVisual } from "@/ai/flows/generate-ad-visual";
 import { z } from "zod";
 
 const formSchema = z.object({
@@ -46,28 +45,4 @@ export async function handleCopyGeneration(prevState: any, formData: FormData) {
     const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred.';
     return { message: `Generation failed: ${errorMessage}`, data: null, errors: {} };
   }
-}
-
-const visualGenerationSchema = z.object({
-    productName: z.string(),
-    productDescription: z.string(),
-    headline: z.string(),
-    body: z.string(),
-});
-
-export async function handleVisualGeneration(input: unknown) {
-    try {
-        const validatedFields = visualGenerationSchema.safeParse(input);
-        if (!validatedFields.success) {
-            return { error: 'Invalid input for visual generation.' };
-        }
-
-        const imageUrl = await generateAdVisual(validatedFields.data);
-        return { imageUrl };
-
-    } catch (error) {
-        console.error(error);
-        const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred.';
-        return { error: `Visual generation failed: ${errorMessage}` };
-    }
 }
