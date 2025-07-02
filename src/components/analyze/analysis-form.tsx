@@ -1,12 +1,12 @@
 'use client';
 
-import { useFormState, useFormStatus } from 'react-dom';
+import { useFormStatus } from 'react-dom';
 import { handleAnalysis } from '@/app/analyze/actions';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useActionState } from 'react';
 import { useToast } from '@/hooks/use-toast';
 import { AnalysisResults } from './analysis-results';
 import type { AnalyzeAdPerformanceOutput } from '@/ai/flows/analyze-ad-performance';
@@ -29,7 +29,7 @@ function SubmitButton() {
 }
 
 export function AnalysisForm() {
-  const [state, formAction] = useFormState(handleAnalysis, initialState);
+  const [state, formAction] = useActionState(handleAnalysis, initialState);
   const { toast } = useToast();
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [preview, setPreview] = useState<string | null>(null);

@@ -1,11 +1,11 @@
 'use client';
 
-import { useFormState, useFormStatus } from 'react-dom';
+import { useFormStatus } from 'react-dom';
 import { handleTrendsAnalysis } from '@/app/trends/actions';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useActionState } from 'react';
 import { useToast } from '@/hooks/use-toast';
 import type { AnalyzeMarketTrendsOutput } from '@/ai/flows/analyze-market-trends';
 import { Loader2 } from 'lucide-react';
@@ -29,7 +29,7 @@ function SubmitButton() {
 }
 
 export function MarketSnapshot() {
-  const [state, formAction] = useFormState(handleTrendsAnalysis, initialState);
+  const [state, formAction] = useActionState(handleTrendsAnalysis, initialState);
   const { toast } = useToast();
   const [result, setResult] = useState<AnalyzeMarketTrendsOutput | null>(null);
 

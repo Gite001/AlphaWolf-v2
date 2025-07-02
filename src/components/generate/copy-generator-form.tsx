@@ -1,12 +1,12 @@
 'use client';
 
-import { useFormState, useFormStatus } from 'react-dom';
+import { useFormStatus } from 'react-dom';
 import { handleCopyGeneration } from '@/app/generate/actions';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useActionState } from 'react';
 import { useToast } from '@/hooks/use-toast';
 import type { GenerateAdCopyOutput, GenerateAdCopyInput } from '@/ai/flows/generate-ad-copy';
 import { Loader2 } from 'lucide-react';
@@ -38,7 +38,7 @@ function SubmitButton() {
 }
 
 export function CopyGeneratorForm() {
-  const [state, formAction] = useFormState(handleCopyGeneration, initialState);
+  const [state, formAction] = useActionState(handleCopyGeneration, initialState);
   const { toast } = useToast();
   const [result, setResult] = useState<ResultState>(null);
 
