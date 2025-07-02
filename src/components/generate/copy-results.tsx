@@ -85,7 +85,7 @@ function VariationCard({ headline, body, cta, productName, productDescription }:
         <Card className="flex flex-col">
             <div className="bg-muted aspect-video w-full rounded-t-lg flex items-center justify-center overflow-hidden relative">
                 {visualState.loading && <Loader2 className="h-8 w-8 animate-spin text-primary" />}
-                {visualState.imageUrl && <Image src={visualState.imageUrl} alt={`AI generated visual for ${headline}`} layout="fill" objectFit="cover" />}
+                {visualState.imageUrl && <Image src={visualState.imageUrl} alt={`AI generated visual for ${headline}`} fill className="object-cover" />}
                 {!visualState.loading && !visualState.imageUrl && !visualState.error && <ImageIcon className="h-12 w-12 text-muted-foreground/50" />}
                 {visualState.error && (
                     <div className='text-center text-destructive p-4 flex flex-col items-center gap-2'>
