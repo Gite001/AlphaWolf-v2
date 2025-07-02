@@ -8,7 +8,7 @@ Cette application exploite la puissance de l'IA Gemini de Google via Genkit pour
 
 ## La Philosophie Fondamentale : Penser Comme un Loup
 
-Un loup ne fait pas que réagir ; il anticipe, élabore des stratégies et chasse. AdInsights est construit sur cette philosophie. Il vous permet de dépasser les simples tâches de commerce électronique et d'adopter un état d'esprit de prédateur dans le paysage marketing.
+Un loup ne fait pas que réagir ; il anticipe, élabore des stratégies et chasse. AdInsights est construit sur cette philosophie. Il vous permet de dépasser les simples tâches de commerce électronique et d'adopter un état d'esprit de prédateur dans le paysage marketing. Notre logo, un loup stylisé intégrant un graphique de croissance, incarne cette fusion de l'instinct et de l'analyse.
 
 ---
 
@@ -16,7 +16,7 @@ Un loup ne fait pas que réagir ; il anticipe, élabore des stratégies et chass
 
 Il est crucial de comprendre comment AdInsights fournit ses analyses. L'IA (le modèle Gemini de Google) n'a pas un accès en temps réel aux données de vente ou aux analyses privées. Sa puissance vient plutôt de la **déduction et de la synthèse**.
 
-Le modèle a été entraîné sur une vaste partie de l'internet public, incluant des milliards d'articles, de descriptions de produits, de rapports de marché et de discussions sur les réseaux sociaux. Lorsque vous lui demandez d'analyser une tendance du marché ou un concurrent, il s'appuie sur cette immense base de connaissances pour identifier des schémas, inférer des connexions et synthétiser des informations qu'un analyste humain mettrait des mois à compiler.
+Le modèle a été entraîné sur une vaste partie de l'internet public. Lorsque vous lui demandez d'analyser une tendance ou un concurrent, il s'appuie sur cette immense base de connaissances pour identifier des schémas, inférer des connexions et synthétiser des informations qu'un analyste humain mettrait des mois à compiler.
 
 En résumé : **AdInsights ne "connaît" pas les réponses, il les "déduit" intelligemment**, agissant comme un analyste de classe mondiale avec une mémoire quasi parfaite du web public.
 
@@ -28,66 +28,76 @@ Votre application est divisée en plusieurs modules puissants, chacun conçu pou
 
 ### 1. 🐺 Le Centre de Commande (Tableau de Bord)
 
-C'est votre centre de mission. Il offre une vue d'ensemble du paysage marketing, mais avec une touche cruciale alimentée par l'IA.
-- **Résumé par l'IA :** En haut du tableau de bord, l'IA analyse vos indicateurs clés en temps réel pour fournir un résumé concis de vos performances et une liste de recommandations stratégiques et exploitables. C'est votre analyste personnel, qui se présente à chaque fois que vous vous connectez.
-- **Statistiques Clés & Graphiques d'Engagement :** Visualisez vos performances sur toutes les plateformes avec des cartes et des graphiques clairs et faciles à comprendre.
+C'est votre centre de mission. Il offre une vue d'ensemble du paysage marketing, avec des visualisations clés pour des décisions rapides.
+- **Résumé par l'IA :** En haut du tableau de bord, l'IA analyse vos indicateurs clés pour fournir un résumé concis et des recommandations stratégiques.
+- **Statistiques Clés & Graphiques d'Engagement :** Visualisez vos performances sur toutes les plateformes. Un **graphique de distribution** vous montre en un coup d'œil quelle plateforme domine votre engagement, vous aidant à allouer vos ressources efficacement.
 - **Actions de la Meute :** Lancez rapidement votre prochaine action stratégique, de la recherche d'un nouveau produit à l'espionnage d'un concurrent.
 
 ### 2. 🏆 Découverte de Produits Gagnants
 
 C'est votre éclaireur numérique. Au lieu que vous cherchiez les tendances, l'IA chasse pour vous.
-- **Fonctionnalité :** Analyse une vaste base de données de performances publicitaires suivies pour identifier les catégories de produits les plus performantes.
-- **Avantage Stratégique :** Il ne se contente pas de lister des produits. Il fournit une **analyse** des raisons pour lesquelles une catégorie est performante et vous donne des **conseils exploitables** sur la manière de pénétrer ce marché. De là, vous pouvez directement passer à la génération d'un concept publicitaire complet pour une catégorie gagnante en un seul clic.
+- **Fonctionnalité :** Analyse une vaste base de données publicitaires pour identifier les catégories de produits les plus performantes.
+- **Avantage Stratégique :** Il ne se contente pas de lister des produits. Il fournit une **analyse** des raisons de leur succès et vous donne des **conseils exploitables**. Un **graphique comparatif de performance** vous permet de visualiser immédiatement quelles catégories surclassent les autres, vous aidant à prioriser vos efforts.
 
 ### 3. 📈 Analyse des Tendances du Marché
 
 Allez au-delà de votre niche actuelle et explorez de nouveaux territoires.
 - **Fonctionnalité :** Entrez n'importe quelle catégorie de produits et région.
-- **Avantage Stratégique :** L'IA fournit un rapport de marché complet incluant un **Résumé du Marché**, une liste de **Produits Tendances**, des **Opportunités** clés (niches mal desservies, nouveaux angles marketing), et les **Risques** potentiels (saturation du marché, forte concurrence).
+- **Avantage Stratégique :** L'IA fournit un rapport de marché complet incluant un **Résumé du Marché**, une liste de **Produits Tendances**, des **Opportunités** clés et les **Risques** potentiels.
 
 ### 4. 🕵️ Espion Concurrent
 
 Déconstruisez et dominez vos concurrents. C'est votre unité de collecte d'informations.
 - **Fonctionnalité :** Fournissez l'URL de la page produit ou de la publicité d'un concurrent.
-- **Avantage Stratégique :** L'IA effectue une analyse approfondie pour révéler leur **Nom de Produit**, leur **Audience Cible** probable, et leur **Angle Marketing** principal. Elle identifie leurs **Forces** et **Faiblesses**, fournit un **Score de Performance Estimé** (0-100), et — le plus important — vous donne une liste de **Contre-Stratégies** concrètes.
+- **Avantage Stratégique :** L'IA révèle leur **Nom de Produit**, leur **Audience Cible**, et leur **Angle Marketing**. Elle identifie leurs **Forces** et **Faiblesses**, fournit un **Score de Performance Estimé** et — le plus important — vous donne une liste de **Contre-Stratégies** concrètes.
 
 ### 5. 🎨 Générateur de Concepts Publicitaires
 
 C'est votre moteur créatif, suralimenté par des capacités multimédias.
 - **Fonctionnalité :** Décrivez votre produit, votre audience et vos mots-clés.
-- **Avantage Stratégique :** L'IA ne se contente pas d'écrire du texte. Elle génère **trois concepts publicitaires complets et distincts**. Chaque concept inclut :
-    - Un **Titre** accrocheur.
-    - Un **Corps de Texte** persuasif.
-    - Un **Appel à l'Action** fort.
-    - Un **Visuel** unique, généré par l'IA, qui correspond parfaitement au ton de la publicité.
-    - Une **Publicité Audio** professionnelle, générée par l'IA en utilisant le corps du texte, prête pour les podcasts ou les voix off de vidéos. La langue de l'audio correspond automatiquement à la langue du texte que vous fournissez.
+- **Avantage Stratégique :** L'IA génère **trois concepts publicitaires complets et distincts**. Chaque concept inclut : un **Titre**, un **Corps de Texte**, un **Appel à l'Action**, un **Visuel unique généré par l'IA**, et une **Publicité Audio** professionnelle.
 
 ### 6. ✨ Analyse de Performance Publicitaire
 
 Obtenez un retour objectif et piloté par l'IA sur votre propre travail créatif.
-- **Fonctionnalité :** Téléchargez votre visuel publicitaire et fournissez le texte et les informations de ciblage correspondants.
-- **Avantage Stratégique :** L'IA analyse votre soumission et renvoie un **Score d'Engagement Estimé** (0-1), une ventilation de ses **Forces** et **Faiblesses**, et une liste de **Suggestions d'Amélioration** concrètes.
+- **Fonctionnalité :** Téléchargez votre visuel publicitaire et fournissez le texte et les informations de ciblage.
+- **Avantage Stratégique :** L'IA renvoie un **Score d'Engagement Estimé**, une ventilation de ses **Forces** et **Faiblesses**, et des **Suggestions d'Amélioration**.
+
+---
+
+## Caractéristiques Clés
+
+- **Bilingue (Français/Anglais) :** L'interface et les réponses de l'IA sont entièrement bilingues. Changez de langue à tout moment depuis l'en-tête de l'application.
+- **Visualisation des Données :** Des graphiques clairs et pertinents vous aident à interpréter rapidement les tendances et les performances.
+- **Personnalisable :** Utilisez vos propres images pour les publicités et le tableau de bord pour une expérience entièrement immersive.
 
 ---
 
 ## Stack Technologique
 
-Cette application est construite avec une stack technologique moderne, robuste et évolutive :
-
 -   **Frontend :** [Next.js](https://nextjs.org/) avec React (App Router)
 -   **Composants UI :** [ShadCN UI](https://ui.shadcn.com/)
 -   **Styling :** [Tailwind CSS](https://tailwindcss.com/)
--   **Intégration IA :** [Genkit](https://firebase.google.com/docs/genkit), le framework officiel de Google pour construire des applications IA prêtes pour la production.
+-   **Intégration IA :** [Genkit](https://firebase.google.com/docs/genkit), le framework officiel de Google.
 -   **Modèle IA :** Google [Gemini](https://deepmind.google/technologies/gemini/)
+-   **Visualisation :** [Recharts](https://recharts.org/)
 
 ---
 
 ## Pour Commencer
 
-Pour lancer l'application localement pour le développement :
+1.  **Installer les dépendances :**
+    ```bash
+    npm install
+    ```
 
-```bash
-npm run dev
-```
+2.  **Lancer le serveur de développement :**
+    ```bash
+    npm run dev
+    ```
+    L'application sera disponible sur `http://localhost:9002`.
 
-Cela démarrera le serveur de développement Next.js, généralement sur `http://localhost:9002`.
+3.  **(Optionnel) Personnaliser les images :**
+    -   Créez un dossier `public` à la racine du projet.
+    -   À l'intérieur, créez un dossier `images`.
+    -   Placez-y vos propres images (ex: `hero-dashboard.png`, `ad-sweater.png`, etc.) en respectant les noms de fichiers utilisés dans le code.
