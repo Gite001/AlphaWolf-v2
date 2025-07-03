@@ -43,7 +43,7 @@ export type AnalyzeCompetitorAdInput = z.infer<typeof AnalyzeCompetitorAdInputSc
 
 const AnalyzeCompetitorAdOutputSchema = z.object({
   productName: z.string().describe("The likely name of the product being advertised. If not determinable, return an empty string."),
-  productFeatures: z.array(z.string()).describe("A list of key product features, benefits, or technical specifications mentioned (e.g., dimensions, weight, materials, composition, key capabilities). Be very specific and extract all available details. If none are found, return an empty array."),
+  productFeatures: z.array(z.string()).describe("A comprehensive list of all key product features, benefits, and technical specifications mentioned (e.g., materials, composition, dimensions, weight, care instructions, key capabilities). Extract all available details. If none are found, return an empty array."),
   targetAudience: z.string().describe("An analysis of the likely target audience based on the page's content and tone. If not determinable, return an empty string."),
   marketingAngle: z.string().describe("A summary of the primary marketing angle or value proposition being used. If not determinable, return an empty string."),
   estimatedPerformance: z.object({
@@ -89,7 +89,7 @@ Based on the **provided HTML content** below, perform a comprehensive analysis.
 
 **Your Analysis Steps:**
 1.  **Identify the Product:** Determine the product name from the content.
-2.  **Extract Product Features:** Meticulously list all key product features, benefits, and technical specifications mentioned (e.g., materials, composition, dimensions, weight, care instructions, key capabilities). Be thorough and extract everything available in the content.
+2.  **Extract All Product Details:** Meticulously list all product details. This includes key features, benefits, and ALL technical specifications like materials, composition, dimensions, weight, care instructions, and other capabilities mentioned in the content. Be exhaustive.
 3.  **Define the Target Audience:** Who are they trying to reach? Describe their demographics, interests, and pain points based on the text and marketing angle.
 4.  **Uncover the Marketing Angle:** What is the core message? Are they competing on price, quality, innovation, lifestyle, or something else?
 5.  **Pinpoint Strengths:** What are they doing exceptionally well in their messaging, visuals (as described in the text), or offer?
