@@ -359,7 +359,9 @@
     "copyButton": {
         "copy": "Copier le Texte",
         "copied": "Copié !"
-    }
+    },
+    "downloadImage": "Télécharger l'Image",
+    "downloadAudio": "Télécharger l'Audio"
   },
   "VideoResults": {
     "title": "Storyboard de la Publicité Vidéo",
@@ -367,7 +369,9 @@
     "imageAlt": "Visuel du storyboard pour la Scène {sceneNumber}",
     "imageFailed": "Échec du Visuel",
     "visualPrompt": "Prompt Visuel",
-    "audioNotSupported": "Votre navigateur ne supporte pas l'élément audio."
+    "audioNotSupported": "Votre navigateur ne supporte pas l'élément audio.",
+    "downloadImage": "Télécharger l'Image",
+    "downloadAudio": "Télécharger l'Audio"
   },
   "CompetitorForm": {
     "submitButton": "Analyser le Concurrent",

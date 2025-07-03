@@ -359,7 +359,9 @@
     "copyButton": {
         "copy": "Copy Text",
         "copied": "Copied!"
-    }
+    },
+    "downloadImage": "Download Image",
+    "downloadAudio": "Download Audio"
   },
   "VideoResults": {
     "title": "Video Ad Storyboard",
@@ -367,7 +369,9 @@
     "imageAlt": "Storyboard visual for Scene {sceneNumber}",
     "imageFailed": "Visual Failed",
     "visualPrompt": "Visual Prompt",
-    "audioNotSupported": "Your browser does not support the audio element."
+    "audioNotSupported": "Your browser does not support the audio element.",
+    "downloadImage": "Download Image",
+    "downloadAudio": "Download Audio"
   },
   "CompetitorForm": {
     "submitButton": "Analyze Competitor",
