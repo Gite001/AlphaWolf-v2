@@ -11,31 +11,29 @@
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
 
-const fetchUrlContentTool = ai.defineTool(
-    {
-        name: 'fetchUrlContent',
-        description: 'Fetches the HTML content of a given URL. Use this to get the information directly from the page to analyze it.',
-        inputSchema: z.object({
-            url: z.string().url().describe('The URL to fetch.'),
-        }),
-        outputSchema: z.string().describe('The HTML content of the page body.'),
-    },
-    async ({url}) => {
-        try {
-            const response = await fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' } });
-            if (!response.ok) {
-                return `Error: Could not fetch URL. Status code: ${response.status}`;
-            }
-            const html = await response.text();
-            // Return raw HTML, the model can handle it.
-            return html;
-        } catch (error) {
-            console.error(`Failed to fetch URL content for ${url}`, error);
-            return 'Error: Failed to fetch the URL content.';
+/**
+ * Fetches the HTML content of a given URL.
+ * @param url The URL to fetch.
+ * @returns The HTML content of the page body.
+ */
+async function fetchUrlContent(url: string): Promise<string> {
+    try {
+        const response = await fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' } });
+        if (!response.ok) {
+            throw new Error(`Could not fetch URL. Status code: ${response.status}`);
         }
+        const html = await response.text();
+        // Return raw HTML, the model can handle it.
+        return html;
+    } catch (error) {
+        console.error(`Failed to fetch URL content for ${url}`, error);
+        // Re-throw a more user-friendly error to be caught by the action handler.
+        if (error instanceof Error && error.message.includes('Status code:')) {
+             throw new Error(`The competitor's website could not be reached (Status: ${error.message.split(' ').pop()}). It may be blocking analysis tools.`);
+        }
+        throw new Error('Failed to fetch the URL content. The website may be down or blocking requests.');
     }
-);
-
+}
 
 const AnalyzeCompetitorAdInputSchema = z.object({
   url: z.string().url().describe('The URL of the competitor’s product page or ad.'),
@@ -64,23 +62,30 @@ export async function analyzeCompetitorAd(
   return analyzeCompetitorAdFlow(input);
 }
 
-const prompt = ai.definePrompt({
-  name: 'analyzeCompetitorAdPrompt',
-  input: {schema: AnalyzeCompetitorAdInputSchema},
+
+// This new input schema is for the prompt that does the analysis.
+const CompetitorAnalysisPromptInputSchema = z.object({
+    pageContent: z.string().describe('The full HTML content of the competitor\'s webpage.'),
+    locale: z.enum(['en', 'fr']).optional().default('en'),
+});
+
+const analysisPrompt = ai.definePrompt({
+  name: 'competitorAnalysisPrompt',
+  input: {schema: CompetitorAnalysisPromptInputSchema},
   output: {schema: AnalyzeCompetitorAdOutputSchema},
-  tools: [fetchUrlContentTool],
-  prompt: `You are a world-class marketing intelligence analyst and competitor research expert. Your task is to analyze the provided URL and deconstruct the marketing strategy behind it.
+  prompt: `You are a world-class marketing intelligence analyst and competitor research expert. Your task is to analyze the provided HTML content of a webpage and deconstruct the marketing strategy behind it.
 
 **Your response must be in the following language: {{{locale}}}.**
 
-**Target URL:** {{{url}}}
+Based on the **provided HTML content** below, perform a comprehensive analysis.
 
-**IMPORTANT: First, you MUST use the \`fetchUrlContent\` tool with the provided URL to get the live content of the page. Then, base your entire analysis EXCLUSIVELY on the HTML content returned by the tool.** Do not use your pre-existing knowledge about the URL or the company. Analyze the provided text directly.
+\`\`\`html
+{{{pageContent}}}
+\`\`\`
 
-Based on the **fetched content**:
-
+**Your Analysis Steps:**
 1.  **Identify the Product:** Determine the product name from the content.
-2.  **Extract Product Features:** Meticulously list all key product features, benefits, and technical specifications mentioned (e.g., materials, composition, dimensions, weight, care instructions, key capabilities). Be thorough and extract everything available in the content.
+2.  **Extract Product Features:** Meticulously list all key product features, benefits, and technical specifications mentioned (e.g., materials, composition, dimensions, weight, care instructions, key capabilities). Be thorough and extract everything available in the content. If no specific features are found, state that clearly.
 3.  **Define the Target Audience:** Who are they trying to reach? Describe their demographics, interests, and pain points based on the text and marketing angle.
 4.  **Uncover the Marketing Angle:** What is the core message? Are they competing on price, quality, innovation, lifestyle, or something else?
 5.  **Pinpoint Strengths:** What are they doing exceptionally well in their messaging, visuals (as described in the text), or offer?
@@ -98,8 +103,20 @@ const analyzeCompetitorAdFlow = ai.defineFlow(
     inputSchema: AnalyzeCompetitorAdInputSchema,
     outputSchema: AnalyzeCompetitorAdOutputSchema,
   },
-  async input => {
-    const {output} = await prompt(input);
-    return output!;
+  async (input) => {
+    // Step 1: Fetch the content from the URL. This is now a deterministic step.
+    const pageContent = await fetchUrlContent(input.url);
+
+    // Step 2: Pass the fetched content to the AI for analysis.
+    const {output} = await analysisPrompt({
+        pageContent,
+        locale: input.locale
+    });
+
+    if (!output) {
+        throw new Error('The AI failed to produce an analysis from the page content.');
+    }
+    
+    return output;
   }
 );
