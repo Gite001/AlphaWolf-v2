@@ -117,10 +117,13 @@ const generateVideoStoryboardFlow = ai.defineFlow(
       throw new Error('Could not generate storyboard structure.');
     }
 
-    // 2. Generate audio and images in parallel
+    // 2. Generate audio and images in parallel, handling failures gracefully
     const [audioResult, imageResults] = await Promise.all([
-      generateAudioAd(storyboard.fullScript),
-      Promise.all(
+      generateAudioAd(storyboard.fullScript).catch(e => {
+        console.error("Audio generation failed, returning undefined.", e);
+        return { audioUrl: undefined };
+      }),
+      Promise.allSettled(
         storyboard.scenes.map((scene) =>
           generateAdImage(scene.visual_description)
         )
@@ -128,10 +131,16 @@ const generateVideoStoryboardFlow = ai.defineFlow(
     ]);
     
     // 3. Combine results
-    const scenesWithImages = storyboard.scenes.map((scene, index) => ({
-        ...scene,
-        imageUrl: imageResults[index]?.imageUrl ?? undefined,
-    }));
+    const scenesWithImages = storyboard.scenes.map((scene, index) => {
+        const imageResult = imageResults[index];
+        if (imageResult.status === 'rejected') {
+            console.error(`Image generation for scene ${scene.sceneNumber} failed`, imageResult.reason);
+        }
+        return {
+            ...scene,
+            imageUrl: imageResult.status === 'fulfilled' ? (imageResult.value?.imageUrl ?? undefined) : undefined,
+        }
+    });
 
     return {
         ...storyboard,
