@@ -10,7 +10,7 @@ export const Logo = ({ className }: LogoProps) => {
         <div className={cn('relative', className)}>
             <Image
                 src="/images/logo.png"
-                alt="AdInsights Logo"
+                alt="AlphaWolf Logo"
                 fill
                 className="object-contain"
             />

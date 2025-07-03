@@ -19,10 +19,10 @@ export function AppFooter() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-2 group">
             <Logo className="h-10 w-10 text-primary transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110" />
-            <span className="font-bold text-lg text-foreground">AdInsights</span>
+            <span className="font-bold text-lg text-foreground">AlphaWolf</span>
           </div>
           <div className="text-center md:text-left text-sm text-muted-foreground">
-            <p>&copy; {year} AdInsights. {t('Footer.rightsReserved')}</p>
+            <p>&copy; {year} AlphaWolf. {t('Footer.rightsReserved')}</p>
           </div>
           <div className="flex items-center gap-6">
             <Link href="/terms" className="text-sm text-muted-foreground hover:text-primary transition-colors">

@@ -1,8 +1,8 @@
 
 {
   "Metadata": {
-    "title": "AdInsights",
-    "description": "Collect, analyze, and visualize e-commerce ads to identify winning products."
+    "title": "AlphaWolf",
+    "description": "AlphaWolf combines cutting-edge AI with market analysis to help you create winning ad campaigns faster than ever."
   },
   "Shared": {
     "poweredByAi": "Powered by GenAI"
@@ -31,12 +31,12 @@
   "HomePage": {
     "hero": {
       "title": "The Future of Ad Creation is Here",
-      "subtitle": "AdInsights combines cutting-edge AI with market analysis to help you create winning ad campaigns faster than ever.",
+      "subtitle": "AlphaWolf combines cutting-edge AI with market analysis to help you create winning ad campaigns faster than ever.",
       "cta": "Go to Dashboard"
     },
     "features": {
       "title": "All-in-One Marketing Intelligence",
-      "subtitle": "From initial idea to performance analysis, AdInsights is your strategic partner.",
+      "subtitle": "From initial idea to performance analysis, AlphaWolf is your strategic partner.",
       "learnMore": "Learn more",
       "winnerDiscovery": {
         "title": "Winning Product Discovery",

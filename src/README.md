@@ -1,28 +1,28 @@
-# AdInsights - Votre Loup du Marketing suralimenté par l'IA
+# AlphaWolf - Votre Loup du Marketing suralimenté par l'IA
 
-Bienvenue dans AdInsights, votre suite d'intelligence marketing tout-en-un. Ce n'est pas seulement une collection d'outils ; c'est un partenaire stratégique conçu pour fonctionner comme un loup : agile, intelligent et toujours concentré sur la chasse aux produits gagnants et à la domination du marché.
+Bienvenue dans AlphaWolf, votre suite d'intelligence marketing tout-en-un. Ce n'est pas seulement une collection d'outils ; c'est un partenaire stratégique conçu pour fonctionner comme un loup : agile, intelligent et toujours concentré sur la chasse aux produits gagnants et à la domination du marché.
 
 Cette application exploite la puissance de l'IA Gemini de Google via Genkit pour fournir des analyses approfondies, des informations stratégiques et de la génération créative, transformant les données brutes en votre avantage concurrentiel.
 
 ---
 
-## La Philosophie Fondamentale : Penser Comme un Loup
+## La Philosophie Fondamentale : Penser Comme un Loup Alpha
 
-Un loup ne fait pas que réagir ; il anticipe, élabore des stratégies et chasse. AdInsights est construit sur cette philosophie. Il vous permet de dépasser les simples tâches de commerce électronique et d'adopter un état d'esprit de prédateur dans le paysage marketing. Notre logo, une tête de loup affirmée intégrant un graphique de croissance, incarne cette fusion de l'instinct prédateur et de l'analyse de données.
+Un loup alpha ne fait pas que réagir ; il anticipe, élabore des stratégies et mène la meute. AlphaWolf est construit sur cette philosophie. Il vous permet de dépasser les simples tâches de commerce électronique et d'adopter un état d'esprit de prédateur dans le paysage marketing. Notre logo, une tête de loup affirmée intégrant un graphique de croissance, incarne cette fusion de l'instinct de leader et de l'analyse de données.
 
 ---
 
 ## Comment l'IA "Pense"
 
-Il est crucial de comprendre comment AdInsights fournit ses analyses. L'IA (le modèle Gemini de Google) n'a pas un accès en temps réel aux données de vente ou aux analyses privées. Sa puissance vient plutôt de la **déduction et de la synthèse**.
+Il est crucial de comprendre comment AlphaWolf fournit ses analyses. L'IA (le modèle Gemini de Google) n'a pas un accès en temps réel aux données de vente ou aux analyses privées. Sa puissance vient plutôt de la **déduction et de la synthèse**.
 
 Le modèle a été entraîné sur une vaste partie de l'internet public. Lorsque vous lui demandez d'analyser une tendance ou un concurrent, il s'appuie sur cette immense base de connaissances pour identifier des schémas, inférer des connexions et synthétiser des informations qu'un analyste humain mettrait des mois à compiler.
 
-En résumé : **AdInsights ne "connaît" pas les réponses, il les "déduit" intelligemment**, agissant comme un analyste de classe mondiale avec une mémoire quasi parfaite du web public.
+En résumé : **AlphaWolf ne "connaît" pas les réponses, il les "déduit" intelligemment**, agissant comme un analyste de classe mondiale avec une mémoire quasi parfaite du web public.
 
 ---
 
-## La Meute de Loups : Votre Arsenal d'Outils
+## La Meute : Votre Arsenal d'Outils
 
 Votre application est divisée en plusieurs modules puissants, chacun conçu pour gérer une phase critique de votre stratégie marketing.
 

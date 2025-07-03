@@ -13,7 +13,7 @@ export function AppHeader() {
         <SidebarTrigger />
         <Link href="/" className="flex items-center gap-2 font-semibold group">
             <Logo className="h-10 w-10 text-primary transition-transform duration-300 group-hover:scale-110" />
-            <span className="">AdInsights</span>
+            <span className="">AlphaWolf</span>
         </Link>
       </div>
 
