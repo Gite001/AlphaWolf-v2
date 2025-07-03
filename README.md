@@ -101,7 +101,7 @@ Pour lancer l'application sur votre machine locale, suivez ces étapes. Ces comm
     ```bash
     npm run dev
     ```
-    L'application sera disponible sur `http://localhost:9002`.
+    L'application sera disponible sur `http://localhost:9003`.
 
 3.  **(Optionnel) Personnaliser l'application :**
     -   **Logo :** Pour utiliser votre propre logo, placez un fichier nommé `logo.png` dans le dossier `public/images`. La taille recommandée est 128x128 pixels ou plus.

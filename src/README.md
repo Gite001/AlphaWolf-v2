@@ -103,7 +103,7 @@ Pour lancer l'application sur votre machine locale, suivez ces étapes. Ces comm
     ```
 
 3.  **Ouvrez l'Application :**
-    Une fois la commande précédente terminée, l'application sera disponible dans votre navigateur à l'adresse `http://localhost:9002`. Toute modification que vous ferez dans le code sera visible en temps réel.
+    Une fois la commande précédente terminée, l'application sera disponible dans votre navigateur à l'adresse `http://localhost:9003`. Toute modification que vous ferez dans le code sera visible en temps réel.
 
 ## (Optionnel) Personnaliser l'application
 
