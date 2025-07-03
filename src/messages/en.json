@@ -384,6 +384,9 @@
   },
   "CompetitorResults": {
     "title": "Analysis for: {productName}",
+    "productFeatures": {
+        "title": "Product Features & Specifications"
+    },
     "estimatedPerformance": {
         "title": "Estimated Performance"
     },
@@ -442,7 +445,6 @@
     "title": "Frequently Asked Questions",
     "description": "Find answers to the most common questions about AlphaWolf and its features.",
     "general": {
-      "title": "General Questions",
       "q1": {
         "question": "What is AlphaWolf?",
         "answer": "AlphaWolf is an all-in-one marketing intelligence suite. It's designed to be a strategic partner that uses AI to analyze market data, find winning products, spy on competitors, and generate high-impact ad concepts."

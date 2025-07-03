@@ -2,7 +2,7 @@
 
 import type { AnalyzeCompetitorAdOutput } from '@/ai/flows/analyze-competitor-ad';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Target, CheckCircle2, AlertTriangle, ShieldCheck, User, Megaphone } from 'lucide-react';
+import { Target, CheckCircle2, AlertTriangle, ShieldCheck, User, Megaphone, ListChecks } from 'lucide-react';
 import { Progress } from '@/components/ui/progress';
 import { useI18n } from '@/hooks/use-i18n';
 
@@ -17,6 +17,18 @@ export function CompetitorResults({ results }: CompetitorResultsProps) {
       <div>
         <h2 className="text-2xl font-bold font-headline text-center mb-4">{t('CompetitorResults.title', { productName: results.productName })}</h2>
       </div>
+
+      <Card>
+        <CardHeader className="flex flex-row items-center gap-2">
+            <ListChecks className="h-6 w-6 text-primary" />
+            <CardTitle>{t('CompetitorResults.productFeatures.title')}</CardTitle>
+        </CardHeader>
+        <CardContent>
+            <ul className="space-y-2 list-disc pl-5 text-sm text-muted-foreground">
+                {results.productFeatures.map((item, index) => <li key={index}>{item}</li>)}
+            </ul>
+        </CardContent>
+      </Card>
 
       <Card>
         <CardHeader>

@@ -384,6 +384,9 @@
   },
   "CompetitorResults": {
     "title": "Analyse pour : {productName}",
+    "productFeatures": {
+        "title": "Caractéristiques & Spécifications du Produit"
+    },
     "estimatedPerformance": {
         "title": "Performance Estimée"
     },

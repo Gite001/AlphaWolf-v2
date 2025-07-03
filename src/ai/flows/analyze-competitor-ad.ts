@@ -19,6 +19,7 @@ export type AnalyzeCompetitorAdInput = z.infer<typeof AnalyzeCompetitorAdInputSc
 
 const AnalyzeCompetitorAdOutputSchema = z.object({
   productName: z.string().describe("The likely name of the product being advertised."),
+  productFeatures: z.array(z.string()).describe("A list of key product features, benefits, or technical specifications mentioned (e.g., dimensions, weight, materials, key capabilities)."),
   targetAudience: z.string().describe("An analysis of the likely target audience."),
   marketingAngle: z.string().describe("A summary of the primary marketing angle or value proposition being used."),
   estimatedPerformance: z.object({
@@ -50,12 +51,13 @@ const prompt = ai.definePrompt({
 Act as if you have fully crawled and analyzed the content of this page. Based on the URL and your vast knowledge of e-commerce, advertising, and marketing:
 
 1.  **Identify the Product:** Determine the likely product name.
-2.  **Define the Target Audience:** Who are they trying to reach? Describe their demographics, interests, and pain points.
-3.  **Uncover the Marketing Angle:** What is the core message? Are they competing on price, quality, innovation, lifestyle, or something else?
-4.  **Pinpoint Strengths:** What are they doing exceptionally well in their messaging, visuals, or offer?
-5.  **Find Weaknesses:** Where are the gaps? What are they failing to address? Are there any missed opportunities?
-6.  **Propose Counter-Strategies:** Based on their strategy, suggest concrete and actionable ways a competitor could differentiate themselves and win market share.
-7.  **Estimate Performance:** Based on all available information, provide an estimated performance score from 0 to 100, and a brief reasoning for that score. This score should reflect its potential to convert and engage its target audience.
+2.  **Extract Product Features:** List the key product features, benefits, or technical specifications mentioned (e.g., dimensions, weight, materials, key capabilities).
+3.  **Define the Target Audience:** Who are they trying to reach? Describe their demographics, interests, and pain points.
+4.  **Uncover the Marketing Angle:** What is the core message? Are they competing on price, quality, innovation, lifestyle, or something else?
+5.  **Pinpoint Strengths:** What are they doing exceptionally well in their messaging, visuals, or offer?
+6.  **Find Weaknesses:** Where are the gaps? What are they failing to address? Are there any missed opportunities?
+7.  **Propose Counter-Strategies:** Based on their strategy, suggest concrete and actionable ways a competitor could differentiate themselves and win market share.
+8.  **Estimate Performance:** Based on all available information, provide an estimated performance score from 0 to 100, and a brief reasoning for that score. This score should reflect its potential to convert and engage its target audience.
 
 Provide a comprehensive analysis structured according to the output schema. Your response must be in valid JSON format and in the requested language ({{{locale}}}).
 `,
