@@ -26,7 +26,8 @@
     "productFinder": "Product Finder",
     "marketTrends": "Market Trends",
     "competitorSpy": "Competitor Analysis",
-    "generateAd": "Generate Ad",
+    "generateAd": "Generate Ad Concept",
+    "generateVideo": "Generate Video Ad",
     "analyzeAd": "Analyze Ad",
     "guide": "Guide"
   },
@@ -97,6 +98,14 @@
     "form": {
         "title": "Generate New Ad Concepts",
         "description": "Describe your product and target audience. The AI will generate three complete ad concepts, each with its own unique copy, visual, and audio."
+    }
+  },
+  "VideoPage": {
+    "title": "Video Ad Storyboard Generator",
+    "description": "Produce a complete, ready-to-shoot video ad storyboard. The AI will act as your director, creating a scene-by-scene plan with visuals, script, and timing.",
+    "form": {
+        "title": "Generate Video Storyboard",
+        "description": "Provide product details and choose a video style. The AI will generate a title, a full storyboard with scene-by-scene visuals, a complete script, and a voiceover track."
     }
   },
   "AnalyzePage": {
@@ -315,6 +324,28 @@
         "placeholder": "e.g., durable, lightweight, stylish (comma-separated)"
     }
   },
+  "VideoGeneratorForm": {
+    "submitButton": "Generate Storyboard",
+    "toast": {
+        "successDescription": "Your video storyboard is ready."
+    },
+    "productName": {
+        "label": "Product Name",
+        "placeholder": "e.g., The Adventure-Ready Backpack"
+    },
+    "targetAudience": {
+        "label": "Target Audience",
+        "placeholder": "e.g., Hikers, digital nomads"
+    },
+    "productDescription": {
+        "label": "Product Description",
+        "placeholder": "Describe what makes your product unique..."
+    },
+    "videoStyle": {
+        "label": "Video Style",
+        "placeholder": "Select a style"
+    }
+  },
   "CopyResults": {
     "title": "Generated Ad Concepts",
     "imageAlt": "AI-generated visual for {headline}",
@@ -329,6 +360,14 @@
         "copy": "Copy Text",
         "copied": "Copied!"
     }
+  },
+  "VideoResults": {
+    "title": "Video Ad Storyboard",
+    "scene": "Scene",
+    "imageAlt": "Storyboard visual for Scene {sceneNumber}",
+    "imageFailed": "Visual Failed",
+    "visualPrompt": "Visual Prompt",
+    "audioNotSupported": "Your browser does not support the audio element."
   },
   "CompetitorForm": {
     "submitButton": "Analyze Competitor",

@@ -10,3 +10,4 @@ import '@/ai/flows/analyze-competitor-ad.ts';
 import '@/ai/flows/find-winning-products.ts';
 import '@/ai/flows/generate-audio-ad.ts';
 import '@/ai/flows/generate-ad-image.ts';
+import '@/ai/flows/generate-video-storyboard.ts';

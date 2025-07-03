@@ -26,7 +26,8 @@
     "productFinder": "Découverte Produits",
     "marketTrends": "Tendances Marché",
     "competitorSpy": "Analyse Concurrent",
-    "generateAd": "Générer Publicité",
+    "generateAd": "Générer Concept Pub",
+    "generateVideo": "Générer Pub Vidéo",
     "analyzeAd": "Analyser Publicité",
     "guide": "Guide"
   },
@@ -97,6 +98,14 @@
     "form": {
         "title": "Générer de Nouveaux Concepts Publicitaires",
         "description": "Décrivez votre produit et votre audience cible. L'IA générera trois concepts publicitaires complets, chacun avec son propre texte, visuel et audio uniques."
+    }
+  },
+   "VideoPage": {
+    "title": "Générateur de Storyboard Vidéo",
+    "description": "Produisez un storyboard complet, prêt pour le tournage. L'IA agira comme votre réalisateur, créant un plan scène par scène avec visuels, script et timing.",
+    "form": {
+        "title": "Générer un Storyboard Vidéo",
+        "description": "Fournissez les détails du produit et choisissez un style de vidéo. L'IA générera un titre, un storyboard complet avec des visuels pour chaque scène, un script complet et une piste de voix off."
     }
   },
   "AnalyzePage": {
@@ -315,6 +324,28 @@
         "placeholder": "ex: durable, léger, stylé (séparés par des virgules)"
     }
   },
+  "VideoGeneratorForm": {
+    "submitButton": "Générer le Storyboard",
+    "toast": {
+        "successDescription": "Votre storyboard vidéo est prêt."
+    },
+    "productName": {
+        "label": "Nom du Produit",
+        "placeholder": "ex: Le Sac à Dos Prêt pour l'Aventure"
+    },
+    "targetAudience": {
+        "label": "Audience Cible",
+        "placeholder": "ex: Randonneurs, nomades numériques"
+    },
+    "productDescription": {
+        "label": "Description du Produit",
+        "placeholder": "Décrivez ce qui rend votre produit unique..."
+    },
+    "videoStyle": {
+        "label": "Style de la Vidéo",
+        "placeholder": "Sélectionner un style"
+    }
+  },
   "CopyResults": {
     "title": "Concepts Publicitaires Générés",
     "imageAlt": "Visuel généré par IA pour {headline}",
@@ -329,6 +360,14 @@
         "copy": "Copier le Texte",
         "copied": "Copié !"
     }
+  },
+  "VideoResults": {
+    "title": "Storyboard de la Publicité Vidéo",
+    "scene": "Scène",
+    "imageAlt": "Visuel du storyboard pour la Scène {sceneNumber}",
+    "imageFailed": "Échec du Visuel",
+    "visualPrompt": "Prompt Visuel",
+    "audioNotSupported": "Votre navigateur ne supporte pas l'élément audio."
   },
   "CompetitorForm": {
     "submitButton": "Analyser le Concurrent",
