@@ -2,12 +2,7 @@
 
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 import { setCookie } from 'cookies-next';
-import fr from '@/messages/fr.json';
-import en from '@/messages/en.json';
-
-const messages: { [key: string]: any } = { fr, en };
-
-type Locale = 'fr' | 'en';
+import { translate, type Locale } from '@/lib/i18n';
 
 interface I18nContextType {
   locale: Locale;
@@ -28,30 +23,7 @@ export const I18nProvider = ({ children, initialLocale }: { children: ReactNode;
   };
 
   const t = (key: string, params?: { [key: string]: string | number }) => {
-    const keys = key.split('.');
-    let result = messages[locale];
-    for (const k of keys) {
-      result = result?.[k];
-      if (result === undefined) {
-        // Fallback to English if key not found in current locale
-        let fallbackResult = messages['en'];
-        for (const fk of keys) {
-            fallbackResult = fallbackResult?.[fk];
-             if (fallbackResult === undefined) return key;
-        }
-        result = fallbackResult;
-        break;
-      }
-    }
-    
-    let text = result || key;
-    if (params) {
-        Object.keys(params).forEach(pKey => {
-            text = text.replace(`{${pKey}}`, String(params[pKey]));
-        });
-    }
-
-    return text;
+    return translate(locale, key, params);
   };
   
   return (
