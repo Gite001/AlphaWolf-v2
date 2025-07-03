@@ -104,3 +104,17 @@ Pour lancer l'application sur votre machine locale, suivez ces étapes. Ces comm
 3.  **(Optionnel) Personnaliser l'application :**
     -   **Logo :** Pour utiliser votre propre logo, placez un fichier nommé `logo.png` dans le dossier `public/images`. La taille recommandée est 128x128 pixels ou plus.
     -   **Images :** Pour utiliser vos propres visuels publicitaires, placez-les dans le dossier `public/images` en vous assurant que les noms de fichiers correspondent à ceux utilisés dans le code (ex: `hero-dashboard.png`, `ad-sweater.png`, etc.).
+
+---
+
+## Pourquoi l'installer en local ? L'avantage du Loup Alpha
+
+Installer l'application sur votre propre machine vous donne le contrôle total et plusieurs avantages stratégiques :
+
+- **Personnalisation Totale :** C'est votre arsenal. Modifiez les couleurs, ajustez les prompts de l'IA, ajoutez de nouvelles fonctionnalités. Vous pouvez expérimenter sans aucune limite pour que l'outil soit parfaitement adapté à vos stratégies.
+
+- **Confidentialité Absolue :** Lorsque vous analysez les données de vos concurrents ou vos propres campagnes, tout reste sur votre ordinateur. Aucune information sensible n'est exposée sur un serveur tiers. Chassez en toute discrétion.
+
+- **Vitesse et Réactivité :** L'application s'exécute avec une vitesse maximale, sans latence réseau. Les modifications de code sont visibles instantanément, vous permettant d'itérer et de vous adapter plus rapidement que n'importe qui.
+
+- **Apprentissage et Maîtrise :** En explorant et en modifiant le code, vous ne vous contentez pas d'utiliser un outil, vous le maîtrisez. Vous comprenez sa logique et pouvez l'adapter à n'importe quel défi futur.
