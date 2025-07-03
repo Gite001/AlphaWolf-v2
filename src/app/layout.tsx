@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next';
+import { Inter, Poppins } from 'next/font/google';
 import './globals.css';
 import { SidebarProvider, Sidebar, SidebarInset } from '@/components/ui/sidebar';
 import { AppSidebar } from '@/components/layout/app-sidebar';
@@ -7,8 +8,20 @@ import { AppFooter } from '@/components/layout/footer';
 import { AppHeader } from '@/components/layout/app-header';
 import { I18nProvider } from '@/hooks/use-i18n';
 import { cookies } from 'next/headers';
-import { getTranslations } from '@/lib/utils';
-import { cn } from '@/lib/utils';
+import { getTranslations, cn } from '@/lib/utils';
+
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+});
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '600', '700'],
+  display: 'swap',
+  variable: '--font-poppins',
+});
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = cookies().get('locale')?.value;
@@ -28,12 +41,7 @@ export default function RootLayout({
   const locale = cookieStore.get('locale')?.value || 'fr';
 
   return (
-    <html lang={locale} className="dark">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-      </head>
+    <html lang={locale} className={cn('dark', inter.variable, poppins.variable)}>
       <body className={cn("font-body antialiased bg-transparent")}>
         <div className="fixed inset-0 -z-10 h-full w-full bg-slate-950">
           <div className="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,165,0,0.15),rgba(255,255,255,0))]"></div>
