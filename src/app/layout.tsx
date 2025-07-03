@@ -8,6 +8,7 @@ import { AppHeader } from '@/components/layout/app-header';
 import { I18nProvider } from '@/hooks/use-i18n';
 import { cookies } from 'next/headers';
 import { getTranslations } from '@/lib/utils';
+import { cn } from '@/lib/utils';
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = cookies().get('locale')?.value;
@@ -31,9 +32,14 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
       </head>
-      <body className="font-body antialiased">
+      <body className={cn("font-body antialiased bg-transparent")}>
+        <div className="fixed inset-0 -z-10 h-full w-full bg-slate-950">
+          <div className="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,165,0,0.15),rgba(255,255,255,0))]"></div>
+          <div className="absolute bottom-0 right-[-20%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(128,0,128,0.15),rgba(255,255,255,0))]"></div>
+        </div>
+
         <I18nProvider initialLocale={locale as 'fr' | 'en'}>
             <SidebarProvider>
               <div className="flex min-h-screen">

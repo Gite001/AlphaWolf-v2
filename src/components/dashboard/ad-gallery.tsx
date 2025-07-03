@@ -40,7 +40,7 @@ export function AdGallery({ ads }: AdGalleryProps) {
   }, [ads, searchTerm, platform, dateRange]);
 
   return (
-    <Card>
+    <Card className="bg-card/30 backdrop-blur-sm border-white/10 shadow-lg">
       <CardHeader>
         <CardTitle className="font-headline">{t('AdGallery.title')}</CardTitle>
         <CardDescription>{t('AdGallery.description')}</CardDescription>

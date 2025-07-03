@@ -37,7 +37,7 @@ export function FinderAnalysis() {
     const renderContent = () => {
         if (loading) {
             return (
-                <Card>
+                <Card className="bg-card/30 backdrop-blur-sm border-white/10">
                     <CardHeader>
                         <CardTitle className="flex items-center gap-2">
                             <Bot className="h-5 w-5 text-primary animate-pulse" />
@@ -46,11 +46,11 @@ export function FinderAnalysis() {
                         <CardDescription>{t('FinderAnalysis.loading.description')}</CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
-                        <Skeleton className="h-4 w-full" />
-                        <Skeleton className="h-4 w-5/6" />
+                        <Skeleton className="h-4 w-full bg-secondary/50" />
+                        <Skeleton className="h-4 w-5/6 bg-secondary/50" />
                         <div className="pt-4 space-y-3">
-                            <Skeleton className="h-24 w-full" />
-                            <Skeleton className="h-24 w-full" />
+                            <Skeleton className="h-24 w-full bg-secondary/50" />
+                            <Skeleton className="h-24 w-full bg-secondary/50" />
                         </div>
                     </CardContent>
                 </Card>
@@ -59,7 +59,7 @@ export function FinderAnalysis() {
 
         if (error) {
             return (
-                <Card className="border-destructive">
+                <Card className="bg-card/30 backdrop-blur-sm border-destructive/50">
                     <CardHeader>
                         <CardTitle className="flex items-center gap-2 text-destructive">
                             <AlertCircle className="h-5 w-5" />

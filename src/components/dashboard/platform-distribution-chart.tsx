@@ -1,11 +1,10 @@
 'use client';
 
 import { useMemo } from 'react';
-import { Pie, PieChart, Cell } from 'recharts';
+import { Pie, PieChart, Cell, Tooltip } from 'recharts';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import {
   ChartContainer,
-  ChartTooltip,
   ChartTooltipContent,
   ChartLegend,
   ChartLegendContent,
@@ -45,7 +44,7 @@ export function PlatformDistributionChart({ data }: PlatformDistributionChartPro
   }, [data]);
 
   return (
-    <Card>
+    <Card className="bg-card/30 backdrop-blur-sm border-white/10 shadow-lg">
       <CardHeader>
         <CardTitle>{t('PlatformDistributionChart.title')}</CardTitle>
         <CardDescription>{t('PlatformDistributionChart.description')}</CardDescription>
@@ -53,13 +52,17 @@ export function PlatformDistributionChart({ data }: PlatformDistributionChartPro
       <CardContent>
         <ChartContainer config={chartConfig} className="min-h-[250px] w-full">
           <PieChart>
-            <ChartTooltip cursor={false} content={<ChartTooltipContent hideLabel />} />
+            <Tooltip
+              cursor={{ fill: 'hsl(var(--accent) / 0.1)' }}
+              content={<ChartTooltipContent hideLabel />}
+            />
             <Pie
               data={chartData}
               dataKey="value"
               nameKey="platform"
               innerRadius={60}
-              strokeWidth={5}
+              strokeWidth={2}
+              stroke="hsl(var(--background))"
             >
                 {chartData.map((entry) => (
                     <Cell key={`cell-${entry.platform}`} fill={entry.fill} />

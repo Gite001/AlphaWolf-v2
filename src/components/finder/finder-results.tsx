@@ -17,7 +17,7 @@ export function FinderResults({ results, onRerun }: FinderResultsProps) {
   const { t } = useI18n();
   return (
     <div className="space-y-8 animate-in fade-in duration-500">
-      <Card className="bg-primary/5 border-primary/20">
+      <Card className="bg-card/30 backdrop-blur-sm border-primary/20 shadow-lg shadow-primary/10">
         <CardHeader>
             <CardTitle className="flex items-center gap-2">
                 <BarChart className="h-6 w-6 text-primary" />
@@ -35,7 +35,7 @@ export function FinderResults({ results, onRerun }: FinderResultsProps) {
 
       <div className="space-y-6">
         {results.winningCategories.map((category, index) => (
-            <Card key={index} className="shadow-md flex flex-col">
+            <Card key={index} className="shadow-lg flex flex-col bg-card/30 backdrop-blur-sm border-white/10 hover:border-primary/50 transition-colors duration-300">
                 <CardHeader>
                     <CardTitle className="flex items-center gap-3">
                         <Package className="h-7 w-7 text-primary" />
@@ -48,7 +48,7 @@ export function FinderResults({ results, onRerun }: FinderResultsProps) {
                         <p className="text-sm">{category.analysis}</p>
                     </div>
                      <div>
-                        <h4 className="font-semibold mb-1 text-yellow-400 flex items-center gap-2">
+                        <h4 className="font-semibold mb-1 text-primary flex items-center gap-2">
                             <Lightbulb className="h-5 w-5" />
                             <span>{t('FinderResults.strategicTip.title')}</span>
                         </h4>
@@ -56,7 +56,7 @@ export function FinderResults({ results, onRerun }: FinderResultsProps) {
                     </div>
                 </CardContent>
                 <CardFooter>
-                    <Button asChild className="w-full">
+                    <Button asChild className="w-full shadow-lg shadow-primary/20 hover:scale-105 transition-transform">
                         <Link href={`/generate?productName=${encodeURIComponent(category.categoryName)}&productDescription=${encodeURIComponent(category.analysis)}&keywords=${encodeURIComponent(category.categoryName)}`}>
                             <FileText className="mr-2 h-4 w-4" />
                             {t('FinderResults.generateAdButton')}

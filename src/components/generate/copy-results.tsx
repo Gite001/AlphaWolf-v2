@@ -55,8 +55,8 @@ function VariationCard({ headline, body, cta, imageUrl, audioUrl }: { headline: 
     };
 
     return (
-        <Card className="flex flex-col">
-            <div className="bg-muted aspect-video w-full rounded-t-lg flex items-center justify-center overflow-hidden relative">
+        <Card className="flex flex-col bg-card/30 backdrop-blur-sm border-white/10 shadow-lg hover:shadow-primary/20 hover:-translate-y-1 transition-all duration-300">
+            <div className="bg-muted/50 aspect-video w-full rounded-t-lg flex items-center justify-center overflow-hidden relative border-b border-white/10">
                 {imageUrl ? (
                     <Image src={imageUrl} alt={t('CopyResults.imageAlt', { headline })} fill className="object-cover" />
                 ) : (

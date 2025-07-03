@@ -7,7 +7,7 @@ import { LanguageSwitcher } from './language-switcher';
 
 export function AppHeader() {
   return (
-    <header className="sticky top-0 z-10 flex h-14 items-center justify-between border-b bg-background px-4 sm:px-6">
+    <header className="sticky top-0 z-20 flex h-16 items-center justify-between border-b border-white/10 bg-background/50 backdrop-blur-sm px-4 sm:px-6">
       {/* Mobile-only Header content */}
       <div className="flex items-center gap-4 md:hidden">
         <SidebarTrigger />

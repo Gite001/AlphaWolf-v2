@@ -23,7 +23,7 @@ function SubmitButton() {
   const { pending } = useFormStatus();
   const { t } = useI18n();
   return (
-    <Button type="submit" disabled={pending} className="w-full">
+    <Button type="submit" disabled={pending} className="w-full shadow-lg shadow-primary/20 hover:scale-105 transition-transform">
       {pending ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
       {t('MarketSnapshot.submitButton')}
     </Button>
@@ -52,7 +52,7 @@ export function MarketSnapshot() {
   const formRef = useRef<HTMLFormElement>(null);
 
   return (
-    <Card>
+    <Card className="bg-card/30 backdrop-blur-sm border-white/10 shadow-lg">
         <CardHeader>
             <CardTitle>{t('MarketSnapshot.title')}</CardTitle>
             <CardDescription>{t('MarketSnapshot.description')}</CardDescription>
@@ -73,7 +73,7 @@ export function MarketSnapshot() {
                 <SubmitButton />
             </form>
             {result && (
-                <div className="mt-6 pt-6 border-t">
+                <div className="mt-6 pt-6 border-t border-white/10">
                     <TrendsResults results={result} />
                 </div>
             )}

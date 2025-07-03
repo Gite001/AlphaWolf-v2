@@ -20,7 +20,7 @@ type EngagementChartProps = {
 export function EngagementChart({ data }: EngagementChartProps) {
   const { t } = useI18n();
   return (
-    <Card>
+    <Card className="bg-card/30 backdrop-blur-sm border-white/10 shadow-lg">
       <CardHeader>
         <CardTitle>{t('EngagementChart.title')}</CardTitle>
         <CardDescription>{t('EngagementChart.description')}</CardDescription>
@@ -28,15 +28,19 @@ export function EngagementChart({ data }: EngagementChartProps) {
       <CardContent>
         <ChartContainer config={chartConfig} className="min-h-[200px] w-full">
           <BarChart data={data} accessibilityLayer>
-            <CartesianGrid vertical={false} />
+            <CartesianGrid vertical={false} strokeDasharray="3 3" stroke="hsl(var(--border) / 0.5)" />
             <XAxis
               dataKey="date"
               tickLine={false}
               tickMargin={10}
               axisLine={false}
+              stroke="hsl(var(--muted-foreground))"
             />
-            <YAxis />
-            <ChartTooltip content={<ChartTooltipContent />} />
+            <YAxis stroke="hsl(var(--muted-foreground))" />
+            <ChartTooltip 
+              cursor={{ fill: 'hsl(var(--accent) / 0.1)' }}
+              content={<ChartTooltipContent />} 
+            />
             <ChartLegend content={<ChartLegendContent />} />
             <Bar dataKey="Facebook" fill="var(--color-Facebook)" radius={4} />
             <Bar dataKey="Instagram" fill="var(--color-Instagram)" radius={4} />

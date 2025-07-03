@@ -25,7 +25,7 @@ export function CategoryPerformanceChart({ data }: CategoryPerformanceChartProps
     const { t } = useI18n();
 
   return (
-    <Card>
+    <Card className="bg-card/30 backdrop-blur-sm border-white/10 shadow-lg">
       <CardHeader>
         <CardTitle>{t('CategoryPerformanceChart.title')}</CardTitle>
         <CardDescription>{t('CategoryPerformanceChart.description')}</CardDescription>
@@ -40,7 +40,7 @@ export function CategoryPerformanceChart({ data }: CategoryPerformanceChartProps
               left: 20,
             }}
           >
-            <CartesianGrid horizontal={false} />
+            <CartesianGrid horizontal={false} strokeDasharray="3 3" stroke="hsl(var(--border) / 0.5)" />
             <YAxis
                 dataKey="categoryName"
                 type="category"
@@ -51,8 +51,8 @@ export function CategoryPerformanceChart({ data }: CategoryPerformanceChartProps
                 width={120}
                 className="truncate"
             />
-            <XAxis dataKey="averageScore" type="number" domain={[0, 100]} />
-            <ChartTooltip cursor={false} content={<ChartTooltipContent indicator="dot" />} />
+            <XAxis dataKey="averageScore" type="number" domain={[0, 100]} stroke="hsl(var(--muted-foreground))" />
+            <ChartTooltip cursor={{ fill: 'hsl(var(--accent) / 0.1)' }} content={<ChartTooltipContent indicator="dot" />} />
             <Bar dataKey="averageScore" fill="var(--color-averageScore)" radius={4} />
           </BarChart>
         </ChartContainer>

@@ -15,10 +15,10 @@ type AdCardProps = {
 };
 
 const platformIcons = {
-  Facebook: <Facebook className="h-4 w-4 text-blue-600" />,
-  Instagram: <Instagram className="h-4 w-4 text-pink-500" />,
-  TikTok: <TikTokIcon className="h-4 w-4" />,
-  Pinterest: <PinterestIcon className="h-4 w-4 text-red-600" />,
+  Facebook: <Facebook className="h-4 w-4 text-blue-400" />,
+  Instagram: <Instagram className="h-4 w-4 text-pink-400" />,
+  TikTok: <TikTokIcon className="h-4 w-4 text-cyan-300" />,
+  Pinterest: <PinterestIcon className="h-4 w-4 text-red-400" />,
 };
 
 export function AdCard({ ad }: AdCardProps) {
@@ -30,14 +30,14 @@ export function AdCard({ ad }: AdCardProps) {
   }, [ad.date]);
 
   return (
-    <Card className="overflow-hidden group transition-all hover:shadow-lg hover:-translate-y-1">
+    <Card className="overflow-hidden group transition-all duration-300 bg-card/30 backdrop-blur-sm border-white/10 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-2 hover:border-primary/50">
       <div className="relative">
         <Image
           src={ad.imageUrl}
           alt={ad.title}
           width={400}
           height={400}
-          className="object-cover w-full h-64"
+          className="object-cover w-full h-64 transition-transform duration-300 group-hover:scale-105"
           data-ai-hint={ad.dataAiHint}
         />
         <div className="absolute top-2 right-2">
@@ -47,7 +47,7 @@ export function AdCard({ ad }: AdCardProps) {
           </Badge>
         </div>
         <div className="absolute bottom-2 left-2">
-            <Badge variant="default" className="bg-primary/80 backdrop-blur-sm">
+            <Badge variant="default" className="bg-primary/80 backdrop-blur-sm text-primary-foreground font-bold">
               Score: {ad.engagement.score}
             </Badge>
         </div>

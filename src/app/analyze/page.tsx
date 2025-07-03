@@ -20,7 +20,7 @@ export default async function AnalyzePage() {
                         {t('AnalyzePage.description')}
                     </p>
                 </header>
-                <Card className="shadow-lg">
+                <Card className="bg-card/30 backdrop-blur-sm border-white/10 shadow-2xl shadow-primary/5">
                     <CardHeader>
                         <CardTitle>{t('AnalyzePage.form.title')}</CardTitle>
                         <CardDescription>{t('AnalyzePage.form.description')}</CardDescription>

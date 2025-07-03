@@ -36,9 +36,15 @@ export function DashboardSummary({ stats, engagementData }: DashboardSummaryProp
         fetchSummary();
     }, [stats, engagementData, t, locale]);
 
+    const CardWrapper = ({ children }: { children: React.ReactNode }) => (
+        <Card className="bg-card/30 backdrop-blur-sm border-primary/20 shadow-lg shadow-primary/10">
+            {children}
+        </Card>
+    );
+
     if (loading) {
         return (
-            <Card>
+            <CardWrapper>
                 <CardHeader>
                     <CardTitle className="flex items-center gap-2">
                         <Sparkles className="h-5 w-5 text-primary" />
@@ -47,20 +53,20 @@ export function DashboardSummary({ stats, engagementData }: DashboardSummaryProp
                     <CardDescription>{t('DashboardSummary.loading.description')}</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                    <Skeleton className="h-4 w-full" />
-                    <Skeleton className="h-4 w-5/6" />
+                    <Skeleton className="h-4 w-full bg-secondary/50" />
+                    <Skeleton className="h-4 w-5/6 bg-secondary/50" />
                     <div className="pt-4 space-y-3">
-                        <Skeleton className="h-8 w-full" />
-                        <Skeleton className="h-8 w-full" />
+                        <Skeleton className="h-8 w-full bg-secondary/50" />
+                        <Skeleton className="h-8 w-full bg-secondary/50" />
                     </div>
                 </CardContent>
-            </Card>
+            </CardWrapper>
         )
     }
 
     if (error) {
          return (
-            <Card className="border-destructive">
+            <Card className="bg-card/30 backdrop-blur-sm border-destructive/50">
                 <CardHeader>
                     <CardTitle className="flex items-center gap-2 text-destructive">
                         <AlertCircle className="h-5 w-5" />
@@ -76,7 +82,7 @@ export function DashboardSummary({ stats, engagementData }: DashboardSummaryProp
     }
 
     return (
-        <Card className="bg-primary/5 border-primary/20">
+        <CardWrapper>
             <CardHeader>
                 <CardTitle className="flex items-center gap-2 font-headline">
                     <Sparkles className="h-6 w-6 text-primary" />
@@ -89,12 +95,12 @@ export function DashboardSummary({ stats, engagementData }: DashboardSummaryProp
                 <ul className="space-y-2">
                     {insights?.map((insight, index) => (
                         <li key={index} className="flex items-start gap-3">
-                            <Lightbulb className="h-5 w-5 mt-0.5 text-yellow-400 shrink-0" />
+                            <Lightbulb className="h-5 w-5 mt-0.5 text-primary shrink-0" />
                             <span className="text-sm text-muted-foreground">{insight}</span>
                         </li>
                     ))}
                 </ul>
             </CardContent>
-        </Card>
+        </CardWrapper>
     )
 }

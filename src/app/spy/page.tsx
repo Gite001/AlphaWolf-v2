@@ -20,7 +20,7 @@ export default async function SpyPage() {
                         {t('SpyPage.description')}
                     </p>
                 </header>
-                <Card className="shadow-lg">
+                <Card className="bg-card/30 backdrop-blur-sm border-white/10 shadow-2xl shadow-primary/5">
                     <CardHeader>
                         <CardTitle>{t('SpyPage.form.title')}</CardTitle>
                         <CardDescription>{t('SpyPage.form.description')}</CardDescription>
@@ -30,7 +30,7 @@ export default async function SpyPage() {
                     </CardContent>
                 </Card>
 
-                <Card className="mt-8 bg-secondary/50 border-dashed">
+                <Card className="mt-8 bg-secondary/30 backdrop-blur-sm border-dashed border-white/20">
                     <CardHeader className="flex-row gap-4 items-center">
                         <Info className="h-6 w-6 text-primary" />
                         <div>

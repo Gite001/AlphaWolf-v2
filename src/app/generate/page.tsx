@@ -20,7 +20,7 @@ export default async function GenerateCopyPage() {
                         {t('GeneratePage.description')}
                     </p>
                 </header>
-                <Card className="shadow-lg">
+                <Card className="bg-card/30 backdrop-blur-sm border-white/10 shadow-2xl shadow-primary/5">
                     <CardHeader>
                         <CardTitle>{t('GeneratePage.form.title')}</CardTitle>
                         <CardDescription>{t('GeneratePage.form.description')}</CardDescription>

@@ -30,7 +30,7 @@ export async function QuickActions() {
     ];
 
     return (
-        <Card>
+        <Card className="bg-card/30 backdrop-blur-sm border-white/10 shadow-lg">
             <CardHeader>
                 <CardTitle>{t('QuickActions.title')}</CardTitle>
                 <CardDescription>{t('QuickActions.description')}</CardDescription>
@@ -38,7 +38,7 @@ export async function QuickActions() {
             <CardContent className="flex flex-col gap-4">
                 {actions.map((action) => (
                     <Link key={action.href} href={action.href} passHref>
-                        <Button variant="outline" className="h-auto w-full justify-start p-4 text-left">
+                        <Button variant="outline" className="h-auto w-full justify-start p-4 text-left transition-colors hover:border-primary/50 hover:bg-primary/10">
                            <action.icon className="mr-4 h-6 w-6 text-primary" />
                            <div className="flex-1">
                              <p className="font-semibold">{action.label}</p>
