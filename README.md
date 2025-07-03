@@ -103,9 +103,22 @@ Pour lancer l'application sur votre machine locale, suivez ces étapes. Ces comm
     ```
     L'application sera alors disponible à l'adresse `http://localhost:9003`. Maintenez la touche `Ctrl` (ou `Cmd` sur Mac) et cliquez sur le lien pour l'ouvrir dans votre navigateur.
 
-3.  **(Optionnel) Personnaliser l'application :**
-    -   **Logo :** Pour utiliser votre propre logo, placez un fichier nommé `logo.png` dans le dossier `public/images`. La taille recommandée est 128x128 pixels ou plus.
-    -   **Images :** Pour utiliser vos propres visuels publicitaires, placez-les dans le dossier `public/images` en vous assurant que les noms de fichiers correspondent à ceux utilisés dans le code (ex: `hero-dashboard.png`, `ad-sweater.png`, etc.).
+## (Optionnel) Personnaliser l'application
+
+Pour que l'application soit vraiment la vôtre, vous pouvez remplacer les images par défaut. Toutes les images se trouvent dans le dossier `public/images`.
+
+-   **Logo de l'application :**
+    -   Fichier : `smartwolf.png`
+    -   Rôle : Le logo principal utilisé dans l'en-tête et la barre latérale.
+    -   Conseil : Utilisez une image carrée avec un fond transparent pour un meilleur résultat.
+
+-   **Image de la page d'accueil (Héro) :**
+    -   Fichier : `office.png`
+    -   Rôle : La grande image d'accueil qui accueille les visiteurs.
+
+-   **Images d'exemples pour la galerie publicitaire :**
+    -   Fichiers : `ad-sweater.png`, `ad-smarthome.png`, `ad-skincare.png`, `ad-blender.png`, `ad-headphones.png`, `ad-yoga.png`, `ad-subbox.png`, `ad-led.png`.
+    -   Rôle : Ces images peuplent la bibliothèque de publicités sur le tableau de bord et servent d'exemples. Vous pouvez les remplacer par des publicités réelles de votre secteur.
 
 ---
 

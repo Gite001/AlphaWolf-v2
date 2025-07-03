@@ -9,7 +9,7 @@ export const Logo = ({ className }: LogoProps) => {
     return (
         <div className={cn('relative', className)}>
             <Image
-                src="/images/logo.png"
+                src="/images/smartwolf.png"
                 alt="AlphaWolf Logo"
                 fill
                 className="object-contain"
