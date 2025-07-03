@@ -94,11 +94,11 @@ const storyboardPrompt = ai.definePrompt({
 1.  Create a catchy **title** for the ad concept.
 2.  Break down the ad into 3-5 sequential **scenes**.
 3.  For each scene, provide:
-    *   `sceneNumber`: The scene number.
-    *   `script_narration`: The voiceover text for this scene. This should be a part of the larger script.
-    *   `visual_description`: A detailed, vivid prompt for an AI image generation model to create a matching visual. This prompt should describe a photorealistic scene, focusing on the product in context or the emotion to convey. **Do not include any text in the prompt itself.**
-    *   `duration_seconds`: The estimated duration of this scene in seconds. The total duration should be between 15 and 30 seconds.
-4.  Combine all `script_narration` parts into a single `fullScript` field.
+    *   sceneNumber: The scene number.
+    *   script_narration: The voiceover text for this scene. This should be a part of the larger script.
+    *   visual_description: A detailed, vivid prompt for an AI image generation model to create a matching visual. This prompt should describe a photorealistic scene, focusing on the product in context or the emotion to convey. **Do not include any text in the prompt itself.**
+    *   duration_seconds: The estimated duration of this scene in seconds. The total duration should be between 15 and 30 seconds.
+4.  Combine all script_narration parts into a single fullScript field.
 
 The tone should be engaging and perfectly tailored to the specified target audience and video style. Your response must be in valid JSON format.`,
 });
