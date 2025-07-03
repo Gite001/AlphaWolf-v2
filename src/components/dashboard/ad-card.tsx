@@ -6,7 +6,7 @@ import type { Ad } from '@/lib/types';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Download, Facebook, Instagram, MessageCircle, Share2, ThumbsUp } from 'lucide-react';
+import { ZoomIn, Facebook, Instagram, MessageCircle, Share2, ThumbsUp } from 'lucide-react';
 import { PinterestIcon, TikTokIcon } from '../icons';
 import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
 import { Tooltip, TooltipContent, TooltipTrigger } from '../ui/tooltip';
@@ -76,8 +76,8 @@ export function AdCard({ ad, t }: AdCardProps) {
             <Tooltip>
               <TooltipTrigger asChild>
                 <Button variant="outline" size="icon" asChild>
-                  <a href={ad.productLink} target="_blank" rel="noopener noreferrer">
-                    <Download className="h-4 w-4" />
+                  <a href={ad.imageUrl} target="_blank" rel="noopener noreferrer">
+                    <ZoomIn className="h-4 w-4" />
                     <span className="sr-only">{t('AdCard.media')}</span>
                   </a>
                 </Button>
