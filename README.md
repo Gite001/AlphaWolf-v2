@@ -88,6 +88,8 @@ Obtenez un retour objectif et piloté par l'IA sur votre propre travail créatif
 
 Pour lancer l'application sur votre machine locale, suivez ces étapes. Ces commandes doivent être exécutées depuis le répertoire racine de votre projet dans le terminal de Firebase Studio.
 
+**Important :** Une application Next.js est un projet complet, et non un simple script. Vous ne pouvez pas la démarrer en exécutant un seul fichier (par exemple, avec une option comme "Exécuter le fichier actif"). Vous devez utiliser les commandes `npm` ci-dessous pour lancer le serveur de développement qui s'occupe de tout compiler.
+
 1.  **Installer les dépendances :**
     La commande `npm install` lit le fichier `package.json` et installe toutes les bibliothèques nécessaires.
     ```bash

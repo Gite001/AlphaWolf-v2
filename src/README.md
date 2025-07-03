@@ -88,6 +88,8 @@ Obtenez un retour objectif et piloté par l'IA sur votre propre travail créatif
 
 Pour lancer l'application sur votre machine locale, suivez ces étapes. Ces commandes doivent être exécutées depuis le répertoire racine de votre projet.
 
+**Important :** Une application Next.js est un projet complet, et non un simple script. Vous ne pouvez pas la démarrer en exécutant un seul fichier (par exemple, avec une option comme "Exécuter le fichier actif"). Vous devez utiliser les commandes `npm` ci-dessous pour lancer le serveur de développement qui s'occupe de tout compiler.
+
 1.  **Installez les dépendances :**
     La commande `npm install` lit le fichier `package.json` à la racine du projet et installe toutes les bibliothèques et outils nécessaires (comme Next.js, React, etc.). Vous n'avez pas besoin de spécifier le nom de l'application, `npm` le sait déjà en se basant sur votre emplacement.
     ```bash
