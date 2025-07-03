@@ -120,7 +120,8 @@ Pour que l'application soit vraiment la vôtre, vous pouvez remplacer les images
 
 -   **Images d'exemples pour la galerie publicitaire :**
     -   Fichiers : `ad-sweater.png`, `ad-smarthome.png`, `ad-skincare.png`, `ad-blender.png`, `ad-headphones.png`, `ad-yoga.png`, `ad-subbox.png`, `ad-led.png`.
-    -   Rôle : Ces images peuplent la bibliothèque de publicités sur le tableau de bord et servent d'exemples. Vous pouvez les remplacer par des publicités réelles de votre secteur.
+    -   Rôle : Ces images peuplent la bibliothèque de publicités sur le tableau de bord et servent d'exemples. Elles sont des visuels pour des **publicités fictives**.
+    -   Pour une expérience totalement personnalisée, vous pouvez non seulement remplacer ces images par des publicités de votre secteur, mais aussi modifier les données associées (titre, score, etc.) dans le fichier `src/lib/data.ts`.
 
 ---
 
