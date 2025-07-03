@@ -1,6 +1,7 @@
 export type Ad = {
   id: string;
   title: string;
+  description: string;
   platform: 'Facebook' | 'Instagram' | 'TikTok' | 'Pinterest';
   imageUrl: string;
   dataAiHint: string;

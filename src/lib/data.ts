@@ -36,6 +36,7 @@ export const ads: Ad[] = [
   {
     id: '1',
     title: 'Cozy Knit Sweater',
+    description: "Enveloppez-vous de douceur. Notre pull en maille ultra-confortable, parfait pour les journées fraîches.",
     platform: 'Pinterest',
     imageUrl: 'https://placehold.co/400x400.png',
     dataAiHint: 'cozy sweater',
@@ -47,6 +48,7 @@ export const ads: Ad[] = [
   {
     id: '2',
     title: 'Smart Home Hub',
+    description: "Centralisez votre maison connectée. Contrôlez lumières, thermostats et plus, simplement avec votre voix.",
     platform: 'Facebook',
     imageUrl: 'https://placehold.co/400x400.png',
     dataAiHint: 'smart home',
@@ -58,6 +60,7 @@ export const ads: Ad[] = [
   {
     id: '3',
     title: 'Organic Skincare Set',
+    description: "Révélez votre éclat naturel. Notre coffret de soins bio nourrit et revitalise votre peau en profondeur.",
     platform: 'Instagram',
     imageUrl: 'https://placehold.co/400x400.png',
     dataAiHint: 'skincare set',
@@ -69,6 +72,7 @@ export const ads: Ad[] = [
   {
     id: '4',
     title: 'Portable Blender',
+    description: "Vos smoothies frais, où que vous soyez. Notre blender portable est puissant, léger et se recharge par USB.",
     platform: 'TikTok',
     imageUrl: 'https://placehold.co/400x400.png',
     dataAiHint: 'portable blender',
@@ -80,6 +84,7 @@ export const ads: Ad[] = [
   {
     id: '5',
     title: 'Noise-Cancelling Headphones',
+    description: "Plongez dans votre monde. Écouteurs à réduction de bruit active pour une immersion sonore totale.",
     platform: 'Facebook',
     imageUrl: 'https://placehold.co/400x400.png',
     dataAiHint: 'headphones music',
@@ -91,6 +96,7 @@ export const ads: Ad[] = [
   {
     id: '6',
     title: 'Yoga Mat & Block Set',
+    description: "Trouvez votre équilibre. L'ensemble parfait pour approfondir votre pratique du yoga, avec confort et stabilité.",
     platform: 'Pinterest',
     imageUrl: 'https://placehold.co/400x400.png',
     dataAiHint: 'yoga mat',
@@ -102,6 +108,7 @@ export const ads: Ad[] = [
   {
     id: '7',
     title: 'Subscription Box',
+    description: "La surprise qui fait plaisir, chaque mois. Découvrez des produits uniques et exclusifs livrés chez vous.",
     platform: 'Instagram',
     imageUrl: 'https://placehold.co/400x400.png',
     dataAiHint: 'subscription box',
@@ -113,6 +120,7 @@ export const ads: Ad[] = [
   {
     id: '8',
     title: 'LED Strip Lights',
+    description: "Créez l'ambiance parfaite. Des millions de couleurs pour transformer n'importe quelle pièce, contrôlables.",
     platform: 'TikTok',
     imageUrl: 'https://placehold.co/400x400.png',
     dataAiHint: 'led lights',
