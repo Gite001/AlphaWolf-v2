@@ -9,3 +9,4 @@ import '@/ai/flows/summarize-dashboard-data.ts';
 import '@/ai/flows/analyze-competitor-ad.ts';
 import '@/ai/flows/find-winning-products.ts';
 import '@/ai/flows/generate-audio-ad.ts';
+import '@/ai/flows/generate-ad-image.ts';

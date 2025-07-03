@@ -103,9 +103,7 @@ export function CopyGeneratorForm() {
       {result && (
         <div className="mt-8 pt-8 border-t">
             <CopyResults 
-                variations={result.variations} 
-                productName={result.originalInput.productName}
-                productDescription={result.originalInput.productDescription}
+                variations={result.variations}
             />
         </div>
       )}

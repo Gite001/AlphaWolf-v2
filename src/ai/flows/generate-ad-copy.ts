@@ -2,14 +2,13 @@
 /**
  * @fileOverview AI agent for generating ad copy and a matching visual.
  *
- * - generateAdCopy - A function that handles the ad copy and visual generation process.
+ * - generateAdCopy - A function that handles the ad copy generation process.
  * - GenerateAdCopyInput - The input type for the generateAdCopy function.
  * - GenerateAdCopyOutput - The return type for the generateAdCopy function.
  */
 
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
-import { generateAudioAd } from './generate-audio-ad';
 
 const GenerateAdCopyInputSchema = z.object({
   productName: z.string().describe('The name of the product.'),
@@ -28,13 +27,7 @@ const AdCopyVariationSchema = z.object({
 });
 
 const GenerateAdCopyOutputSchema = z.object({
-  variations: z.array(z.object({
-    headline: z.string(),
-    body: z.string(),
-    cta: z.string(),
-    imageUrl: z.string().nullable().describe('The data URI of the generated ad visual. Null if generation failed.'),
-    audioUrl: z.string().nullable().describe('The data URI of the generated ad audio. Null if generation failed.'),
-  })).describe('An array of 3 ad copy variations, each with a generated visual and audio.'),
+  variations: z.array(AdCopyVariationSchema).describe('An array of 3 ad copy text variations, each with a visual prompt.'),
 });
 export type GenerateAdCopyOutput = z.infer<typeof GenerateAdCopyOutputSchema>;
 
@@ -46,7 +39,7 @@ export async function generateAdCopy(input: GenerateAdCopyInput): Promise<Genera
 const textGenerationPrompt = ai.definePrompt({
   name: 'generateAdCopyTextPrompt',
   input: {schema: GenerateAdCopyInputSchema},
-  output: {schema: z.object({ variations: z.array(AdCopyVariationSchema) })},
+  output: {schema: GenerateAdCopyOutputSchema},
   prompt: `You are an expert copywriter and creative director specializing in high-converting ads for e-commerce. Generate 3 compelling ad copy variations based on the following product information.
 
 **The ad copy (headline, body, cta) must be in the following language: {{{locale}}}.**
@@ -73,47 +66,12 @@ const generateAdCopyFlow = ai.defineFlow(
     outputSchema: GenerateAdCopyOutputSchema,
   },
   async (input) => {
-    // 1. Generate text variations and visual prompts
-    const { output: textOutput } = await textGenerationPrompt(input);
+    const { output } = await textGenerationPrompt(input);
     
-    if (!textOutput?.variations) {
+    if (!output?.variations) {
         throw new Error('Could not generate ad copy variations.');
     }
 
-    // 2. Generate images and audio in parallel for each variation
-    const variationsWithMedia = await Promise.all(
-        textOutput.variations.map(async (variation) => {
-            const [imageResult, audioResult] = await Promise.allSettled([
-                ai.generate({
-                    model: 'googleai/gemini-2.0-flash-preview-image-generation',
-                    prompt: `A professional, photorealistic advertisement image. The image should be: ${variation.visualPrompt}`,
-                    config: {
-                        responseModalities: ['TEXT', 'IMAGE'],
-                    },
-                }),
-                generateAudioAd(variation.body),
-            ]);
-
-            const imageUrl = imageResult.status === 'fulfilled' ? imageResult.value.media?.url ?? null : null;
-            if (imageResult.status === 'rejected') {
-                console.error(`Image generation failed for headline "${variation.headline}":`, imageResult.reason);
-            }
-
-            const audioUrl = audioResult.status === 'fulfilled' ? audioResult.value.audioUrl : null;
-            if (audioResult.status === 'rejected') {
-                console.error(`Audio generation failed for headline "${variation.headline}":`, audioResult.reason);
-            }
-
-            return {
-                headline: variation.headline,
-                body: variation.body,
-                cta: variation.cta,
-                imageUrl,
-                audioUrl,
-            };
-        })
-    );
-
-    return { variations: variationsWithMedia };
+    return { variations: output.variations };
   }
 );
