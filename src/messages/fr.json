@@ -18,7 +18,7 @@
     "rightsReserved": "Tous droits réservés.",
     "terms": "Conditions d'Utilisation",
     "privacy": "Politique de Confidentialité",
-    "faq": "FAQ"
+    "guide": "Guide"
   },
   "AppSidebar": {
     "home": "Accueil",
@@ -27,7 +27,8 @@
     "marketTrends": "Tendances Marché",
     "competitorSpy": "Analyse Concurrent",
     "generateAd": "Générer Publicité",
-    "analyzeAd": "Analyser Publicité"
+    "analyzeAd": "Analyser Publicité",
+    "guide": "Guide"
   },
   "HomePage": {
     "hero": {
@@ -411,21 +412,61 @@
         "question": "Mes données sont-elles confidentielles et sécurisées ?",
         "answer": "Oui. Lorsque vous exécutez AlphaWolf en local, toutes vos entrées (comme les URL des concurrents ou le texte des publicités) restent sur votre ordinateur. Elles ne sont envoyées à l'API de l'IA de Google que pour le traitement et ne sont pas stockées ou utilisées à d'autres fins. Votre travail stratégique reste confidentiel."
       }
+    }
+  },
+  "GuidePage": {
+    "header": "Guide Utilisateur",
+    "title": "Guide AlphaWolf",
+    "description": "Votre manuel complet pour maîtriser la suite marketing AlphaWolf.",
+    "philosophy": {
+      "title": "Philosophie Fondamentale : Penser Comme un Loup Alpha",
+      "content": "Un loup alpha ne fait pas que réagir ; il anticipe, élabore des stratégies et mène la meute. AlphaWolf est construit sur cette philosophie. Il vous permet de dépasser les simples tâches de commerce électronique et d'adopter un état d'esprit de prédateur dans le paysage marketing. Notre logo, une tête de loup affirmée intégrant un graphique de croissance, incarne cette fusion de l'instinct de leader et de l'analyse de données."
     },
-    "features": {
-      "title": "Détails des Fonctionnalités",
-      "q1": {
-        "question": "Comment fonctionne l' 'Analyse des Tendances du Marché' ?",
-        "answer": "Cet outil vous permet d'explorer de nouveaux territoires. Vous fournissez une catégorie de produit et une région, et l'IA génère un rapport de marché complet, incluant un résumé global, une liste de produits tendances, des opportunités clés et les risques potentiels."
+    "howAiThinks": {
+      "title": "Comment l'IA \"Pense\"",
+      "content": "Il est crucial de comprendre comment AlphaWolf fournit ses analyses. L'IA (le modèle Gemini de Google) n'a pas un accès en temps réel aux données de vente ou aux analyses privées. Sa puissance vient plutôt de la **déduction et de la synthèse**.\n\nLe modèle a été entraîné sur une vaste partie de l'internet public. Lorsque vous lui demandez d'analyser une tendance ou un concurrent, il s'appuie sur cette immense base de connaissances pour identifier des schémas, inférer des connexions et synthétiser des informations qu'un analyste humain mettrait des mois à compiler.\n\nEn résumé : **AlphaWolf ne \"connaît\" pas les réponses, il les \"déduit\" intelligemment**, agissant comme un analyste de classe mondiale avec une mémoire quasi parfaite du web public."
+    },
+    "tools": {
+      "title": "La Meute : Votre Arsenal d'Outils",
+      "description": "Votre application est divisée en plusieurs modules puissants, chacun conçu pour gérer une phase critique de votre stratégie marketing.",
+      "dashboard": {
+        "title": "🐺 Le Centre de Commande (Tableau de Bord)",
+        "content": "C'est votre centre de mission. Il offre une vue d'ensemble du paysage marketing, avec des visualisations clés pour des décisions rapides. En haut, un **Résumé par l'IA** analyse les indicateurs clés pour fournir un aperçu concis et des recommandations stratégiques. Vous pouvez également visualiser les performances sur toutes les plateformes avec des **Statistiques Clés & Graphiques d'Engagement**, y compris un **graphique de distribution** pour voir quelle plateforme domine votre engagement. Des actions rapides vous permettent de lancer votre prochaine action."
       },
-      "q2": {
-        "question": "Que peut me dire l' 'Analyse Concurrentielle' ?",
-        "answer": "En fournissant une URL vers la page produit ou la publicité d'un concurrent, l'IA déconstruit sa stratégie. Elle identifie son audience cible, son angle marketing, ses forces et ses faiblesses. Plus important encore, elle vous donne des contre-stratégies concrètes pour rivaliser efficacement."
+      "finder": {
+        "title": "🏆 Découverte de Produits Gagnants",
+        "content": "C'est votre éclaireur numérique. Au lieu que vous cherchiez les tendances, l'IA chasse pour vous. Elle analyse une vaste base de données publicitaires pour identifier les catégories de produits les plus performantes. Elle ne se contente pas de lister des produits ; elle fournit une **analyse** des raisons de leur succès et vous donne des **conseils exploitables**. Un **graphique comparatif de performance** vous permet de visualiser immédiatement quelles catégories surclassent les autres."
       },
-      "q3": {
-        "question": "Qu'est-ce que j'obtiens avec le 'Générateur de Concepts Publicitaires' ?",
-        "answer": "Vous obtenez trois concepts publicitaires complets et distincts. Chaque concept inclut un titre, un corps de texte, un appel à l'action, un visuel unique généré par l'IA pour correspondre au texte, et même une publicité audio avec une voix professionnelle. C'est votre moteur créatif, suralimenté."
+      "trends": {
+        "title": "📈 Analyse des Tendances du Marché",
+        "content": "Allez au-delà de votre niche actuelle et explorez de nouveaux territoires. Entrez n'importe quelle catégorie de produits et région, et l'IA fournira un rapport de marché complet incluant un **Résumé du Marché**, une liste de **Produits Tendances**, des **Opportunités** clés et les **Risques** potentiels."
+      },
+      "spy": {
+        "title": "🕵️ Analyse Concurrentielle",
+        "content": "Déconstruisez et dominez vos concurrents. Fournissez l'URL de la page produit ou de la publicité d'un concurrent, et l'IA révèle leur **Nom de Produit**, leur **Audience Cible**, et leur **Angle Marketing**. Elle identifie leurs **Forces** et **Faiblesses**, fournit un **Score de Performance Estimé** et vous donne une liste de **Contre-Stratégies** concrètes."
+      },
+      "generate": {
+        "title": "🎨 Générateur de Concepts Publicitaires",
+        "content": "C'est votre moteur créatif, suralimenté par des capacités multimédias. Décrivez votre produit, votre audience et vos mots-clés, et l'IA génère **trois concepts publicitaires complets et distincts**. Chaque concept inclut : un **Titre**, un **Corps de Texte**, un **Appel à l'Action**, un **visuel unique généré par l'IA**, et une **publicité audio** professionnelle."
+      },
+      "analyze": {
+        "title": "✨ Analyse de Performance Publicitaire",
+        "content": "Obtenez un retour objectif et piloté par l'IA sur votre propre travail créatif. Téléchargez votre visuel publicitaire, fournissez le texte et les informations de ciblage, et l'IA renvoie un **Score d'Engagement Estimé**, une ventilation de ses **Forces** et **Faiblesses**, et des **Suggestions d'Amélioration**."
       }
+    },
+    "gettingStarted": {
+      "title": "Démarrage (Installation Locale)",
+      "intro": "Pour lancer l'application sur votre machine locale, suivez ces étapes depuis le répertoire racine de votre projet dans le terminal de Firebase Studio.",
+      "important": "Une application Next.js est un projet complet. Vous ne pouvez pas la démarrer en exécutant un seul fichier. Vous devez utiliser les commandes `npm` ci-dessous pour lancer le serveur de développement qui s'occupe de tout compiler.",
+      "step1": {
+        "title": "1. Installer les dépendances (une seule fois)",
+        "content": "La commande `npm install` lit le fichier `package.json` et installe toutes les bibliothèques nécessaires. Vous ne devez faire cette étape qu'une seule fois."
+      },
+      "step2": {
+        "title": "2. Lancer le serveur de développement (à chaque fois)",
+        "content": "Cette commande démarre l'application. Vous devrez l'exécuter chaque fois que vous voudrez travailler sur l'application. Le terminal doit rester ouvert pendant que vous l'utilisez."
+      },
+      "outro": "L'application sera alors disponible à l'adresse `http://localhost:9003`. Maintenez la touche `Ctrl` (ou `Cmd` sur Mac) et cliquez sur le lien pour l'ouvrir dans votre navigateur."
     }
   }
 }

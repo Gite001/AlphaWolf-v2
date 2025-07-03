@@ -13,7 +13,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-import { LayoutDashboard, Sparkles, FileText, LineChart, Home, Binoculars, Trophy } from 'lucide-react';
+import { LayoutDashboard, Sparkles, FileText, LineChart, Home, Binoculars, Trophy, BookOpen } from 'lucide-react';
 import { useI18n } from '@/hooks/use-i18n';
 import { Logo } from '../logo';
 
@@ -29,6 +29,7 @@ export function AppSidebar() {
     { href: '/spy', label: t('AppSidebar.competitorSpy'), icon: Binoculars },
     { href: '/generate', label: t('AppSidebar.generateAd'), icon: FileText },
     { href: '/analyze', label: t('AppSidebar.analyzeAd'), icon: Sparkles },
+    { href: '/guide', label: t('AppSidebar.guide'), icon: BookOpen },
   ];
 
   return (

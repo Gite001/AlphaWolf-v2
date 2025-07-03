@@ -16,19 +16,19 @@ export default async function HomePage() {
       icon: <LineChart className="h-8 w-8 text-primary" />,
       title: t('HomePage.features.marketAnalysis.title'),
       description: t('HomePage.features.marketAnalysis.description'),
-      link: '/faq#market-analysis',
+      link: '/guide#tools',
     },
     {
       icon: <Binoculars className="h-8 w-8 text-primary" />,
       title: t('HomePage.features.competitorDeconstruction.title'),
       description: t('HomePage.features.competitorDeconstruction.description'),
-      link: '/faq#competitor-deconstruction',
+      link: '/guide#tools',
     },
     {
       icon: <Sparkles className="h-8 w-8 text-primary" />,
       title: t('HomePage.features.multiFormatAds.title'),
       description: t('HomePage.features.multiFormatAds.description'),
-      link: '/faq#multi-format-ads',
+      link: '/guide#tools',
     },
   ];
 

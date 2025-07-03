@@ -28,8 +28,8 @@ export function AppFooter() {
             <Link href="/terms" className="text-sm text-muted-foreground hover:text-primary transition-colors">
               {t('Footer.terms')}
             </Link>
-            <Link href="/faq" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-              {t('Footer.faq')}
+            <Link href="/guide" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              {t('Footer.guide')}
             </Link>
             <Link href="/privacy" className="text-sm text-muted-foreground hover:text-primary transition-colors">
               {t('Footer.privacy')}

@@ -18,7 +18,7 @@
     "rightsReserved": "All rights reserved.",
     "terms": "Terms of Use",
     "privacy": "Privacy Policy",
-    "faq": "FAQ"
+    "guide": "Guide"
   },
   "AppSidebar": {
     "home": "Home",
@@ -27,7 +27,8 @@
     "marketTrends": "Market Trends",
     "competitorSpy": "Competitor Analysis",
     "generateAd": "Generate Ad",
-    "analyzeAd": "Analyze Ad"
+    "analyzeAd": "Analyze Ad",
+    "guide": "Guide"
   },
   "HomePage": {
     "hero": {
@@ -411,21 +412,61 @@
         "question": "Is my data private and secure?",
         "answer": "Yes. When you run AlphaWolf locally, all your inputs (like competitor URLs or ad text) remain on your computer. They are only sent to the Google AI API for processing and are not stored or used for any other purpose. Your strategic work remains confidential."
       }
+    }
+  },
+  "GuidePage": {
+    "header": "User Guide",
+    "title": "AlphaWolf Guide",
+    "description": "Your complete manual for mastering the AlphaWolf marketing suite.",
+    "philosophy": {
+      "title": "Core Philosophy: Think Like an Alpha Wolf",
+      "content": "An alpha wolf doesn't just react; it anticipates, strategizes, and leads the pack. AlphaWolf is built on this philosophy. It empowers you to move beyond simple e-commerce tasks and adopt a predator's mindset in the marketing landscape. Our logo, an assertive wolf's head integrating a growth chart, embodies this fusion of leadership instinct and data analysis."
     },
-    "features": {
-      "title": "Feature Details",
-      "q1": {
-        "question": "How does 'Market Trend Analysis' work?",
-        "answer": "This tool lets you explore new territories. You provide a product category and a region, and the AI generates a comprehensive market report, including an overall summary, a list of trending products, key opportunities, and potential risks."
+    "howAiThinks": {
+      "title": "How the AI 'Thinks'",
+      "content": "It's crucial to understand how AlphaWolf delivers its analysis. The AI (Google's Gemini model) doesn't have real-time access to sales data or private analytics. Its power comes from **deduction and synthesis**.\n\nThe model was trained on a vast portion of the public internet. When you ask it to analyze a trend or a competitor, it draws on this immense knowledge base to identify patterns, infer connections, and synthesize information that would take a human analyst months to compile.\n\nIn short: **AlphaWolf doesn't 'know' the answers, it intelligently 'deduces' them**, acting like a world-class analyst with a near-perfect memory of the public web."
+    },
+    "tools": {
+      "title": "The Pack: Your Arsenal of Tools",
+      "description": "Your application is divided into several powerful modules, each designed to handle a critical phase of your marketing strategy.",
+      "dashboard": {
+        "title": "🐺 The Command Center (Dashboard)",
+        "content": "This is your mission control. It provides a high-level view of the marketing landscape, with key visualizations for quick decision-making. At the top, an **AI Summary** analyzes key metrics to provide a concise overview and strategic recommendations. You can also visualize performance across platforms with **Key Stats & Engagement Charts**, including a **distribution chart** to see which platform dominates your engagement. Quick actions let you launch your next move."
       },
-      "q2": {
-        "question": "What can 'Competitor Analysis' tell me?",
-        "answer": "By providing a URL to a competitor's product page or ad, the AI deconstructs their strategy. It identifies their target audience, marketing angle, strengths, and weaknesses. Most importantly, it gives you concrete counter-strategies to compete effectively."
+      "finder": {
+        "title": "🏆 Winning Product Discovery",
+        "content": "This is your digital scout. Instead of you hunting for trends, the AI hunts for you. It analyzes a vast ad database to identify top-performing product categories. It doesn't just list products; it provides an **analysis** of why they're successful and gives you **actionable advice**. A **comparative performance chart** lets you immediately visualize which categories are outperforming others."
       },
-      "q3": {
-        "question": "What do I get from the 'Ad Concept Generator'?",
-        "answer": "You get three complete, distinct ad concepts. Each concept includes a headline, body text, a call to action, a unique AI-generated visual to match the copy, and even a professionally-voiced audio ad. It's your creative engine, supercharged."
+      "trends": {
+        "title": "📈 Market Trend Analysis",
+        "content": "Go beyond your current niche and explore new territories. Enter any product category and region, and the AI will provide a comprehensive market report including a **Market Summary**, a list of **Trending Products**, key **Opportunities**, and potential **Risks**."
+      },
+      "spy": {
+        "title": "🕵️ Competitor Analysis",
+        "content": "Deconstruct and dominate your competitors. Provide a competitor's product page or ad URL, and the AI reveals their **Product Name**, **Target Audience**, and **Marketing Angle**. It identifies their **Strengths** and **Weaknesses**, provides an **Estimated Performance Score**, and gives you a list of concrete **Counter-Strategies**."
+      },
+      "generate": {
+        "title": "🎨 Ad Concept Generator",
+        "content": "This is your creative engine, supercharged with multimedia capabilities. Describe your product, audience, and keywords, and the AI generates **three complete and distinct ad concepts**. Each concept includes: a **Title**, **Body Text**, a **Call to Action**, a **unique AI-generated visual**, and a professional **Audio Ad**."
+      },
+      "analyze": {
+        "title": "✨ Ad Performance Analysis",
+        "content": "Get objective, AI-driven feedback on your own creative work. Upload your ad visual, provide the text and targeting information, and the AI returns an **Estimated Engagement Score**, a breakdown of its **Strengths** and **Weaknesses**, and **Suggestions for Improvement**."
       }
+    },
+    "gettingStarted": {
+      "title": "Getting Started (Local Installation)",
+      "intro": "To run the application on your local machine, follow these steps from the root directory of your project in the Firebase Studio terminal.",
+      "important": "A Next.js application is a full project. You cannot start it by running a single file. You must use the `npm` commands below to start the development server that handles compiling everything.",
+      "step1": {
+        "title": "1. Install dependencies (one-time)",
+        "content": "The `npm install` command reads the `package.json` file and installs all necessary libraries. You only need to do this step once."
+      },
+      "step2": {
+        "title": "2. Run the development server (each time)",
+        "content": "This command starts the application. You will need to run this every time you want to work on the app. The terminal must remain open while you use it."
+      },
+      "outro": "The application will then be available at `http://localhost:9003`. Hold `Ctrl` (or `Cmd` on Mac) and click the link to open it in your browser."
     }
   }
 }
