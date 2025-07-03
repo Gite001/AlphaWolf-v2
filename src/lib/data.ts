@@ -1,37 +1,7 @@
 import type { Ad, Stat, EngagementData } from './types';
 import { BarChart, Target, TrendingUp, Users } from 'lucide-react';
 
-export const stats: Stat[] = [
-  {
-    title: 'Publicités Suivies',
-    value: '12,405',
-    change: '+12.5%',
-    changeType: 'increase',
-    icon: BarChart,
-  },
-  {
-    title: 'Produits Gagnants',
-    value: '237',
-    change: '+3.2%',
-    changeType: 'increase',
-    icon: Target,
-  },
-  {
-    title: 'Engagement Supérieur',
-    value: '89.7%',
-    change: '-1.8%',
-    changeType: 'decrease',
-    icon: TrendingUp,
-  },
-  {
-    title: 'Nouveaux Concurrents',
-    value: '15',
-    change: '+5 depuis la semaine dernière',
-    changeType: 'increase',
-    icon: Users,
-  },
-];
-
+// --- Static Data for Ads Library ---
 export const ads: Ad[] = [
   {
     id: '1',
@@ -131,12 +101,76 @@ export const ads: Ad[] = [
   },
 ];
 
-export const engagementData: EngagementData[] = [
-  { date: 'Lun', Facebook: 2200, Instagram: 3400, TikTok: 4500, Pinterest: 1200 },
-  { date: 'Mar', Facebook: 2500, Instagram: 3600, TikTok: 4800, Pinterest: 1500 },
-  { date: 'Mer', Facebook: 2800, Instagram: 3800, TikTok: 5200, Pinterest: 1700 },
-  { date: 'Jeu', Facebook: 3100, Instagram: 4100, TikTok: 5500, Pinterest: 1900 },
-  { date: 'Ven', Facebook: 3400, Instagram: 4400, TikTok: 6000, Pinterest: 2100 },
-  { date: 'Sam', Facebook: 3700, Instagram: 4700, TikTok: 6500, Pinterest: 2400 },
-  { date: 'Dim', Facebook: 4000, Instagram: 5000, TikTok: 7000, Pinterest: 2600 },
-];
+
+// --- Dynamic Data Generation for Dashboard ---
+
+// Helper function to generate a random number within a range
+const random = (min: number, max: number) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+// Function to generate dynamic stats
+const generateStats = (): Stat[] => {
+    const trackedAdsChange = (random(10, 25) / 10).toFixed(1);
+    const winningProductsChange = (random(1, 5) / 10).toFixed(1);
+    const topEngagementChange = (random(1, 3) / 10).toFixed(1);
+    const newCompetitorsChange = random(2, 8);
+
+    return [
+        {
+            title: 'Publicités Suivies',
+            value: random(12000, 15000).toLocaleString(),
+            change: `+${trackedAdsChange}%`,
+            changeType: 'increase',
+            icon: BarChart,
+        },
+        {
+            title: 'Produits Gagnants',
+            value: random(200, 300).toString(),
+            change: `+${winningProductsChange}%`,
+            changeType: 'increase',
+            icon: Target,
+        },
+        {
+            title: 'Engagement Supérieur',
+            value: `${random(85, 95)}.${random(0,9)}%`,
+            change: `-${topEngagementChange}%`,
+            changeType: 'decrease',
+            icon: TrendingUp,
+        },
+        {
+            title: 'Nouveaux Concurrents',
+            value: random(10, 25).toString(),
+            change: `+${newCompetitorsChange} depuis la semaine dernière`,
+            changeType: 'increase',
+            icon: Users,
+        },
+    ];
+};
+
+// Function to generate dynamic engagement data for the chart
+const generateEngagementData = (): EngagementData[] => {
+    const days = ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim'];
+    const base = {
+        Facebook: 2000,
+        Instagram: 3000,
+        TikTok: 4000,
+        Pinterest: 1000
+    };
+    const growth = {
+        Facebook: 300,
+        Instagram: 350,
+        TikTok: 500,
+        Pinterest: 200
+    }
+
+    return days.map((day, index) => ({
+        date: day,
+        Facebook: base.Facebook + (index * growth.Facebook) + random(-200, 200),
+        Instagram: base.Instagram + (index * growth.Instagram) + random(-200, 200),
+        TikTok: base.TikTok + (index * growth.TikTok) + random(-300, 300),
+        Pinterest: base.Pinterest + (index * growth.Pinterest) + random(-150, 150),
+    }));
+};
+
+// Export the dynamically generated data
+export const stats: Stat[] = generateStats();
+export const engagementData: EngagementData[] = generateEngagementData();
