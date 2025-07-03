@@ -24,9 +24,13 @@ export function CompetitorResults({ results }: CompetitorResultsProps) {
             <CardTitle>{t('CompetitorResults.productFeatures.title')}</CardTitle>
         </CardHeader>
         <CardContent>
-            <ul className="space-y-2 list-disc pl-5 text-sm text-muted-foreground">
-                {results.productFeatures.map((item, index) => <li key={index}>{item}</li>)}
-            </ul>
+            {results.productFeatures && results.productFeatures.length > 0 ? (
+                <ul className="space-y-2 list-disc pl-5 text-sm text-muted-foreground">
+                    {results.productFeatures.map((item, index) => <li key={index}>{item}</li>)}
+                </ul>
+            ) : (
+                 <p className="text-sm text-muted-foreground italic">{t('CompetitorResults.noneFound')}</p>
+            )}
         </CardContent>
       </Card>
 
@@ -53,7 +57,11 @@ export function CompetitorResults({ results }: CompetitorResultsProps) {
                 <CardTitle>{t('CompetitorResults.targetAudience.title')}</CardTitle>
             </CardHeader>
             <CardContent>
-                <p className="text-sm text-muted-foreground">{results.targetAudience}</p>
+                {results.targetAudience ? (
+                    <p className="text-sm text-muted-foreground">{results.targetAudience}</p>
+                ) : (
+                    <p className="text-sm text-muted-foreground italic">{t('CompetitorResults.notDetermined')}</p>
+                )}
             </CardContent>
         </Card>
         <Card>
@@ -62,7 +70,11 @@ export function CompetitorResults({ results }: CompetitorResultsProps) {
                 <CardTitle>{t('CompetitorResults.marketingAngle.title')}</CardTitle>
             </CardHeader>
             <CardContent>
-                <p className="text-sm text-muted-foreground">{results.marketingAngle}</p>
+                 {results.marketingAngle ? (
+                    <p className="text-sm text-muted-foreground">{results.marketingAngle}</p>
+                ) : (
+                    <p className="text-sm text-muted-foreground italic">{t('CompetitorResults.notDetermined')}</p>
+                )}
             </CardContent>
         </Card>
       </div>
@@ -74,9 +86,13 @@ export function CompetitorResults({ results }: CompetitorResultsProps) {
             <CardTitle>{t('CompetitorResults.strengths.title')}</CardTitle>
           </CardHeader>
           <CardContent>
-            <ul className="space-y-2 list-disc pl-5 text-sm text-muted-foreground">
-                {results.strengths.map((item, index) => <li key={index}>{item}</li>)}
-            </ul>
+             {results.strengths && results.strengths.length > 0 ? (
+                <ul className="space-y-2 list-disc pl-5 text-sm text-muted-foreground">
+                    {results.strengths.map((item, index) => <li key={index}>{item}</li>)}
+                </ul>
+             ) : (
+                <p className="text-sm text-muted-foreground italic">{t('CompetitorResults.noneFound')}</p>
+             )}
           </CardContent>
         </Card>
         <Card>
@@ -85,9 +101,13 @@ export function CompetitorResults({ results }: CompetitorResultsProps) {
             <CardTitle>{t('CompetitorResults.weaknesses.title')}</CardTitle>
           </CardHeader>
           <CardContent>
-            <ul className="space-y-2 list-disc pl-5 text-sm text-muted-foreground">
-                {results.weaknesses.map((item, index) => <li key={index}>{item}</li>)}
-            </ul>
+            {results.weaknesses && results.weaknesses.length > 0 ? (
+                <ul className="space-y-2 list-disc pl-5 text-sm text-muted-foreground">
+                    {results.weaknesses.map((item, index) => <li key={index}>{item}</li>)}
+                </ul>
+            ) : (
+                <p className="text-sm text-muted-foreground italic">{t('CompetitorResults.noneFound')}</p>
+            )}
           </CardContent>
         </Card>
       </div>
@@ -98,14 +118,18 @@ export function CompetitorResults({ results }: CompetitorResultsProps) {
             <CardTitle>{t('CompetitorResults.counterStrategies.title')}</CardTitle>
         </CardHeader>
         <CardContent>
-            <div className="space-y-3">
-            {results.counterStrategies.map((strategy, index) => (
-                <div key={index} className="p-3 rounded-lg border bg-secondary/30 flex items-start gap-3">
-                    <Target className="h-5 w-5 mt-0.5 text-primary shrink-0" />
-                    <p className="text-sm text-muted-foreground">{strategy}</p>
+            {results.counterStrategies && results.counterStrategies.length > 0 ? (
+                <div className="space-y-3">
+                    {results.counterStrategies.map((strategy, index) => (
+                        <div key={index} className="p-3 rounded-lg border bg-secondary/30 flex items-start gap-3">
+                            <Target className="h-5 w-5 mt-0.5 text-primary shrink-0" />
+                            <p className="text-sm text-muted-foreground">{strategy}</p>
+                        </div>
+                    ))}
                 </div>
-            ))}
-            </div>
+            ) : (
+                <p className="text-sm text-muted-foreground italic">{t('CompetitorResults.noneFound')}</p>
+            )}
         </CardContent>
       </Card>
     </div>

@@ -404,7 +404,9 @@
     },
     "counterStrategies": {
         "title": "Contre-Stratégies Recommandées"
-    }
+    },
+    "notDetermined": "Non spécifié dans le contenu fourni.",
+    "noneFound": "Aucun trouvé dans le contenu fourni."
   },
   "TrendsForm": {
     "submitButton": "Analyser les Tendances",

@@ -83,9 +83,13 @@ Based on the **provided HTML content** below, perform a comprehensive analysis.
 {{{pageContent}}}
 \`\`\`
 
+**Important Instructions:**
+-   **Stick to the Facts:** Base your entire analysis ONLY on the HTML content provided. Do not invent information or use external knowledge.
+-   **Handle Missing Information:** If you cannot determine a specific text field (like 'targetAudience' or 'marketingAngle') from the content, return an empty string (""). If you cannot find any items for a list field (like 'strengths' or 'weaknesses'), return an empty array ([]). Do not write phrases like "Impossible to determine".
+
 **Your Analysis Steps:**
 1.  **Identify the Product:** Determine the product name from the content.
-2.  **Extract Product Features:** Meticulously list all key product features, benefits, and technical specifications mentioned (e.g., materials, composition, dimensions, weight, care instructions, key capabilities). Be thorough and extract everything available in the content. If no specific features are found, state that clearly.
+2.  **Extract Product Features:** Meticulously list all key product features, benefits, and technical specifications mentioned (e.g., materials, composition, dimensions, weight, care instructions, key capabilities). Be thorough and extract everything available in the content.
 3.  **Define the Target Audience:** Who are they trying to reach? Describe their demographics, interests, and pain points based on the text and marketing angle.
 4.  **Uncover the Marketing Angle:** What is the core message? Are they competing on price, quality, innovation, lifestyle, or something else?
 5.  **Pinpoint Strengths:** What are they doing exceptionally well in their messaging, visuals (as described in the text), or offer?
