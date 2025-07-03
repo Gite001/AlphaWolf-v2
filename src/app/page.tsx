@@ -53,7 +53,7 @@ export default async function HomePage() {
                 </Button>
               </div>
               <Image
-                src="/images/office.png"
+                src="https://placehold.co/600x400.png"
                 width="600"
                 height="400"
                 alt="Hero"

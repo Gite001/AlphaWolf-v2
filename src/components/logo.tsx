@@ -9,10 +9,11 @@ export const Logo = ({ className }: LogoProps) => {
     return (
         <div className={cn('relative', className)}>
             <Image
-                src="/images/smartwolf.png"
+                src="https://placehold.co/100x100.png"
                 alt="AlphaWolf Logo"
                 fill
                 className="object-contain"
+                data-ai-hint="wolf logo"
             />
         </div>
     );
