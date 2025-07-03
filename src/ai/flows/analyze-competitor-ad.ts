@@ -42,17 +42,17 @@ const AnalyzeCompetitorAdInputSchema = z.object({
 export type AnalyzeCompetitorAdInput = z.infer<typeof AnalyzeCompetitorAdInputSchema>;
 
 const AnalyzeCompetitorAdOutputSchema = z.object({
-  productName: z.string().describe("The likely name of the product being advertised."),
-  productFeatures: z.array(z.string()).describe("A list of key product features, benefits, or technical specifications mentioned (e.g., dimensions, weight, materials, composition, key capabilities). Be very specific and extract all available details."),
-  targetAudience: z.string().describe("An analysis of the likely target audience based on the page's content and tone."),
-  marketingAngle: z.string().describe("A summary of the primary marketing angle or value proposition being used."),
+  productName: z.string().describe("The likely name of the product being advertised. If not determinable, return an empty string."),
+  productFeatures: z.array(z.string()).describe("A list of key product features, benefits, or technical specifications mentioned (e.g., dimensions, weight, materials, composition, key capabilities). Be very specific and extract all available details. If none are found, return an empty array."),
+  targetAudience: z.string().describe("An analysis of the likely target audience based on the page's content and tone. If not determinable, return an empty string."),
+  marketingAngle: z.string().describe("A summary of the primary marketing angle or value proposition being used. If not determinable, return an empty string."),
   estimatedPerformance: z.object({
       score: z.number().min(0).max(100).describe("An estimated performance score from 0 to 100, where 100 is a top-performing ad or page."),
       reasoning: z.string().describe("A brief explanation for the estimated performance score, based on the page content and marketing angle.")
   }).describe("An estimation of the ad's or page's likely performance."),
-  strengths: z.array(z.string()).describe("A list of key strengths in their marketing approach based on the fetched content."),
-  weaknesses: z.array(z.string()).describe("A list of potential weaknesses or missed opportunities based on the fetched content."),
-  counterStrategies: z.array(z.string()).describe("A list of actionable counter-strategies or ways to differentiate."),
+  strengths: z.array(z.string()).describe("A list of key strengths in their marketing approach based on the fetched content. If none are found, return an empty array."),
+  weaknesses: z.array(z.string()).describe("A list of potential weaknesses or missed opportunities based on the fetched content. If none are found, return an empty array."),
+  counterStrategies: z.array(z.string()).describe("A list of actionable counter-strategies or ways to differentiate. If none are found, return an empty array."),
 });
 export type AnalyzeCompetitorAdOutput = z.infer<typeof AnalyzeCompetitorAdOutputSchema>;
 
@@ -83,9 +83,9 @@ Based on the **provided HTML content** below, perform a comprehensive analysis.
 {{{pageContent}}}
 \`\`\`
 
-**Important Instructions:**
+**Crucial Rule for Missing Information:**
 -   **Stick to the Facts:** Base your entire analysis ONLY on the HTML content provided. Do not invent information or use external knowledge.
--   **Handle Missing Information:** If you cannot determine a specific text field (like 'targetAudience' or 'marketingAngle') from the content, return an empty string (""). If you cannot find any items for a list field (like 'strengths' or 'weaknesses'), return an empty array ([]). Do not write phrases like "Impossible to determine".
+-   **Handle Missing Information:** It is critical that you follow this rule. For any text field (like 'targetAudience' or 'productName'), if you cannot determine the value, you **MUST** return an empty string (""). For any array field (like 'strengths'), you **MUST** return an empty array ([]). **DO NOT** write phrases like "Not available", "Cannot be determined", or "Inconnu".
 
 **Your Analysis Steps:**
 1.  **Identify the Product:** Determine the product name from the content.
