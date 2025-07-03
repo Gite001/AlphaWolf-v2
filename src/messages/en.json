@@ -468,5 +468,12 @@
       },
       "outro": "The application will then be available at `http://localhost:9003`. Hold `Ctrl` (or `Cmd` on Mac) and click the link to open it in your browser."
     }
+  },
+  "AdCard": {
+    "engagement": "Engagement",
+    "media": "View Media",
+    "likes": "Likes",
+    "comments": "Comments",
+    "shares": "Shares"
   }
 }

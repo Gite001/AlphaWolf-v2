@@ -464,9 +464,16 @@
       },
       "step2": {
         "title": "2. Lancer le serveur de développement (à chaque fois)",
-        "content": "Cette commande démarre l'application. Vous devrez l'exécuter chaque fois que vous voudrez travailler sur l'application. Le terminal doit rester ouvert pendant que vous l'utilisez."
+        "content": "This command starts the application. You will need to run this every time you want to work on the app. The terminal must remain open while you use it."
       },
       "outro": "L'application sera alors disponible à l'adresse `http://localhost:9003`. Maintenez la touche `Ctrl` (ou `Cmd` sur Mac) et cliquez sur le lien pour l'ouvrir dans votre navigateur."
     }
+  },
+  "AdCard": {
+    "engagement": "Engagement",
+    "media": "Voir le Média",
+    "likes": "J'aime",
+    "comments": "Commentaires",
+    "shares": "Partages"
   }
 }

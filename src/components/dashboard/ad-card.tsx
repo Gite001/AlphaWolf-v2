@@ -9,9 +9,11 @@ import { Button } from '@/components/ui/button';
 import { Download, Facebook, Instagram, MessageCircle, Share2, ThumbsUp } from 'lucide-react';
 import { PinterestIcon, TikTokIcon } from '../icons';
 import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
+import { Tooltip, TooltipContent, TooltipTrigger } from '../ui/tooltip';
 
 type AdCardProps = {
   ad: Ad;
+  t: (key: string) => string;
 };
 
 const platformIcons = {
@@ -21,7 +23,7 @@ const platformIcons = {
   Pinterest: <PinterestIcon className="h-4 w-4 text-red-400" />,
 };
 
-export function AdCard({ ad }: AdCardProps) {
+export function AdCard({ ad, t }: AdCardProps) {
   const [formattedDate, setFormattedDate] = useState('');
 
   useEffect(() => {
@@ -54,29 +56,36 @@ export function AdCard({ ad }: AdCardProps) {
       </div>
       <CardContent className="p-4 flex flex-col flex-grow">
         <h3 className="font-semibold font-headline truncate">{ad.title}</h3>
-        <p className="text-sm text-muted-foreground mt-1">{ad.description}</p>
+        <p className="text-sm text-muted-foreground mt-1 line-clamp-2">{ad.description}</p>
         
         <div className="mt-auto pt-4">
           <p className="text-xs text-muted-foreground mb-2">{formattedDate}</p>
           <div className="flex justify-between items-center">
             <Popover>
               <PopoverTrigger asChild>
-                <Button variant="ghost" size="sm" className="text-muted-foreground -ml-3">Engagement</Button>
+                <Button variant="ghost" size="sm" className="text-muted-foreground -ml-3">{t('AdCard.engagement')}</Button>
               </PopoverTrigger>
               <PopoverContent className="w-auto">
                 <div className="text-sm space-y-2">
-                  <div className="flex items-center gap-2"><ThumbsUp className="h-4 w-4 text-primary" /> Likes: {(ad.engagement.likes / 1000).toFixed(1)}k</div>
-                  <div className="flex items-center gap-2"><MessageCircle className="h-4 w-4 text-primary" /> Comments: {(ad.engagement.comments / 1000).toFixed(1)}k</div>
-                  <div className="flex items-center gap-2"><Share2 className="h-4 w-4 text-primary" /> Shares: {(ad.engagement.shares / 1000).toFixed(1)}k</div>
+                  <div className="flex items-center gap-2"><ThumbsUp className="h-4 w-4 text-primary" /> {t('AdCard.likes')}: {(ad.engagement.likes / 1000).toFixed(1)}k</div>
+                  <div className="flex items-center gap-2"><MessageCircle className="h-4 w-4 text-primary" /> {t('AdCard.comments')}: {(ad.engagement.comments / 1000).toFixed(1)}k</div>
+                  <div className="flex items-center gap-2"><Share2 className="h-4 w-4 text-primary" /> {t('AdCard.shares')}: {(ad.engagement.shares / 1000).toFixed(1)}k</div>
                 </div>
               </PopoverContent>
             </Popover>
-            <Button variant="outline" size="sm" asChild>
-              <a href={ad.productLink} target="_blank" rel="noopener noreferrer">
-                <Download className="mr-2 h-4 w-4" />
-                Media
-              </a>
-            </Button>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button variant="outline" size="icon" asChild>
+                  <a href={ad.productLink} target="_blank" rel="noopener noreferrer">
+                    <Download className="h-4 w-4" />
+                    <span className="sr-only">{t('AdCard.media')}</span>
+                  </a>
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>{t('AdCard.media')}</p>
+              </TooltipContent>
+            </Tooltip>
           </div>
         </div>
       </CardContent>
