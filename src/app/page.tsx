@@ -16,19 +16,19 @@ export default async function HomePage() {
       icon: <Trophy className="h-8 w-8 text-primary" />,
       title: t('HomePage.features.winnerDiscovery.title'),
       description: t('HomePage.features.winnerDiscovery.description'),
-      link: '/finder',
+      link: '/faq#product-discovery',
     },
     {
       icon: <Binoculars className="h-8 w-8 text-primary" />,
       title: t('HomePage.features.competitorSpy.title'),
       description: t('HomePage.features.competitorSpy.description'),
-      link: '/spy',
+      link: '/faq#competitor-spy',
     },
     {
       icon: <FileText className="h-8 w-8 text-primary" />,
       title: t('HomePage.features.instantConcepts.title'),
       description: t('HomePage.features.instantConcepts.description'),
-      link: '/generate',
+      link: '/faq#ad-generator',
     },
   ];
 

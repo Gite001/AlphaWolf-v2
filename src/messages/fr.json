@@ -17,7 +17,8 @@
   "Footer": {
     "rightsReserved": "Tous droits réservés.",
     "terms": "Conditions d'Utilisation",
-    "privacy": "Politique de Confidentialité"
+    "privacy": "Politique de Confidentialité",
+    "faq": "FAQ"
   },
   "AppSidebar": {
     "home": "Accueil",
@@ -391,5 +392,48 @@
   "CategoryPerformanceChart": {
     "title": "Performance des Catégories Gagnantes",
     "description": "Score de performance moyen estimé par l'IA pour chaque catégorie identifiée."
+  },
+  "FaqPage": {
+    "header": "Centre d'Aide",
+    "title": "Foire Aux Questions",
+    "description": "Trouvez les réponses aux questions les plus fréquentes sur AlphaWolf et ses fonctionnalités.",
+    "general": {
+      "title": "Questions Générales",
+      "q1": {
+        "question": "Qu'est-ce qu'AlphaWolf ?",
+        "answer": "AlphaWolf est une suite d'intelligence marketing tout-en-un. Elle est conçue comme un partenaire stratégique qui utilise l'IA pour analyser les données du marché, trouver des produits gagnants, espionner les concurrents et générer des concepts publicitaires à fort impact."
+      },
+      "q2": {
+        "question": "Comment fonctionne l'IA ?",
+        "answer": "L'IA est propulsée par les modèles Gemini de Google. Elle n'a pas accès en temps réel aux données privées. Au lieu de cela, elle s'appuie sur sa vaste formation sur une grande partie de l'Internet public. Lorsque vous lui demandez d'analyser quelque chose, elle identifie des schémas et synthétise des informations à partir de cette base de connaissances pour fournir des déductions intelligentes, un peu comme un analyste de classe mondiale avec une mémoire quasi parfaite du web."
+      },
+      "q3": {
+        "question": "Mes données sont-elles confidentielles et sécurisées ?",
+        "answer": "Oui. Lorsque vous exécutez AlphaWolf en local, toutes vos entrées (comme les URL des concurrents ou le texte des publicités) restent sur votre ordinateur. Elles ne sont envoyées à l'API de l'IA de Google que pour le traitement et ne sont pas stockées ou utilisées à d'autres fins. Votre travail stratégique reste confidentiel."
+      }
+    },
+    "features": {
+      "title": "Détails des Fonctionnalités",
+      "q1": {
+        "question": "Comment fonctionne la 'Découverte de Produits Gagnants' ?",
+        "answer": "Cet outil analyse une base de données de publicités très performantes pour identifier des schémas. Il regroupe les publicités en catégories, calcule leur performance moyenne et fournit une analyse des raisons de leur succès. C'est votre éclaireur numérique pour trouver de nouvelles opportunités de marché."
+      },
+      "q2": {
+        "question": "Que peut me dire l'outil 'Espion Concurrent' ?",
+        "answer": "En fournissant une URL vers la page produit ou la publicité d'un concurrent, l'IA déconstruit sa stratégie. Elle identifie son audience cible, son angle marketing, ses forces et ses faiblesses. Plus important encore, elle vous donne des contre-stratégies concrètes pour rivaliser efficacement."
+      },
+      "q3": {
+        "question": "Qu'est-ce que j'obtiens avec le 'Générateur de Concepts Publicitaires' ?",
+        "answer": "Vous obtenez trois concepts publicitaires complets et distincts. Chaque concept inclut un titre, un corps de texte, un appel à l'action, un visuel unique généré par l'IA pour correspondre au texte, et même une publicité audio avec une voix professionnelle. C'est votre moteur créatif, suralimenté."
+      },
+      "q4": {
+        "question": "À quoi sert l' 'Analyse des Tendances du Marché' ?",
+        "answer": "Cet outil vous permet d'explorer de nouveaux territoires. Vous fournissez une catégorie de produit et une région, et l'IA génère un rapport de marché complet, incluant un résumé global, une liste de produits tendances, des opportunités clés et les risques potentiels."
+      },
+      "q5": {
+        "question": "Comment fonctionne l' 'Analyse de Performance Publicitaire' ?",
+        "answer": "Cet outil vous donne un retour objectif sur vos propres créations. Vous téléchargez votre visuel publicitaire, fournissez le texte et les informations de ciblage, et l'IA vous renvoie un score d'engagement estimé, une analyse des forces et faiblesses, et des suggestions d'amélioration concrètes."
+      }
+    }
   }
 }

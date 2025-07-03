@@ -17,7 +17,8 @@
   "Footer": {
     "rightsReserved": "All rights reserved.",
     "terms": "Terms of Use",
-    "privacy": "Privacy Policy"
+    "privacy": "Privacy Policy",
+    "faq": "FAQ"
   },
   "AppSidebar": {
     "home": "Home",
@@ -391,5 +392,48 @@
   "CategoryPerformanceChart": {
     "title": "Winning Category Performance",
     "description": "Average AI-estimated performance score for each identified category."
+  },
+  "FaqPage": {
+    "header": "Help Center",
+    "title": "Frequently Asked Questions",
+    "description": "Find answers to the most common questions about AlphaWolf and its features.",
+    "general": {
+      "title": "General Questions",
+      "q1": {
+        "question": "What is AlphaWolf?",
+        "answer": "AlphaWolf is an all-in-one marketing intelligence suite. It's designed to be a strategic partner that uses AI to analyze market data, find winning products, spy on competitors, and generate high-impact ad concepts."
+      },
+      "q2": {
+        "question": "How does the AI work?",
+        "answer": "The AI is powered by Google's Gemini models. It doesn't have real-time access to private data. Instead, it leverages its vast training on a large portion of the public internet. When you ask it to analyze something, it identifies patterns and synthesizes information from this knowledge base to provide intelligent deductions, much like a world-class analyst with a near-perfect memory of the web."
+      },
+      "q3": {
+        "question": "Is my data private and secure?",
+        "answer": "Yes. When you run AlphaWolf locally, all your inputs (like competitor URLs or ad text) remain on your computer. They are only sent to the Google AI API for processing and are not stored or used for any other purpose. Your strategic work remains confidential."
+      }
+    },
+    "features": {
+      "title": "Feature Details",
+      "q1": {
+        "question": "How does 'Winning Product Discovery' work?",
+        "answer": "This tool analyzes a database of high-performing ads to identify patterns. It groups ads into categories, calculates their average performance, and provides an analysis of why they are successful. It's your digital scout for finding hot new market opportunities."
+      },
+      "q2": {
+        "question": "What can 'Competitor Spy' tell me?",
+        "answer": "By providing a URL to a competitor's product page or ad, the AI deconstructs their strategy. It identifies their target audience, marketing angle, strengths, and weaknesses. Most importantly, it gives you concrete counter-strategies to compete effectively."
+      },
+      "q3": {
+        "question": "What do I get from the 'Ad Concept Generator'?",
+        "answer": "You get three complete, distinct ad concepts. Each concept includes a headline, body text, a call to action, a unique AI-generated visual to match the copy, and even a professionally-voiced audio ad. It's your creative engine, supercharged."
+      },
+      "q4": {
+        "question": "What is 'Market Trend Analysis' for?",
+        "answer": "This tool lets you explore new territories. You provide a product category and a region, and the AI generates a comprehensive market report, including an overall summary, a list of trending products, key opportunities, and potential risks."
+      },
+      "q5": {
+        "question": "How does 'Ad Performance Analysis' work?",
+        "answer": "This tool gives you objective feedback on your own creatives. You upload your ad visual, provide the text and targeting info, and the AI returns an estimated engagement score, a breakdown of strengths and weaknesses, and actionable suggestions for improvement."
+      }
+    }
   }
 }
