@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -53,12 +54,11 @@ export default async function HomePage() {
                 </Button>
               </div>
               <Image
-                src="https://placehold.co/600x400.png"
+                src="/office.png"
                 width="600"
                 height="400"
                 alt="Hero"
                 className="mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full lg:order-last border border-white/10 shadow-2xl shadow-primary/10"
-                data-ai-hint="dashboard analytics"
               />
             </div>
           </div>
