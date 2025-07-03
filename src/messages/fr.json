@@ -380,6 +380,12 @@
     },
     "url": {
         "label": "URL du Concurrent"
+    },
+    "manualMode": {
+      "title": "Plan B : Analyse Manuelle",
+      "description": "L'outil d'espionnage n'a pas pu analyser cette page automatiquement, probablement car elle nécessite du JavaScript complexe. Pour continuer, veuillez visiter l'URL, copier le contenu textuel pertinent de la page, et le coller ci-dessous.",
+      "contentLabel": "Contenu de la Page Collé",
+      "contentPlaceholder": "Collez ici le contenu textuel de la page du concurrent..."
     }
   },
   "CompetitorResults": {

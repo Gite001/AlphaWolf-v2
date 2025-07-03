@@ -1,7 +1,7 @@
 'use server';
 
 /**
- * @fileOverview AI agent for analyzing a competitor's ad or product page from a URL.
+ * @fileOverview AI agent for analyzing a competitor's ad or product page from a URL or manually provided content.
  *
  * - analyzeCompetitorAd - A function that handles the competitor analysis process.
  * - AnalyzeCompetitorAdInput - The input type for the analyzeCompetitorAd function.
@@ -52,8 +52,11 @@ async function fetchUrlContent(url: string): Promise<string> {
 }
 
 const AnalyzeCompetitorAdInputSchema = z.object({
-  url: z.string().url().describe('The URL of the competitor’s product page or ad.'),
+  url: z.string().url().optional(),
+  pageContent: z.string().optional(),
   locale: z.enum(['en', 'fr']).optional().default('en').describe('The language for the output.'),
+}).refine(data => data.url || data.pageContent, {
+    message: "Either a URL or page content must be provided for analysis.",
 });
 export type AnalyzeCompetitorAdInput = z.infer<typeof AnalyzeCompetitorAdInputSchema>;
 
@@ -124,10 +127,18 @@ const analyzeCompetitorAdFlow = ai.defineFlow(
     outputSchema: AnalyzeCompetitorAdOutputSchema,
   },
   async (input) => {
-    // Step 1: Fetch the content from the URL. This is now a deterministic step.
-    const pageContent = await fetchUrlContent(input.url);
+    // Step 1: Determine the page content. Prioritize manually provided content.
+    let pageContent: string;
+    if (input.pageContent) {
+        pageContent = input.pageContent;
+    } else if (input.url) {
+        pageContent = await fetchUrlContent(input.url);
+    } else {
+        // This case should be prevented by the schema refinement, but as a safeguard:
+        throw new Error('Analysis requires either a URL or page content.');
+    }
 
-    // Step 2: Pass the fetched content to the AI for analysis.
+    // Step 2: Pass the content to the AI for analysis.
     const {output} = await analysisPrompt({
         pageContent,
         locale: input.locale

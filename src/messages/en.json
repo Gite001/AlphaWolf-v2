@@ -380,6 +380,12 @@
     },
     "url": {
         "label": "Competitor URL"
+    },
+    "manualMode": {
+      "title": "Plan B: Manual Analysis",
+      "description": "The spy tool couldn't analyze this page automatically, likely because it requires complex JavaScript. To proceed, please visit the URL, copy the relevant text content from the page, and paste it below.",
+      "contentLabel": "Pasted Page Content",
+      "contentPlaceholder": "Paste the text content from the competitor's page here..."
     }
   },
   "CompetitorResults": {
