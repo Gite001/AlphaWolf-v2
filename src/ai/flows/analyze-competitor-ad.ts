@@ -23,15 +23,31 @@ async function fetchUrlContent(url: string): Promise<string> {
             throw new Error(`Could not fetch URL. Status code: ${response.status}`);
         }
         const html = await response.text();
-        // Return raw HTML, the model can handle it.
+
+        // Check for client-side rendered apps (SPAs) which may not have content in initial HTML
+        const bodyMatch = html.match(/<body[^>]*>([\s\S]*)<\/body>/i);
+        const bodyContent = bodyMatch ? bodyMatch[1].trim() : '';
+
+        // If the body is very small and contains a typical SPA root element, it's likely an SPA.
+        if (bodyContent.length < 500 && (bodyContent.toLowerCase().includes('id="root"') || bodyContent.toLowerCase().includes('id="app"'))) {
+            throw new Error(`This page appears to require JavaScript to display content. The spy tool currently cannot analyze it correctly.`);
+        }
+        
         return html;
     } catch (error) {
         console.error(`Failed to fetch URL content for ${url}`, error);
-        // Re-throw a more user-friendly error to be caught by the action handler.
-        if (error instanceof Error && error.message.includes('Status code:')) {
-             throw new Error(`The competitor's website could not be reached (Status: ${error.message.split(' ').pop()}). It may be blocking analysis tools.`);
+        
+        if (error instanceof Error) {
+            // Pass specific, user-friendly errors through
+            if (error.message.includes('Status code:')) {
+                 throw new Error(`The competitor's website could not be reached (Status: ${error.message.split(' ').pop()}). It may be blocking analysis tools.`);
+            }
+            if (error.message.includes('JavaScript to display content')) {
+                throw error;
+            }
         }
-        throw new Error('Failed to fetch the URL content. The website may be down or blocking requests.');
+        // Generic fallback error
+        throw new Error('Failed to fetch or process the URL. The website may be down or blocking automated requests.');
     }
 }
 
