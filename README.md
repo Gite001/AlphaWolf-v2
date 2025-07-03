@@ -31,7 +31,7 @@ Votre application est divisée en plusieurs modules puissants, chacun conçu pou
 C'est votre centre de mission. Il offre une vue d'ensemble du paysage marketing, avec des visualisations clés pour des décisions rapides.
 - **Résumé par l'IA :** En haut du tableau de bord, l'IA analyse vos indicateurs clés pour fournir un résumé concis et des recommandations stratégiques.
 - **Statistiques Clés & Graphiques d'Engagement :** Visualisez vos performances sur toutes les plateformes. Un **graphique de distribution** vous montre en un coup d'œil quelle plateforme domine votre engagement, vous aidant à allouer vos ressources efficacement.
-- **Actions de la Meute :** Lancez rapidement votre prochaine action stratégique, de la recherche d'un nouveau produit à l'espionnage d'un concurrent.
+- **Actions de la Meute :** Lancez rapidement votre prochaine action stratégique, de la recherche d'un nouveau produit à l'analyse d'un concurrent.
 
 ### 2. 🏆 Découverte de Produits Gagnants
 
@@ -45,7 +45,7 @@ Allez au-delà de votre niche actuelle et explorez de nouveaux territoires.
 - **Fonctionnalité :** Entrez n'importe quelle catégorie de produits et région.
 - **Avantage Stratégique :** L'IA fournit un rapport de marché complet incluant un **Résumé du Marché**, une liste de **Produits Tendances**, des **Opportunités** clés et les **Risques** potentiels.
 
-### 4. 🕵️ Espion Concurrent
+### 4. 🕵️ Analyse Concurrentielle
 
 Déconstruisez et dominez vos concurrents. C'est votre unité de collecte d'informations.
 - **Fonctionnalité :** Fournissez l'URL de la page produit ou de la publicité d'un concurrent.

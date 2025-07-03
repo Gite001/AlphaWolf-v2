@@ -25,7 +25,7 @@
     "dashboard": "Tableau de bord",
     "productFinder": "Découverte Produits",
     "marketTrends": "Tendances Marché",
-    "competitorSpy": "Espion Concurrent",
+    "competitorSpy": "Analyse Concurrent",
     "generateAd": "Générer Publicité",
     "analyzeAd": "Analyser Publicité"
   },
@@ -39,17 +39,17 @@
       "title": "Intelligence Marketing Tout-en-Un",
       "subtitle": "De l'idée initiale à l'analyse des performances, AlphaWolf est votre partenaire stratégique.",
       "learnMore": "En savoir plus",
-      "winnerDiscovery": {
-        "title": "Découverte de Produits Gagnants",
-        "description": "Notre loup IA parcourt notre base de données publicitaires pour dénicher les produits tendances et les stratégies qui les font réussir."
+      "marketAnalysis": {
+        "title": "Révélez les Tendances du Marché",
+        "description": "Notre loup IA analyse de vastes données de marché pour révéler les produits tendances, les opportunités inexploitées et les risques potentiels."
       },
-      "competitorSpy": {
-        "title": "Espion Concurrent",
-        "description": "Déconstruisez la publicité ou la page produit de n'importe quel concurrent. Obtenez leur angle marketing, leurs faiblesses et des contre-stratégies."
+      "competitorDeconstruction": {
+        "title": "Déconstruisez les Stratégies Concurrentes",
+        "description": "Analysez la publicité ou la page produit de n'importe quel concurrent pour comprendre leurs tactiques, leurs faiblesses et comment les surpasser."
       },
-      "instantConcepts": {
-        "title": "Concepts Publicitaires Instantanés",
-        "description": "Générez des concepts publicitaires complets et à haute conversion — un texte convaincant associé à des visuels IA personnalisés — en quelques secondes."
+      "multiFormatAds": {
+        "title": "Générez des Publicités Multi-Format",
+        "description": "Créez instantanément des concepts publicitaires complets avec un texte percutant, des visuels uniques générés par IA et des publicités audio professionnelles."
       }
     },
     "cta": {
@@ -79,8 +79,16 @@
     }
   },
   "SpyPage": {
-    "title": "Espion Concurrent",
-    "description": "Déconstruisez la stratégie marketing d'un concurrent spécifique. Entrez l'URL de son annonce ou de sa page produit pour obtenir une analyse détaillée de son approche et des contre-stratégies efficaces."
+    "title": "Analyse Concurrentielle",
+    "description": "Déconstruisez la stratégie marketing d'un concurrent spécifique. Entrez l'URL de son annonce ou de sa page produit pour obtenir une analyse détaillée de son approche et des contre-stratégies efficaces.",
+    "form": {
+      "title": "Analyser un Concurrent Spécifique",
+      "description": "Fournissez un lien direct vers la publicité ou la page produit d'un concurrent. L'IA déconstruira sa stratégie et vous proposera des moyens de la contrer."
+    },
+    "howItWorks": {
+      "title": "Comment ça marche ?",
+      "description": "L'IA s'appuie sur sa vaste base de connaissances de données publiques du web pour identifier des schémas, des tendances et des perspectives stratégiques. Elle analyse le contenu, la structure et l'audience probable de l'URL fournie en se basant sur les informations apprises lors de sa formation. Elle n'effectue pas de navigation en direct ni n'accède à des données privées."
+    }
   },
   "GeneratePage": {
     "title": "Générateur de Concepts Publicitaires",
@@ -181,7 +189,7 @@
         "description": "Laissez l'IA analyser notre base de données publicitaires."
     },
     "spy": {
-        "label": "Espionner les Concurrents",
+        "label": "Analyser les Concurrents",
         "description": "Déconstruisez la page d'un concurrent."
     },
     "generate": {
@@ -377,14 +385,6 @@
         "title": "Risques & Considérations"
     }
   },
-  "SpyPage.form": {
-    "title": "Analyser un Concurrent Spécifique",
-    "description": "Fournissez un lien direct vers la publicité ou la page produit d'un concurrent. L'IA déconstruira sa stratégie et vous proposera des moyens de la contrer."
-  },
-  "SpyPage.howItWorks": {
-    "title": "Comment ça marche ?",
-    "description": "L'IA s'appuie sur sa vaste base de connaissances de données publiques du web pour identifier des schémas, des tendances et des perspectives stratégiques. Elle analyse le contenu, la structure et l'audience probable de l'URL fournie en se basant sur les informations apprises lors de sa formation. Elle n'effectue pas de navigation en direct ni n'accède à des données privées."
-  },
   "PlatformDistributionChart": {
     "title": "Distribution de l'Engagement",
     "description": "Part de l'engagement total par plateforme pour la semaine."
@@ -415,24 +415,16 @@
     "features": {
       "title": "Détails des Fonctionnalités",
       "q1": {
-        "question": "Comment fonctionne la 'Découverte de Produits Gagnants' ?",
-        "answer": "Cet outil analyse une base de données de publicités très performantes pour identifier des schémas. Il regroupe les publicités en catégories, calcule leur performance moyenne et fournit une analyse des raisons de leur succès. C'est votre éclaireur numérique pour trouver de nouvelles opportunités de marché."
+        "question": "Comment fonctionne l' 'Analyse des Tendances du Marché' ?",
+        "answer": "Cet outil vous permet d'explorer de nouveaux territoires. Vous fournissez une catégorie de produit et une région, et l'IA génère un rapport de marché complet, incluant un résumé global, une liste de produits tendances, des opportunités clés et les risques potentiels."
       },
       "q2": {
-        "question": "Que peut me dire l'outil 'Espion Concurrent' ?",
+        "question": "Que peut me dire l' 'Analyse Concurrentielle' ?",
         "answer": "En fournissant une URL vers la page produit ou la publicité d'un concurrent, l'IA déconstruit sa stratégie. Elle identifie son audience cible, son angle marketing, ses forces et ses faiblesses. Plus important encore, elle vous donne des contre-stratégies concrètes pour rivaliser efficacement."
       },
       "q3": {
         "question": "Qu'est-ce que j'obtiens avec le 'Générateur de Concepts Publicitaires' ?",
         "answer": "Vous obtenez trois concepts publicitaires complets et distincts. Chaque concept inclut un titre, un corps de texte, un appel à l'action, un visuel unique généré par l'IA pour correspondre au texte, et même une publicité audio avec une voix professionnelle. C'est votre moteur créatif, suralimenté."
-      },
-      "q4": {
-        "question": "À quoi sert l' 'Analyse des Tendances du Marché' ?",
-        "answer": "Cet outil vous permet d'explorer de nouveaux territoires. Vous fournissez une catégorie de produit et une région, et l'IA génère un rapport de marché complet, incluant un résumé global, une liste de produits tendances, des opportunités clés et les risques potentiels."
-      },
-      "q5": {
-        "question": "Comment fonctionne l' 'Analyse de Performance Publicitaire' ?",
-        "answer": "Cet outil vous donne un retour objectif sur vos propres créations. Vous téléchargez votre visuel publicitaire, fournissez le texte et les informations de ciblage, et l'IA vous renvoie un score d'engagement estimé, une analyse des forces et faiblesses, et des suggestions d'amélioration concrètes."
       }
     }
   }

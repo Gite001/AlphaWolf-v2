@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowRight, Trophy, Binoculars, FileText } from 'lucide-react';
+import { ArrowRight, Sparkles, Binoculars, LineChart } from 'lucide-react';
 import Image from 'next/image';
 import { getTranslations } from '@/lib/utils';
 import { cookies } from 'next/headers';
@@ -13,22 +13,22 @@ export default async function HomePage() {
 
   const features = [
     {
-      icon: <Trophy className="h-8 w-8 text-primary" />,
-      title: t('HomePage.features.winnerDiscovery.title'),
-      description: t('HomePage.features.winnerDiscovery.description'),
-      link: '/faq#product-discovery',
+      icon: <LineChart className="h-8 w-8 text-primary" />,
+      title: t('HomePage.features.marketAnalysis.title'),
+      description: t('HomePage.features.marketAnalysis.description'),
+      link: '/faq#market-analysis',
     },
     {
       icon: <Binoculars className="h-8 w-8 text-primary" />,
-      title: t('HomePage.features.competitorSpy.title'),
-      description: t('HomePage.features.competitorSpy.description'),
-      link: '/faq#competitor-spy',
+      title: t('HomePage.features.competitorDeconstruction.title'),
+      description: t('HomePage.features.competitorDeconstruction.description'),
+      link: '/faq#competitor-deconstruction',
     },
     {
-      icon: <FileText className="h-8 w-8 text-primary" />,
-      title: t('HomePage.features.instantConcepts.title'),
-      description: t('HomePage.features.instantConcepts.description'),
-      link: '/faq#ad-generator',
+      icon: <Sparkles className="h-8 w-8 text-primary" />,
+      title: t('HomePage.features.multiFormatAds.title'),
+      description: t('HomePage.features.multiFormatAds.description'),
+      link: '/faq#multi-format-ads',
     },
   ];
 

@@ -20,11 +20,9 @@ export default async function FaqPage() {
     ];
 
     const featureFaq = [
-        { id: "product-discovery", question: "FaqPage.features.q1.question", answer: "FaqPage.features.q1.answer" },
-        { id: "competitor-spy", question: "FaqPage.features.q2.question", answer: "FaqPage.features.q2.answer" },
-        { id: "ad-generator", question: "FaqPage.features.q3.question", answer: "FaqPage.features.q3.answer" },
-        { id: "market-trends", question: "FaqPage.features.q4.question", answer: "FaqPage.features.q4.answer" },
-        { id: "ad-analysis", question: "FaqPage.features.q5.question", answer: "FaqPage.features.q5.answer" },
+        { id: "market-analysis", question: "FaqPage.features.q1.question", answer: "FaqPage.features.q1.answer" },
+        { id: "competitor-deconstruction", question: "FaqPage.features.q2.question", answer: "FaqPage.features.q2.answer" },
+        { id: "multi-format-ads", question: "FaqPage.features.q3.question", answer: "FaqPage.features.q3.answer" },
     ];
 
     return (
