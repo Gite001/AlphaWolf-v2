@@ -371,7 +371,11 @@
     "visualPrompt": "Prompt Visuel",
     "audioNotSupported": "Votre navigateur ne supporte pas l'élément audio.",
     "downloadImage": "Télécharger l'Image",
-    "downloadAudio": "Télécharger l'Audio"
+    "downloadAudio": "Télécharger l'Audio",
+    "fullScriptTitle": "Script Complet & Audio",
+    "totalDuration": "Durée totale : {duration} secondes",
+    "viewScript": "Voir le Script Complet",
+    "audioFailed": "La génération audio a échoué."
   },
   "CompetitorForm": {
     "submitButton": "Analyser le Concurrent",

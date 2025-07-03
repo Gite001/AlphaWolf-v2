@@ -371,7 +371,11 @@
     "visualPrompt": "Visual Prompt",
     "audioNotSupported": "Your browser does not support the audio element.",
     "downloadImage": "Download Image",
-    "downloadAudio": "Download Audio"
+    "downloadAudio": "Download Audio",
+    "fullScriptTitle": "Full Script & Audio",
+    "totalDuration": "Total duration: {duration} seconds",
+    "viewScript": "View Full Script",
+    "audioFailed": "Audio generation failed."
   },
   "CompetitorForm": {
     "submitButton": "Analyze Competitor",
