@@ -118,10 +118,8 @@ Pour que l'application soit vraiment la vôtre, vous pouvez remplacer les images
     -   Fichier : `office.png`
     -   Rôle : La grande image d'accueil qui accueille les visiteurs.
 
--   **Images d'exemples pour la galerie publicitaire :**
-    -   Fichiers : `ad-sweater.png`, `ad-smarthome.png`, `ad-skincare.png`, `ad-blender.png`, `ad-headphones.png`, `ad-yoga.png`, `ad-subbox.png`, `ad-led.png`.
-    -   Rôle : Ces images peuplent la bibliothèque de publicités sur le tableau de bord et servent d'exemples. Elles sont des visuels pour des **publicités fictives**.
-    -   Pour une expérience totalement personnalisée, vous pouvez non seulement remplacer ces images par des publicités de votre secteur, mais aussi modifier les données associées (titre, score, etc.) dans le fichier `src/lib/data.ts`.
+-   **Données d'exemples pour la galerie publicitaire :**
+    -   Les images dans la bibliothèque de publicités sur le tableau de bord sont des **placeholders dynamiques**. Les données qui les alimentent (titre, score, etc.) se trouvent dans le fichier `src/lib/data.ts`. Pour une expérience totalement personnalisée, vous pouvez modifier ces données pour qu'elles correspondent aux produits de votre secteur.
 
 ---
 

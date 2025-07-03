@@ -3,6 +3,7 @@ export type Ad = {
   title: string;
   platform: 'Facebook' | 'Instagram' | 'TikTok' | 'Pinterest';
   imageUrl: string;
+  dataAiHint: string;
   engagement: {
     likes: number;
     comments: number;
@@ -12,7 +13,6 @@ export type Ad = {
   date: string;
   country: string;
   productLink: string;
-  dataAiHint: string;
 };
 
 export type Stat = {
