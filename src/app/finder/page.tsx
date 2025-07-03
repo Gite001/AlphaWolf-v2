@@ -3,6 +3,8 @@ import { Trophy } from "lucide-react";
 import { FinderAnalysis } from "@/components/finder/finder-analysis";
 import { getTranslations } from "@/lib/utils";
 import { cookies } from "next/headers";
+import { Suspense } from "react";
+import { FinderAnalysisSkeleton } from "@/components/finder/finder-analysis-skeleton";
 
 export default async function FinderPage() {
     const locale = cookies().get('locale')?.value;
@@ -20,7 +22,9 @@ export default async function FinderPage() {
                         {t('FinderPage.description')}
                     </p>
                 </header>
-                <FinderAnalysis />
+                <Suspense fallback={<FinderAnalysisSkeleton />}>
+                    <FinderAnalysis />
+                </Suspense>
             </div>
         </div>
     );

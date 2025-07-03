@@ -8,6 +8,8 @@ import { DashboardSummary } from "@/components/dashboard/dashboard-summary";
 import { getTranslations } from "@/lib/utils";
 import { cookies } from "next/headers";
 import { PlatformDistributionChart } from "@/components/dashboard/platform-distribution-chart";
+import { Suspense } from "react";
+import { DashboardSummarySkeleton } from "@/components/dashboard/dashboard-summary-skeleton";
 
 export default async function DashboardPage() {
   const locale = cookies().get('locale')?.value;
@@ -19,7 +21,9 @@ export default async function DashboardPage() {
         <p className="text-muted-foreground">{t('DashboardPage.description')}</p>
       </header>
       
-      <DashboardSummary stats={stats} engagementData={engagementData} />
+      <Suspense fallback={<DashboardSummarySkeleton />}>
+        <DashboardSummary stats={stats} engagementData={engagementData} />
+      </Suspense>
       
       <StatsCards stats={stats} />
       

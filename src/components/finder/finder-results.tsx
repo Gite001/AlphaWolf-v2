@@ -7,14 +7,23 @@ import { Button } from '../ui/button';
 import Link from 'next/link';
 import { useI18n } from '@/hooks/use-i18n';
 import { CategoryPerformanceChart } from './category-performance-chart';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 
 type FinderResultsProps = {
   results: FindWinningProductsOutput;
-  onRerun: () => void;
 };
 
-export function FinderResults({ results, onRerun }: FinderResultsProps) {
+export function FinderResults({ results }: FinderResultsProps) {
   const { t } = useI18n();
+  const router = useRouter();
+  const [isRerunning, setIsRerunning] = useState(false);
+
+  const handleRerun = () => {
+    setIsRerunning(true);
+    router.refresh();
+  };
+
   return (
     <div className="space-y-8 animate-in fade-in duration-500">
       <Card className="bg-card/30 backdrop-blur-sm border-primary/20 shadow-lg shadow-primary/10">
@@ -68,9 +77,9 @@ export function FinderResults({ results, onRerun }: FinderResultsProps) {
       </div>
       
       <div className="text-center pt-4">
-        <Button variant="outline" onClick={onRerun}>
-            <RefreshCw className="mr-2 h-4 w-4" />
-            {t('FinderResults.rerunButton')}
+        <Button variant="outline" onClick={handleRerun} disabled={isRerunning}>
+            <RefreshCw className={`mr-2 h-4 w-4 ${isRerunning ? 'animate-spin' : ''}`} />
+            {isRerunning ? t('FinderAnalysis.loading.title') : t('FinderResults.rerunButton')}
         </Button>
       </div>
 

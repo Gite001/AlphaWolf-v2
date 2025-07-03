@@ -1,72 +1,30 @@
-'use client';
-
-import { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui/card';
 import { getDashboardSummary } from '@/app/dashboard/actions';
 import type { Stat, EngagementData } from '@/lib/types';
-import { Skeleton } from '../ui/skeleton';
 import { Lightbulb, Sparkles, AlertCircle } from 'lucide-react';
-import { useI18n } from '@/hooks/use-i18n';
+import { getTranslations } from '@/lib/utils';
+import { cookies } from 'next/headers';
 
 type DashboardSummaryProps = {
     stats: Stat[];
     engagementData: EngagementData[];
 };
 
-export function DashboardSummary({ stats, engagementData }: DashboardSummaryProps) {
-    const { t, locale } = useI18n();
-    const [summary, setSummary] = useState<string | null>(null);
-    const [insights, setInsights] = useState<string[] | null>(null);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState<string | null>(null);
+const CardWrapper = ({ children, isError = false }: { children: React.ReactNode, isError?: boolean }) => (
+    <Card className={`bg-card/30 backdrop-blur-sm shadow-lg ${isError ? 'border-destructive/50' : 'border-primary/20 shadow-primary/10'}`}>
+        {children}
+    </Card>
+);
 
-    useEffect(() => {
-        async function fetchSummary() {
-            setLoading(true);
-            setError(null);
-            const result = await getDashboardSummary(stats, engagementData, locale);
-            if (result.data) {
-                setSummary(result.data.summary);
-                setInsights(result.data.insights);
-            } else {
-                setError(result.error || t('DashboardSummary.unknownError'));
-            }
-            setLoading(false);
-        }
-        fetchSummary();
-    }, [stats, engagementData, t, locale]);
+export async function DashboardSummary({ stats, engagementData }: DashboardSummaryProps) {
+    const locale = cookies().get('locale')?.value as 'en' | 'fr' | undefined || 'en';
+    const t = getTranslations(locale);
+    
+    const result = await getDashboardSummary(stats, engagementData, locale);
 
-    const CardWrapper = ({ children }: { children: React.ReactNode }) => (
-        <Card className="bg-card/30 backdrop-blur-sm border-primary/20 shadow-lg shadow-primary/10">
-            {children}
-        </Card>
-    );
-
-    if (loading) {
-        return (
-            <CardWrapper>
-                <CardHeader>
-                    <CardTitle className="flex items-center gap-2">
-                        <Sparkles className="h-5 w-5 text-primary" />
-                        <span>{t('DashboardSummary.loading.title')}</span>
-                    </CardTitle>
-                    <CardDescription>{t('DashboardSummary.loading.description')}</CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                    <Skeleton className="h-4 w-full bg-secondary/50" />
-                    <Skeleton className="h-4 w-5/6 bg-secondary/50" />
-                    <div className="pt-4 space-y-3">
-                        <Skeleton className="h-8 w-full bg-secondary/50" />
-                        <Skeleton className="h-8 w-full bg-secondary/50" />
-                    </div>
-                </CardContent>
-            </CardWrapper>
-        )
-    }
-
-    if (error) {
+    if (result.error || !result.data) {
          return (
-            <Card className="bg-card/30 backdrop-blur-sm border-destructive/50">
+            <CardWrapper isError>
                 <CardHeader>
                     <CardTitle className="flex items-center gap-2 text-destructive">
                         <AlertCircle className="h-5 w-5" />
@@ -75,9 +33,9 @@ export function DashboardSummary({ stats, engagementData }: DashboardSummaryProp
                     <CardDescription className="text-destructive/80">{t('DashboardSummary.error.description')}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                    <p className="text-sm text-muted-foreground">{error}</p>
+                    <p className="text-sm text-muted-foreground">{result.error || t('DashboardSummary.unknownError')}</p>
                 </CardContent>
-            </Card>
+            </CardWrapper>
         )
     }
 
@@ -88,12 +46,12 @@ export function DashboardSummary({ stats, engagementData }: DashboardSummaryProp
                     <Sparkles className="h-6 w-6 text-primary" />
                     <span>{t('DashboardSummary.results.title')}</span>
                 </CardTitle>
-                <CardDescription>{summary}</CardDescription>
+                <CardDescription>{result.data.summary}</CardDescription>
             </CardHeader>
             <CardContent>
                 <h4 className="font-semibold mb-3">{t('DashboardSummary.results.strategicTips')}</h4>
                 <ul className="space-y-2">
-                    {insights?.map((insight, index) => (
+                    {result.data.insights?.map((insight, index) => (
                         <li key={index} className="flex items-start gap-3">
                             <Lightbulb className="h-5 w-5 mt-0.5 text-primary shrink-0" />
                             <span className="text-sm text-muted-foreground">{insight}</span>
