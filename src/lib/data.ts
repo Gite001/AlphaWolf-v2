@@ -5,7 +5,7 @@ import { BarChart, Target, TrendingUp, Users } from 'lucide-react';
 const random = (min: number, max: number) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 // Function to generate dynamic ad data with recent dates
-const generateAdData = (): Ad[] => {
+export const getAds = (): Ad[] => {
     const adTemplates = [
       {
         title: 'Cozy Knit Sweater',
@@ -76,12 +76,8 @@ const generateAdData = (): Ad[] => {
     });
 };
 
-// --- Dynamic Data for the Application ---
-
-export const ads: Ad[] = generateAdData();
-
 // Function to generate dynamic stats
-const generateStats = (): Stat[] => {
+export const getStats = (): Stat[] => {
     const trackedAdsChange = (random(10, 25) / 10).toFixed(1);
     const winningProductsChange = (random(1, 5) / 10).toFixed(1);
     const topEngagementChange = (random(1, 3) / 10).toFixed(1);
@@ -120,7 +116,7 @@ const generateStats = (): Stat[] => {
 };
 
 // Function to generate dynamic engagement data for the chart
-const generateEngagementData = (): EngagementData[] => {
+export const getEngagementData = (): EngagementData[] => {
     const days = ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim'];
     const base = {
         Facebook: 2000,
@@ -143,10 +139,6 @@ const generateEngagementData = (): EngagementData[] => {
         Pinterest: base.Pinterest + (index * growth.Pinterest) + random(-150, 150),
     }));
 };
-
-// Export the dynamically generated data
-export const stats: Stat[] = generateStats();
-export const engagementData: EngagementData[] = generateEngagementData();
 
 // --- Static Data for Geographic Hotspots Chart ---
 // Data adjusted to reflect the user's strategic input.

@@ -1,14 +1,14 @@
 'use server';
 
 import { findWinningProducts } from "@/ai/flows/find-winning-products";
-import { ads } from "@/lib/data";
+import { getAds } from "@/lib/data";
 
 export async function getWinningProductsAnalysis(locale: 'en' | 'fr' = 'en') {
   try {
     // In a real app, you'd fetch this from a database.
     // Here, we're using mock data.
     const analysisInput = {
-      ads: ads.map(ad => ({
+      ads: getAds().map(ad => ({
         title: ad.title,
         platform: ad.platform,
         score: ad.engagement.score,
@@ -17,6 +17,10 @@ export async function getWinningProductsAnalysis(locale: 'en' | 'fr' = 'en') {
     };
     
     const result = await findWinningProducts(analysisInput);
+
+    if (!result) {
+        throw new Error('Analysis failed to produce a result.');
+    }
 
     return { data: result, error: null };
   } catch (error) {

@@ -3,7 +3,7 @@ import { EngagementChart } from "@/components/dashboard/engagement-chart";
 import { MarketSnapshot } from "@/components/dashboard/market-snapshot";
 import { QuickActions } from "@/components/dashboard/quick-actions";
 import { StatsCards } from "@/components/dashboard/stats-cards";
-import { ads, engagementData, stats, geoData } from "@/lib/data";
+import { getAds, getEngagementData, getStats, geoData } from "@/lib/data";
 import { DashboardSummary } from "@/components/dashboard/dashboard-summary";
 import { getTranslations } from "@/lib/utils";
 import { cookies } from "next/headers";
@@ -15,6 +15,10 @@ import { GeoChart } from "@/components/dashboard/geo-chart";
 export default async function DashboardPage() {
   const locale = cookies().get('locale')?.value;
   const t = getTranslations(locale);
+  const stats = getStats();
+  const engagementData = getEngagementData();
+  const ads = getAds();
+
   return (
     <div className="flex flex-col gap-8 p-4 md:p-8">
       <header>
