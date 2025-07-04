@@ -53,8 +53,20 @@
         "description": "Déconstruisez les sites web concurrents, découvrez des produits gagnants et analysez les tendances du marché pour trouver votre prochaine opportunité."
       },
       "creativeGeneration": {
-        "title": "Générer des Créas Multi-Média",
-        "description": "Produisez instantanément des textes publicitaires, des visuels générés par IA, des audios professionnels et des storyboards vidéo complets."
+        "title": "Générer des Concepts Publicitaires",
+        "description": "Produisez instantanément des textes publicitaires avec des visuels générés par IA et des audios professionnels assortis."
+      },
+      "productFinder": {
+        "title": "Découvrez des Produits Gagnants",
+        "description": "Laissez notre IA analyser une bibliothèque de publicités pour identifier les produits les plus performants et leurs stratégies."
+      },
+      "adAnalysis": {
+        "title": "Analysez Vos Créations",
+        "description": "Obtenez un score de performance IA et des retours exploitables sur vos propres visuels et textes avant de dépenser."
+      },
+      "videoGeneration": {
+        "title": "Produisez des Storyboards Vidéo",
+        "description": "Générez des storyboards vidéo complets, scène par scène, avec visuels IA, scripts, et audio."
       }
     },
     "cta": {

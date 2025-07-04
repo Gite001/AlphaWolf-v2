@@ -53,8 +53,20 @@
         "description": "Deconstruct competitor websites, uncover winning products, and analyze market trends to find your next opportunity."
       },
       "creativeGeneration": {
-        "title": "Generate Multi-Media Creatives",
-        "description": "Instantly produce ad copy, AI-generated visuals, professional audio, and complete video storyboards."
+        "title": "Generate Ad Concepts",
+        "description": "Instantly produce ad copy with matching AI-generated visuals and professional audio."
+      },
+      "productFinder": {
+        "title": "Uncover Winning Products",
+        "description": "Let our AI analyze an ad library to pinpoint top-performing products and the strategies making them successful."
+      },
+      "adAnalysis": {
+        "title": "Analyze Your Creatives",
+        "description": "Get an AI performance score and actionable feedback on your own ad visuals and copy before you spend a dime."
+      },
+      "videoGeneration": {
+        "title": "Produce Video Storyboards",
+        "description": "Generate complete, scene-by-scene video ad storyboards with AI-generated visuals, scripts, and audio."
       }
     },
     "cta": {

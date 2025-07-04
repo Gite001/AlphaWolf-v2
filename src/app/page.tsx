@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowRight, Sparkles, Binoculars, Compass } from 'lucide-react';
+import { ArrowRight, Sparkles, Binoculars, Compass, FileText, Trophy, Clapperboard } from 'lucide-react';
 import Image from 'next/image';
 import { getTranslations } from '@/lib/utils';
 import { cookies } from 'next/headers';
@@ -26,10 +26,28 @@ export default async function HomePage() {
       link: '/spy',
     },
     {
-      icon: <Sparkles className="h-8 w-8 text-primary" />,
+      icon: <FileText className="h-8 w-8 text-primary" />,
       title: t('HomePage.features.creativeGeneration.title'),
       description: t('HomePage.features.creativeGeneration.description'),
       link: '/generate',
+    },
+    {
+      icon: <Trophy className="h-8 w-8 text-primary" />,
+      title: t('HomePage.features.productFinder.title'),
+      description: t('HomePage.features.productFinder.description'),
+      link: '/finder',
+    },
+    {
+      icon: <Sparkles className="h-8 w-8 text-primary" />,
+      title: t('HomePage.features.adAnalysis.title'),
+      description: t('HomePage.features.adAnalysis.description'),
+      link: '/analyze',
+    },
+    {
+      icon: <Clapperboard className="h-8 w-8 text-primary" />,
+      title: t('HomePage.features.videoGeneration.title'),
+      description: t('HomePage.features.videoGeneration.description'),
+      link: '/video',
     },
   ];
 
