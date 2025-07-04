@@ -499,6 +499,11 @@
     "title": "Engagement Distribution",
     "description": "Total engagement share by platform for the week."
   },
+  "GeoChart": {
+    "title": "Geographic Hotspots",
+    "description": "Estimated e-commerce market strength by country.",
+    "marketStrength": "Market Strength"
+  },
   "CategoryPerformanceChart": {
     "title": "Winning Category Performance",
     "description": "Average AI-estimated performance score for each identified category."

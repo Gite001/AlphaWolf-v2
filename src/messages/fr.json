@@ -499,6 +499,11 @@
     "title": "Distribution de l'Engagement",
     "description": "Part de l'engagement total par plateforme pour la semaine."
   },
+  "GeoChart": {
+    "title": "Points Chauds Géographiques",
+    "description": "Force estimée du marché e-commerce par pays.",
+    "marketStrength": "Force du Marché"
+  },
   "CategoryPerformanceChart": {
     "title": "Performance des Catégories Gagnantes",
     "description": "Score de performance moyen estimé par l'IA pour chaque catégorie identifiée."

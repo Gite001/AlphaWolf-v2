@@ -1,4 +1,4 @@
-import type { Ad, Stat, EngagementData } from './types';
+import type { Ad, Stat, EngagementData, GeoData } from './types';
 import { BarChart, Target, TrendingUp, Users } from 'lucide-react';
 
 // --- Static Data for Ads Library ---
@@ -174,3 +174,16 @@ const generateEngagementData = (): EngagementData[] => {
 // Export the dynamically generated data
 export const stats: Stat[] = generateStats();
 export const engagementData: EngagementData[] = generateEngagementData();
+
+// --- Static Data for Geographic Hotspots Chart ---
+export const geoData: GeoData[] = [
+    { country: 'USA', marketStrength: 95 },
+    { country: 'United Kingdom', marketStrength: 88 },
+    { country: 'Germany', marketStrength: 85 },
+    { country: 'Canada', marketStrength: 82 },
+    { country: 'Australia', marketStrength: 78 },
+    { country: 'France', marketStrength: 75 },
+    { country: 'Spain', marketStrength: 68 },
+    { country: 'Italy', marketStrength: 65 },
+    { country: 'New Zealand', marketStrength: 60 },
+].sort((a, b) => a.marketStrength - b.marketStrength);

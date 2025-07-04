@@ -33,3 +33,8 @@ export type EngagementData = {
 };
 
 export const supportedMarketplaces = ['Aliexpress', 'Etsy'] as const;
+
+export type GeoData = {
+  country: string;
+  marketStrength: number;
+};

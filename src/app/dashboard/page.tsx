@@ -3,13 +3,14 @@ import { EngagementChart } from "@/components/dashboard/engagement-chart";
 import { MarketSnapshot } from "@/components/dashboard/market-snapshot";
 import { QuickActions } from "@/components/dashboard/quick-actions";
 import { StatsCards } from "@/components/dashboard/stats-cards";
-import { ads, engagementData, stats } from "@/lib/data";
+import { ads, engagementData, stats, geoData } from "@/lib/data";
 import { DashboardSummary } from "@/components/dashboard/dashboard-summary";
 import { getTranslations } from "@/lib/utils";
 import { cookies } from "next/headers";
 import { PlatformDistributionChart } from "@/components/dashboard/platform-distribution-chart";
 import { Suspense } from "react";
 import { DashboardSummarySkeleton } from "@/components/dashboard/dashboard-summary-skeleton";
+import { GeoChart } from "@/components/dashboard/geo-chart";
 
 export default async function DashboardPage() {
   const locale = cookies().get('locale')?.value;
@@ -35,6 +36,7 @@ export default async function DashboardPage() {
         <div className="lg:col-span-2 flex flex-col gap-8">
             <QuickActions />
             <PlatformDistributionChart data={engagementData} />
+            <GeoChart data={geoData} />
             <MarketSnapshot />
         </div>
       </div>
