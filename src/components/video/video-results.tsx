@@ -1,23 +1,13 @@
 'use client';
 
 import Image from 'next/image';
-import type { GenerateVideoStoryboardOutput, Scene } from '@/ai/flows/generate-video-storyboard';
-import { generateVariationImage, generateVariationAudio } from '@/app/generate/actions';
+import type { GenerateVideoStoryboardOutput } from '@/ai/flows/generate-video-storyboard';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Skeleton } from '@/components/ui/skeleton';
-import { useToast } from '@/hooks/use-toast';
-import { AlertCircle, FileText, Timer, Download, Loader2 } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { AlertCircle, FileText, Timer, Download } from 'lucide-react';
 import { useI18n } from '@/hooks/use-i18n';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../ui/accordion';
 import { Button } from '../ui/button';
 import { TooltipProvider, Tooltip, TooltipTrigger, TooltipContent } from '../ui/tooltip';
-
-type SceneWithMedia = Scene & {
-  imageUrl?: string;
-  imageError?: boolean;
-  isGeneratingImage?: boolean;
-};
 
 type VideoResultsProps = {
   results: GenerateVideoStoryboardOutput;
@@ -25,50 +15,6 @@ type VideoResultsProps = {
 
 export function VideoResults({ results }: VideoResultsProps) {
   const { t } = useI18n();
-  const { toast } = useToast();
-  const [audioUrl, setAudioUrl] = useState<string | null>(null);
-  const [isGeneratingAudio, setIsGeneratingAudio] = useState(true);
-  const [scenes, setScenes] = useState<SceneWithMedia[]>(
-    results.scenes.map(s => ({ ...s, isGeneratingImage: true }))
-  );
-
-  useEffect(() => {
-    let isCancelled = false;
-
-    // Generate audio
-    generateVariationAudio(results.fullScript).then(result => {
-      if (isCancelled) return;
-      if (result.error || !result.data?.audioUrl) {
-        console.error("Audio generation failed:", result.error);
-        toast({ variant: 'destructive', title: t('Toast.errorTitle'), description: t('VideoResults.audioFailed') });
-      } else {
-        setAudioUrl(result.data.audioUrl);
-      }
-      setIsGeneratingAudio(false);
-    });
-
-    // Generate images for each scene
-    results.scenes.forEach((scene, index) => {
-      generateVariationImage(scene.visual_description).then(result => {
-        if (isCancelled) return;
-        setScenes(prevScenes => {
-          const newScenes = [...prevScenes];
-          if (result.error || !result.data?.imageUrl) {
-            console.error(`Image generation for scene ${scene.sceneNumber} failed`, result.error);
-            newScenes[index] = { ...newScenes[index], imageError: true, isGeneratingImage: false };
-          } else {
-            newScenes[index] = { ...newScenes[index], imageUrl: result.data.imageUrl, isGeneratingImage: false };
-          }
-          return newScenes;
-        });
-      });
-    });
-
-    return () => {
-      isCancelled = true;
-    };
-  }, [results, t, toast]);
-
   const totalDuration = results.scenes.reduce((acc, scene) => acc + scene.duration_seconds, 0);
 
   return (
@@ -85,18 +31,16 @@ export function VideoResults({ results }: VideoResultsProps) {
                 <CardDescription>{t('VideoResults.totalDuration', { duration: totalDuration })}</CardDescription>
             </CardHeader>
             <CardContent>
-                {isGeneratingAudio ? (
-                    <Skeleton className="w-full h-10 rounded-md" />
-                ) : audioUrl ? (
+                {results.audioUrl ? (
                     <div className="flex items-center gap-2">
                         <audio controls className="w-full h-10 flex-1">
-                            <source src={audioUrl} type="audio/wav" />
+                            <source src={results.audioUrl} type="audio/wav" />
                             {t('VideoResults.audioNotSupported')}
                         </audio>
                         <Tooltip>
                             <TooltipTrigger asChild>
                                 <Button variant="outline" size="icon" asChild>
-                                    <a href={audioUrl} download="storyboard_audio.wav">
+                                    <a href={results.audioUrl} download="storyboard_audio.wav">
                                         <Download className="h-4 w-4" />
                                         <span className="sr-only">{t('VideoResults.downloadAudio')}</span>
                                     </a>
@@ -126,19 +70,10 @@ export function VideoResults({ results }: VideoResultsProps) {
         </Card>
 
         <div className="space-y-8">
-            {scenes.map((scene, index) => (
+            {results.scenes.map((scene, index) => (
               <Card key={index} className="shadow-lg flex flex-col md:flex-row bg-card/30 backdrop-blur-sm border-white/10 overflow-hidden">
                   <div className="md:w-1/3 aspect-video md:aspect-auto bg-muted/50 flex items-center justify-center overflow-hidden relative border-b md:border-b-0 md:border-r border-white/10">
-                    {scene.isGeneratingImage ? (
-                       <div className="w-full h-full flex items-center justify-center bg-secondary/30">
-                          <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
-                       </div>
-                    ) : scene.imageError ? (
-                      <div className='text-center text-destructive p-4 flex flex-col items-center gap-2'>
-                        <AlertCircle className="h-8 w-8" />
-                        <p className='text-sm font-semibold'>{t('VideoResults.imageFailed')}</p>
-                      </div>
-                    ) : scene.imageUrl ? (
+                    {scene.imageUrl ? (
                       <>
                           <Image src={scene.imageUrl} alt={t('VideoResults.imageAlt', { sceneNumber: scene.sceneNumber })} fill className="object-cover" />
                           <Tooltip>
@@ -155,7 +90,12 @@ export function VideoResults({ results }: VideoResultsProps) {
                               </TooltipContent>
                           </Tooltip>
                       </>
-                    ) : null}
+                    ) : (
+                      <div className='text-center text-destructive p-4 flex flex-col items-center gap-2'>
+                        <AlertCircle className="h-8 w-8" />
+                        <p className='text-sm font-semibold'>{t('VideoResults.imageFailed')}</p>
+                      </div>
+                    )}
                   </div>
                   <div className="md:w-2/3">
                       <CardHeader>
