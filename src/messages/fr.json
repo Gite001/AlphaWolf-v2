@@ -25,6 +25,7 @@
     "dashboard": "Tableau de bord",
     "productFinder": "Découverte Produits",
     "marketTrends": "Tendances Marché",
+    "marketplacePulse": "Pouls du Marché",
     "competitorSpy": "Analyse Concurrent",
     "generateAd": "Générer Concept Pub",
     "generateVideo": "Générer Pub Vidéo",
@@ -78,6 +79,18 @@
     "howItWorks": {
         "title": "Comment ça marche ?",
         "description": "L'IA s'appuie sur sa vaste formation sur les données publiques du web jusqu'à sa dernière mise à jour. En analysant d'innombrables articles, listes de produits et discussions de consommateurs, elle identifie des schémas et synthétise des informations pour fournir des aperçus stratégiques sur les tendances du marché, les produits populaires et les risques potentiels. Elle n'accède pas aux données de vente en temps réel."
+    }
+  },
+  "PulsePage": {
+    "title": "Pouls du Marché",
+    "description": "Obtenez une analyse par IA des tendances des produits les plus vendus sur les grandes plateformes e-commerce comme Aliexpress et Etsy. Cet outil ne scrape pas les données en direct, mais synthétise une vaste connaissance de ce qui est populaire.",
+    "form": {
+      "title": "Analyser les Tendances d'un Marché",
+      "description": "Choisissez un marché, une catégorie et une région pour obtenir un rapport détaillé sur les tendances."
+    },
+    "howItWorks": {
+      "title": "Comment ça marche ?",
+      "description": "L'IA ne visite pas les marchés en temps réel. Elle s'appuie plutôt sur sa formation approfondie sur les données web publiques, les forums et les rapports de tendance pour déduire ce qui est populaire sur ces plateformes. C'est une déduction d'expert basée sur une mémoire quasi parfaite des discussions sur le commerce en ligne."
     }
   },
   "SpyPage": {
@@ -194,6 +207,10 @@
   "QuickActions": {
     "title": "Actions de la Meute",
     "description": "Lancez votre prochaine chasse aux produits gagnants.",
+    "pulse": {
+      "label": "Pouls du Marché",
+      "description": "Analysez les tendances sur Aliexpress ou Etsy."
+    },
     "finder": {
         "label": "Trouver des Produits Gagnants",
         "description": "Laissez l'IA analyser notre base de données publicitaires."
@@ -432,6 +449,24 @@
         "placeholder": "ex: Amérique du Nord, Europe"
     }
   },
+  "PulseForm": {
+    "submitButton": "Prendre le Pouls",
+    "toast": {
+      "successDescription": "Votre rapport sur le pouls du marché est prêt."
+    },
+    "marketplace": {
+      "label": "Place de Marché",
+      "placeholder": "Sélectionner un marché"
+    },
+    "productCategory": {
+      "label": "Catégorie de Produit",
+      "placeholder": "ex: Bijoux faits main, Accessoires téléphone"
+    },
+    "region": {
+      "label": "Région / Marché",
+      "placeholder": "ex: France"
+    }
+  },
   "TrendsResults": {
     "title": "Résultats de l'Analyse de Marché",
     "trendingProducts": {
@@ -443,6 +478,19 @@
     "risks": {
         "title": "Risques & Considérations"
     }
+  },
+  "PulseResults": {
+    "title": "Rapport du Pouls du Marché",
+    "trendingProducts": {
+      "title": "Produits Tendances sur la Plateforme"
+    },
+    "platformSpecificAdvice": {
+      "title": "Conseils Spécifiques à la Plateforme"
+    },
+    "commonPitfalls": {
+      "title": "Pièges Courants à Éviter"
+    },
+    "marketingAngle": "Angle Marketing"
   },
   "PlatformDistributionChart": {
     "title": "Distribution de l'Engagement",

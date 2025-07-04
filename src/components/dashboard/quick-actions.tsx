@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { FileText, ArrowRight, Binoculars, Trophy } from 'lucide-react';
+import { FileText, ArrowRight, Binoculars, Trophy, Store } from 'lucide-react';
 import { getTranslations } from '@/lib/utils';
 import { cookies } from 'next/headers';
 
@@ -9,6 +9,12 @@ export async function QuickActions() {
     const locale = cookies().get('locale')?.value;
     const t = getTranslations(locale);
     const actions = [
+        {
+            href: '/pulse',
+            label: t('QuickActions.pulse.label'),
+            description: t('QuickActions.pulse.description'),
+            icon: Store
+        },
         {
             href: '/finder',
             label: t('QuickActions.finder.label'),

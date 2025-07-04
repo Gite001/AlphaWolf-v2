@@ -25,6 +25,7 @@
     "dashboard": "Dashboard",
     "productFinder": "Product Finder",
     "marketTrends": "Market Trends",
+    "marketplacePulse": "Marketplace Pulse",
     "competitorSpy": "Competitor Analysis",
     "generateAd": "Generate Ad Concept",
     "generateVideo": "Generate Video Ad",
@@ -78,6 +79,18 @@
     "howItWorks": {
         "title": "How does it work?",
         "description": "The AI leverages its vast training on public web data up to its last update. By analyzing countless articles, product listings, and consumer discussions, it identifies patterns and synthesizes information to provide strategic insights on market trends, popular products, and potential risks. It does not access real-time sales data."
+    }
+  },
+  "PulsePage": {
+    "title": "Marketplace Pulse",
+    "description": "Get an AI-powered analysis of top-selling product trends on major e-commerce platforms like Aliexpress and Etsy. This tool doesn't scrape live data, but synthesizes vast knowledge about what's popular.",
+    "form": {
+      "title": "Analyze Marketplace Trends",
+      "description": "Choose a marketplace, a category, and a region to get a detailed report on what's hot."
+    },
+    "howItWorks": {
+      "title": "How does it work?",
+      "description": "The AI doesn't visit the marketplaces in real-time. Instead, it leverages its extensive training on public web data, forums, and trend reports to deduce what is popular on these platforms. It's an expert deduction based on a near-perfect memory of online commerce discussions."
     }
   },
   "SpyPage": {
@@ -194,6 +207,10 @@
   "QuickActions": {
     "title": "Pack Actions",
     "description": "Launch your next hunt for winning products.",
+    "pulse": {
+        "label": "Marketplace Pulse",
+        "description": "Analyze trends on Aliexpress or Etsy."
+    },
     "finder": {
         "label": "Find Winning Products",
         "description": "Let AI analyze our ad database."
@@ -432,6 +449,24 @@
         "placeholder": "e.g., North America, Europe"
     }
   },
+  "PulseForm": {
+    "submitButton": "Get Pulse",
+    "toast": {
+      "successDescription": "Your marketplace pulse report is ready."
+    },
+    "marketplace": {
+      "label": "Marketplace",
+      "placeholder": "Select a marketplace"
+    },
+    "productCategory": {
+      "label": "Product Category",
+      "placeholder": "e.g., Handmade jewelry, Phone accessories"
+    },
+    "region": {
+      "label": "Region / Market",
+      "placeholder": "e.g., USA"
+    }
+  },
   "TrendsResults": {
     "title": "Market Analysis Results",
     "trendingProducts": {
@@ -443,6 +478,19 @@
     "risks": {
         "title": "Risks & Considerations"
     }
+  },
+  "PulseResults": {
+    "title": "Marketplace Pulse Report",
+    "trendingProducts": {
+      "title": "Trending Products on the Platform"
+    },
+    "platformSpecificAdvice": {
+      "title": "Platform-Specific Advice"
+    },
+    "commonPitfalls": {
+      "title": "Common Pitfalls to Avoid"
+    },
+    "marketingAngle": "Marketing Angle"
   },
   "PlatformDistributionChart": {
     "title": "Engagement Distribution",
