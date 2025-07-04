@@ -66,6 +66,9 @@ const analyzeMarketTrendsFlow = ai.defineFlow(
   },
   async input => {
     const {output} = await prompt(input);
-    return output!;
+    if (!output) {
+      throw new Error('The AI failed to generate a valid market trends analysis.');
+    }
+    return output;
   }
 );
