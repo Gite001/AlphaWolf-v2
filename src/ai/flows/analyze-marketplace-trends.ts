@@ -51,7 +51,7 @@ const prompt = ai.definePrompt({
   name: 'analyzeMarketplaceTrendsPrompt',
   input: {schema: AnalyzeMarketplaceTrendsInputSchema},
   output: {schema: AnalyzeMarketplaceTrendsOutputSchema},
-  prompt: `You are a world-class e-commerce intelligence analyst who is an expert on trends on specific marketplaces like Aliexpress and Etsy. Your task is to analyze the current market for a given product category on a specific platform.
+  prompt: `You are a world-class e-commerce intelligence analyst who is an expert on trends on specific marketplaces like Amazon, Aliexpress and Etsy. Your task is to analyze the current market for a given product category on a specific platform.
 
 **Your response must be in the following language: {{{locale}}}.**
 
@@ -67,8 +67,8 @@ Your analysis must include:
     - Provide a name.
     - Explain why it's popular on {{{marketplace}}}.
     - Suggest a specific marketing angle tailored to the platform's audience.
-3.  **Platform-Specific Advice:** Give actionable advice for selling in this category on {{{marketplace}}}. What do buyers on this platform look for? (e.g., for Etsy: handmade feel, personalization; for Aliexpress: value, novelty, tech gadgets).
-4.  **Common Pitfalls:** Point out potential risks or common mistakes sellers make on this platform (e.g., for Etsy: appearing too corporate; for Aliexpress: quality concerns, long shipping times).
+3.  **Platform-Specific Advice:** Give actionable advice for selling in this category on {{{marketplace}}}. What do buyers on this platform look for? (e.g., for Amazon: fast shipping (Prime), customer reviews, competitive pricing; for Etsy: handmade feel, personalization; for Aliexpress: value, novelty, tech gadgets).
+4.  **Common Pitfalls:** Point out potential risks or common mistakes sellers make on this platform (e.g., for Amazon: high competition, strict seller policies, FBA fees; for Etsy: appearing too corporate; for Aliexpress: quality concerns, long shipping times).
 5.  **Estimated Demand Trend:** Provide a synthesized trend of consumer demand for this category over the last 6 months. Create an array of 6 data points, one for each month (using short, 3-letter month names), with a 'month' and a 'demandScore' (0-100). This is an educated guess based on seasonal patterns and general market knowledge.
 6.  **Trend Analysis:** Briefly explain the reasoning behind the demand trend you generated in 1-2 sentences.
 

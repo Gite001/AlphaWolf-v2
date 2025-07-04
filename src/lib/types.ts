@@ -32,7 +32,7 @@ export type EngagementData = {
   Pinterest: number;
 };
 
-export const supportedMarketplaces = ['Aliexpress', 'Etsy'] as const;
+export const supportedMarketplaces = ['Amazon', 'Aliexpress', 'Etsy'] as const;
 
 export type GeoData = {
   country: string;
