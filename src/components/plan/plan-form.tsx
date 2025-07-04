@@ -115,6 +115,7 @@ export function PlanForm() {
         </div>
 
         <SubmitButton />
+        <p className="text-xs text-center text-muted-foreground mt-2 px-4">{t('PlanForm.outputHint')}</p>
       </form>
       {result && (
         <div className="mt-8 pt-8 border-t">

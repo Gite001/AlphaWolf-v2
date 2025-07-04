@@ -509,7 +509,8 @@
         "BrandAwareness": "Brand Awareness",
         "DirectSales": "Direct Sales",
         "LeadGeneration": "Lead Generation"
-    }
+    },
+    "outputHint": "The generated plan will appear below and will include influencer strategies, platform recommendations, and a phased timeline."
   },
   "TrendsResults": {
     "title": "Market Analysis Results",

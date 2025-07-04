@@ -509,7 +509,8 @@
         "BrandAwareness": "Notoriété de la Marque",
         "DirectSales": "Ventes Directes",
         "LeadGeneration": "Génération de Prospects"
-    }
+    },
+    "outputHint": "Le plan généré apparaîtra ci-dessous et inclura des stratégies d'influence, des recommandations de plateforme et un calendrier par phases."
   },
   "TrendsResults": {
     "title": "Résultats de l'Analyse de Marché",
