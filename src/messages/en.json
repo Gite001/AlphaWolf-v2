@@ -15,7 +15,7 @@
     "toggle": "Toggle language"
   },
   "AppHeader": {
-    "title": "AlphaWolf Command",
+    "title": "Dominate Your Niche",
     "homeTooltip": "Home"
   },
   "Footer": {
@@ -26,7 +26,6 @@
   },
   "AppSidebar": {
     "home": "Home",
-    "toolsTitle": "Arsenal",
     "dashboard": "Dashboard",
     "marketingPlan": "Marketing Plan",
     "productFinder": "Product Finder",

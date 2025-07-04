@@ -15,7 +15,7 @@
     "toggle": "Changer de langue"
   },
   "AppHeader": {
-    "title": "Poste de Commande",
+    "title": "Dominez Votre Niche",
     "homeTooltip": "Accueil"
   },
   "Footer": {
@@ -26,7 +26,6 @@
   },
   "AppSidebar": {
     "home": "Accueil",
-    "toolsTitle": "Arsenal",
     "dashboard": "Tableau de bord",
     "marketingPlan": "Plan Marketing",
     "productFinder": "Découverte Produits",
