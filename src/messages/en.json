@@ -15,7 +15,7 @@
     "toggle": "Toggle language"
   },
   "AppHeader": {
-    "title": "The Hunt is On",
+    "title": "La Chasse est Ouverte",
     "homeTooltip": "Home"
   },
   "Footer": {
@@ -41,8 +41,8 @@
   },
   "HomePage": {
     "hero": {
-      "title": "The Future of Ad Creation is Here",
-      "subtitle": "Your all-in-one intelligence suite to strategize, analyze, and generate high-impact marketing campaigns from a single command center.",
+      "title": "The Intelligence That Forges Victories",
+      "subtitle": "Your all-in-one command center to strategize, analyze, and generate winning campaigns that dominate the market.",
       "cta": "Go to Dashboard"
     },
     "features": {
@@ -58,8 +58,8 @@
         "description": "Deconstruct competitor websites, uncover winning products, and analyze market trends to find your next opportunity."
       },
       "creativeGeneration": {
-        "title": "Generate Ad Concepts",
-        "description": "Instantly produce ad copy with matching AI-generated visuals and professional audio."
+        "title": "Generate Multimedia Creatives",
+        "description": "Instantly produce ad copy with matching AI-generated visuals, professional audio and video storyboards."
       },
       "productFinder": {
         "title": "Uncover Winning Products",
@@ -181,6 +181,23 @@
     "howItWorks": {
       "title": "Limitless Knowledge",
       "description": "The Ads Lexicon isn't a dictionary with a finite number of pages; its knowledge is virtually limitless.\n\nThe AI doesn't have a fixed list of terms. It's been trained on a massive amount of web knowledge. You can ask it about hundreds of terms, from common to obscure (e.g., CTR, ROAS, Lookalike Audience...).\n\nIf a term exists in digital marketing jargon, our AI wolf can decipher it. The only limit is your curiosity."
+    }
+  },
+  "FaqPage": {
+    "general": {
+      "title": "Frequently Asked Questions",
+      "q1": {
+        "question": "What is AlphaWolf?",
+        "answer": "AlphaWolf is an AI-powered marketing intelligence suite that helps you build strategies, analyze markets, and generate high-impact ad concepts."
+      },
+      "q2": {
+        "question": "How does the AI work?",
+        "answer": "The AI (Google's Gemini model) doesn't have real-time access to sales data. It was trained on a vast portion of the public internet. It uses this knowledge to identify patterns, infer connections, and synthesize information like a world-class analyst."
+      },
+      "q3": {
+        "question": "Is my data private?",
+        "answer": "Yes. Your inputs are used to generate results for you and are not used to train the model. We are committed to protecting your privacy and data security."
+      }
     }
   },
   "PrivacyPage": {

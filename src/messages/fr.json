@@ -41,8 +41,8 @@
   },
   "HomePage": {
     "hero": {
-      "title": "Le Futur de la Création Publicitaire est Ici",
-      "subtitle": "Votre suite d'intelligence tout-en-un pour élaborer des stratégies, analyser et générer des campagnes marketing à fort impact depuis un unique centre de commande.",
+      "title": "L'Intelligence Qui Forge les Victoires",
+      "subtitle": "Votre centre de commande tout-en-un pour élaborer des stratégies, analyser et générer des campagnes gagnantes qui dominent le marché.",
       "cta": "Aller au Tableau de Bord"
     },
     "features": {
@@ -58,8 +58,8 @@
         "description": "Déconstruisez les sites web concurrents, découvrez des produits gagnants et analysez les tendances du marché pour trouver votre prochaine opportunité."
       },
       "creativeGeneration": {
-        "title": "Générer des Concepts Publicitaires",
-        "description": "Produisez instantanément des textes publicitaires avec des visuels générés par IA et des audios professionnels assortis."
+        "title": "Générer des Créas Multi-Média",
+        "description": "Produisez instantanément des textes publicitaires avec visuels IA, audio professionnel et storyboards vidéo assortis."
       },
       "productFinder": {
         "title": "Découvrez des Produits Gagnants",
@@ -183,7 +183,24 @@
       "description": "Le Lexique Publicitaire n'est pas un dictionnaire avec un nombre fini de pages ; son savoir est pratiquement illimité.\n\nL'IA n'a pas une liste fixe de termes. Elle a été entraînée sur une quantité massive de connaissances provenant du web. Vous pouvez l'interroger sur des centaines de termes, des plus courants aux plus obscurs (ex: CTR, ROAS, Lookalike Audience...).\n\nSi un terme existe dans le jargon du marketing digital, notre loup IA peut le déchiffrer. La seule limite est votre curiosité."
     }
   },
-    "PrivacyPage": {
+  "FaqPage": {
+    "general": {
+      "title": "Foire Aux Questions",
+      "q1": {
+        "question": "Qu'est-ce qu'AlphaWolf ?",
+        "answer": "AlphaWolf est une suite d'intelligence marketing pilotée par l'IA qui vous aide à élaborer des stratégies, analyser les marchés et générer des concepts publicitaires à fort impact."
+      },
+      "q2": {
+        "question": "Comment fonctionne l'IA ?",
+        "answer": "L'IA (modèle Gemini de Google) n'a pas d'accès en temps réel aux données de vente. Elle a été entraînée sur une vaste partie de l'internet public. Elle utilise cette connaissance pour identifier des schémas, inférer des connexions et synthétiser des informations comme un analyste de classe mondiale."
+      },
+      "q3": {
+        "question": "Mes données sont-elles confidentielles ?",
+        "answer": "Oui. Vos entrées sont utilisées pour générer des résultats pour vous et ne sont pas utilisées pour entraîner le modèle. Nous nous engageons à protéger votre vie privée et la sécurité de vos données."
+      }
+    }
+  },
+  "PrivacyPage": {
     "title": "Politique de Confidentialité",
     "lastUpdated": "Dernière mise à jour :",
     "intro": "Cette Politique de Confidentialité décrit Nos politiques et procédures sur la collecte, l'utilisation et la divulgation de Vos informations lorsque Vous utilisez le Service et Vous informe de Vos droits à la vie privée et de la manière dont la loi Vous protège.",
