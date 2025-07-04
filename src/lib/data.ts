@@ -1,111 +1,84 @@
 import type { Ad, Stat, EngagementData, GeoData } from './types';
 import { BarChart, Target, TrendingUp, Users } from 'lucide-react';
 
-// --- Static Data for Ads Library ---
-export const ads: Ad[] = [
-  {
-    id: '1',
-    title: 'Cozy Knit Sweater',
-    description: "Enveloppez-vous de douceur. Notre pull en maille ultra-confortable, parfait pour les journées fraîches.",
-    platform: 'Pinterest',
-    imageUrl: 'https://placehold.co/400x400.png',
-    dataAiHint: 'cozy sweater',
-    engagement: { likes: 12000, comments: 450, shares: 1200, score: 92 },
-    date: '2023-10-26',
-    country: 'USA',
-    productLink: '#',
-  },
-  {
-    id: '2',
-    title: 'Smart Home Hub',
-    description: "Centralisez votre maison connectée. Contrôlez lumières, thermostats et plus, simplement avec votre voix.",
-    platform: 'Facebook',
-    imageUrl: 'https://placehold.co/400x400.png',
-    dataAiHint: 'smart home',
-    engagement: { likes: 8500, comments: 1200, shares: 900, score: 90 },
-    date: '2023-10-25',
-    country: 'UK',
-    productLink: '#',
-  },
-  {
-    id: '3',
-    title: 'Organic Skincare Set',
-    description: "Révélez votre éclat naturel. Notre coffret de soins bio nourrit et revitalise votre peau en profondeur.",
-    platform: 'Instagram',
-    imageUrl: 'https://placehold.co/400x400.png',
-    dataAiHint: 'skincare set',
-    engagement: { likes: 25000, comments: 3500, shares: 2000, score: 88 },
-    date: '2023-10-24',
-    country: 'Canada',
-    productLink: '#',
-  },
-  {
-    id: '4',
-    title: 'Portable Blender',
-    description: "Vos smoothies frais, où que vous soyez. Notre blender portable est puissant, léger et se recharge par USB.",
-    platform: 'TikTok',
-    imageUrl: 'https://placehold.co/400x400.png',
-    dataAiHint: 'portable blender',
-    engagement: { likes: 500000, comments: 15000, shares: 25000, score: 85 },
-    date: '2023-10-23',
-    country: 'Australia',
-    productLink: '#',
-  },
-  {
-    id: '5',
-    title: 'Noise-Cancelling Headphones',
-    description: "Plongez dans votre monde. Écouteurs à réduction de bruit active pour une immersion sonore totale.",
-    platform: 'Facebook',
-    imageUrl: 'https://placehold.co/400x400.png',
-    dataAiHint: 'headphones music',
-    engagement: { likes: 7200, comments: 800, shares: 500, score: 82 },
-    date: '2023-10-22',
-    country: 'Germany',
-    productLink: '#',
-  },
-  {
-    id: '6',
-    title: 'Yoga Mat & Block Set',
-    description: "Trouvez votre équilibre. L'ensemble parfait pour approfondir votre pratique du yoga, avec confort et stabilité.",
-    platform: 'Pinterest',
-    imageUrl: 'https://placehold.co/400x400.png',
-    dataAiHint: 'yoga mat',
-    engagement: { likes: 18000, comments: 600, shares: 2500, score: 80 },
-    date: '2023-10-21',
-    country: 'USA',
-    productLink: '#',
-  },
-  {
-    id: '7',
-    title: 'Subscription Box',
-    description: "La surprise qui fait plaisir, chaque mois. Découvrez des produits uniques et exclusifs livrés chez vous.",
-    platform: 'Instagram',
-    imageUrl: 'https://placehold.co/400x400.png',
-    dataAiHint: 'subscription box',
-    engagement: { likes: 32000, comments: 2800, shares: 1500, score: 79 },
-    date: '2023-10-20',
-    country: 'UK',
-    productLink: '#',
-  },
-  {
-    id: '8',
-    title: 'LED Strip Lights',
-    description: "Créez l'ambiance parfaite. Des millions de couleurs pour transformer n'importe quelle pièce, contrôlables.",
-    platform: 'TikTok',
-    imageUrl: 'https://placehold.co/400x400.png',
-    dataAiHint: 'led lights',
-    engagement: { likes: 800000, comments: 25000, shares: 40000, score: 75 },
-    date: '2023-10-19',
-    country: 'USA',
-    productLink: '#',
-  },
-];
-
-
-// --- Dynamic Data Generation for Dashboard ---
-
 // Helper function to generate a random number within a range
 const random = (min: number, max: number) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+// Function to generate dynamic ad data with recent dates
+const generateAdData = (): Ad[] => {
+    const adTemplates = [
+      {
+        title: 'Cozy Knit Sweater',
+        description: "Enveloppez-vous de douceur. Notre pull en maille ultra-confortable, parfait pour les journées fraîches.",
+        dataAiHint: 'cozy sweater',
+      },
+      {
+        title: 'Smart Home Hub',
+        description: "Centralisez votre maison connectée. Contrôlez lumières, thermostats et plus, simplement avec votre voix.",
+        dataAiHint: 'smart home',
+      },
+      {
+        title: 'Organic Skincare Set',
+        description: "Révélez votre éclat naturel. Notre coffret de soins bio nourrit et revitalise votre peau en profondeur.",
+        dataAiHint: 'skincare set',
+      },
+      {
+        title: 'Portable Blender',
+        description: "Vos smoothies frais, où que vous soyez. Notre blender portable est puissant, léger et se recharge par USB.",
+        dataAiHint: 'portable blender',
+      },
+      {
+        title: 'Noise-Cancelling Headphones',
+        description: "Plongez dans votre monde. Écouteurs à réduction de bruit active pour une immersion sonore totale.",
+        dataAiHint: 'headphones music',
+      },
+      {
+        title: 'Yoga Mat & Block Set',
+        description: "Trouvez votre équilibre. L'ensemble parfait pour approfondir votre pratique du yoga, avec confort et stabilité.",
+        dataAiHint: 'yoga mat',
+      },
+      {
+        title: 'Subscription Box',
+        description: "La surprise qui fait plaisir, chaque mois. Découvrez des produits uniques et exclusifs livrés chez vous.",
+        dataAiHint: 'subscription box',
+      },
+      {
+        title: 'LED Strip Lights',
+        description: "Créez l'ambiance parfaite. Des millions de couleurs pour transformer n'importe quelle pièce, contrôlables.",
+        dataAiHint: 'led lights',
+      },
+    ];
+
+    const platforms: Ad['platform'][] = ['Facebook', 'Instagram', 'TikTok', 'Pinterest'];
+    const countries = ['USA', 'UK', 'Canada', 'Australia', 'Germany', 'France'];
+
+    return adTemplates.map((template, index) => {
+        const date = new Date();
+        date.setDate(date.getDate() - random(0, 29)); // Ads from the last 30 days
+
+        return {
+            id: (index + 1).toString(),
+            title: template.title,
+            description: template.description,
+            platform: platforms[random(0, platforms.length - 1)],
+            imageUrl: 'https://placehold.co/400x400.png',
+            dataAiHint: template.dataAiHint,
+            engagement: {
+                likes: random(5000, 500000),
+                comments: random(200, 25000),
+                shares: random(100, 40000),
+                score: random(70, 95),
+            },
+            date: date.toISOString().split('T')[0], // Format as YYYY-MM-DD
+            country: countries[random(0, countries.length - 1)],
+            productLink: '#',
+        };
+    });
+};
+
+// --- Dynamic Data for the Application ---
+
+export const ads: Ad[] = generateAdData();
 
 // Function to generate dynamic stats
 const generateStats = (): Stat[] => {
