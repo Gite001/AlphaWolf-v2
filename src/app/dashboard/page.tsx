@@ -38,7 +38,7 @@ export default async function DashboardPage() {
             <AdGallery ads={ads} />
         </div>
         <div className="lg:col-span-2 flex flex-col gap-8">
-            <QuickActions />
+            <QuickActions t={t} />
             <PlatformDistributionChart data={engagementData} />
             <GeoChart data={geoData} />
             <MarketSnapshot />

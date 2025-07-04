@@ -1,15 +1,13 @@
-'use client';
-
 import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { FileText, ArrowRight, Binoculars, Trophy, Store, Compass, BookMarked, Swords, LineChart } from 'lucide-react';
-import { getTranslations } from '@/lib/utils';
-import { cookies } from 'next/headers';
 
-export async function QuickActions() {
-    const locale = cookies().get('locale')?.value;
-    const t = getTranslations(locale);
+type QuickActionsProps = {
+    t: (key: string) => string;
+};
+
+export function QuickActions({ t }: QuickActionsProps) {
     const actions = [
         {
             href: '/plan',
