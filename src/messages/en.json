@@ -130,6 +130,13 @@
         "description": "Provide product details and choose a video style. The AI will generate a title, a full storyboard with scene-by-scene visuals, a complete script, and a voiceover track."
     }
   },
+  "VideoStyles": {
+    "Dynamicandfast-paced": "Dynamic and fast-paced",
+    "Cinematicandemotional": "Cinematic and emotional",
+    "Informativeanddirect": "Informative and direct",
+    "Humorousandquirky": "Humorous and quirky",
+    "User-generatedcontentstyle": "User-generated content style"
+  },
   "AnalyzePage": {
     "title": "Ad Performance Analysis",
     "description": "Get an AI-powered analysis of your ad creative. Upload your visual, provide the details, and receive an estimated engagement score and actionable feedback.",
@@ -583,6 +590,7 @@
     "title": "Frequently Asked Questions",
     "description": "Find answers to the most common questions about AlphaWolf and its features.",
     "general": {
+      "title": "General Questions",
       "q1": {
         "question": "What is AlphaWolf?",
         "answer": "AlphaWolf is an all-in-one marketing intelligence suite. It's designed to be a strategic partner that uses AI to analyze market data, find winning products, spy on competitors, and generate high-impact ad concepts."
@@ -616,6 +624,10 @@
         "title": "🐺 The Command Center (Dashboard)",
         "content": "This is your mission control. It provides a high-level view of the marketing landscape, with key visualizations for quick decision-making. At the top, an **AI Summary** analyzes key metrics to provide a concise overview and strategic recommendations. You can also visualize performance across platforms with **Key Stats & Engagement Charts**, including a **distribution chart** to see which platform dominates your engagement. Quick actions let you launch your next move."
       },
+      "plan": {
+        "title": "🧭 The Strategic Roadmap (Marketing Plan)",
+        "content": "Move from uncertainty to action. This tool acts as your personal marketing mentor. Provide details about your product, target audience, and budget, and the AI will generate a comprehensive, step-by-step marketing plan. It covers everything from audience analysis and platform strategy (your own site vs. marketplaces) to influencer marketing and a phased roadmap for launch, optimization, and scaling."
+      },
       "finder": {
         "title": "🏆 Winning Product Discovery",
         "content": "This is your digital scout. Instead of you hunting for trends, the AI hunts for you. It analyzes a vast ad database to identify top-performing product categories. It doesn't just list products; it provides an **analysis** of why they're successful and gives you **actionable advice**. A **comparative performance chart** lets you immediately visualize which categories are outperforming others."
@@ -624,6 +636,10 @@
         "title": "📈 Market Trend Analysis",
         "content": "Go beyond your current niche and explore new territories. Enter any product category and region, and the AI will provide a comprehensive market report including a **Market Summary**, a list of **Trending Products**, key **Opportunities**, and potential **Risks**."
       },
+      "pulse": {
+        "title": "📡 Marketplace Pulse",
+        "content": "Get an AI-powered analysis of top-selling product trends on major e-commerce platforms like Amazon, Aliexpress, and Etsy. This tool doesn't scrape live data, but synthesizes vast knowledge about what's popular, giving you a report on what's hot, platform-specific advice, and an estimated demand trend over the last 6 months."
+      },
       "spy": {
         "title": "🕵️ Competitor Analysis",
         "content": "Deconstruct and dominate your competitors. Provide a competitor's product page or ad URL, and the AI reveals their **Product Name**, **Target Audience**, and **Marketing Angle**. It identifies their **Strengths** and **Weaknesses**, provides an **Estimated Performance Score**, and gives you a list of concrete **Counter-Strategies**."
@@ -631,6 +647,10 @@
       "generate": {
         "title": "🎨 Ad Concept Generator",
         "content": "This is your creative engine, supercharged with multimedia capabilities. Describe your product, audience, and keywords, and the AI generates **three complete and distinct ad concepts**. Each concept includes: a **Title**, **Body Text**, a **Call to Action**, a **unique AI-generated visual**, and a professional **Audio Ad**."
+      },
+      "video": {
+        "title": "🎬 Video Ad Storyboard Generator",
+        "content": "Go beyond static images and produce a complete, ready-to-shoot video ad storyboard. The AI acts as your director, creating a scene-by-scene plan complete with visual descriptions, a full narration script, timing for each scene, and a generated voiceover for the entire ad."
       },
       "analyze": {
         "title": "✨ Ad Performance Analysis",

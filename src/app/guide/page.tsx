@@ -9,10 +9,13 @@ export default async function GuidePage() {
 
     const tools = [
         { id: "dashboard", title: t('GuidePage.tools.dashboard.title'), content: t('GuidePage.tools.dashboard.content') },
+        { id: "plan", title: t('GuidePage.tools.plan.title'), content: t('GuidePage.tools.plan.content') },
         { id: "finder", title: t('GuidePage.tools.finder.title'), content: t('GuidePage.tools.finder.content') },
         { id: "trends", title: t('GuidePage.tools.trends.title'), content: t('GuidePage.tools.trends.content') },
+        { id: "pulse", title: t('GuidePage.tools.pulse.title'), content: t('GuidePage.tools.pulse.content') },
         { id: "spy", title: t('GuidePage.tools.spy.title'), content: t('GuidePage.tools.spy.content') },
         { id: "generate", title: t('GuidePage.tools.generate.title'), content: t('GuidePage.tools.generate.content') },
+        { id: "video", title: t('GuidePage.tools.video.title'), content: t('GuidePage.tools.video.content') },
         { id: "analyze", title: t('GuidePage.tools.analyze.title'), content: t('GuidePage.tools.analyze.content') }
     ];
 

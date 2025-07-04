@@ -130,6 +130,13 @@
         "description": "Fournissez les détails du produit et choisissez un style de vidéo. L'IA générera un titre, un storyboard complet avec des visuels pour chaque scène, un script complet et une piste de voix off."
     }
   },
+  "VideoStyles": {
+    "Dynamicandfast-paced": "Dynamique et rapide",
+    "Cinematicandemotional": "Cinématographique et émotionnel",
+    "Informativeanddirect": "Informatif et direct",
+    "Humorousandquirky": "Humoristique et décalé",
+    "User-generatedcontentstyle": "Style contenu généré par l'utilisateur"
+  },
   "AnalyzePage": {
     "title": "Analyse de Performance Publicitaire",
     "description": "Obtenez une analyse par IA de votre création publicitaire. Téléchargez votre visuel, fournissez les détails, et recevez un score d'engagement estimé ainsi que des retours exploitables.",
@@ -604,7 +611,7 @@
     "description": "Votre manuel complet pour maîtriser la suite marketing AlphaWolf.",
     "philosophy": {
       "title": "Philosophie Fondamentale : Penser Comme un Loup Alpha",
-      "content": "Un loup alpha ne fait pas que réagir ; il anticipe, élabore des stratégies et mène la meute. AlphaWolf est construit sur cette philosophie. Il vous permet de dépasser les simples tâches de commerce électronique et d'adopter un état d'esprit de prédateur dans le paysage marketing. Notre logo, une tête de loup affirmée intégrant un graphique de croissance, incarne cette fusion de l'instinct de leader et de l'analyse de données."
+      "content": "Un loup alpha ne fait pas que réagir ; il anticipe, élabore des stratégies et mène la meute.AlphaWolf est construit sur cette philosophie. Il vous permet de dépasser les simples tâches de commerce électronique et d'adopter un état d'esprit de prédateur dans le paysage marketing. Notre logo, une tête de loup affirmée intégrant un graphique de croissance, incarne cette fusion de l'instinct de leader et de l'analyse de données."
     },
     "howAiThinks": {
       "title": "Comment l'IA \"Pense\"",
@@ -615,7 +622,11 @@
       "description": "Votre application est divisée en plusieurs modules puissants, chacun conçu pour gérer une phase critique de votre stratégie marketing.",
       "dashboard": {
         "title": "🐺 Le Centre de Commande (Tableau de Bord)",
-        "content": "C'est votre centre de mission. Il offre une vue d'ensemble du paysage marketing, avec des visualisations clés pour des décisions rapides. En haut, un **Résumé par l'IA** analyse les indicateurs clés pour fournir un aperçu concis et des recommandations stratégiques. Vous pouvez également visualiser les performances sur toutes les plateformes avec des **Statistiques Clés & Graphiques d'Engagement**, y compris un **graphique de distribution** pour voir quelle plateforme domine votre engagement. Des actions rapides vous permettent de lancer votre prochaine action."
+        "content": "C'est votre centre de contrôle. Il offre une vue d'ensemble du paysage marketing, avec des visualisations clés pour des décisions rapides. En haut, un **Résumé par l'IA** analyse les indicateurs clés pour fournir un aperçu concis et des recommandations stratégiques. Vous pouvez également visualiser les performances sur toutes les plateformes avec des **Statistiques Clés & Graphiques d'Engagement**, y compris un **graphique de distribution** pour voir quelle plateforme domine votre engagement. Des actions rapides vous permettent de lancer votre prochaine action."
+      },
+      "plan": {
+        "title": "🧭 La Feuille de Route Stratégique (Plan Marketing)",
+        "content": "Passez de l'incertitude à l'action. Cet outil agit comme votre mentor marketing personnel. Fournissez des détails sur votre produit, votre audience cible et votre budget, et l'IA générera un plan marketing complet et étape par étape. Il couvre tout, de l'analyse de l'audience et de la stratégie de plateforme (votre propre site contre les places de marché) au marketing d'influence et à une feuille de route progressive pour le lancement, l'optimisation et la croissance."
       },
       "finder": {
         "title": "🏆 Découverte de Produits Gagnants",
@@ -625,6 +636,10 @@
         "title": "📈 Analyse des Tendances du Marché",
         "content": "Allez au-delà de votre niche actuelle et explorez de nouveaux territoires. Entrez n'importe quelle catégorie de produits et région, et l'IA fournira un rapport de marché complet incluant un **Résumé du Marché**, une liste de **Produits Tendances**, des **Opportunités** clés et les **Risques** potentiels."
       },
+      "pulse": {
+        "title": "📡 Pouls du Marché",
+        "content": "Obtenez une analyse par IA des tendances des produits les plus vendus sur les grandes plateformes e-commerce comme Amazon, Aliexpress et Etsy. Cet outil ne scrape pas les données en direct, mais synthétise une vaste connaissance de ce qui est populaire, vous donnant un rapport sur les tendances, des conseils spécifiques à la plateforme et une tendance de la demande estimée sur les 6 derniers mois."
+      },
       "spy": {
         "title": "🕵️ Analyse Concurrentielle",
         "content": "Déconstruisez et dominez vos concurrents. Fournissez l'URL de la page produit ou de la publicité d'un concurrent, et l'IA révèle leur **Nom de Produit**, leur **Audience Cible**, et leur **Angle Marketing**. Elle identifie leurs **Forces** et **Faiblesses**, fournit un **Score de Performance Estimé** et vous donne une liste de **Contre-Stratégies** concrètes."
@@ -632,6 +647,10 @@
       "generate": {
         "title": "🎨 Générateur de Concepts Publicitaires",
         "content": "C'est votre moteur créatif, suralimenté par des capacités multimédias. Décrivez votre produit, votre audience et vos mots-clés, et l'IA génère **trois concepts publicitaires complets et distincts**. Chaque concept inclut : un **Titre**, un **Corps de Texte**, un **Appel à l'Action**, un **visuel unique généré par l'IA**, et une **publicité audio** professionnelle."
+      },
+      "video": {
+        "title": "🎬 Générateur de Storyboard Vidéo",
+        "content": "Allez au-delà des images statiques et produisez un storyboard de publicité vidéo complet et prêt à tourner. L'IA agit comme votre réalisateur, créant un plan scène par scène complet avec des descriptions visuelles, un script de narration complet, le timing pour chaque scène et une voix off générée pour toute la publicité."
       },
       "analyze": {
         "title": "✨ Analyse de Performance Publicitaire",
@@ -648,7 +667,7 @@
       },
       "step2": {
         "title": "2. Lancer le serveur de développement (à chaque fois)",
-        "content": "This command starts the application. You will need to run this every time you want to work on the app. The terminal must remain open while you use it."
+        "content": "Cette commande démarre l'application. Vous devrez l'exécuter chaque fois que vous voudrez travailler sur l'application. Le terminal doit rester ouvert pendant que vous l'utilisez."
       },
       "outro": "L'application sera alors disponible à l'adresse `http://localhost:9003`. Maintenez la touche `Ctrl` (ou `Cmd` sur Mac) et cliquez sur le lien pour l'ouvrir dans votre navigateur."
     }

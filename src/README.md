@@ -1,6 +1,6 @@
 # AlphaWolf - Votre Loup du Marketing suralimenté par l'IA
 
-Bienvenue dans AlphaWolf, votre suite d'intelligence marketing tout-en-un. Cette application exploite la puissance de l'IA Gemini de Google via Genkit pour fournir des analyses approfondies, des informations stratégiques et de la génération créative.
+Bienvenue dans AlphaWolf, votre suite d'intelligence marketing tout-en-un. Cette application exploite la puissance de l'IA Gemini de Google via Genkit pour analyser les tendances du marché, déconstruire les stratégies des concurrents, générer des plans marketing complets et produire des concepts publicitaires à fort impact (incluant textes, images générées par IA et audio).
 
 Pour une description complète des fonctionnalités et de la philosophie, veuillez consulter la section **"Guide"** à l'intérieur de l'application en cours d'exécution.
 

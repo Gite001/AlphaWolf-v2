@@ -1,6 +1,6 @@
 # AlphaWolf - Your AI-Powered Marketing Wolf
 
-Welcome to AlphaWolf, your all-in-one marketing intelligence suite. This application leverages Google's Gemini AI via Genkit to provide deep analytics, strategic insights, and creative generation.
+Welcome to AlphaWolf, your all-in-one marketing intelligence suite. This application leverages Google's Gemini AI via Genkit to analyze market trends, deconstruct competitor strategies, generate complete marketing plans, and produce high-impact ad concepts (including text, AI-generated images, and audio).
 
 For a full breakdown of features and philosophy, please see the **"Guide"** section inside the running application.
 

@@ -68,6 +68,14 @@ export function VideoGeneratorForm() {
   
   const formRef = useRef<HTMLFormElement>(null);
 
+  const videoStyleOptions = [
+    'Dynamic and fast-paced',
+    'Cinematic and emotional',
+    'Informative and direct',
+    'Humorous and quirky',
+    'User-generated content style',
+  ] as const;
+
   return (
     <div>
       <form ref={formRef} action={formAction} className="space-y-6">
@@ -94,13 +102,15 @@ export function VideoGeneratorForm() {
 
         <div className="space-y-2">
             <Label htmlFor="videoStyle">{t('VideoGeneratorForm.videoStyle.label')}</Label>
-             <Select name="videoStyle" defaultValue={videoStyles[0]}>
+             <Select name="videoStyle" defaultValue={videoStyleOptions[0]}>
                 <SelectTrigger id="videoStyle">
                     <SelectValue placeholder={t('VideoGeneratorForm.videoStyle.placeholder')} />
                 </SelectTrigger>
                 <SelectContent>
-                    {videoStyles.map(style => (
-                        <SelectItem key={style} value={style}>{style}</SelectItem>
+                    {videoStyleOptions.map(style => (
+                        <SelectItem key={style} value={style}>
+                            {t(`VideoStyles.${style.replace(/ /g, '').replace(/-/g, '').replace(/&/g, '')}`)}
+                        </SelectItem>
                     ))}
                 </SelectContent>
             </Select>
