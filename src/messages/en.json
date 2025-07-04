@@ -28,6 +28,7 @@
     "marketTrends": "Market Trends",
     "marketplacePulse": "Marketplace Pulse",
     "competitorSpy": "Competitor Analysis",
+    "campaignTakedown": "Campaign Takedown",
     "generateAd": "Generate Ad Concept",
     "generateVideo": "Generate Video Ad",
     "analyzeAd": "Analyze Ad",
@@ -125,6 +126,14 @@
     "howItWorks": {
         "title": "How does it work?",
         "description": "The AI draws upon its vast knowledge base of public web data to identify patterns, trends, and strategic insights. It analyzes the content, structure, and likely audience of the provided URL based on information learned during its training. It does not perform live browsing or access private data."
+    }
+  },
+  "TakedownPage": {
+    "title": "Campaign Takedown",
+    "description": "Go on the offensive. Provide a competitor's product URL, and our AI will generate multiple strategic counter-attack campaigns designed to exploit their weaknesses and capture their market share.",
+    "form": {
+      "title": "Plan Your Takedown",
+      "description": "Designate your target by providing their product URL and your own product name. The AI will return three distinct attack vectors."
     }
   },
   "GeneratePage": {
@@ -263,6 +272,10 @@
     "spy": {
         "label": "Analyze Competitors",
         "description": "Deconstruct a competitor's page."
+    },
+    "takedown": {
+        "label": "Launch Takedown",
+        "description": "Generate counter-attacks."
     },
     "generate": {
         "label": "Generate Ad Concepts",
@@ -458,6 +471,19 @@
       "contentPlaceholder": "Paste the text content from the competitor's page here..."
     }
   },
+  "TakedownForm": {
+    "submitButton": "Generate Takedown Plan",
+    "toast": {
+        "successDescription": "Your takedown plan is ready."
+    },
+    "url": {
+        "label": "Competitor Product URL"
+    },
+    "yourProductName": {
+        "label": "Your Product Name",
+        "placeholder": "e.g., The AlphaWolf Pro"
+    }
+  },
   "CompetitorResults": {
     "title": "Analysis for: {productName}",
     "productFeatures": {
@@ -483,6 +509,11 @@
     },
     "notDetermined": "Not specified in the provided content.",
     "noneFound": "None found in the provided content."
+  },
+  "TakedownResults": {
+    "title": "Takedown Plan",
+    "description": "Counter-attack angles against '{competitorProduct}' by {competitorBrand}.",
+    "targetSegment": "Target Segment"
   },
   "TrendsForm": {
     "submitButton": "Analyze Trends",

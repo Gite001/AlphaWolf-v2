@@ -14,3 +14,4 @@ import '@/ai/flows/generate-video-storyboard.ts';
 import '@/ai/flows/analyze-marketplace-trends.ts';
 import '@/ai/flows/generate-marketing-plan.ts';
 import '@/ai/flows/define-ad-term.ts';
+import '@/ai/flows/generate-takedown-plan.ts';

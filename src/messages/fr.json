@@ -28,6 +28,7 @@
     "marketTrends": "Tendances Marché",
     "marketplacePulse": "Pouls du Marché",
     "competitorSpy": "Analyse Concurrent",
+    "campaignTakedown": "Plan de Conquête",
     "generateAd": "Générer Concept Pub",
     "generateVideo": "Générer Pub Vidéo",
     "analyzeAd": "Analyser Publicité",
@@ -125,6 +126,14 @@
     "howItWorks": {
       "title": "Comment ça marche ?",
       "description": "L'IA s'appuie sur sa vaste base de connaissances de données publiques du web pour identifier des schémas, des tendances et des perspectives stratégiques. Elle analyse le contenu, la structure et l'audience probable de l'URL fournie en se basant sur les informations apprises lors de sa formation. Elle n'effectue pas de navigation en direct ni n'accède à des données privées."
+    }
+  },
+   "TakedownPage": {
+    "title": "Plan de Conquête",
+    "description": "Passez à l'offensive. Fournissez l'URL produit d'un concurrent, et notre IA générera plusieurs campagnes de contre-attaque stratégiques conçues pour exploiter leurs faiblesses et capturer leurs parts de marché.",
+    "form": {
+      "title": "Planifier Votre Conquête",
+      "description": "Désignez votre cible en fournissant l'URL de son produit et le nom de votre propre produit. L'IA vous retournera trois vecteurs d'attaque distincts."
     }
   },
   "GeneratePage": {
@@ -263,6 +272,10 @@
     "spy": {
         "label": "Analyser les Concurrents",
         "description": "Déconstruisez la page d'un concurrent."
+    },
+    "takedown": {
+        "label": "Lancer la Conquête",
+        "description": "Générez des contre-attaques."
     },
     "generate": {
         "label": "Générer des Concepts Publicitaires",
@@ -458,6 +471,19 @@
       "contentPlaceholder": "Collez ici le contenu textuel de la page du concurrent..."
     }
   },
+  "TakedownForm": {
+    "submitButton": "Générer le Plan de Conquête",
+    "toast": {
+        "successDescription": "Votre plan de conquête est prêt."
+    },
+    "url": {
+        "label": "URL Produit du Concurrent"
+    },
+    "yourProductName": {
+        "label": "Nom de Votre Produit",
+        "placeholder": "ex: L'AlphaWolf Pro"
+    }
+  },
   "CompetitorResults": {
     "title": "Analyse pour : {productName}",
     "productFeatures": {
@@ -483,6 +509,11 @@
     },
     "notDetermined": "Non spécifié dans le contenu fourni.",
     "noneFound": "Aucun trouvé dans le contenu fourni."
+  },
+  "TakedownResults": {
+    "title": "Plan de Conquête",
+    "description": "Angles de contre-attaque contre '{competitorProduct}' de {competitorBrand}.",
+    "targetSegment": "Segment Cible"
   },
   "TrendsForm": {
     "submitButton": "Analyser les Tendances",

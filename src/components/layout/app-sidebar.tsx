@@ -13,7 +13,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-import { LayoutDashboard, Sparkles, FileText, LineChart, Home, Binoculars, Trophy, BookOpen, Clapperboard, Store, Compass, BookMarked } from 'lucide-react';
+import { LayoutDashboard, Sparkles, FileText, LineChart, Home, Binoculars, Trophy, BookOpen, Clapperboard, Store, Compass, BookMarked, Swords } from 'lucide-react';
 import { useI18n } from '@/hooks/use-i18n';
 import { Logo } from '../logo';
 
@@ -29,6 +29,7 @@ export function AppSidebar() {
     { href: '/trends', label: t('AppSidebar.marketTrends'), icon: LineChart },
     { href: '/pulse', label: t('AppSidebar.marketplacePulse'), icon: Store },
     { href: '/spy', label: t('AppSidebar.competitorSpy'), icon: Binoculars },
+    { href: '/takedown', label: t('AppSidebar.campaignTakedown'), icon: Swords },
     { href: '/generate', label: t('AppSidebar.generateAd'), icon: FileText },
     { href: '/video', label: t('AppSidebar.generateVideo'), icon: Clapperboard },
     { href: '/analyze', label: t('AppSidebar.analyzeAd'), icon: Sparkles },
