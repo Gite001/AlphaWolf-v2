@@ -47,6 +47,21 @@ export const getAds = (): Ad[] => {
         description: "Créez l'ambiance parfaite. Des millions de couleurs pour transformer n'importe quelle pièce, contrôlables.",
         dataAiHint: 'led lights',
       },
+      {
+        title: 'Ergonomic Office Chair',
+        description: "Le confort pour vos longues journées de travail. Notre chaise de bureau ergonomique soutient votre dos et améliore votre posture.",
+        dataAiHint: 'office chair',
+      },
+      {
+        title: 'Gourmet Coffee Beans',
+        description: "Commencez votre journée avec l'arôme parfait. Des grains de café d'origine unique, torréfiés à la perfection.",
+        dataAiHint: 'coffee beans',
+      },
+      {
+        title: 'Waterproof Adventure Watch',
+        description: "Conçue pour l'exploration. Une montre robuste, étanche et dotée d'un GPS pour toutes vos aventures.",
+        dataAiHint: 'adventure watch',
+      },
     ];
 
     const platforms: Ad['platform'][] = ['Facebook', 'Instagram', 'TikTok', 'Pinterest'];
