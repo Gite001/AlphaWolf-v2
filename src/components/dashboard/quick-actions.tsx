@@ -52,7 +52,7 @@ export async function QuickActions() {
                     <Link key={action.href} href={action.href} passHref>
                         <Button variant="outline" className="h-auto w-full justify-start p-4 text-left transition-colors hover:border-primary/50 hover:bg-primary/10">
                            <action.icon className="mr-4 h-6 w-6 text-primary" />
-                           <div className="flex-1">
+                           <div className="flex-1 min-w-0">
                              <p className="font-semibold">{action.label}</p>
                              <p className="text-xs text-muted-foreground">{action.description}</p>
                            </div>
