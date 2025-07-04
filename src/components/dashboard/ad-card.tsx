@@ -10,6 +10,7 @@ import { ZoomIn, Facebook, Instagram, MessageCircle, Share2, ThumbsUp } from 'lu
 import { PinterestIcon, TikTokIcon } from '../icons';
 import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
 import { Tooltip, TooltipContent, TooltipTrigger } from '../ui/tooltip';
+import { Dialog, DialogContent, DialogTrigger } from '../ui/dialog';
 
 type AdCardProps = {
   ad: Ad;
@@ -73,19 +74,31 @@ export function AdCard({ ad, t }: AdCardProps) {
                 </div>
               </PopoverContent>
             </Popover>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <Button variant="outline" size="icon" asChild>
-                  <a href={ad.imageUrl} target="_blank" rel="noopener noreferrer">
-                    <ZoomIn className="h-4 w-4" />
-                    <span className="sr-only">{t('AdCard.media')}</span>
-                  </a>
-                </Button>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>{t('AdCard.media')}</p>
-              </TooltipContent>
-            </Tooltip>
+            <Dialog>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <DialogTrigger asChild>
+                    <Button variant="outline" size="icon">
+                      <ZoomIn className="h-4 w-4" />
+                      <span className="sr-only">{t('AdCard.media')}</span>
+                    </Button>
+                  </DialogTrigger>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>{t('AdCard.media')}</p>
+                </TooltipContent>
+              </Tooltip>
+              <DialogContent className="max-w-3xl p-0 border-0">
+                <Image
+                  src={ad.imageUrl.replace('400x400', '800x800')}
+                  alt={ad.title}
+                  width={800}
+                  height={800}
+                  className="object-contain w-full h-auto rounded-lg"
+                  data-ai-hint={ad.dataAiHint}
+                />
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
       </CardContent>
