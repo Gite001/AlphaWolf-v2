@@ -261,6 +261,10 @@
       "label": "Bâtir une Stratégie",
       "description": "Générez une feuille de route marketing."
     },
+    "trends": {
+      "label": "Tendances Marché",
+      "description": "Analysez les grandes tendances de marché pour toute catégorie."
+    },
     "pulse": {
       "label": "Pouls du Marché",
       "description": "Analysez les tendances sur Aliexpress ou Etsy."

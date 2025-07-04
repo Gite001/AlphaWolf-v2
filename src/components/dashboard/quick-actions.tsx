@@ -1,7 +1,9 @@
+'use client';
+
 import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { FileText, ArrowRight, Binoculars, Trophy, Store, Compass, BookMarked, Swords } from 'lucide-react';
+import { FileText, ArrowRight, Binoculars, Trophy, Store, Compass, BookMarked, Swords, LineChart } from 'lucide-react';
 import { getTranslations } from '@/lib/utils';
 import { cookies } from 'next/headers';
 
@@ -14,6 +16,12 @@ export async function QuickActions() {
             label: t('QuickActions.plan.label'),
             description: t('QuickActions.plan.description'),
             icon: Compass
+        },
+        {
+            href: '/trends',
+            label: t('QuickActions.trends.label'),
+            description: t('QuickActions.trends.description'),
+            icon: LineChart
         },
         {
             href: '/pulse',

@@ -261,6 +261,10 @@
         "label": "Build a Strategy",
         "description": "Generate a full marketing roadmap."
     },
+    "trends": {
+      "label": "Market Trends",
+      "description": "Analyze broad market trends for any category."
+    },
     "pulse": {
         "label": "Marketplace Pulse",
         "description": "Analyze trends on Aliexpress or Etsy."
