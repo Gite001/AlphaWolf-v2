@@ -13,7 +13,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-import { LayoutDashboard, Sparkles, FileText, LineChart, Home, Binoculars, Trophy, BookOpen, Clapperboard, Store, Compass, BookMarked, Swords } from 'lucide-react';
+import { LayoutDashboard, Sparkles, FileText, LineChart, Binoculars, Trophy, BookOpen, Clapperboard, Store, Compass, BookMarked, Swords } from 'lucide-react';
 import { useI18n } from '@/hooks/use-i18n';
 import { Logo } from '../logo';
 
@@ -22,7 +22,6 @@ export function AppSidebar() {
   const { t } = useI18n();
 
   const menuItems = [
-    { href: '/', label: t('AppSidebar.home'), icon: Home },
     { href: '/dashboard', label: t('AppSidebar.dashboard'), icon: LayoutDashboard },
     { href: '/plan', label: t('AppSidebar.marketingPlan'), icon: Compass },
     { href: '/trends', label: t('AppSidebar.marketTrends'), icon: LineChart },
@@ -47,6 +46,9 @@ export function AppSidebar() {
         </Link>
       </SidebarHeader>
       <SidebarContent>
+        <p className="px-3 pb-2 text-xs font-semibold uppercase text-muted-foreground tracking-wider group-data-[collapsible=icon]:hidden">
+            {t('AppSidebar.toolsTitle')}
+        </p>
         <SidebarMenu>
           {menuItems.map((item) => (
             <SidebarMenuItem key={item.href}>

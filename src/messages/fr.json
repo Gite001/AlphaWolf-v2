@@ -14,6 +14,10 @@
   "LanguageSwitcher": {
     "toggle": "Changer de langue"
   },
+  "AppHeader": {
+    "title": "Poste de Commande",
+    "homeTooltip": "Accueil"
+  },
   "Footer": {
     "rightsReserved": "Tous droits réservés.",
     "terms": "Conditions d'Utilisation",
@@ -22,6 +26,7 @@
   },
   "AppSidebar": {
     "home": "Accueil",
+    "toolsTitle": "Arsenal",
     "dashboard": "Tableau de bord",
     "marketingPlan": "Plan Marketing",
     "productFinder": "Découverte Produits",
