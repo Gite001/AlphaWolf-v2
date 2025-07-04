@@ -37,24 +37,24 @@
   "HomePage": {
     "hero": {
       "title": "The Future of Ad Creation is Here",
-      "subtitle": "AlphaWolf combines cutting-edge AI with market analysis to help you create winning ad campaigns faster than ever.",
+      "subtitle": "Your all-in-one intelligence suite to strategize, analyze, and generate high-impact marketing campaigns from a single command center.",
       "cta": "Go to Dashboard"
     },
     "features": {
       "title": "All-in-One Marketing Intelligence",
       "subtitle": "From initial idea to performance analysis, AlphaWolf is your strategic partner.",
       "learnMore": "Learn more",
-      "marketAnalysis": {
-        "title": "Uncover Market Trends",
-        "description": "Our AI wolf analyzes vast market data to reveal trending products, untapped opportunities, and potential risks."
+      "strategicPlanning": {
+        "title": "Build Complete Strategies",
+        "description": "Generate comprehensive marketing roadmaps, from audience analysis and platform choice to a phased action plan."
       },
-      "competitorDeconstruction": {
-        "title": "Deconstruct Competitor Strategies",
-        "description": "Analyze any competitor's ad or product page to understand their tactics, weaknesses, and how to outperform them."
+      "competitorAnalysis": {
+        "title": "Analyze Markets & Competitors",
+        "description": "Deconstruct competitor websites, uncover winning products, and analyze market trends to find your next opportunity."
       },
-      "multiFormatAds": {
-        "title": "Generate Multi-Format Ads",
-        "description": "Instantly create complete ad concepts with compelling copy, unique AI-generated visuals, and professional audio ads."
+      "creativeGeneration": {
+        "title": "Generate Multi-Media Creatives",
+        "description": "Instantly produce ad copy, AI-generated visuals, professional audio, and complete video storyboards."
       }
     },
     "cta": {

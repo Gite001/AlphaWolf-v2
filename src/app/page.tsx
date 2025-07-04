@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowRight, Sparkles, Binoculars, LineChart } from 'lucide-react';
+import { ArrowRight, Sparkles, Binoculars, Compass } from 'lucide-react';
 import Image from 'next/image';
 import { getTranslations } from '@/lib/utils';
 import { cookies } from 'next/headers';
@@ -14,22 +14,22 @@ export default async function HomePage() {
 
   const features = [
     {
-      icon: <LineChart className="h-8 w-8 text-primary" />,
-      title: t('HomePage.features.marketAnalysis.title'),
-      description: t('HomePage.features.marketAnalysis.description'),
-      link: '/guide#tools',
+      icon: <Compass className="h-8 w-8 text-primary" />,
+      title: t('HomePage.features.strategicPlanning.title'),
+      description: t('HomePage.features.strategicPlanning.description'),
+      link: '/plan',
     },
     {
       icon: <Binoculars className="h-8 w-8 text-primary" />,
-      title: t('HomePage.features.competitorDeconstruction.title'),
-      description: t('HomePage.features.competitorDeconstruction.description'),
-      link: '/guide#tools',
+      title: t('HomePage.features.competitorAnalysis.title'),
+      description: t('HomePage.features.competitorAnalysis.description'),
+      link: '/spy',
     },
     {
       icon: <Sparkles className="h-8 w-8 text-primary" />,
-      title: t('HomePage.features.multiFormatAds.title'),
-      description: t('HomePage.features.multiFormatAds.description'),
-      link: '/guide#tools',
+      title: t('HomePage.features.creativeGeneration.title'),
+      description: t('HomePage.features.creativeGeneration.description'),
+      link: '/generate',
     },
   ];
 
