@@ -4,6 +4,7 @@ import type { AnalyzeMarketplaceTrendsOutput } from '@/ai/flows/analyze-marketpl
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Handshake, AlertTriangle, TrendingUp, Sparkles } from 'lucide-react';
 import { useI18n } from '@/hooks/use-i18n';
+import { DemandTrendChart } from './demand-trend-chart';
 
 type PulseResultsProps = {
   results: AnalyzeMarketplaceTrendsOutput;
@@ -17,6 +18,10 @@ export function PulseResults({ results }: PulseResultsProps) {
         <h2 className="text-2xl font-bold font-headline text-center mb-2">{t('PulseResults.title')}</h2>
         <p className="text-center text-muted-foreground">{results.marketplaceSummary}</p>
       </div>
+
+      {results.demandTrend && results.demandTrend.length > 0 && (
+        <DemandTrendChart data={results.demandTrend} analysis={results.trendAnalysis} />
+      )}
 
       <Card>
         <CardHeader className="flex flex-row items-center gap-2">

@@ -492,6 +492,9 @@
     },
     "marketingAngle": "Marketing Angle"
   },
+  "DemandTrendChart": {
+    "title": "Estimated Demand Trend (Last 6 Months)"
+  },
   "PlatformDistributionChart": {
     "title": "Engagement Distribution",
     "description": "Total engagement share by platform for the week."
