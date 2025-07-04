@@ -23,11 +23,18 @@ const TrendingProductSchema = z.object({
     description: z.string().describe('A brief description of why this product is trending.'),
 });
 
+const GeoTrendPointSchema = z.object({
+    country: z.string().describe('The name of the country.'),
+    demandScore: z.number().min(0).max(100).describe('An estimated demand score from 0-100 for that country, where 100 is peak demand.'),
+});
+
 const AnalyzeMarketTrendsOutputSchema = z.object({
   marketSummary: z.string().describe('An overall summary of the market landscape for this category.'),
   trendingProducts: z.array(TrendingProductSchema).describe('An array of 3-5 trending products in the category.'),
   opportunities: z.string().describe('Key opportunities for new sellers or products in this market.'),
   risks: z.string().describe('Potential risks or market saturation points to be aware of.'),
+  geoTrend: z.array(GeoTrendPointSchema).describe('An array of the top 5-7 countries for this product category, ranked by estimated demand.'),
+  geoTrendAnalysis: z.string().describe("A brief analysis explaining the geographic demand distribution.")
 });
 export type AnalyzeMarketTrendsOutput = z.infer<typeof AnalyzeMarketTrendsOutputSchema>;
 
@@ -53,6 +60,8 @@ Based on your knowledge of current consumer behavior, social media trends, and m
 2.  **Trending Products:** Identify 3-5 specific products that are currently popular or have high growth potential. For each product, provide a name and a short description of why it's trending.
 3.  **Opportunities:** Highlight key opportunities for new e-commerce sellers. This could involve underserved niches, new technologies, or marketing angles.
 4.  **Risks:** Point out potential risks, such as high competition, market saturation, or changing consumer preferences.
+5.  **Geographic Hotspots:** Identify the top 5-7 countries within the specified region that show the highest demand for this product category. For each country, provide an estimated demand score (0-100). This is an educated guess based on market size, consumer behavior, and cultural fit.
+6.  **Hotspot Analysis:** Briefly explain the reasoning behind the geographic distribution in 1-2 sentences. Why are these countries hotspots?
 
 Structure your response according to the output schema. Your response must be in valid JSON format and in the requested language ({{{locale}}}).
 `,

@@ -560,6 +560,10 @@
   "DemandTrendChart": {
     "title": "Estimated Demand Trend (Last 6 Months)"
   },
+  "GeoTrendChart": {
+    "title": "Geographic Demand Hotspots",
+    "demandScore": "Demand Score"
+  },
   "PlatformDistributionChart": {
     "title": "Engagement Distribution",
     "description": "Total engagement share by platform for the week."

@@ -4,6 +4,7 @@ import type { AnalyzeMarketTrendsOutput } from '@/ai/flows/analyze-market-trends
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Zap, Target, ShieldAlert, TrendingUp } from 'lucide-react';
 import { useI18n } from '@/hooks/use-i18n';
+import { GeoTrendChart } from './geo-trend-chart';
 
 type TrendsResultsProps = {
   results: AnalyzeMarketTrendsOutput;
@@ -17,6 +18,10 @@ export function TrendsResults({ results }: TrendsResultsProps) {
         <h2 className="text-2xl font-bold font-headline text-center mb-2">{t('TrendsResults.title')}</h2>
         <p className="text-center text-muted-foreground">{results.marketSummary}</p>
       </div>
+
+      {results.geoTrend && results.geoTrend.length > 0 && (
+        <GeoTrendChart data={results.geoTrend} analysis={results.geoTrendAnalysis} />
+      )}
 
       <Card>
         <CardHeader className="flex flex-row items-center gap-2">
