@@ -31,7 +31,7 @@
     "generateAd": "Générer Concept Pub",
     "generateVideo": "Générer Pub Vidéo",
     "analyzeAd": "Analyser Publicité",
-    "lexicon": "Lexique du Chasseur",
+    "lexicon": "Lexique Publicitaire",
     "guide": "Guide"
   },
   "HomePage": {
@@ -147,15 +147,15 @@
     }
   },
   "LexiconPage": {
-    "title": "Lexique du Chasseur",
-    "description": "Le jargon du marketing peut être une jungle. Notre chef de meute IA tranche le bruit pour vous donner des définitions claires et des stratégies létales.",
+    "title": "Lexique Publicitaire",
+    "description": "Maîtrisez le langage de la publicité. Ce lexique clarifie le jargon pour vous donner des définitions précises et des aperçus stratégiques pour n'importe quel terme marketing.",
     "form": {
         "title": "Décoder le Jargon Marketing",
         "description": "Entrez un terme ou un acronyme (ex: 'CTR', 'AOV', 'Audience Similaire') pour obtenir une définition simple et un conseil stratégique."
     },
     "howItWorks": {
       "title": "Un Savoir Sans Limites",
-      "description": "Le Lexique du Chasseur n'est pas un dictionnaire avec un nombre fini de pages ; son savoir est pratiquement illimité.\n\nL'IA n'a pas une liste fixe de termes. Elle a été entraînée sur une quantité massive de connaissances provenant du web. Vous pouvez l'interroger sur des centaines de termes, des plus courants aux plus obscurs (ex: CTR, ROAS, Lookalike Audience...).\n\nSi un terme existe dans le jargon du marketing digital, notre loup IA peut le déchiffrer. La seule limite est votre curiosité."
+      "description": "Le Lexique Publicitaire n'est pas un dictionnaire avec un nombre fini de pages ; son savoir est pratiquement illimité.\n\nL'IA n'a pas une liste fixe de termes. Elle a été entraînée sur une quantité massive de connaissances provenant du web. Vous pouvez l'interroger sur des centaines de termes, des plus courants aux plus obscurs (ex: CTR, ROAS, Lookalike Audience...).\n\nSi un terme existe dans le jargon du marketing digital, notre loup IA peut le déchiffrer. La seule limite est votre curiosité."
     }
   },
     "PrivacyPage": {
@@ -257,7 +257,7 @@
         "description": "Créez instantanément des textes et visuels complets."
     },
     "lexicon": {
-      "label": "Décoder le Jargon Pub",
+      "label": "Lexique Publicitaire",
       "description": "Obtenez des définitions claires des termes marketing."
     }
   },
@@ -672,7 +672,7 @@
         "content": "Obtenez un retour objectif et piloté par l'IA sur votre propre travail créatif. Téléchargez votre visuel publicitaire, fournissez le texte et les informations de ciblage, et l'IA renvoie un **Score d'Engagement Estimé**, une ventilation de ses **Forces** et **Faiblesses**, et des **Suggestions d'Amélioration**."
       },
        "lexicon": {
-        "title": "📖 Lexique du Chasseur",
+        "title": "📖 Lexique Publicitaire",
         "content": "Le champ de bataille du marketing est rempli de jargon conçu pour semer la confusion. Cet outil est votre traducteur. Entrez n'importe quel terme ou acronyme marketing (CTR, CPA, AOV), et l'IA fournira une définition simple et directe ainsi qu'un conseil stratégique pointu sur la manière d'utiliser ce concept à votre avantage."
       }
     },

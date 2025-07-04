@@ -31,7 +31,7 @@
     "generateAd": "Generate Ad Concept",
     "generateVideo": "Generate Video Ad",
     "analyzeAd": "Analyze Ad",
-    "lexicon": "Hunter's Lexicon",
+    "lexicon": "Ads Lexicon",
     "guide": "Guide"
   },
   "HomePage": {
@@ -147,15 +147,15 @@
     }
   },
   "LexiconPage": {
-    "title": "Hunter's Lexicon",
-    "description": "Marketing jargon can be a jungle. Our AI pack leader cuts through the noise to give you clear definitions and lethal strategies.",
+    "title": "Ads Lexicon",
+    "description": "Master the language of advertising. This lexicon cuts through the jargon to give you clear definitions and strategic insights for any marketing term.",
     "form": {
         "title": "Decode Marketing Lingo",
         "description": "Enter a term or acronym (e.g., 'CTR', 'AOV', 'Lookalike Audience') to get a straightforward definition and a strategic tip."
     },
     "howItWorks": {
       "title": "Limitless Knowledge",
-      "description": "The Hunter's Lexicon isn't a dictionary with a finite number of pages; its knowledge is virtually limitless.\n\nThe AI doesn't have a fixed list of terms. It's been trained on a massive amount of web knowledge. You can ask it about hundreds of terms, from common to obscure (e.g., CTR, ROAS, Lookalike Audience...).\n\nIf a term exists in digital marketing jargon, our AI wolf can decipher it. The only limit is your curiosity."
+      "description": "The Ads Lexicon isn't a dictionary with a finite number of pages; its knowledge is virtually limitless.\n\nThe AI doesn't have a fixed list of terms. It's been trained on a massive amount of web knowledge. You can ask it about hundreds of terms, from common to obscure (e.g., CTR, ROAS, Lookalike Audience...).\n\nIf a term exists in digital marketing jargon, our AI wolf can decipher it. The only limit is your curiosity."
     }
   },
   "PrivacyPage": {
@@ -257,7 +257,7 @@
         "description": "Instantly create full copy and visuals."
     },
     "lexicon": {
-      "label": "Decode Ad Lingo",
+      "label": "Ads Lexicon",
       "description": "Get clear definitions for marketing terms."
     }
   },
@@ -672,7 +672,7 @@
         "content": "Get objective, AI-driven feedback on your own creative work. Upload your ad visual, provide the text and targeting information, and the AI returns an **Estimated Engagement Score**, a breakdown of its **Strengths** and **Weaknesses**, and **Suggestions for Improvement**."
       },
       "lexicon": {
-        "title": "📖 Hunter's Lexicon",
+        "title": "📖 Ads Lexicon",
         "content": "The battlefield of marketing is filled with jargon designed to confuse. This tool is your translator. Enter any marketing term or acronym (CTR, CPA, AOV), and the AI will provide a simple, direct definition and a sharp, strategic tip on how to use that concept to your advantage."
       }
     },
