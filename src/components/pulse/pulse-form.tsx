@@ -12,7 +12,7 @@ import { Loader2 } from 'lucide-react';
 import { PulseResults } from './pulse-results';
 import { useI18n } from '@/hooks/use-i18n';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../ui/select';
-import { supportedMarketplaces } from '@/ai/flows/analyze-marketplace-trends';
+import { supportedMarketplaces } from '@/lib/types';
 
 const initialState = {
   message: '',

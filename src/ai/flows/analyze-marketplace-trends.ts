@@ -10,8 +10,7 @@
 
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
-
-export const supportedMarketplaces = ['Aliexpress', 'Etsy'] as const;
+import { supportedMarketplaces } from '@/lib/types';
 
 const AnalyzeMarketplaceTrendsInputSchema = z.object({
   marketplace: z.enum(supportedMarketplaces).describe('The e-commerce marketplace to analyze.'),

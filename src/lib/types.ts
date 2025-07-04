@@ -31,3 +31,5 @@ export type EngagementData = {
   TikTok: number;
   Pinterest: number;
 };
+
+export const supportedMarketplaces = ['Aliexpress', 'Etsy'] as const;

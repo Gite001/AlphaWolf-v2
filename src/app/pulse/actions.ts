@@ -1,6 +1,7 @@
 'use server';
 
-import { analyzeMarketplaceTrends, supportedMarketplaces } from "@/ai/flows/analyze-marketplace-trends";
+import { analyzeMarketplaceTrends } from "@/ai/flows/analyze-marketplace-trends";
+import { supportedMarketplaces } from "@/lib/types";
 import { z } from "zod";
 
 const formSchema = z.object({
