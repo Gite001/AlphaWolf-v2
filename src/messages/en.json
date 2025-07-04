@@ -152,6 +152,10 @@
     "form": {
         "title": "Decode Marketing Lingo",
         "description": "Enter a term or acronym (e.g., 'CTR', 'AOV', 'Lookalike Audience') to get a straightforward definition and a strategic tip."
+    },
+    "howItWorks": {
+      "title": "Limitless Knowledge",
+      "description": "The Hunter's Lexicon isn't a dictionary with a finite number of pages; its knowledge is virtually limitless.\n\nThe AI doesn't have a fixed list of terms. It's been trained on a massive amount of web knowledge. You can ask it about hundreds of terms, from common to obscure (e.g., CTR, ROAS, Lookalike Audience...).\n\nIf a term exists in digital marketing jargon, our AI wolf can decipher it. The only limit is your curiosity."
     }
   },
   "PrivacyPage": {
@@ -615,26 +619,6 @@
   "CategoryPerformanceChart": {
     "title": "Winning Category Performance",
     "description": "Average AI-estimated performance score for each identified category."
-  },
-  "FaqPage": {
-    "header": "Help Center",
-    "title": "Frequently Asked Questions",
-    "description": "Find answers to the most common questions about AlphaWolf and its features.",
-    "general": {
-      "title": "General Questions",
-      "q1": {
-        "question": "What is AlphaWolf?",
-        "answer": "AlphaWolf is an all-in-one marketing intelligence suite. It's designed to be a strategic partner that uses AI to analyze market data, find winning products, spy on competitors, and generate high-impact ad concepts."
-      },
-      "q2": {
-        "question": "How does the AI work?",
-        "answer": "The AI is powered by Google's Gemini models. It doesn't have real-time access to private data. Instead, it leverages its vast training on a large portion of the public internet. When you ask it to analyze something, it identifies patterns and synthesizes information from this knowledge base to provide intelligent deductions, much like a world-class analyst with a near-perfect memory of the web."
-      },
-      "q3": {
-        "question": "Is my data private and secure?",
-        "answer": "Yes. When you run AlphaWolf locally, all your inputs (like competitor URLs or ad text) remain on your computer. They are only sent to the Google AI API for processing and are not stored or used for any other purpose. Your strategic work remains confidential."
-      }
-    }
   },
   "GuidePage": {
     "header": "User Guide",

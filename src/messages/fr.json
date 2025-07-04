@@ -152,6 +152,10 @@
     "form": {
         "title": "Décoder le Jargon Marketing",
         "description": "Entrez un terme ou un acronyme (ex: 'CTR', 'AOV', 'Audience Similaire') pour obtenir une définition simple et un conseil stratégique."
+    },
+    "howItWorks": {
+      "title": "Un Savoir Sans Limites",
+      "description": "Le Lexique du Chasseur n'est pas un dictionnaire avec un nombre fini de pages ; son savoir est pratiquement illimité.\n\nL'IA n'a pas une liste fixe de termes. Elle a été entraînée sur une quantité massive de connaissances provenant du web. Vous pouvez l'interroger sur des centaines de termes, des plus courants aux plus obscurs (ex: CTR, ROAS, Lookalike Audience...).\n\nSi un terme existe dans le jargon du marketing digital, notre loup IA peut le déchiffrer. La seule limite est votre curiosité."
     }
   },
     "PrivacyPage": {
@@ -615,26 +619,6 @@
   "CategoryPerformanceChart": {
     "title": "Performance des Catégories Gagnantes",
     "description": "Score de performance moyen estimé par l'IA pour chaque catégorie identifiée."
-  },
-  "FaqPage": {
-    "header": "Centre d'Aide",
-    "title": "Foire Aux Questions",
-    "description": "Trouvez les réponses aux questions les plus fréquentes sur AlphaWolf et ses fonctionnalités.",
-    "general": {
-      "title": "Questions Générales",
-      "q1": {
-        "question": "Qu'est-ce qu'AlphaWolf ?",
-        "answer": "AlphaWolf est une suite d'intelligence marketing tout-en-un. Elle est conçue comme un partenaire stratégique qui utilise l'IA pour analyser les données du marché, trouver des produits gagnants, espionner les concurrents et générer des concepts publicitaires à fort impact."
-      },
-      "q2": {
-        "question": "Comment fonctionne l'IA ?",
-        "answer": "L'IA est propulsée par les modèles Gemini de Google. Elle n'a pas accès en temps réel aux données privées. Au lieu de cela, elle s'appuie sur sa vaste formation sur une grande partie de l'Internet public. Lorsque vous lui demandez d'analyser quelque chose, elle identifie des schémas et synthétise des informations à partir de cette base de connaissances pour fournir des déductions intelligentes, un peu comme un analyste de classe mondiale avec une mémoire quasi parfaite du web."
-      },
-      "q3": {
-        "question": "Mes données sont-elles confidentielles et sécurisées ?",
-        "answer": "Oui. Lorsque vous exécutez AlphaWolf en local, toutes vos entrées (comme les URL des concurrents ou le texte des publicités) restent sur votre ordinateur. Elles ne sont envoyées à l'API de l'IA de Google que pour le traitement et ne sont pas stockées ou utilisées à d'autres fins. Votre travail stratégique reste confidentiel."
-      }
-    }
   },
   "GuidePage": {
     "header": "Guide Utilisateur",

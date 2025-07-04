@@ -1,7 +1,7 @@
 import { LexiconForm } from "@/components/lexicon/lexicon-form";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { getTranslations } from "@/lib/utils";
-import { BookMarked } from "lucide-react";
+import { BookMarked, Info } from "lucide-react";
 import { cookies } from "next/headers";
 
 export default async function LexiconPage() {
@@ -27,6 +27,20 @@ export default async function LexiconPage() {
                     </CardHeader>
                     <CardContent>
                         <LexiconForm />
+                    </CardContent>
+                </Card>
+
+                <Card className="mt-8 bg-secondary/30 backdrop-blur-sm border-dashed border-white/20">
+                    <CardHeader className="flex-row gap-4 items-center">
+                        <Info className="h-6 w-6 text-primary" />
+                        <div>
+                            <CardTitle className="text-lg">{t('LexiconPage.howItWorks.title')}</CardTitle>
+                        </div>
+                    </CardHeader>
+                    <CardContent>
+                        <p className="text-sm text-muted-foreground whitespace-pre-line">
+                            {t('LexiconPage.howItWorks.description')}
+                        </p>
                     </CardContent>
                 </Card>
             </div>
