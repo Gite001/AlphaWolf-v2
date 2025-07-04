@@ -176,14 +176,17 @@ export const stats: Stat[] = generateStats();
 export const engagementData: EngagementData[] = generateEngagementData();
 
 // --- Static Data for Geographic Hotspots Chart ---
+// Data adjusted to reflect the user's strategic input.
 export const geoData: GeoData[] = [
+    // Tier 1: USA, Canada, UK, Australia, New Zealand
     { country: 'USA', marketStrength: 95 },
-    { country: 'United Kingdom', marketStrength: 88 },
-    { country: 'Germany', marketStrength: 85 },
-    { country: 'Canada', marketStrength: 82 },
-    { country: 'Australia', marketStrength: 78 },
-    { country: 'France', marketStrength: 75 },
-    { country: 'Spain', marketStrength: 68 },
-    { country: 'Italy', marketStrength: 65 },
-    { country: 'New Zealand', marketStrength: 60 },
+    { country: 'United Kingdom', marketStrength: 92 },
+    { country: 'Australia', marketStrength: 90 },
+    { country: 'Canada', marketStrength: 88 },
+    { country: 'New Zealand', marketStrength: 85 },
+    // Tier 2: France, Germany, Spain, Italy
+    { country: 'Germany', marketStrength: 80 },
+    { country: 'France', marketStrength: 78 },
+    { country: 'Spain', marketStrength: 72 },
+    { country: 'Italy', marketStrength: 70 },
 ].sort((a, b) => a.marketStrength - b.marketStrength);
