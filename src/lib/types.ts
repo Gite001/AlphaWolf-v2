@@ -38,3 +38,6 @@ export type GeoData = {
   country: string;
   marketStrength: number;
 };
+
+export const budgetLevels = ['Low', 'Medium', 'High'] as const;
+export const marketingGoals = ['Brand Awareness', 'Direct Sales', 'Lead Generation'] as const;

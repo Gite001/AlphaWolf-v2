@@ -1,6 +1,7 @@
 'use server';
 
-import { generateMarketingPlan, budgetLevels, marketingGoals } from "@/ai/flows/generate-marketing-plan";
+import { generateMarketingPlan } from "@/ai/flows/generate-marketing-plan";
+import { budgetLevels, marketingGoals } from "@/lib/types";
 import { z } from "zod";
 
 const formSchema = z.object({

@@ -10,9 +10,7 @@
 
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
-
-export const budgetLevels = ['Low', 'Medium', 'High'] as const;
-export const marketingGoals = ['Brand Awareness', 'Direct Sales', 'Lead Generation'] as const;
+import { budgetLevels, marketingGoals } from '@/lib/types';
 
 const GenerateMarketingPlanInputSchema = z.object({
   productName: z.string().describe('The name of the product.'),

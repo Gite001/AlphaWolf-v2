@@ -9,7 +9,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { useEffect, useRef, useState, useActionState } from 'react';
 import { useToast } from '@/hooks/use-toast';
 import type { GenerateMarketingPlanOutput } from '@/ai/flows/generate-marketing-plan';
-import { budgetLevels, marketingGoals } from '@/ai/flows/generate-marketing-plan';
+import { budgetLevels, marketingGoals } from '@/lib/types';
 import { Loader2 } from 'lucide-react';
 import { useI18n } from '@/hooks/use-i18n';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../ui/select';
