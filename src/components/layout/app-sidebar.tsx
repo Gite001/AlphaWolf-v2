@@ -13,7 +13,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-import { LayoutDashboard, Sparkles, FileText, LineChart, Home, Binoculars, Trophy, BookOpen, Clapperboard, Store } from 'lucide-react';
+import { LayoutDashboard, Sparkles, FileText, LineChart, Home, Binoculars, Trophy, BookOpen, Clapperboard, Store, Compass } from 'lucide-react';
 import { useI18n } from '@/hooks/use-i18n';
 import { Logo } from '../logo';
 
@@ -24,6 +24,7 @@ export function AppSidebar() {
   const menuItems = [
     { href: '/', label: t('AppSidebar.home'), icon: Home },
     { href: '/dashboard', label: t('AppSidebar.dashboard'), icon: LayoutDashboard },
+    { href: '/plan', label: t('AppSidebar.marketingPlan'), icon: Compass },
     { href: '/finder', label: t('AppSidebar.productFinder'), icon: Trophy },
     { href: '/trends', label: t('AppSidebar.marketTrends'), icon: LineChart },
     { href: '/pulse', label: t('AppSidebar.marketplacePulse'), icon: Store },

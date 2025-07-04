@@ -23,6 +23,7 @@
   "AppSidebar": {
     "home": "Accueil",
     "dashboard": "Tableau de bord",
+    "marketingPlan": "Plan Marketing",
     "productFinder": "Découverte Produits",
     "marketTrends": "Tendances Marché",
     "marketplacePulse": "Pouls du Marché",
@@ -64,6 +65,14 @@
   "DashboardPage": {
     "title": "Centre de Commande",
     "description": "Votre tableau de bord marketing piloté par l'IA."
+  },
+  "PlanPage": {
+    "title": "Stratège Marketing IA",
+    "description": "Arrêtez de deviner et commencez à élaborer des stratégies. Obtenez un plan marketing personnalisé de notre expert IA, conçu pour vous guider du lancement à la croissance, en remplaçant la confusion par une feuille de route claire.",
+    "form": {
+        "title": "Construire Votre Plan Marketing",
+        "description": "Fournissez les détails de votre produit, et l'IA agira comme votre consultant marketing personnel, livrant une stratégie étape par étape."
+    }
   },
   "FinderPage": {
     "title": "Découverte de Produits Gagnants",
@@ -207,6 +216,10 @@
   "QuickActions": {
     "title": "Actions de la Meute",
     "description": "Lancez votre prochaine chasse aux produits gagnants.",
+    "plan": {
+      "label": "Bâtir une Stratégie",
+      "description": "Générez une feuille de route marketing."
+    },
     "pulse": {
       "label": "Pouls du Marché",
       "description": "Analysez les tendances sur Aliexpress ou Etsy."
@@ -467,6 +480,37 @@
       "placeholder": "ex: France"
     }
   },
+  "PlanForm": {
+    "submitButton": "Générer le Plan",
+    "toast": {
+      "successDescription": "Votre nouveau plan marketing est prêt."
+    },
+    "productName": {
+        "label": "Nom du Produit",
+        "placeholder": "ex: 'Tapis de Yoga Écologique'"
+    },
+    "productDescription": {
+        "label": "Description du Produit",
+        "placeholder": "ex: 'Fabriqué en liège durable, antidérapant...'"
+    },
+    "targetAudience": {
+        "label": "Audience Cible",
+        "placeholder": "ex: 'Femmes éco-conscientes, 25-45 ans, pratiquant le yoga...'"
+    },
+    "budgetLevel": {
+        "label": "Niveau de Budget",
+        "Low": "Faible",
+        "Medium": "Moyen",
+        "High": "Élevé"
+    },
+    "marketingGoal": {
+        "label": "Objectif Principal",
+        "placeholder": "Sélectionner un objectif",
+        "BrandAwareness": "Notoriété de la Marque",
+        "DirectSales": "Ventes Directes",
+        "LeadGeneration": "Génération de Prospects"
+    }
+  },
   "TrendsResults": {
     "title": "Résultats de l'Analyse de Marché",
     "trendingProducts": {
@@ -491,6 +535,27 @@
       "title": "Pièges Courants à Éviter"
     },
     "marketingAngle": "Angle Marketing"
+  },
+  "PlanResults": {
+    "title": "Votre Feuille de Route Marketing Personnalisée",
+    "description": "Voici un plan stratégique étape par étape généré par votre mentor IA.",
+    "audienceInsight": {
+      "title": "Analyse de l'Audience"
+    },
+    "platformStrategy": {
+      "title": "Stratégie de Plateforme"
+    },
+    "keyMessaging": {
+      "title": "Messages Clés"
+    },
+    "influencerStrategy": {
+      "title": "Stratégie d'Influence"
+    },
+    "phasedRoadmap": {
+      "title": "Feuille de Route par Phases",
+      "description": "Un plan en 3 phases pour vous guider du lancement à la croissance.",
+      "actions": "Actions Clés"
+    }
   },
   "DemandTrendChart": {
     "title": "Tendance de la Demande Estimée (6 derniers mois)"
