@@ -31,6 +31,7 @@
     "generateAd": "Generate Ad Concept",
     "generateVideo": "Generate Video Ad",
     "analyzeAd": "Analyze Ad",
+    "lexicon": "Hunter's Lexicon",
     "guide": "Guide"
   },
   "HomePage": {
@@ -92,7 +93,7 @@
   },
   "PulsePage": {
     "title": "Marketplace Pulse",
-    "description": "Get an AI-powered analysis of top-selling product trends on major e-commerce platforms like Aliexpress and Etsy. This tool doesn't scrape live data, but synthesizes vast knowledge about what's popular.",
+    "description": "Get an AI-powered analysis of top-selling product trends on major e-commerce platforms like Amazon, Aliexpress and Etsy. This tool doesn't scrape live data, but synthesizes vast knowledge about what's popular.",
     "form": {
       "title": "Analyze Marketplace Trends",
       "description": "Choose a marketplace, a category, and a region to get a detailed report on what's hot."
@@ -143,6 +144,14 @@
     "form": {
         "title": "Analyze a New Ad",
         "description": "Provide the details of your ad below. The AI will analyze the copy, visual, and targeting to give you a performance estimate and suggestions for improvement."
+    }
+  },
+  "LexiconPage": {
+    "title": "Hunter's Lexicon",
+    "description": "Marketing jargon can be a jungle. Our AI pack leader cuts through the noise to give you clear definitions and lethal strategies.",
+    "form": {
+        "title": "Decode Marketing Lingo",
+        "description": "Enter a term or acronym (e.g., 'CTR', 'AOV', 'Lookalike Audience') to get a straightforward definition and a strategic tip."
     }
   },
   "PrivacyPage": {
@@ -242,6 +251,10 @@
     "generate": {
         "label": "Generate Ad Concepts",
         "description": "Instantly create full copy and visuals."
+    },
+    "lexicon": {
+      "label": "Decode Ad Lingo",
+      "description": "Get clear definitions for marketing terms."
     }
   },
   "MarketSnapshot": {
@@ -519,6 +532,16 @@
     },
     "outputHint": "The generated plan will appear below and will include influencer strategies, platform recommendations, and a phased timeline."
   },
+  "LexiconForm": {
+    "submitButton": "Define Term",
+    "toast": {
+      "successDescription": "The definition is ready."
+    },
+    "term": {
+      "label": "Term or Acronym",
+      "placeholder": "e.g., CPA"
+    }
+  },
   "TrendsResults": {
     "title": "Market Analysis Results",
     "trendingProducts": {
@@ -563,6 +586,14 @@
       "title": "Phased Roadmap",
       "description": "A 3-phase plan to guide you from launch to growth.",
       "actions": "Key Actions"
+    }
+  },
+  "LexiconResults": {
+    "definition": {
+      "title": "Definition"
+    },
+    "strategicTip": {
+      "title": "AlphaWolf's Strategic Tip"
     }
   },
   "DemandTrendChart": {
@@ -655,6 +686,10 @@
       "analyze": {
         "title": "✨ Ad Performance Analysis",
         "content": "Get objective, AI-driven feedback on your own creative work. Upload your ad visual, provide the text and targeting information, and the AI returns an **Estimated Engagement Score**, a breakdown of its **Strengths** and **Weaknesses**, and **Suggestions for Improvement**."
+      },
+      "lexicon": {
+        "title": "📖 Hunter's Lexicon",
+        "content": "The battlefield of marketing is filled with jargon designed to confuse. This tool is your translator. Enter any marketing term or acronym (CTR, CPA, AOV), and the AI will provide a simple, direct definition and a sharp, strategic tip on how to use that concept to your advantage."
       }
     },
     "gettingStarted": {

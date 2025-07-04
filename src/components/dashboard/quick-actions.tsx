@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { FileText, ArrowRight, Binoculars, Trophy, Store, Compass } from 'lucide-react';
+import { FileText, ArrowRight, Binoculars, Trophy, Store, Compass, BookMarked } from 'lucide-react';
 import { getTranslations } from '@/lib/utils';
 import { cookies } from 'next/headers';
 
@@ -38,6 +38,12 @@ export async function QuickActions() {
             label: t('QuickActions.generate.label'),
             description: t('QuickActions.generate.description'),
             icon: FileText
+        },
+        {
+            href: '/lexicon',
+            label: t('QuickActions.lexicon.label'),
+            description: t('QuickActions.lexicon.description'),
+            icon: BookMarked
         },
     ];
 

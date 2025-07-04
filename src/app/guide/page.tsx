@@ -16,7 +16,8 @@ export default async function GuidePage() {
         { id: "spy", title: t('GuidePage.tools.spy.title'), content: t('GuidePage.tools.spy.content') },
         { id: "generate", title: t('GuidePage.tools.generate.title'), content: t('GuidePage.tools.generate.content') },
         { id: "video", title: t('GuidePage.tools.video.title'), content: t('GuidePage.tools.video.content') },
-        { id: "analyze", title: t('GuidePage.tools.analyze.title'), content: t('GuidePage.tools.analyze.content') }
+        { id: "analyze", title: t('GuidePage.tools.analyze.title'), content: t('GuidePage.tools.analyze.content') },
+        { id: "lexicon", title: t('GuidePage.tools.lexicon.title'), content: t('GuidePage.tools.lexicon.content') }
     ];
 
     const generalFaq = [

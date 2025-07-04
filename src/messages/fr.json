@@ -31,6 +31,7 @@
     "generateAd": "Générer Concept Pub",
     "generateVideo": "Générer Pub Vidéo",
     "analyzeAd": "Analyser Publicité",
+    "lexicon": "Lexique du Chasseur",
     "guide": "Guide"
   },
   "HomePage": {
@@ -92,7 +93,7 @@
   },
   "PulsePage": {
     "title": "Pouls du Marché",
-    "description": "Obtenez une analyse par IA des tendances des produits les plus vendus sur les grandes plateformes e-commerce comme Aliexpress et Etsy. Cet outil ne scrape pas les données en direct, mais synthétise une vaste connaissance de ce qui est populaire.",
+    "description": "Obtenez une analyse par IA des tendances des produits les plus vendus sur les grandes plateformes e-commerce comme Amazon, Aliexpress et Etsy. Cet outil ne scrape pas les données en direct, mais synthétise une vaste connaissance de ce qui est populaire.",
     "form": {
       "title": "Analyser les Tendances d'un Marché",
       "description": "Choisissez un marché, une catégorie et une région pour obtenir un rapport détaillé sur les tendances."
@@ -143,6 +144,14 @@
     "form": {
         "title": "Analyser une Nouvelle Publicité",
         "description": "Fournissez les détails de votre publicité ci-dessous. L'IA analysera le texte, le visuel et le ciblage pour vous donner une estimation de performance et des suggestions d'amélioration."
+    }
+  },
+  "LexiconPage": {
+    "title": "Lexique du Chasseur",
+    "description": "Le jargon du marketing peut être une jungle. Notre chef de meute IA tranche le bruit pour vous donner des définitions claires et des stratégies létales.",
+    "form": {
+        "title": "Décoder le Jargon Marketing",
+        "description": "Entrez un terme ou un acronyme (ex: 'CTR', 'AOV', 'Audience Similaire') pour obtenir une définition simple et un conseil stratégique."
     }
   },
     "PrivacyPage": {
@@ -242,6 +251,10 @@
     "generate": {
         "label": "Générer des Concepts Publicitaires",
         "description": "Créez instantanément des textes et visuels complets."
+    },
+    "lexicon": {
+      "label": "Décoder le Jargon Pub",
+      "description": "Obtenez des définitions claires des termes marketing."
     }
   },
   "MarketSnapshot": {
@@ -519,6 +532,16 @@
     },
     "outputHint": "Le plan généré apparaîtra ci-dessous et inclura des stratégies d'influence, des recommandations de plateforme et un calendrier par phases."
   },
+  "LexiconForm": {
+    "submitButton": "Définir le Terme",
+    "toast": {
+      "successDescription": "La définition est prête."
+    },
+    "term": {
+      "label": "Terme ou Acronyme",
+      "placeholder": "ex: CPA"
+    }
+  },
   "TrendsResults": {
     "title": "Résultats de l'Analyse de Marché",
     "trendingProducts": {
@@ -563,6 +586,14 @@
       "title": "Feuille de Route par Phases",
       "description": "Un plan en 3 phases pour vous guider du lancement à la croissance.",
       "actions": "Actions Clés"
+    }
+  },
+  "LexiconResults": {
+    "definition": {
+      "title": "Définition"
+    },
+    "strategicTip": {
+      "title": "Conseil Stratégique d'AlphaWolf"
     }
   },
   "DemandTrendChart": {
@@ -655,6 +686,10 @@
       "analyze": {
         "title": "✨ Analyse de Performance Publicitaire",
         "content": "Obtenez un retour objectif et piloté par l'IA sur votre propre travail créatif. Téléchargez votre visuel publicitaire, fournissez le texte et les informations de ciblage, et l'IA renvoie un **Score d'Engagement Estimé**, une ventilation de ses **Forces** et **Faiblesses**, et des **Suggestions d'Amélioration**."
+      },
+       "lexicon": {
+        "title": "📖 Lexique du Chasseur",
+        "content": "Le champ de bataille du marketing est rempli de jargon conçu pour semer la confusion. Cet outil est votre traducteur. Entrez n'importe quel terme ou acronyme marketing (CTR, CPA, AOV), et l'IA fournira une définition simple et directe ainsi qu'un conseil stratégique pointu sur la manière d'utiliser ce concept à votre avantage."
       }
     },
     "gettingStarted": {
