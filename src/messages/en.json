@@ -41,14 +41,15 @@
   },
   "HomePage": {
     "hero": {
+      "badge": "Marketing Intelligence",
       "title": "The Intelligence That Forges Victories",
       "subtitle": "Your all-in-one command center to strategize, analyze, and generate winning campaigns that dominate the market.",
       "cta": "Go to Dashboard"
     },
     "features": {
-      "title": "All-in-One Marketing Intelligence",
+      "title": "All-in-One Marketing Arsenal",
       "subtitle": "From initial idea to performance analysis, AlphaWolf is your strategic partner.",
-      "learnMore": "Learn more",
+      "exploreTool": "Explore Tool",
       "strategicPlanning": {
         "title": "Build Complete Strategies",
         "description": "Generate comprehensive marketing roadmaps, from audience analysis and platform choice to a phased action plan."
@@ -73,11 +74,6 @@
         "title": "Produce Video Storyboards",
         "description": "Generate complete, scene-by-scene video ad storyboards with AI-generated visuals, scripts, and audio."
       }
-    },
-    "cta": {
-      "title": "Ready to Revolutionize Your Ads?",
-      "subtitle": "Stop guessing and start creating data-driven, AI-powered campaigns that convert.",
-      "button": "Get Started for Free"
     }
   },
   "DashboardPage": {

@@ -41,14 +41,15 @@
   },
   "HomePage": {
     "hero": {
+      "badge": "Intelligence Marketing",
       "title": "L'Intelligence Qui Forge les Victoires",
       "subtitle": "Votre centre de commande tout-en-un pour élaborer des stratégies, analyser et générer des campagnes gagnantes qui dominent le marché.",
       "cta": "Aller au Tableau de Bord"
     },
     "features": {
-      "title": "Intelligence Marketing Tout-en-Un",
+      "title": "Arsenal Marketing Tout-en-Un",
       "subtitle": "De l'idée initiale à l'analyse des performances, AlphaWolf est votre partenaire stratégique.",
-      "learnMore": "En savoir plus",
+      "exploreTool": "Explorer l'Outil",
       "strategicPlanning": {
         "title": "Bâtir des Stratégies Complètes",
         "description": "Générez des feuilles de route marketing complètes, de l'analyse d'audience au choix de plateforme, jusqu'à un plan d'action phasé."
@@ -73,11 +74,6 @@
         "title": "Produisez des Storyboards Vidéo",
         "description": "Générez des storyboards vidéo complets, scène par scène, avec visuels IA, scripts, et audio."
       }
-    },
-    "cta": {
-      "title": "Prêt à Révolutionner Vos Publicités ?",
-      "subtitle": "Arrêtez de deviner et commencez à créer des campagnes basées sur les données et l'IA qui convertissent.",
-      "button": "Commencez Gratuitement"
     }
   },
   "DashboardPage": {
