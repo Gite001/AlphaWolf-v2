@@ -28,7 +28,7 @@
     "home": "Accueil",
     "dashboard": "Tableau de bord",
     "marketingPlan": "Plan Marketing",
-    "adSpy": "Veille Publicitaire",
+    "adSpy": "Analyse de Publicités",
     "marketTrends": "Découverte de Produits",
     "marketplacePulse": "Pouls du Marché",
     "competitorSpy": "Analyse Concurrent",
@@ -89,7 +89,7 @@
     }
   },
   "FinderPage": {
-    "title": "Veille Publicitaire",
+    "title": "Analyse de Publicités",
     "description": "Scannez notre immense bibliothèque de publicités suivies. Utilisez les filtres avancés pour repérer les campagnes les plus performantes, puis lancez l'IA pour déconstruire leurs stratégies gagnantes et trouver votre prochain produit."
   },
   "TrendsPage": {
@@ -176,7 +176,7 @@
     },
     "howItWorks": {
       "title": "Un Savoir Sans Limites",
-      "description": "Le Lexique Publicitaire n'est pas un dictionnaire avec un nombre fini de pages ; son savoir est pratiquement illimité.\n\nL'IA n'a pas une liste fixe de termes. Elle a été entraînée sur une quantité massive de connaissances provenant du web. Vous pouvez l'interroger sur des centaines de termes, des plus courants aux plus obscurs (ex: CTR, ROAS, Lookalike Audience...).\n\nSi un terme existe dans le jargon du marketing digital, notre loup IA peut le déchiffrer. La seule limite est votre curiosité."
+      "description": "Le Lexique Publicitaire n'est pas un dictionnaire avec un nombre fini de pages ; son savoir est pratiquement illimité.\\n\\nL'IA n'a pas une liste fixe de termes. Elle a été entraînée sur une quantité massive de connaissances provenant du web. Vous pouvez l'interroger sur des centaines de termes, des plus courants aux plus obscurs (ex: CTR, ROAS, Lookalike Audience...).\\n\\nSi un terme existe dans le jargon du marketing digital, notre loup IA peut le déchiffrer. La seule limite est votre curiosité."
     }
   },
   "FaqPage": {
@@ -275,16 +275,16 @@
     "title": "Actions de la Meute",
     "description": "Lancez votre prochaine chasse aux produits gagnants.",
     "plan": {
-      "label": "Bâtir une Stratégie",
-      "description": "Générez une feuille de route marketing."
+        "label": "Bâtir une Stratégie",
+        "description": "Générez une feuille de route marketing."
     },
     "trends": {
       "label": "Trouver des Produits Gagnants",
       "description": "Découvrez les produits tendances sur n'importe quel marché."
     },
     "pulse": {
-      "label": "Pouls du Marché",
-      "description": "Analysez les tendances sur Aliexpress ou Etsy."
+        "label": "Pouls du Marché",
+        "description": "Analysez les tendances sur Aliexpress ou Etsy."
     },
     "finder": {
         "label": "Analyser les Publicités Gagnantes",
@@ -738,7 +738,7 @@
     },
     "howAiThinks": {
       "title": "Comment l'IA \"Pense\"",
-      "content": "Il est crucial de comprendre comment AlphaWolf fournit ses analyses. L'IA (le modèle Gemini de Google) n'a pas un accès en temps réel aux données de vente ou aux analyses privées. Sa puissance vient plutôt de la **déduction et de la synthèse**.\n\nLe modèle a été entraîné sur une vaste partie de l'internet public. Lorsque vous lui demandez d'analyser une tendance ou un concurrent, il s'appuie sur cette immense base de connaissances pour identifier des schémas, inférer des connexions et synthétiser des informations qu'un analyste humain mettrait des mois à compiler.\n\nEn résumé : **AlphaWolf ne \"connaît\" pas les réponses, il les \"déduit\" intelligemment**, agissant comme un analyste de classe mondiale avec une mémoire quasi parfaite du web public."
+      "content": "Il est crucial de comprendre comment AlphaWolf fournit ses analyses. L'IA (le modèle Gemini de Google) n'a pas un accès en temps réel aux données de vente ou aux analyses privées. Sa puissance vient plutôt de la **déduction et de la synthèse**.\\n\\nLe modèle a été entraîné sur une vaste partie de l'internet public. Lorsque vous lui demandez d'analyser une tendance ou un concurrent, il s'appuie sur cette immense base de connaissances pour identifier des schémas, inférer des connexions et synthétiser des informations qu'un analyste humain mettrait des mois à compiler.\\n\\nEn résumé : **AlphaWolf ne \"connaît\" pas les réponses, il les \"déduit\" intelligemment**, agissant comme un analyste de classe mondiale avec une mémoire quasi parfaite du web public."
     },
     "tools": {
       "title": "La Meute : Votre Arsenal d'Outils",
@@ -752,8 +752,8 @@
         "content": "Passez de l'incertitude à l'action. Cet outil agit comme votre mentor marketing personnel. Fournissez des détails sur votre produit, votre audience cible et votre budget, et l'IA générera un plan marketing complet et étape par étape. Il couvre tout, de l'analyse de l'audience et de la stratégie de plateforme (votre propre site contre les places de marché) au marketing d'influence et à une feuille de route progressive pour le lancement, l'optimisation et la croissance."
       },
       "adSpy": {
-        "title": "🏆 Veille Publicitaire",
-        "content": "L'outil 'Veille Publicitaire' est une opération de renseignement en deux phases. Il ne s'agit pas d'espionner au hasard, mais de mener une chasse ciblée.\n\n**1. La Traque (Votre Rôle) :** Vous êtes le chasseur. Vous utilisez la panoplie de filtres (mot-clé, score d'engagement, pays, date...) pour isoler une 'meute' de publicités qui vous intéressent dans notre vaste base de données. Vous ne partez pas à l'aveugle ; vous ciblez avec précision les campagnes qui semblent prometteuses.\n\n**2. La Dissection (Rôle de l'IA) :** Une fois votre sélection faite, vous lancez l'IA. Elle ne se contente pas de regarder les titres ; elle effectue une analyse approfondie du contenu complet de l'annonce — **descriptions, langage marketing et métriques d'engagement détaillées (likes, commentaires, partages, score)** — pour chaque publicité de votre sélection. Elle agit comme un data scientist, croisant toutes ces données pour trouver les schémas cachés et les tendances profondes. Elle identifie les catégories de produits qui surperforment, les angles marketing les plus efficaces et les audiences les plus réceptives. Elle vous livre ensuite un rapport de renseignement complet.\n\nEn résumé, vous dirigez la chasse, et l'IA s'occupe de l'autopsie pour vous fournir une stratégie prête à l'emploi."
+        "title": "🏆 Analyse de Publicités",
+        "content": "L'outil 'Analyse de Publicités' est une opération de renseignement en deux phases. Il ne s'agit pas d'espionner au hasard, mais de mener une chasse ciblée.\\n\\n**1. La Traque (Votre Rôle) :** Vous êtes le chasseur. Vous utilisez la panoplie de filtres (mot-clé, score d'engagement, pays, date...) pour isoler une 'meute' de publicités qui vous intéressent dans notre vaste base de données. Vous ne partez pas à l'aveugle ; vous ciblez avec précision les campagnes qui semblent prometteuses.\\n\\n**2. La Dissection (Rôle de l'IA) :** Une fois votre sélection faite, vous lancez l'IA. Elle ne se contente pas de regarder les titres ; elle effectue une analyse approfondie du contenu complet de l'annonce—**descriptions, langage marketing et métriques d'engagement détaillées (likes, commentaires, partages, score)**—pour chaque publicité de votre sélection. Elle agit comme un data scientist, croisant toutes ces données pour trouver les schémas cachés et les tendances profondes. Elle identifie les catégories de produits qui surperforment, les angles marketing les plus efficaces et les audiences les plus réceptives. Elle vous livre ensuite un rapport de renseignement complet.\\n\\nEn résumé, vous dirigez la chasse, et l'IA s'occupe de l'autopsie pour vous fournir une stratégie prête à l'emploi."
       },
       "trends": {
         "title": "📈 Analyse des Tendances du Marché",
@@ -794,7 +794,7 @@
       },
       "step2": {
         "title": "2. Lancer le serveur de développement (à chaque fois)",
-        "content": "Cette commande démarre l'application. Vous devrez l'exécuter chaque fois que vous voudrez travailler sur l'application. Le terminal doit rester ouvert pendant que vous l'utilisez."
+        "content": "This command starts the application. You will need to run this every time you want to work on the app. The terminal must remain open while you use it."
       },
       "outro": "L'application sera alors disponible à l'adresse `http://localhost:9003`. Maintenez la touche `Ctrl` (ou `Cmd` sur Mac) et cliquez sur le lien pour l'ouvrir dans votre navigateur."
     }
@@ -807,3 +807,5 @@
     "shares": "Partages"
   }
 }
+
+    
