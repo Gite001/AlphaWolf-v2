@@ -63,7 +63,7 @@
         "description": "Instantly produce ad copy with matching AI-generated visuals, professional audio and video storyboards."
       },
       "adSpy": {
-        "title": "Spy on Winning Ads",
+        "title": "Analyze Winning Ads",
         "description": "Let our AI analyze a vast ad library to pinpoint top-performing products and the strategies making them successful."
       },
       "adAnalysis": {
@@ -101,7 +101,7 @@
     },
     "howItWorks": {
         "title": "How does it work?",
-        "description": "The AI leverages its vast training on public web data up to its last update. By analyzing countless articles, product listings, and consumer discussions, it identifies patterns and synthesizes information to provide strategic insights on market trends, popular products, and potential risks. It does not access real-time sales data."
+        "description": "The AI leverages its vast training on public web data. By analyzing countless articles, product listings, and consumer discussions, it identifies patterns and synthesizes information to provide strategic insights on market trends, popular products, and potential risks. It does not access real-time sales data."
     }
   },
   "PulsePage": {
@@ -738,7 +738,7 @@
     },
     "howAiThinks": {
       "title": "How the AI 'Thinks'",
-      "content": "It's crucial to understand how AlphaWolf delivers its analysis. The AI (Google's Gemini model) doesn't have real-time access to sales data or private analytics. Its power comes from **deduction and synthesis**.\n\nThe model was trained on a vast portion of the public internet. When you ask it to analyze a trend or a competitor, it draws on this immense knowledge base to identify patterns, infer connections, and synthesize information that would take a human analyst months to compile.\n\nIn short: **AlphaWolf doesn't 'know' the answers, it intelligently 'deduces' them**, acting like a world-class analyst with a near-perfect memory of the public web."
+      "content": "It's crucial to understand how AlphaWolf delivers its analysis. The AI (Google's Gemini model) doesn't have real-time access to sales data or private analytics. Its power comes from **deduction and synthesis**.\n\nThe model was trained on a vast portion of the public internet. When you ask it to analyze a trend or a competitor, it draws on this immense knowledge base to identify patterns, infer connections, and synthesize information that would take a human analyst months to compile.\n\n**Who, When, and How is it Updated?** The model is created and periodically updated by Google, not on a fixed schedule, but as new, more powerful versions become available. These updates involve retraining the model on more recent and comprehensive data from the public web. This app is configured to always use the latest stable version, so you are always operating with the most current intelligence base available.\n\nIn short: **AlphaWolf doesn't 'know' the answers, it intelligently 'deduces' them**, acting like a world-class analyst with a near-perfect memory of the public web."
     },
     "tools": {
       "title": "The Pack: Your Arsenal of Tools",

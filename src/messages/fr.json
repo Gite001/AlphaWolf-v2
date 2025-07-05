@@ -63,7 +63,7 @@
         "description": "Produisez instantanément des textes publicitaires avec visuels IA, audio professionnel et storyboards vidéo assortis."
       },
       "adSpy": {
-        "title": "Espionner les Publicités Gagnantes",
+        "title": "Analyser les Publicités Gagnantes",
         "description": "Laissez notre IA analyser une vaste bibliothèque publicitaire pour identifier les produits les plus performants et les stratégies qui les font réussir."
       },
       "adAnalysis": {
@@ -101,7 +101,7 @@
     },
     "howItWorks": {
         "title": "Comment ça marche ?",
-        "description": "L'IA s'appuie sur sa vaste formation sur les données publiques du web jusqu'à sa dernière mise à jour. En analysant d'innombrables articles, listes de produits et discussions de consommateurs, elle identifie des schémas et synthétise des informations pour fournir des aperçus stratégiques sur les tendances du marché, les produits populaires et les risques potentiels. Elle n'accède pas aux données de vente en temps réel."
+        "description": "L'IA s'appuie sur sa vaste formation sur les données publiques du web. En analysant d'innombrables articles, listes de produits et discussions de consommateurs, elle identifie des schémas et synthétise des informations pour fournir des aperçus stratégiques sur les tendances du marché, les produits populaires et les risques potentiels. Elle n'accède pas aux données de vente en temps réel."
     }
   },
   "PulsePage": {
@@ -738,7 +738,7 @@
     },
     "howAiThinks": {
       "title": "Comment l'IA \"Pense\"",
-      "content": "Il est crucial de comprendre comment AlphaWolf fournit ses analyses. L'IA (le modèle Gemini de Google) n'a pas un accès en temps réel aux données de vente ou aux analyses privées. Sa puissance vient plutôt de la **déduction et de la synthèse**.\\n\\nLe modèle a été entraîné sur une vaste partie de l'internet public. Lorsque vous lui demandez d'analyser une tendance ou un concurrent, il s'appuie sur cette immense base de connaissances pour identifier des schémas, inférer des connexions et synthétiser des informations qu'un analyste humain mettrait des mois à compiler.\\n\\nEn résumé : **AlphaWolf ne \"connaît\" pas les réponses, il les \"déduit\" intelligemment**, agissant comme un analyste de classe mondiale avec une mémoire quasi parfaite du web public."
+      "content": "Il est crucial de comprendre comment AlphaWolf fournit ses analyses. L'IA (le modèle Gemini de Google) n'a pas un accès en temps réel aux données de vente ou aux analyses privées. Sa puissance vient plutôt de la **déduction et de la synthèse**.\\n\\nLe modèle a été entraîné sur une vaste partie de l'internet public. Lorsque vous lui demandez d'analyser une tendance ou un concurrent, il s'appuie sur cette immense base de connaissances pour identifier des schémas, inférer des connexions et synthétiser des informations qu'un analyste humain mettrait des mois à compiler.\\n\\n**Qui, quand et comment est-il mis à jour ?** Le modèle est créé et périodiquement mis à jour par Google, non pas selon un calendrier fixe, mais à mesure que de nouvelles versions plus puissantes deviennent disponibles. Ces mises à jour impliquent de réentraîner le modèle sur des données plus récentes et plus complètes du web public. Cette application est configurée pour utiliser en permanence la dernière version stable, vous assurant ainsi de toujours opérer avec la base de renseignements la plus actuelle disponible.\\n\\nEn résumé : **AlphaWolf ne \"connaît\" pas les réponses, il les \"déduit\" intelligemment**, agissant comme un analyste de classe mondiale avec une mémoire quasi parfaite du web public."
     },
     "tools": {
       "title": "La Meute : Votre Arsenal d'Outils",
