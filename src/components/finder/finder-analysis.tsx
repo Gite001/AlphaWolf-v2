@@ -1,35 +1,220 @@
+'use client';
+
+import { useState, useMemo, useActionState, useRef, useEffect } from 'react';
+import { useI18n } from '@/hooks/use-i18n';
+import type { Ad } from '@/lib/types';
+import { Input } from '@/components/ui/input';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Button } from '@/components/ui/button';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
+import { Calendar } from '@/components/ui/calendar';
+import { Slider } from '@/components/ui/slider';
+import { AdCard } from '@/components/dashboard/ad-card';
+import { Search, Calendar as CalendarIcon, Bot, Loader2 } from 'lucide-react';
+import type { DateRange } from 'react-day-picker';
+import { format, subDays } from 'date-fns';
+import { fr, enUS } from 'date-fns/locale';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui/card';
 import { getWinningProductsAnalysis } from '@/app/finder/actions';
-import { AlertCircle } from 'lucide-react';
+import { useToast } from '@/hooks/use-toast';
 import { FinderResults } from './finder-results';
-import { getTranslations } from '@/lib/utils';
-import { cookies } from 'next/headers';
+import { Skeleton } from '../ui/skeleton';
 
-export async function FinderAnalysis() {
-    const locale = cookies().get('locale')?.value as 'en' | 'fr' | undefined || 'en';
-    const t = getTranslations(locale);
-    
-    const response = await getWinningProductsAnalysis(locale);
+type AdSpyClientProps = {
+  ads: Ad[];
+  allPlatforms: string[];
+  allCountries: string[];
+};
 
-    if (response.error || !response.data) {
-        return (
-            <Card className="bg-card/30 backdrop-blur-sm border-destructive/50">
-                <CardHeader>
-                    <CardTitle className="flex items-center gap-2 text-destructive">
-                        <AlertCircle className="h-5 w-5" />
-                        <span>{t('FinderAnalysis.error.title')}</span>
-                    </CardTitle>
-                    <CardDescription className="text-destructive/80">{t('FinderAnalysis.error.description')}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                    <p className="text-sm text-muted-foreground">{response.error || t('FinderAnalysis.unknownError')}</p>
-                    <a href="/finder" className="mt-4 inline-block text-primary underline">
-                        {t('FinderAnalysis.error.retryButton')}
-                    </a>
-                </CardContent>
-            </Card>
-        )
+const initialState = {
+  message: '',
+  data: null,
+  errors: {},
+};
+
+function AnalyzeButton({ resultCount }: { resultCount: number }) {
+  const { pending } = useFormStatus();
+  const { t } = useI18n();
+  return (
+    <Button type="submit" disabled={pending || resultCount === 0} className="w-full md:w-auto" size="lg">
+      {pending ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : (
+        <Bot className="mr-2 h-5 w-5" />
+      )}
+      {t('AdSpy.analyzeButton', { count: resultCount })}
+    </Button>
+  );
+}
+
+export function FinderAnalysis({ ads, allPlatforms, allCountries }: AdSpyClientProps) {
+  const { t, locale } = useI18n();
+  const { toast } = useToast();
+  const [state, formAction] = useActionState(getWinningProductsAnalysis, initialState);
+  
+  const [searchTerm, setSearchTerm] = useState('');
+  const [platform, setPlatform] = useState('all');
+  const [country, setCountry] = useState('all');
+  const [scoreRange, setScoreRange] = useState([60, 100]);
+  const [dateRange, setDateRange] = useState<DateRange | undefined>({
+    from: subDays(new Date(), 29),
+    to: new Date(),
+  });
+
+  const dateLocale = locale === 'fr' ? fr : enUS;
+
+  const filteredAds = useMemo(() => {
+    return ads.filter((ad) => {
+      const adDate = new Date(ad.date);
+      const searchMatch = ad.title.toLowerCase().includes(searchTerm.toLowerCase());
+      const platformMatch = platform === 'all' || ad.platform === platform;
+      const countryMatch = country === 'all' || ad.country === country;
+      const scoreMatch = ad.engagement.score >= scoreRange[0] && ad.engagement.score <= scoreRange[1];
+      const dateMatch = !dateRange?.from || !dateRange?.to || (
+        adDate >= dateRange.from && adDate <= dateRange.to
+      );
+      return searchMatch && platformMatch && countryMatch && scoreMatch && dateMatch;
+    });
+  }, [ads, searchTerm, platform, country, scoreRange, dateRange]);
+
+  const formRef = useRef<HTMLFormElement>(null);
+
+  useEffect(() => {
+    if (state.message && state.message !== 'Analysis complete.') {
+      toast({
+        variant: 'destructive',
+        title: t('Toast.errorTitle'),
+        description: state.message,
+      });
     }
+  }, [state, toast, t]);
 
-    return <FinderResults results={response.data} />;
+  return (
+    <div className="space-y-8">
+      <Card className="bg-card/30 backdrop-blur-sm">
+        <CardHeader>
+          <CardTitle>{t('AdSpy.filters.title')}</CardTitle>
+          <CardDescription>{t('AdSpy.filters.description')}</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <Input
+                placeholder={t('AdSpy.filters.keywordPlaceholder')}
+                className="pl-10"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
+            </div>
+            <Select value={platform} onValueChange={setPlatform}>
+              <SelectTrigger>
+                <SelectValue placeholder={t('AdSpy.filters.platformPlaceholder')} />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">{t('AdSpy.filters.allPlatforms')}</SelectItem>
+                {allPlatforms.map(p => <SelectItem key={p} value={p}>{p}</SelectItem>)}
+              </SelectContent>
+            </Select>
+            <Select value={country} onValueChange={setCountry}>
+              <SelectTrigger>
+                <SelectValue placeholder={t('AdSpy.filters.countryPlaceholder')} />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">{t('AdSpy.filters.allCountries')}</SelectItem>
+                {allCountries.map(c => <SelectItem key={c} value={c}>{c}</SelectItem>)}
+              </SelectContent>
+            </Select>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+            <Popover>
+              <PopoverTrigger asChild>
+                <Button variant="outline" className="w-full justify-start text-left font-normal">
+                  <CalendarIcon className="mr-2 h-4 w-4" />
+                  {dateRange?.from ? (
+                    dateRange.to ? (
+                      <>
+                        {format(dateRange.from, 'LLL dd, y', { locale: dateLocale })} - {format(dateRange.to, 'LLL dd, y', { locale: dateLocale })}
+                      </>
+                    ) : (
+                      format(dateRange.from, 'LLL dd, y', { locale: dateLocale })
+                    )
+                  ) : (
+                    <span>{t('AdGallery.pickDate')}</span>
+                  )}
+                </Button>
+              </PopoverTrigger>
+              <PopoverContent className="w-auto p-0" align="start">
+                <Calendar
+                  mode="range"
+                  selected={dateRange}
+                  onSelect={setDateRange}
+                  initialFocus
+                  locale={dateLocale}
+                  defaultMonth={dateRange?.from}
+                />
+              </PopoverContent>
+            </Popover>
+            <div className="space-y-2">
+              <Label className="text-sm">{t('AdSpy.filters.scoreRangeLabel')}: {scoreRange[0]} - {scoreRange[1]}</Label>
+              <Slider
+                value={scoreRange}
+                onValueChange={setScoreRange}
+                max={100}
+                min={0}
+                step={1}
+                minStepsBetweenThumbs={5}
+              />
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+      
+      <div className="space-y-6">
+        <form ref={formRef} action={formAction} className="p-4 border-y border-dashed flex flex-col md:flex-row items-center justify-between gap-4 sticky top-16 z-10 bg-background/80 backdrop-blur-sm">
+            <input type="hidden" name="locale" value={locale} />
+            <input type="hidden" name="adIds" value={filteredAds.map(ad => ad.id).join(',')} />
+            <div className="text-lg font-semibold">
+                {t('AdSpy.resultsCount', { count: filteredAds.length, total: ads.length })}
+            </div>
+            <AnalyzeButton resultCount={filteredAds.length} />
+        </form>
+        
+        {state.data ? (
+             <FinderResults results={state.data} />
+        ) : useFormStatus().pending ? (
+            <div className="space-y-8 animate-in fade-in duration-500">
+                <Card className="bg-card/30 backdrop-blur-sm border-white/10">
+                    <CardHeader>
+                        <CardTitle className="flex items-center gap-2">
+                            <Bot className="h-5 w-5 text-primary animate-pulse" />
+                            <span>{t('FinderAnalysis.loading.title')}</span>
+                        </CardTitle>
+                        <CardDescription>{t('FinderAnalysis.loading.description')}</CardDescription>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                        <Skeleton className="h-4 w-full bg-secondary/50" />
+                        <Skeleton className="h-4 w-5/6 bg-secondary/50" />
+                        <div className="pt-4 space-y-3">
+                            <Skeleton className="h-24 w-full bg-secondary/50" />
+                            <Skeleton className="h-24 w-full bg-secondary/50" />
+                        </div>
+                    </CardContent>
+                </Card>
+            </div>
+        ): (
+            filteredAds.length > 0 ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                {filteredAds.map((ad) => (
+                <AdCard key={ad.id} ad={ad} t={t} />
+                ))}
+            </div>
+            ) : (
+            <div className="text-center py-16 text-muted-foreground">
+                <p className="text-lg font-semibold">{t('AdGallery.noAds.title')}</p>
+                <p>{t('AdGallery.noAds.description')}</p>
+            </div>
+            )
+        )}
+      </div>
+    </div>
+  );
 }

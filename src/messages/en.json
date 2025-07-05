@@ -28,7 +28,7 @@
     "home": "Home",
     "dashboard": "Dashboard",
     "marketingPlan": "Marketing Plan",
-    "productFinder": "Product Finder",
+    "adSpy": "Ad Spy",
     "marketTrends": "Market Trends",
     "marketplacePulse": "Marketplace Pulse",
     "competitorSpy": "Competitor Analysis",
@@ -61,9 +61,9 @@
         "title": "Generate Multimedia Creatives",
         "description": "Instantly produce ad copy with matching AI-generated visuals, professional audio and video storyboards."
       },
-      "productFinder": {
-        "title": "Uncover Winning Products",
-        "description": "Let our AI analyze an ad library to pinpoint top-performing products and the strategies making them successful."
+      "adSpy": {
+        "title": "Spy on Winning Ads",
+        "description": "Let our AI analyze a vast ad library to pinpoint top-performing products and the strategies making them successful."
       },
       "adAnalysis": {
         "title": "Analyze Your Creatives",
@@ -93,8 +93,8 @@
     }
   },
   "FinderPage": {
-    "title": "Winning Product Discovery",
-    "description": "Let our AI analyze our ad library to identify top-performing product categories and uncover the trends driving their success. This is the ideal tool to find your next market to conquer."
+    "title": "Ad Spy",
+    "description": "Scan our massive library of tracked ads. Use advanced filters to pinpoint top-performing campaigns, then unleash the AI to deconstruct their winning strategies and find your next product."
   },
   "TrendsPage": {
     "title": "Market Trend Analysis",
@@ -320,7 +320,7 @@
     },
     "region": {
         "label": "Region / Market",
-        "placeholder": "e.g., USA, Western Europe, South-East Asia"
+        "placeholder": "e.g., USA, Western Europe"
     },
     "submitButton": "Analyze Now"
   },
@@ -389,6 +389,20 @@
         "description": "Could not generate analysis.",
         "retryButton": "Retry"
     }
+  },
+  "AdSpy": {
+    "filters": {
+        "title": "Intelligence Filters",
+        "description": "Refine your search to pinpoint the most relevant ads.",
+        "keywordPlaceholder": "Search by keyword...",
+        "platformPlaceholder": "Platform",
+        "allPlatforms": "All Platforms",
+        "countryPlaceholder": "Country",
+        "allCountries": "All Countries",
+        "scoreRangeLabel": "Engagement Score"
+    },
+    "resultsCount": "{count} of {total} ads shown",
+    "analyzeButton": "Analyze {count} Ads with AI"
   },
   "FinderResults": {
     "marketOverview": {
@@ -566,7 +580,7 @@
     },
     "region": {
         "label": "Region / Market",
-        "placeholder": "e.g., USA, Western Europe, South-East Asia"
+        "placeholder": "e.g., USA, Western Europe"
     }
   },
   "PulseForm": {
@@ -726,9 +740,9 @@
         "title": "🧭 The Strategic Roadmap (Marketing Plan)",
         "content": "Move from uncertainty to action. This tool acts as your personal marketing mentor. Provide details about your product, target audience, and budget, and the AI will generate a comprehensive, step-by-step marketing plan. It covers everything from audience analysis and platform strategy (your own site vs. marketplaces) to influencer marketing and a phased roadmap for launch, optimization, and scaling."
       },
-      "finder": {
-        "title": "🏆 Winning Product Discovery",
-        "content": "This is your digital scout. Instead of you hunting for trends, the AI hunts for you. It analyzes a vast ad database to identify top-performing product categories. It doesn't just list products; it provides an **analysis** of why they're successful and gives you **actionable advice**. A **comparative performance chart** lets you immediately visualize which categories are outperforming others."
+      "adSpy": {
+        "title": "🏆 Ad Spy",
+        "content": "This is your digital scout on steroids. Instead of you hunting for trends, the AI hunts for you. The tool presents a massive, filterable database of tracked ads. You can use advanced filters (keyword, platform, country, engagement score) to zero in on specific strategies. Once you've identified a promising set of ads, one click unleashes the AI to perform a deep analysis, revealing the winning product categories, their marketing angles, and actionable advice."
       },
       "trends": {
         "title": "📈 Market Trend Analysis",
@@ -754,9 +768,9 @@
         "title": "✨ Ad Performance Analysis",
         "content": "Get objective, AI-driven feedback on your own creative work. Upload your ad visual, provide the text and targeting information, and the AI returns an **Estimated Engagement Score**, a breakdown of its **Strengths** and **Weaknesses**, and **Suggestions for Improvement**."
       },
-      "lexicon": {
+       "lexicon": {
         "title": "📖 Ads Lexicon",
-        "content": "The battlefield of marketing is filled with jargon designed to confuse. This tool is your translator. Enter any marketing term or acronym (CTR, CPA, AOV), and the AI will provide a simple, direct definition and a sharp, strategic tip on how to use that concept to your advantage."
+        "content": "The battlefield of marketing is filled with jargon designed to confuse. This tool is your translator. Entrez n'importe quel terme ou acronyme marketing (CTR, CPA, AOV), et l'IA fournira une définition simple et directe ainsi qu'un conseil stratégique pointu sur la manière d'utiliser ce concept à votre avantage."
       }
     },
     "gettingStarted": {

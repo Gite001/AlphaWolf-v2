@@ -28,7 +28,7 @@
     "home": "Accueil",
     "dashboard": "Tableau de bord",
     "marketingPlan": "Plan Marketing",
-    "productFinder": "Découverte Produits",
+    "adSpy": "Veille Publicitaire",
     "marketTrends": "Tendances Marché",
     "marketplacePulse": "Pouls du Marché",
     "competitorSpy": "Analyse Concurrent",
@@ -61,9 +61,9 @@
         "title": "Générer des Créas Multi-Média",
         "description": "Produisez instantanément des textes publicitaires avec visuels IA, audio professionnel et storyboards vidéo assortis."
       },
-      "productFinder": {
-        "title": "Découvrez des Produits Gagnants",
-        "description": "Laissez notre IA analyser une bibliothèque de publicités pour identifier les produits les plus performants et leurs stratégies."
+      "adSpy": {
+        "title": "Espionner les Publicités Gagnantes",
+        "description": "Laissez notre IA analyser une vaste bibliothèque publicitaire pour identifier les produits les plus performants et les stratégies qui les font réussir."
       },
       "adAnalysis": {
         "title": "Analysez Vos Créations",
@@ -93,8 +93,8 @@
     }
   },
   "FinderPage": {
-    "title": "Découverte de Produits Gagnants",
-    "description": "Laissez notre IA analyser notre bibliothèque de publicités pour identifier les catégories de produits les plus performantes et découvrir les tendances qui animent leur succès. C'est l'outil idéal pour trouver votre prochain marché à conquérir."
+    "title": "Veille Publicitaire",
+    "description": "Scannez notre immense bibliothèque de publicités suivies. Utilisez les filtres avancés pour repérer les campagnes les plus performantes, puis lancez l'IA pour déconstruire leurs stratégies gagnantes et trouver votre prochain produit."
   },
   "TrendsPage": {
     "title": "Analyse des Tendances du Marché",
@@ -320,7 +320,7 @@
     },
     "region": {
         "label": "Région / Marché",
-        "placeholder": "ex: France, Europe de l'Ouest, Asie du Sud-Est"
+        "placeholder": "ex: France, Europe de l'Ouest"
     },
     "submitButton": "Analyser maintenant"
   },
@@ -389,6 +389,20 @@
         "description": "Impossible de générer l'analyse.",
         "retryButton": "Réessayer"
     }
+  },
+   "AdSpy": {
+    "filters": {
+        "title": "Filtres de Renseignement",
+        "description": "Affinez votre recherche pour repérer les publicités les plus pertinentes.",
+        "keywordPlaceholder": "Rechercher par mot-clé...",
+        "platformPlaceholder": "Plateforme",
+        "allPlatforms": "Toutes les plateformes",
+        "countryPlaceholder": "Pays",
+        "allCountries": "Tous les pays",
+        "scoreRangeLabel": "Score d'Engagement"
+    },
+    "resultsCount": "{count} publicités affichées sur {total}",
+    "analyzeButton": "Analyser {count} pubs avec l'IA"
   },
   "FinderResults": {
     "marketOverview": {
@@ -566,7 +580,7 @@
     },
     "region": {
         "label": "Région / Marché",
-        "placeholder": "ex: France, Europe de l'Ouest, Asie du Sud-Est"
+        "placeholder": "ex: France, Europe de l'Ouest"
     }
   },
   "PulseForm": {
@@ -726,9 +740,9 @@
         "title": "🧭 La Feuille de Route Stratégique (Plan Marketing)",
         "content": "Passez de l'incertitude à l'action. Cet outil agit comme votre mentor marketing personnel. Fournissez des détails sur votre produit, votre audience cible et votre budget, et l'IA générera un plan marketing complet et étape par étape. Il couvre tout, de l'analyse de l'audience et de la stratégie de plateforme (votre propre site contre les places de marché) au marketing d'influence et à une feuille de route progressive pour le lancement, l'optimisation et la croissance."
       },
-      "finder": {
-        "title": "🏆 Découverte de Produits Gagnants",
-        "content": "C'est votre éclaireur numérique. Au lieu que vous cherchiez les tendances, l'IA chasse pour vous. Elle analyse une vaste base de données publicitaires pour identifier les catégories de produits les plus performantes. Elle ne se contente pas de lister des produits ; elle fournit une **analyse** des raisons de leur succès et vous donne des **conseils exploitables**. Un **graphique comparatif de performance** vous permet de visualiser immédiatement quelles catégories surclassent les autres."
+       "adSpy": {
+        "title": "🏆 Veille Publicitaire",
+        "content": "C'est votre éclaireur numérique sous stéroïdes. Au lieu de chasser les tendances vous-même, l'IA chasse pour vous. L'outil présente une base de données massive et filtrable de publicités suivies. Vous pouvez utiliser des filtres avancés (mot-clé, plateforme, pays, score d'engagement) pour cibler des stratégies spécifiques. Une fois que vous avez identifié un ensemble d'annonces prometteuses, un clic déclenche l'IA pour effectuer une analyse approfondie, révélant les catégories de produits gagnantes, leurs angles marketing et des conseils exploitables."
       },
       "trends": {
         "title": "📈 Analyse des Tendances du Marché",

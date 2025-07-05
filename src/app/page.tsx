@@ -33,8 +33,8 @@ export default async function HomePage() {
     },
     {
       icon: <Trophy className="h-8 w-8 text-primary" />,
-      title: t('HomePage.features.productFinder.title'),
-      description: t('HomePage.features.productFinder.description'),
+      title: t('HomePage.features.adSpy.title'),
+      description: t('HomePage.features.adSpy.description'),
       link: '/finder',
     },
     {

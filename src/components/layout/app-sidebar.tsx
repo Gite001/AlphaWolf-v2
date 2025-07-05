@@ -26,7 +26,7 @@ export function AppSidebar() {
     { href: '/plan', label: t('AppSidebar.marketingPlan'), icon: Compass },
     { href: '/trends', label: t('AppSidebar.marketTrends'), icon: LineChart },
     { href: '/pulse', label: t('AppSidebar.marketplacePulse'), icon: Store },
-    { href: '/finder', label: t('AppSidebar.productFinder'), icon: Trophy },
+    { href: '/finder', label: t('AppSidebar.adSpy'), icon: Trophy },
     { href: '/spy', label: t('AppSidebar.competitorSpy'), icon: Binoculars },
     { href: '/takedown', label: t('AppSidebar.campaignTakedown'), icon: Swords },
     { href: '/generate', label: t('AppSidebar.generateAd'), icon: FileText },
