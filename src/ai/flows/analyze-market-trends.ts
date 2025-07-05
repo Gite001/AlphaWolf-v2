@@ -48,6 +48,7 @@ export async function analyzeMarketTrends(
 
 const prompt = ai.definePrompt({
   name: 'analyzeMarketTrendsPrompt',
+  system: "You are an AI assistant that ONLY responds in valid JSON format as defined by the provided output schema. Do not under any circumstances deviate from this format.",
   input: {schema: AnalyzeMarketTrendsInputSchema},
   output: {schema: AnalyzeMarketTrendsOutputSchema},
   prompt: `You are a world-class market research analyst specializing in e-commerce trends. Your task is to analyze the current market for the given product category and region to identify the most sought-after products.
