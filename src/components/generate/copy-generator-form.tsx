@@ -8,20 +8,15 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { useEffect, useRef, useState, useActionState } from 'react';
 import { useToast } from '@/hooks/use-toast';
-import type { GenerateAdCopyOutput, GenerateAdCopyInput } from '@/ai/flows/generate-ad-copy';
+import type { GenerateAdCopyOutput } from '@/ai/flows/generate-ad-copy';
 import { Loader2 } from 'lucide-react';
 import { CopyResults } from './copy-results';
 import { useSearchParams } from 'next/navigation';
 import { useI18n } from '@/hooks/use-i18n';
 
-type ResultState = {
-    variations: GenerateAdCopyOutput['variations'];
-    originalInput: GenerateAdCopyInput;
-} | null;
-
 const initialState: {
   message: string;
-  data: ResultState;
+  data: GenerateAdCopyOutput | null;
   errors: any;
 } = {
   message: '',
@@ -44,7 +39,7 @@ export function CopyGeneratorForm() {
   const [state, formAction] = useActionState(handleCopyGeneration, initialState);
   const { toast } = useToast();
   const { t, locale } = useI18n();
-  const [result, setResult] = useState<ResultState>(null);
+  const [result, setResult] = useState<GenerateAdCopyOutput | null>(null);
   const searchParams = useSearchParams();
   
   const productName = searchParams.get('productName') || '';
