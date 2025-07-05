@@ -83,11 +83,17 @@ const findWinningProductsFlow = ai.defineFlow(
     inputSchema: FindWinningProductsInputSchema,
     outputSchema: FindWinningProductsOutputSchema,
   },
-  async input => {
-    const {output} = await prompt(input);
-    if (!output) {
-      throw new Error('The AI failed to generate a valid winning products analysis.');
+  async (input) => {
+    try {
+      const { output } = await prompt(input);
+      if (!output) {
+        throw new Error('The AI failed to generate a valid winning products analysis.');
+      }
+      return output;
+    } catch (e) {
+      console.error('Error within findWinningProductsFlow:', e);
+      // Re-throw a standardized error to ensure it's handled correctly upstream.
+      throw new Error(`The AI analysis process failed unexpectedly. Reason: ${e instanceof Error ? e.message : 'Unknown'}`);
     }
-    return output;
   }
 );
