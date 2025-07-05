@@ -8,60 +8,70 @@ const random = (min: number, max: number) => Math.floor(Math.random() * (max - m
 export const getAds = (): Ad[] => {
     const adTemplates = [
       {
-        title: 'Cozy Knit Sweater',
+        title: 'Pull en Maille Douillet',
         description: "Enveloppez-vous de douceur. Notre pull en maille ultra-confortable, parfait pour les journées fraîches.",
         dataAiHint: 'cozy sweater',
       },
       {
-        title: 'Smart Home Hub',
+        title: 'Hub Maison Intelligente',
         description: "Centralisez votre maison connectée. Contrôlez lumières, thermostats et plus, simplement avec votre voix.",
         dataAiHint: 'smart home',
       },
       {
-        title: 'Organic Skincare Set',
+        title: 'Set de Soins Bio',
         description: "Révélez votre éclat naturel. Notre coffret de soins bio nourrit et revitalise votre peau en profondeur.",
         dataAiHint: 'skincare set',
       },
       {
-        title: 'Portable Blender',
-        description: "Vos smoothies frais, où que vous soyez. Notre blender portable est puissant, léger et se recharge par USB.",
+        title: 'Mixeur Portable',
+        description: "Vos smoothies frais, où que vous soyez. Notre mixeur portable est puissant, léger et se recharge par USB.",
         dataAiHint: 'portable blender',
       },
       {
-        title: 'Noise-Cancelling Headphones',
+        title: 'Écouteurs Anti-Bruit',
         description: "Plongez dans votre monde. Écouteurs à réduction de bruit active pour une immersion sonore totale.",
         dataAiHint: 'headphones music',
       },
       {
-        title: 'Yoga Mat & Block Set',
+        title: 'Set Tapis et Bloc de Yoga',
         description: "Trouvez votre équilibre. L'ensemble parfait pour approfondir votre pratique du yoga, avec confort et stabilité.",
         dataAiHint: 'yoga mat',
       },
       {
-        title: 'Subscription Box',
+        title: 'Box par Abonnement',
         description: "La surprise qui fait plaisir, chaque mois. Découvrez des produits uniques et exclusifs livrés chez vous.",
         dataAiHint: 'subscription box',
       },
       {
-        title: 'LED Strip Lights',
+        title: 'Bandes Lumineuses LED',
         description: "Créez l'ambiance parfaite. Des millions de couleurs pour transformer n'importe quelle pièce, contrôlables.",
         dataAiHint: 'led lights',
       },
       {
-        title: 'Ergonomic Office Chair',
+        title: 'Chaise de Bureau Ergonomique',
         description: "Le confort pour vos longues journées de travail. Notre chaise de bureau ergonomique soutient votre dos et améliore votre posture.",
         dataAiHint: 'office chair',
       },
       {
-        title: 'Gourmet Coffee Beans',
+        title: 'Grains de Café Gourmet',
         description: "Commencez votre journée avec l'arôme parfait. Des grains de café d'origine unique, torréfiés à la perfection.",
         dataAiHint: 'coffee beans',
       },
       {
-        title: 'Waterproof Adventure Watch',
+        title: 'Montre d\'Aventure Étanche',
         description: "Conçue pour l'exploration. Une montre robuste, étanche et dotée d'un GPS pour toutes vos aventures.",
         dataAiHint: 'adventure watch',
       },
+      {
+        title: 'Robot de Cuisine Multifonction',
+        description: "Simplifiez votre quotidien en cuisine. Hache, mélange, et cuit à la perfection. L'allié de tous les chefs.",
+        dataAiHint: 'kitchen robot',
+      },
+      {
+        title: 'Ensemble de Couteaux de Cuisine Pro',
+        description: "La précision d'un chef dans votre cuisine. Acier allemand, tranchant durable. Préparez vos ingrédients comme un pro.",
+        dataAiHint: 'kitchen knives',
+      }
     ];
 
     const platforms: Ad['platform'][] = ['Facebook', 'Instagram', 'TikTok', 'Pinterest'];
@@ -69,7 +79,7 @@ export const getAds = (): Ad[] => {
 
     return adTemplates.map((template, index) => {
         const date = new Date();
-        date.setDate(date.getDate() - random(0, 29)); // Ads from the last 30 days
+        date.setDate(date.getDate() - random(0, 365)); // Ads from the last year
 
         return {
             id: (index + 1).toString(),
@@ -82,7 +92,7 @@ export const getAds = (): Ad[] => {
                 likes: random(5000, 500000),
                 comments: random(200, 25000),
                 shares: random(100, 40000),
-                score: random(70, 95),
+                score: random(60, 98),
             },
             date: date.toISOString().split('T')[0], // Format as YYYY-MM-DD
             country: countries[random(0, countries.length - 1)],

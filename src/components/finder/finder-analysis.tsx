@@ -64,7 +64,10 @@ export function FinderAnalysis({ ads, allPlatforms, allCountries }: AdSpyClientP
   const filteredAds = useMemo(() => {
     return ads.filter((ad) => {
       const adDate = new Date(ad.date);
-      const searchMatch = ad.title.toLowerCase().includes(searchTerm.toLowerCase());
+      const searchTermLower = searchTerm.toLowerCase();
+      const searchMatch = !searchTermLower || 
+                          ad.title.toLowerCase().includes(searchTermLower) || 
+                          ad.description.toLowerCase().includes(searchTermLower);
       const platformMatch = platform === 'all' || ad.platform === platform;
       const countryMatch = country === 'all' || ad.country === country;
       const scoreMatch = ad.engagement.score >= scoreRange[0] && ad.engagement.score <= scoreRange[1];
