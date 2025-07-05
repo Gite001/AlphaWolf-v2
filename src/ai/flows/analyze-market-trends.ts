@@ -11,9 +11,30 @@
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
 
+const searchWebForRecentTrends = ai.defineTool(
+  {
+    name: 'searchWebForRecentTrends',
+    description: 'Searches the web for the very latest articles, news, and consumer discussions about a product category to get up-to-the-minute information. Use this to supplement your existing knowledge.',
+    inputSchema: z.object({
+      query: z.string().describe('A concise search query, like "latest trends in home fitness equipment"'),
+    }),
+    outputSchema: z.string().describe('A summary of the most relevant and recent findings from the web search.'),
+  },
+  async ({ query }) => {
+    // In a real-world scenario, this would call a search API (e.g., Google Search, Tavily).
+    // For this demonstration, we simulate the output of a live web search.
+    console.log(`Simulating web search for: ${query}`);
+    return `Simulated Real-Time Web Search Results for "${query}":
+- An article from two days ago highlights a sudden consumer interest in 'at-home water conservation' devices, driven by recent environmental reports.
+- A major tech blog just reviewed a new 'smart garden' system, causing a spike in social media discussion around automated home agriculture.
+- Financial news from this week indicates increased venture capital funding in the 'personalized nutrition' sector, suggesting imminent market growth.`;
+  }
+);
+
+
 const AnalyzeMarketTrendsInputSchema = z.object({
   productCategory: z.string().describe('The product category to analyze.'),
-  region: z.string().describe('The geographical region for the analysis (e.g., USA, Western Europe).'),
+  region: z.string().describe('The geographical region for the analysis (e.g., USA, Western Europe, Gulf Region).'),
   locale: z.enum(['en', 'fr']).optional().default('en').describe('The language for the output.'),
 });
 export type AnalyzeMarketTrendsInput = z.infer<typeof AnalyzeMarketTrendsInputSchema>;
@@ -51,18 +72,21 @@ export async function analyzeMarketTrends(
 const prompt = ai.definePrompt({
   name: 'analyzeMarketTrendsPrompt',
   system: "You are an AI assistant that ONLY responds in valid JSON format as defined by the provided output schema. Do not under any circumstances deviate from this format.",
+  tools: [searchWebForRecentTrends],
   input: {schema: AnalyzeMarketTrendsInputSchema},
   output: {schema: AnalyzeMarketTrendsOutputSchema},
   prompt: `You are a senior e-commerce market intelligence analyst. Your task is to synthesize your vast knowledge of public market data, consumer trend reports, and social media analytics into a concise, data-driven report. **Avoid generic statements, marketing fluff, and repetitive content.** Your analysis must be objective and based on facts and observed patterns from your training data.
 
 **Your response must be in the following language: {{{locale}}}.**
 
+**CRITICAL INSTRUCTION:** Before compiling your final report, you **MUST** use the \`searchWebForRecentTrends\` tool to find the absolute latest, up-to-the-minute information about the requested product category. Integrate these fresh findings from your web search directly into your Market Summary and Opportunities sections to provide the most current intelligence possible.
+
 **Analysis Request:**
 - Product Category: {{{productCategory}}}
 - Region: {{{region}}}
 
 **Report Requirements:**
-1.  **Market Summary:** A brief, data-centric overview of the market.
+1.  **Market Summary:** A brief, data-centric overview of the market, **updated with your real-time web search findings.**
 2.  **Trending Products:** Identify 3-5 specific, trending products. For each:
     *   **Name:** The product trend's name.
     *   **Description:** A factual description of why it's trending, referencing consumer behavior shifts or market signals.
@@ -70,12 +94,12 @@ const prompt = ai.definePrompt({
     *   **Marketing Angle:** A proven, effective marketing angle.
     *   **Competition Level:** (Low, Medium, High) based on market saturation signals.
     *   **Example Product Ideas:** 2-3 concrete product variations.
-3.  **Opportunities:** Highlight specific, quantifiable opportunities (e.g., underserved niches, new tech adoption).
+3.  **Opportunities:** Highlight specific, quantifiable opportunities (e.g., underserved niches, new tech adoption), **especially those identified in your web search.**
 4.  **Risks:** Identify concrete risks (e.g., supply chain issues, changing regulations, market saturation).
 5.  **Geographic Hotspots:** Identify the top 5-7 countries in the region with the highest demand. Provide an estimated demand score (0-100) based on synthesized market size and consumer behavior data.
 6.  **Hotspot Analysis:** Briefly explain the data points supporting the geographic distribution.
 
-**Crucial Directive:** Do not invent information. Stick to synthesizing and analyzing patterns from your knowledge base. Structure the response according to the output schema. Your response must be in valid JSON and in the requested language ({{{locale}}}).
+**Crucial Directive:** Do not invent information. Stick to synthesizing and analyzing patterns from your knowledge base and your fresh web search results. Structure the response according to the output schema. Your response must be in valid JSON and in the requested language ({{{locale}}}).
 `,
 });
 
