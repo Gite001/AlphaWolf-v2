@@ -654,8 +654,21 @@
     "risks": {
         "title": "Risques & Considérations"
     },
-    "targetAudience": "Audience Cible",
-    "marketingAngle": "Angle Marketing"
+    "targetAudience": {
+      "title": "Audience Cible"
+    },
+    "marketingAngle": {
+      "title": "Angle Marketing"
+    },
+    "competitionLevel": {
+      "title": "Niveau de Compétition",
+      "Low": "Faible",
+      "Medium": "Moyen",
+      "High": "Élevé"
+    },
+    "exampleProductIdeas": {
+      "title": "Idées de Produits Spécifiques"
+    }
   },
   "PulseResults": {
     "title": "Rapport du Pouls du Marché",

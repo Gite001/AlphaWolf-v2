@@ -654,8 +654,21 @@
     "risks": {
         "title": "Risks & Considerations"
     },
-    "targetAudience": "Target Audience",
-    "marketingAngle": "Marketing Angle"
+    "targetAudience": {
+      "title": "Target Audience"
+    },
+    "marketingAngle": {
+      "title": "Marketing Angle"
+    },
+    "competitionLevel": {
+      "title": "Competition Level",
+      "Low": "Low",
+      "Medium": "Medium",
+      "High": "High"
+    },
+    "exampleProductIdeas": {
+      "title": "Specific Product Ideas"
+    }
   },
   "PulseResults": {
     "title": "Marketplace Pulse Report",

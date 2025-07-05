@@ -23,6 +23,8 @@ const TrendingProductSchema = z.object({
     description: z.string().describe('A brief description of why this product is trending.'),
     targetAudience: z.string().describe('The ideal target audience for this product.'),
     marketingAngle: z.string().describe('A powerful marketing angle to sell this product.'),
+    competitionLevel: z.enum(['Low', 'Medium', 'High']).describe("An estimation of the competition level for this product idea."),
+    exampleProductIdeas: z.array(z.string()).describe("A list of 2-3 specific product ideas or variations within this trend."),
 });
 
 const GeoTrendPointSchema = z.object({
@@ -60,7 +62,13 @@ Region: {{{region}}}
 
 Based on your knowledge of current consumer behavior, social media trends, and market data, provide a detailed analysis including:
 1.  **Market Summary:** A brief overview of the current state of the market for this category.
-2.  **Trending Products:** Identify 3-5 specific products that are currently popular or have high growth potential. For each product, provide a name, a short description of why it's trending, the ideal target audience, and a powerful marketing angle.
+2.  **Trending Products:** Identify 3-5 specific products that are currently popular or have high growth potential. For each product, provide:
+    *   A compelling **name** for the product trend.
+    *   A **description** of why it's trending.
+    *   The ideal **target audience**.
+    *   A powerful **marketing angle**.
+    *   An estimated **competition level** (Low, Medium, or High).
+    *   A list of 2-3 **example product ideas** that a seller could launch.
 3.  **Opportunities:** Highlight key opportunities for new e-commerce sellers. This could involve underserved niches, new technologies, or marketing angles.
 4.  **Risks:** Point out potential risks, such as high competition, market saturation, or changing consumer preferences.
 5.  **Geographic Hotspots:** Identify the top 5-7 countries within the specified region that show the highest demand for this product category. For each country, provide an estimated demand score (0-100). This is an educated guess based on market size, consumer behavior, and cultural fit.
