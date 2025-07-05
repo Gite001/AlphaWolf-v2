@@ -33,12 +33,11 @@ const initialState = {
   errors: {},
 };
 
-function AnalyzeButton({ resultCount }: { resultCount: number }) {
-  const { pending } = useFormStatus();
+function AnalyzeButton({ resultCount, isPending }: { resultCount: number; isPending: boolean; }) {
   const { t } = useI18n();
   return (
-    <Button type="submit" disabled={pending || resultCount === 0} className="w-full md:w-auto" size="lg">
-      {pending ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : (
+    <Button type="submit" disabled={isPending || resultCount === 0} className="w-full md:w-auto" size="lg">
+      {isPending ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : (
         <Bot className="mr-2 h-5 w-5" />
       )}
       {t('AdSpy.analyzeButton', { count: resultCount })}
@@ -49,7 +48,7 @@ function AnalyzeButton({ resultCount }: { resultCount: number }) {
 export function FinderAnalysis({ ads, allPlatforms, allCountries }: AdSpyClientProps) {
   const { t, locale } = useI18n();
   const { toast } = useToast();
-  const [state, formAction] = useActionState(getWinningProductsAnalysis, initialState);
+  const [state, formAction, isPending] = useActionState(getWinningProductsAnalysis, initialState);
   
   const [searchTerm, setSearchTerm] = useState('');
   const [platform, setPlatform] = useState('all');
@@ -176,12 +175,12 @@ export function FinderAnalysis({ ads, allPlatforms, allCountries }: AdSpyClientP
             <div className="text-lg font-semibold">
                 {t('AdSpy.resultsCount', { count: filteredAds.length, total: ads.length })}
             </div>
-            <AnalyzeButton resultCount={filteredAds.length} />
+            <AnalyzeButton resultCount={filteredAds.length} isPending={isPending} />
         </form>
         
         {state.data ? (
              <FinderResults results={state.data} />
-        ) : useFormStatus().pending ? (
+        ) : isPending ? (
             <div className="space-y-8 animate-in fade-in duration-500">
                 <Card className="bg-card/30 backdrop-blur-sm border-white/10">
                     <CardHeader>
