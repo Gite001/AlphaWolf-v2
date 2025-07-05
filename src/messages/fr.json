@@ -320,7 +320,7 @@
     },
     "region": {
         "label": "Région / Marché",
-        "placeholder": "ex: France"
+        "placeholder": "ex: France, Europe de l'Ouest, Asie du Sud-Est"
     },
     "submitButton": "Analyser maintenant"
   },
@@ -566,7 +566,7 @@
     },
     "region": {
         "label": "Région / Marché",
-        "placeholder": "ex: Amérique du Nord, Europe"
+        "placeholder": "ex: France, Europe de l'Ouest, Asie du Sud-Est"
     }
   },
   "PulseForm": {
