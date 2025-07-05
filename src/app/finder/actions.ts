@@ -38,7 +38,11 @@ export async function getWinningProductsAnalysis(prevState: any, formData: FormD
     const analysisInput = {
       ads: selectedAds.map(ad => ({
         title: ad.title,
+        description: ad.description,
         platform: ad.platform,
+        likes: ad.engagement.likes,
+        comments: ad.engagement.comments,
+        shares: ad.engagement.shares,
         score: ad.engagement.score,
       })),
       locale,
