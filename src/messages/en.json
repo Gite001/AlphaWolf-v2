@@ -15,7 +15,7 @@
     "toggle": "Toggle language"
   },
   "AppHeader": {
-    "title": "La Chasse est Ouverte",
+    "title": "The Hunt is On",
     "homeTooltip": "Home"
   },
   "Footer": {
@@ -742,7 +742,7 @@
       },
       "adSpy": {
         "title": "🏆 Ad Spy",
-        "content": "This is your digital scout on steroids. Instead of you hunting for trends, the AI hunts for you. The tool presents a massive, filterable database of tracked ads. You can use advanced filters (keyword, platform, country, engagement score) to zero in on specific strategies. Once you've identified a promising set of ads, one click unleashes the AI to perform a deep analysis, revealing the winning product categories, their marketing angles, and actionable advice."
+        "content": "The 'Ad Spy' tool is a two-phase intelligence operation. It's not about random spying, but about a targeted hunt.\n\n**1. The Hunt (Your Role):** You are the hunter. You use the array of filters (keyword, engagement score, country, date...) to isolate a 'pack' of ads that interest you. You are not searching blindly; you are precisely targeting campaigns that look promising from our vast database.\n\n**2. The Dissection (AI's Role):** Once you have your selection, you unleash the AI. It doesn't just look at the ads one by one. It analyzes them all as a whole, like a data scientist, to find hidden patterns and deep trends. It identifies which product categories are overperforming, the most recurrent marketing angles, and the most receptive audiences. It then delivers a complete intelligence report to you.\n\nIn short, you lead the hunt, and the AI handles the autopsy to provide you with a ready-to-use strategy."
       },
       "trends": {
         "title": "📈 Market Trend Analysis",
