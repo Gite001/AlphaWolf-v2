@@ -28,6 +28,10 @@ const WinningProductCategorySchema = z.object({
     analysis: z.string().describe('A brief analysis explaining why this category is performing well, based on the provided ad data.'),
     actionableAdvice: z.string().describe('A concrete piece of advice for a marketer looking to enter this category.'),
     averageScore: z.number().min(0).max(100).describe('The average performance score of all ads identified within this category, rounded to the nearest integer.'),
+    targetAudience: z.string().describe("A brief description of the most likely target audience for this product category."),
+    competitionLevel: z.enum(['Low', 'Medium', 'High']).describe("An estimation of the competition level for this category based on the ad data."),
+    marketingAngles: z.array(z.string()).describe("A list of 2-3 powerful marketing angles to use for this category."),
+    exampleProducts: z.array(z.string()).describe("A list of 2-3 product titles from the input ads that exemplify this category.")
 });
 
 const FindWinningProductsOutputSchema = z.object({
@@ -64,6 +68,10 @@ Based on your analysis, provide:
     -   Write a brief **Analysis** explaining *why* this category seems to be successful, referencing the ad data.
     -   Give one piece of **Actionable Advice** for someone wanting to sell in this category.
     -   Calculate and provide the **Average Score**, which is the mathematical average of the scores of all ads you've grouped into this category. Round it to the nearest integer.
+    -   Describe the likely **Target Audience** for this product category.
+    -   Estimate the **Competition Level** (Low, Medium, or High) based on the variety and performance of ads.
+    -   Suggest 2-3 powerful **Marketing Angles**.
+    -   List 2-3 **Example Products** by title from the provided data that fit into this category.
 
 Focus your analysis exclusively on the data provided. Do not use external knowledge. Your response must be in valid JSON format and in the requested language ({{{locale}}}).
 `,

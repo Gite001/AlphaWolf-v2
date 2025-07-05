@@ -404,7 +404,22 @@
       "title": "Conseil Stratégique"
     },
     "generateAdButton": "Générer un Concept Publicitaire",
-    "rerunButton": "Relancer l'Analyse"
+    "rerunButton": "Relancer l'Analyse",
+    "targetAudience": {
+      "title": "Audience Cible Probable"
+    },
+    "competitionLevel": {
+      "title": "Niveau de Compétition",
+      "Low": "Faible",
+      "Medium": "Moyen",
+      "High": "Élevé"
+    },
+    "marketingAngles": {
+      "title": "Meilleurs Angles Marketing"
+    },
+    "exampleProducts": {
+      "title": "Exemples de Produits des Données"
+    }
   },
   "CopyGeneratorForm": {
     "submitButton": "Générer les Textes",

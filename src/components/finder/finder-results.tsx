@@ -2,7 +2,7 @@
 
 import type { FindWinningProductsOutput } from '@/ai/flows/find-winning-products';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
-import { Lightbulb, Package, BarChart, RefreshCw, FileText } from 'lucide-react';
+import { Lightbulb, Package, BarChart, RefreshCw, FileText, Users, BarChart3, Megaphone, List } from 'lucide-react';
 import { Button } from '../ui/button';
 import Link from 'next/link';
 import { useI18n } from '@/hooks/use-i18n';
@@ -51,11 +51,53 @@ export function FinderResults({ results }: FinderResultsProps) {
                         <span className="text-2xl font-headline">{category.categoryName}</span>
                     </CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-4 flex-grow">
+                <CardContent className="space-y-6 flex-grow">
                     <div>
                         <h4 className="font-semibold mb-1 text-muted-foreground">{t('FinderResults.analysis.title')}</h4>
                         <p className="text-sm">{category.analysis}</p>
                     </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm border-t pt-4">
+                        <div className="flex items-start gap-2">
+                            <Users className="h-5 w-5 mt-0.5 text-primary shrink-0" />
+                            <div>
+                                <h5 className="font-semibold text-foreground">{t('FinderResults.targetAudience.title')}</h5>
+                                <p className="text-muted-foreground">{category.targetAudience}</p>
+                            </div>
+                        </div>
+                        <div className="flex items-start gap-2">
+                            <BarChart3 className="h-5 w-5 mt-0.5 text-primary shrink-0" />
+                            <div>
+                                <h5 className="font-semibold text-foreground">{t('FinderResults.competitionLevel.title')}</h5>
+                                <p className="text-muted-foreground">{t(`FinderResults.competitionLevel.${category.competitionLevel}`)}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 className="font-semibold mb-2 text-primary flex items-center gap-2">
+                            <Megaphone className="h-5 w-5" />
+                            <span>{t('FinderResults.marketingAngles.title')}</span>
+                        </h4>
+                        <ul className="space-y-2 list-disc pl-5 text-sm text-muted-foreground">
+                            {category.marketingAngles.map((angle, angleIndex) => (
+                                <li key={angleIndex}>{angle}</li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 className="font-semibold mb-2 text-muted-foreground flex items-center gap-2">
+                            <List className="h-5 w-5" />
+                            <span>{t('FinderResults.exampleProducts.title')}</span>
+                        </h4>
+                        <ul className="space-y-1 list-disc pl-5 text-sm text-muted-foreground">
+                            {category.exampleProducts.map((product, productIndex) => (
+                                <li key={productIndex}>"{product}"</li>
+                            ))}
+                        </ul>
+                    </div>
+                     
                      <div>
                         <h4 className="font-semibold mb-1 text-primary flex items-center gap-2">
                             <Lightbulb className="h-5 w-5" />

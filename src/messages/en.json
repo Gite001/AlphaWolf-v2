@@ -404,7 +404,22 @@
       "title": "Strategic Tip"
     },
     "generateAdButton": "Generate Ad Concept",
-    "rerunButton": "Rerun Analysis"
+    "rerunButton": "Rerun Analysis",
+    "targetAudience": {
+      "title": "Likely Target Audience"
+    },
+    "competitionLevel": {
+      "title": "Competition Level",
+      "Low": "Low",
+      "Medium": "Medium",
+      "High": "High"
+    },
+    "marketingAngles": {
+      "title": "Top Marketing Angles"
+    },
+    "exampleProducts": {
+      "title": "Example Products from Data"
+    }
   },
   "CopyGeneratorForm": {
     "submitButton": "Generate Concepts",
