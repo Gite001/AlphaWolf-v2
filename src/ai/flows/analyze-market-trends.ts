@@ -53,28 +53,29 @@ const prompt = ai.definePrompt({
   system: "You are an AI assistant that ONLY responds in valid JSON format as defined by the provided output schema. Do not under any circumstances deviate from this format.",
   input: {schema: AnalyzeMarketTrendsInputSchema},
   output: {schema: AnalyzeMarketTrendsOutputSchema},
-  prompt: `You are a world-class market research analyst specializing in e-commerce trends. Your task is to analyze the current market for the given product category and region to identify the most sought-after products.
+  prompt: `You are a senior e-commerce market intelligence analyst. Your task is to synthesize your vast knowledge of public market data, consumer trend reports, and social media analytics into a concise, data-driven report. **Avoid generic statements, marketing fluff, and repetitive content.** Your analysis must be objective and based on facts and observed patterns from your training data.
 
 **Your response must be in the following language: {{{locale}}}.**
 
-Product Category: {{{productCategory}}}
-Region: {{{region}}}
+**Analysis Request:**
+- Product Category: {{{productCategory}}}
+- Region: {{{region}}}
 
-Based on your knowledge of current consumer behavior, social media trends, and market data, provide a detailed analysis including:
-1.  **Market Summary:** A brief overview of the current state of the market for this category.
-2.  **Trending Products:** Identify 3-5 specific products that are currently popular or have high growth potential. For each product, provide:
-    *   A compelling **name** for the product trend.
-    *   A **description** of why it's trending.
-    *   The ideal **target audience**.
-    *   A powerful **marketing angle**.
-    *   An estimated **competition level** (Low, Medium, or High).
-    *   A list of 2-3 **example product ideas** that a seller could launch.
-3.  **Opportunities:** Highlight key opportunities for new e-commerce sellers. This could involve underserved niches, new technologies, or marketing angles.
-4.  **Risks:** Point out potential risks, such as high competition, market saturation, or changing consumer preferences.
-5.  **Geographic Hotspots:** Identify the top 5-7 countries within the specified region that show the highest demand for this product category. For each country, provide an estimated demand score (0-100). This is an educated guess based on market size, consumer behavior, and cultural fit.
-6.  **Hotspot Analysis:** Briefly explain the reasoning behind the geographic distribution in 1-2 sentences. Why are these countries hotspots?
+**Report Requirements:**
+1.  **Market Summary:** A brief, data-centric overview of the market.
+2.  **Trending Products:** Identify 3-5 specific, trending products. For each:
+    *   **Name:** The product trend's name.
+    *   **Description:** A factual description of why it's trending, referencing consumer behavior shifts or market signals.
+    *   **Target Audience:** A precise demographic and psychographic profile.
+    *   **Marketing Angle:** A proven, effective marketing angle.
+    *   **Competition Level:** (Low, Medium, High) based on market saturation signals.
+    *   **Example Product Ideas:** 2-3 concrete product variations.
+3.  **Opportunities:** Highlight specific, quantifiable opportunities (e.g., underserved niches, new tech adoption).
+4.  **Risks:** Identify concrete risks (e.g., supply chain issues, changing regulations, market saturation).
+5.  **Geographic Hotspots:** Identify the top 5-7 countries in the region with the highest demand. Provide an estimated demand score (0-100) based on synthesized market size and consumer behavior data.
+6.  **Hotspot Analysis:** Briefly explain the data points supporting the geographic distribution.
 
-Structure your response according to the output schema. Your response must be in valid JSON format and in the requested language ({{{locale}}}).
+**Crucial Directive:** Do not invent information. Stick to synthesizing and analyzing patterns from your knowledge base. Structure the response according to the output schema. Your response must be in valid JSON and in the requested language ({{{locale}}}).
 `,
 });
 

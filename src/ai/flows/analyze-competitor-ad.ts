@@ -92,29 +92,27 @@ const analysisPrompt = ai.definePrompt({
   name: 'competitorAnalysisPrompt',
   input: {schema: CompetitorAnalysisPromptInputSchema},
   output: {schema: AnalyzeCompetitorAdOutputSchema},
-  prompt: `You are a world-class marketing intelligence analyst and competitor research expert. Your task is to analyze the provided HTML content of a webpage and deconstruct the marketing strategy behind it.
+  prompt: `You are a marketing intelligence analyst. Your task is to perform a forensic analysis of the provided HTML content from a competitor's webpage. Your entire report must be based **exclusively** on the text and structure of the provided HTML.
 
 **Your response must be in the following language: {{{locale}}}.**
 
-Based on the **provided HTML content** below, perform a comprehensive analysis.
-
+**Source HTML Content:**
 \`\`\`html
 {{{pageContent}}}
 \`\`\`
 
-**Crucial Rule for Missing Information:**
--   **Stick to the Facts:** Base your entire analysis ONLY on the HTML content provided. Do not invent information or use external knowledge.
--   **Handle Missing Information:** It is critical that you follow this rule. For any text field (like 'targetAudience' or 'productName'), if you cannot determine the value, you **MUST** return an empty string (""). For any array field (like 'strengths'), you **MUST** return an empty array ([]). **DO NOT** write phrases like "Not available", "Cannot be determined", or "Inconnu".
+**Crucial Rules:**
+1.  **Data-Driven:** Base your analysis ONLY on the HTML content provided. Do not invent information, infer beyond the text, or use any external knowledge.
+2.  **Handle Missing Information:** If a value for a field cannot be determined from the text, you **MUST** return an empty string ("") for text fields or an empty array ([]) for array fields. Do not write "N/A" or "Not found". This is a strict requirement.
 
-**Your Analysis Steps:**
-1.  **Identify the Product:** Determine the product name from the content.
-2.  **Extract All Product Details:** Meticulously list all product details. This includes key features, benefits, and ALL technical specifications like materials, composition, dimensions, weight, care instructions, and other capabilities mentioned in the content. Be exhaustive.
-3.  **Define the Target Audience:** Who are they trying to reach? Describe their demographics, interests, and pain points based on the text and marketing angle.
-4.  **Uncover the Marketing Angle:** What is the core message? Are they competing on price, quality, innovation, lifestyle, or something else?
-5.  **Pinpoint Strengths:** What are they doing exceptionally well in their messaging, visuals (as described in the text), or offer?
-6.  **Find Weaknesses:** Where are the gaps? What are they failing to address? Are there any missed opportunities in the provided content?
-7.  **Propose Counter-Strategies:** Based on their strategy, suggest concrete and actionable ways a competitor could differentiate themselves and win market share.
-8.  **Estimate Performance:** Based on the content, provide an estimated performance score from 0 to 100, and a brief reasoning for that score.
+**Analysis Steps:**
+1.  **Product Identification:** Extract the product name from the content.
+2.  **Feature Extraction:** Meticulously list all product features, benefits, and technical specifications (materials, dimensions, etc.) mentioned in the content. Be exhaustive.
+3.  **Target Audience Profile:** Describe the target audience based *only* on the language, tone, and features presented in the text.
+4.  **Marketing Angle Deconstruction:** Identify the primary marketing angle (e.g., price, quality, innovation) used in the content.
+5.  **Strengths & Weaknesses:** List strengths and weaknesses based *only* on the provided content.
+6.  **Counter-Strategies:** Suggest actionable counter-strategies based on the identified weaknesses.
+7.  **Performance Estimation:** Provide a performance score (0-100) and a brief reasoning based *only* on the marketing elements found in the HTML.
 
 Provide a comprehensive analysis structured according to the output schema. Your response must be in valid JSON format and in the requested language ({{{locale}}}).
 `,

@@ -54,11 +54,11 @@ const prompt = ai.definePrompt({
   name: 'findWinningProductsPrompt',
   input: {schema: FindWinningProductsInputSchema},
   output: {schema: FindWinningProductsOutputSchema},
-  prompt: `You are a master e-commerce strategist and data scientist. You have been given a list of recently tracked ads with their performance scores and descriptions. Your task is to analyze this data to identify "winning" product categories and the underlying trends driving their success.
+  prompt: `You are a data scientist and e-commerce strategist. Your task is to perform a rigorous analysis of the provided advertising data. **Your entire analysis must be derived ONLY from the data below.** Do not use external knowledge or make assumptions. Be objective and concise.
 
 **You must generate your response in the following language: {{{locale}}}.**
 
-**Ad Data Details:**
+**Input Ad Data:**
 {{#each ads}}
 Ad #{{@index}}:
 - **Title:** "{{title}}"
@@ -68,21 +68,23 @@ Ad #{{@index}}:
 ---
 {{/each}}
 
-Analyze the provided ad data, especially the top-performers (high scores, likes, and shares), to identify patterns. Group products into broader categories (e.g., "Smart Home Hub" and "LED Strip Lights" could be in a "Smart Home Tech" category).
+**Analysis Procedure:**
+1.  Group the ads into logical product categories based on their titles and descriptions.
+2.  Analyze the engagement metrics for each category to identify top performers.
 
-Based on your analysis, provide:
-1.  **Market Overview:** A 2-3 sentence summary of what's currently working. Are there platforms that are dominating? Are there common themes in the product titles or descriptions?
+**Report Requirements:**
+1.  **Market Overview:** A 2-3 sentence summary of the key patterns observed **in the data**. Which platforms and themes are most successful?
 2.  **Winning Categories:** A list of the top 3-5 product categories. For each category:
-    -   Provide a clear **Category Name**.
-    -   Write a brief **Analysis** explaining *why* this category seems to be successful, referencing the ad data (e.g., "high share counts on Facebook suggest strong word-of-mouth potential").
-    -   Give one piece of **Actionable Advice** for someone wanting to sell in this category.
-    -   Calculate and provide the **Average Score**, which is the mathematical average of the scores of all ads you've grouped into this category. Round it to the nearest integer.
-    -   Describe the likely **Target Audience** for this product category based on the ad descriptions and platforms.
-    -   Estimate the **Competition Level** (Low, Medium, or High) based on the variety and performance of ads.
-    -   Suggest 2-3 powerful **Marketing Angles** based on the ad descriptions.
-    -   List 2-3 **Example Products** by title from the provided data that fit into this category.
+    -   **Category Name:** The name of the category you identified.
+    -   **Analysis:** A brief explanation for this category's success, **citing specific data points** (e.g., "high share counts on Facebook for ads like '...'").
+    -   **Actionable Advice:** One concrete piece of advice for a marketer, **based directly on the data analysis**.
+    -   **Average Score:** The mathematical average of the scores of all ads in this category, rounded to the nearest integer.
+    -   **Target Audience:** A description of the target audience as inferred **only from the ad descriptions and platforms provided**.
+    -   **Competition Level:** (Low, Medium, High) estimated based **only on the ad variety and performance in the input data**.
+    -   **Marketing Angles:** 2-3 powerful marketing angles **extracted directly from the provided ad descriptions**.
+    -   **Example Products:** 2-3 product titles from the input ads that fit this category.
 
-Focus your analysis exclusively on the data provided. Do not use external knowledge. Your response must be in valid JSON format and in the requested language ({{{locale}}}).
+Your response must be a valid JSON object strictly following the output schema, in the requested language ({{{locale}}}).
 `,
 });
 

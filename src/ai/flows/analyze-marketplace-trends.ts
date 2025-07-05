@@ -51,28 +51,27 @@ const prompt = ai.definePrompt({
   name: 'analyzeMarketplaceTrendsPrompt',
   input: {schema: AnalyzeMarketplaceTrendsInputSchema},
   output: {schema: AnalyzeMarketplaceTrendsOutputSchema},
-  prompt: `You are a world-class e-commerce intelligence analyst who is an expert on trends on specific marketplaces like Amazon, Aliexpress and Etsy. Your task is to analyze the current market for a given product category on a specific platform.
+  prompt: `You are an expert e-commerce intelligence analyst. Your mission is to provide a factual, data-driven report on a product category within a specific online marketplace. Synthesize your knowledge from public data, trend reports, and observed listing patterns. **Avoid generic advice and repetitive phrasing.** Your analysis must be objective. Do not invent information or act as a creative writer.
 
 **Your response must be in the following language: {{{locale}}}.**
 
-Marketplace: {{{marketplace}}}
-Product Category: {{{productCategory}}}
-Region: {{{region}}}
+**Analysis Request:**
+- Marketplace: {{{marketplace}}}
+- Product Category: {{{productCategory}}}
+- Region: {{{region}}}
 
-Based on your vast knowledge of online commerce, social media buzz, and product listing patterns, provide a detailed analysis. Do not pretend to have real-time access. Instead, synthesize your knowledge to provide expert deductions.
+**Report Requirements:**
+1.  **Marketplace Summary:** A concise, data-centric overview of the category's current state on {{{marketplace}}}.
+2.  **Trending Products:** Identify 3-5 trending product types. For each:
+    - **Name:** The product's name.
+    - **Description:** A factual explanation of its popularity on this platform, based on observed consumer behavior.
+    - **Marketing Angle:** A proven marketing angle for this specific platform.
+3.  **Platform-Specific Advice:** Provide concrete, actionable advice for sellers based on the platform's known user base and algorithm.
+4.  **Common Pitfalls:** List specific, common mistakes sellers make in this category on this platform.
+5.  **Estimated Demand Trend:** Synthesize a demand trend for the last 6 months (demandScore 0-100). This must be based on known seasonal patterns and market signals from your training data, not random guessing.
+6.  **Trend Analysis:** A brief, data-based explanation for the estimated trend.
 
-Your analysis must include:
-1.  **Marketplace Summary:** A brief overview of what's currently popular for this product category on {{{marketplace}}}.
-2.  **Trending Products:** Identify 3-5 specific product examples or types that are currently trending. For each:
-    - Provide a name.
-    - Explain why it's popular on {{{marketplace}}}.
-    - Suggest a specific marketing angle tailored to the platform's audience.
-3.  **Platform-Specific Advice:** Give actionable advice for selling in this category on {{{marketplace}}}. What do buyers on this platform look for? (e.g., for Amazon: fast shipping (Prime), customer reviews, competitive pricing; for Etsy: handmade feel, personalization; for Aliexpress: value, novelty, tech gadgets).
-4.  **Common Pitfalls:** Point out potential risks or common mistakes sellers make on this platform (e.g., for Amazon: high competition, strict seller policies, FBA fees; for Etsy: appearing too corporate; for Aliexpress: quality concerns, long shipping times).
-5.  **Estimated Demand Trend:** Provide a synthesized trend of consumer demand for this category over the last 6 months. Create an array of 6 data points, one for each month (using short, 3-letter month names), with a 'month' and a 'demandScore' (0-100). This is an educated guess based on seasonal patterns and general market knowledge.
-6.  **Trend Analysis:** Briefly explain the reasoning behind the demand trend you generated in 1-2 sentences.
-
-Structure your response according to the output schema. Your response must be in valid JSON format and in the requested language ({{{locale}}}).
+**Crucial Directive:** Generate your report based solely on synthesized data and analysis. Your response must be in valid JSON format and in the requested language ({{{locale}}}).
 `,
 });
 
