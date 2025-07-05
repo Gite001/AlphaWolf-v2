@@ -2,7 +2,7 @@
 
 import type { AnalyzeMarketTrendsOutput } from '@/ai/flows/analyze-market-trends';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Zap, Target, ShieldAlert, TrendingUp } from 'lucide-react';
+import { Zap, Target, ShieldAlert, TrendingUp, Users, Megaphone } from 'lucide-react';
 import { useI18n } from '@/hooks/use-i18n';
 import { GeoTrendChart } from './geo-trend-chart';
 
@@ -32,8 +32,24 @@ export function TrendsResults({ results }: TrendsResultsProps) {
             <div className="space-y-4">
             {results.trendingProducts.map((product, index) => (
                 <div key={index} className="p-4 rounded-lg border bg-secondary/30">
-                    <h4 className="font-semibold">{product.name}</h4>
-                    <p className="text-sm text-muted-foreground">{product.description}</p>
+                    <h4 className="font-semibold text-lg">{product.name}</h4>
+                    <p className="text-sm text-muted-foreground mt-1">{product.description}</p>
+                    <div className="mt-4 pt-4 border-t border-white/10 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+                        <div className="flex items-start gap-2">
+                            <Users className="h-5 w-5 mt-0.5 text-primary shrink-0" />
+                            <div>
+                                <h5 className="font-semibold text-foreground">{t('TrendsResults.targetAudience')}</h5>
+                                <p className="text-muted-foreground">{product.targetAudience}</p>
+                            </div>
+                        </div>
+                         <div className="flex items-start gap-2">
+                            <Megaphone className="h-5 w-5 mt-0.5 text-primary shrink-0" />
+                            <div>
+                                <h5 className="font-semibold text-foreground">{t('TrendsResults.marketingAngle')}</h5>
+                                <p className="text-muted-foreground">{product.marketingAngle}</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             ))}
             </div>

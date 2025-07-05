@@ -13,7 +13,7 @@ import {z} from 'genkit';
 
 const AnalyzeMarketTrendsInputSchema = z.object({
   productCategory: z.string().describe('The product category to analyze.'),
-  region: z.string().describe('The geographical region for the analysis (e.g., USA, Europe).'),
+  region: z.string().describe('The geographical region for the analysis (e.g., USA, Western Europe).'),
   locale: z.enum(['en', 'fr']).optional().default('en').describe('The language for the output.'),
 });
 export type AnalyzeMarketTrendsInput = z.infer<typeof AnalyzeMarketTrendsInputSchema>;
@@ -21,6 +21,8 @@ export type AnalyzeMarketTrendsInput = z.infer<typeof AnalyzeMarketTrendsInputSc
 const TrendingProductSchema = z.object({
     name: z.string().describe('The name of the trending product.'),
     description: z.string().describe('A brief description of why this product is trending.'),
+    targetAudience: z.string().describe('The ideal target audience for this product.'),
+    marketingAngle: z.string().describe('A powerful marketing angle to sell this product.'),
 });
 
 const GeoTrendPointSchema = z.object({
@@ -57,7 +59,7 @@ Region: {{{region}}}
 
 Based on your knowledge of current consumer behavior, social media trends, and market data, provide a detailed analysis including:
 1.  **Market Summary:** A brief overview of the current state of the market for this category.
-2.  **Trending Products:** Identify 3-5 specific products that are currently popular or have high growth potential. For each product, provide a name and a short description of why it's trending.
+2.  **Trending Products:** Identify 3-5 specific products that are currently popular or have high growth potential. For each product, provide a name, a short description of why it's trending, the ideal target audience, and a powerful marketing angle.
 3.  **Opportunities:** Highlight key opportunities for new e-commerce sellers. This could involve underserved niches, new technologies, or marketing angles.
 4.  **Risks:** Point out potential risks, such as high competition, market saturation, or changing consumer preferences.
 5.  **Geographic Hotspots:** Identify the top 5-7 countries within the specified region that show the highest demand for this product category. For each country, provide an estimated demand score (0-100). This is an educated guess based on market size, consumer behavior, and cultural fit.

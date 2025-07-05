@@ -29,7 +29,7 @@
     "dashboard": "Dashboard",
     "marketingPlan": "Marketing Plan",
     "adSpy": "Ad Spy",
-    "marketTrends": "Market Trends",
+    "marketTrends": "Product Discovery",
     "marketplacePulse": "Marketplace Pulse",
     "competitorSpy": "Competitor Analysis",
     "campaignTakedown": "Campaign Takedown",
@@ -97,10 +97,10 @@
     "description": "Scan our massive library of tracked ads. Use advanced filters to pinpoint top-performing campaigns, then unleash the AI to deconstruct their winning strategies and find your next product."
   },
   "TrendsPage": {
-    "title": "Market Trend Analysis",
-    "description": "Discover the most sought-after products in any category. Enter a product category and region to get an AI-driven market analysis.",
+    "title": "Winning Product Discovery",
+    "description": "Ask our AI to scan the horizon and reveal the products that are exploding right now. This is your shortcut to success.",
     "form": {
-        "title": "Analyze Market Trends",
+        "title": "Launch a Discovery Mission",
         "description": "Tell the AI which product category and region you're interested in. It will provide a market summary, trending products, and strategic advice."
     },
     "howItWorks": {
@@ -283,15 +283,15 @@
         "description": "Generate a full marketing roadmap."
     },
     "trends": {
-      "label": "Market Trends",
-      "description": "Analyze broad market trends for any category."
+      "label": "Find Winning Products",
+      "description": "Discover trending products in any market."
     },
     "pulse": {
         "label": "Marketplace Pulse",
         "description": "Analyze trends on Aliexpress or Etsy."
     },
     "finder": {
-        "label": "Find Winning Products",
+        "label": "Analyze Winning Ads",
         "description": "Let AI analyze our ad database."
     },
     "spy": {
@@ -644,7 +644,7 @@
     }
   },
   "TrendsResults": {
-    "title": "Market Analysis Results",
+    "title": "Product Discovery Report",
     "trendingProducts": {
         "title": "Trending Products"
     },
@@ -653,7 +653,9 @@
     },
     "risks": {
         "title": "Risks & Considerations"
-    }
+    },
+    "targetAudience": "Target Audience",
+    "marketingAngle": "Marketing Angle"
   },
   "PulseResults": {
     "title": "Marketplace Pulse Report",

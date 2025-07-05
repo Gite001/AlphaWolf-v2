@@ -29,7 +29,7 @@
     "dashboard": "Tableau de bord",
     "marketingPlan": "Plan Marketing",
     "adSpy": "Veille Publicitaire",
-    "marketTrends": "Tendances Marché",
+    "marketTrends": "Découverte de Produits",
     "marketplacePulse": "Pouls du Marché",
     "competitorSpy": "Analyse Concurrent",
     "campaignTakedown": "Plan de Conquête",
@@ -97,10 +97,10 @@
     "description": "Scannez notre immense bibliothèque de publicités suivies. Utilisez les filtres avancés pour repérer les campagnes les plus performantes, puis lancez l'IA pour déconstruire leurs stratégies gagnantes et trouver votre prochain produit."
   },
   "TrendsPage": {
-    "title": "Analyse des Tendances du Marché",
-    "description": "Découvrez les produits les plus recherchés dans n'importe quelle catégorie. Saisissez une catégorie de produits et une région pour obtenir une analyse de marché pilotée par l'IA.",
+    "title": "Découverte de Produits Gagnants",
+    "description": "Demandez à notre IA de scanner l'horizon et de vous révéler les produits qui explosent en ce moment. C'est votre raccourci vers le succès.",
     "form": {
-        "title": "Analyser les Tendances du Marché",
+        "title": "Lancer une Mission de Découverte",
         "description": "Indiquez à l'IA la catégorie de produits et la région qui vous intéressent. Elle vous fournira un résumé du marché, les produits tendances et des conseils stratégiques."
     },
     "howItWorks": {
@@ -283,15 +283,15 @@
       "description": "Générez une feuille de route marketing."
     },
     "trends": {
-      "label": "Tendances Marché",
-      "description": "Analysez les grandes tendances de marché pour toute catégorie."
+      "label": "Trouver des Produits Gagnants",
+      "description": "Découvrez les produits tendances sur n'importe quel marché."
     },
     "pulse": {
       "label": "Pouls du Marché",
       "description": "Analysez les tendances sur Aliexpress ou Etsy."
     },
     "finder": {
-        "label": "Trouver des Produits Gagnants",
+        "label": "Analyser les Publicités Gagnantes",
         "description": "Laissez l'IA analyser notre base de données publicitaires."
     },
     "spy": {
@@ -644,7 +644,7 @@
     }
   },
   "TrendsResults": {
-    "title": "Résultats de l'Analyse de Marché",
+    "title": "Rapport de Découverte de Produits",
     "trendingProducts": {
         "title": "Produits en Tendance"
     },
@@ -653,7 +653,9 @@
     },
     "risks": {
         "title": "Risques & Considérations"
-    }
+    },
+    "targetAudience": "Audience Cible",
+    "marketingAngle": "Angle Marketing"
   },
   "PulseResults": {
     "title": "Rapport du Pouls du Marché",
