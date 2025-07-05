@@ -19,6 +19,7 @@ import { getWinningProductsAnalysis } from '@/app/finder/actions';
 import { useToast } from '@/hooks/use-toast';
 import { FinderResults } from './finder-results';
 import { Skeleton } from '../ui/skeleton';
+import { Label } from '../ui/label';
 
 type AdSpyClientProps = {
   ads: Ad[];
