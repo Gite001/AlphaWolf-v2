@@ -316,7 +316,7 @@
     },
     "region": {
         "label": "Région / Marché",
-        "placeholder": "ex: France, Europe de l'Ouest"
+        "placeholder": "ex: France, Europe de l'Ouest, Région du Golfe"
     },
     "submitButton": "Analyser maintenant"
   },
@@ -576,7 +576,7 @@
     },
     "region": {
         "label": "Région / Marché",
-        "placeholder": "ex: France, Europe de l'Ouest"
+        "placeholder": "ex: France, Europe de l'Ouest, Région du Golfe"
     }
   },
   "PulseForm": {
