@@ -1,11 +1,10 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowRight, Sparkles, Binoculars, LineChart } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
+import { ArrowRight, Sparkles, Binoculars, Compass } from 'lucide-react';
 import Image from 'next/image';
 import { getTranslations } from '@/lib/utils';
 import { cookies } from 'next/headers';
-import { Logo } from '@/components/logo';
 
 export default async function HomePage() {
   const locale = cookies().get('locale')?.value;
@@ -13,22 +12,22 @@ export default async function HomePage() {
 
   const features = [
     {
-      icon: <LineChart className="h-8 w-8 text-primary" />,
-      title: t('HomePage.features.marketAnalysis.title'),
-      description: t('HomePage.features.marketAnalysis.description'),
-      link: '/guide#tools',
+      icon: <Compass className="h-8 w-8 text-primary" />,
+      title: t('HomePage.features.strategicPlanning.title'),
+      description: t('HomePage.features.strategicPlanning.description'),
+      link: '/plan',
     },
     {
       icon: <Binoculars className="h-8 w-8 text-primary" />,
-      title: t('HomePage.features.competitorDeconstruction.title'),
-      description: t('HomePage.features.competitorDeconstruction.description'),
-      link: '/guide#tools',
+      title: t('HomePage.features.competitorAnalysis.title'),
+      description: t('HomePage.features.competitorAnalysis.description'),
+      link: '/spy',
     },
     {
       icon: <Sparkles className="h-8 w-8 text-primary" />,
-      title: t('HomePage.features.multiFormatAds.title'),
-      description: t('HomePage.features.multiFormatAds.description'),
-      link: '/guide#tools',
+      title: t('HomePage.features.creativeGeneration.title'),
+      description: t('HomePage.features.creativeGeneration.description'),
+      link: '/generate',
     },
   ];
 
@@ -46,7 +45,7 @@ export default async function HomePage() {
                 <p className="max-w-[600px] text-muted-foreground md:text-xl">
                   {t('HomePage.hero.subtitle')}
                 </p>
-                <Button asChild size="lg" className="mt-8 w-full sm:w-fit shadow-lg shadow-primary/20 hover:scale-105 transition-transform duration-300">
+                <Button asChild size="lg" className="mt-8 w-full sm:w-fit self-center lg:self-start shadow-lg shadow-primary/20 hover:scale-105 transition-transform duration-300">
                   <Link href="/dashboard">
                     {t('HomePage.hero.cta')} <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
@@ -58,7 +57,7 @@ export default async function HomePage() {
                 height="400"
                 alt="Fictitious hero image showing a modern analytics dashboard"
                 className="mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full lg:order-last border border-white/10 shadow-2xl shadow-primary/10"
-                data-ai-hint="marketing dashboard"
+                data-ai-hint="marketing analytics"
               />
             </div>
           </div>
@@ -75,19 +74,21 @@ export default async function HomePage() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {features.map((feature, index) => (
-                <Card key={index} className="flex flex-col text-center items-center p-6 bg-card/30 backdrop-blur-sm border-white/10 shadow-lg hover:shadow-primary/20 hover:-translate-y-2 transition-all duration-300">
-                  <CardHeader>
+                <Card key={index} className="flex flex-col bg-card/30 backdrop-blur-sm border-white/10 shadow-lg hover:shadow-primary/20 hover:-translate-y-2 transition-all duration-300">
+                  <CardHeader className="items-center text-center">
                     {feature.icon}
                     <CardTitle className="mt-4 font-headline">{feature.title}</CardTitle>
                   </CardHeader>
-                  <CardContent className="flex-grow">
+                  <CardContent className="flex-grow text-center">
                     <p className="text-muted-foreground">{feature.description}</p>
                   </CardContent>
-                  <Button variant="outline" asChild>
-                    <Link href={feature.link}>
-                      {t('HomePage.features.learnMore')} <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
+                  <CardFooter className='justify-center pt-4'>
+                    <Button variant="outline" asChild>
+                      <Link href={feature.link}>
+                        {t('HomePage.features.learnMore')} <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                    </Button>
+                  </CardFooter>
                 </Card>
               ))}
             </div>

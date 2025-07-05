@@ -49,7 +49,7 @@
     "features": {
       "title": "Arsenal Marketing Tout-en-Un",
       "subtitle": "De l'idée initiale à l'analyse des performances, AlphaWolf est votre partenaire stratégique.",
-      "exploreTool": "Explorer l'Outil",
+      "learnMore": "En savoir plus",
       "strategicPlanning": {
         "title": "Bâtir des Stratégies Complètes",
         "description": "Générez des feuilles de route marketing complètes, de l'analyse d'audience au choix de plateforme, jusqu'à un plan d'action phasé."
@@ -61,19 +61,12 @@
       "creativeGeneration": {
         "title": "Générer des Créas Multi-Média",
         "description": "Produisez instantanément des textes publicitaires avec visuels IA, audio professionnel et storyboards vidéo assortis."
-      },
-      "adSpy": {
-        "title": "Analyser les Publicités Gagnantes",
-        "description": "Laissez notre IA analyser une vaste bibliothèque publicitaire pour identifier les produits les plus performants et les stratégies qui les font réussir."
-      },
-      "adAnalysis": {
-        "title": "Analysez Vos Créations",
-        "description": "Obtenez un score de performance IA et des retours exploitables sur vos propres visuels et textes avant de dépenser."
-      },
-      "videoGeneration": {
-        "title": "Produisez des Storyboards Vidéo",
-        "description": "Générez des storyboards vidéo complets, scène par scène, avec visuels IA, scripts, et audio."
       }
+    },
+    "cta": {
+      "title": "Prêt à Dominer ?",
+      "subtitle": "Libérez votre potentiel de chef de meute. Commencez à analyser, créer et gagner dès aujourd'hui.",
+      "button": "Entrer dans la Chasse"
     }
   },
   "DashboardPage": {
@@ -807,5 +800,3 @@
     "shares": "Partages"
   }
 }
-
-    

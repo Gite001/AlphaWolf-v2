@@ -49,7 +49,7 @@
     "features": {
       "title": "All-in-One Marketing Arsenal",
       "subtitle": "From initial idea to performance analysis, AlphaWolf is your strategic partner.",
-      "exploreTool": "Explore Tool",
+      "learnMore": "Learn More",
       "strategicPlanning": {
         "title": "Build Complete Strategies",
         "description": "Generate comprehensive marketing roadmaps, from audience analysis and platform choice to a phased action plan."
@@ -61,19 +61,12 @@
       "creativeGeneration": {
         "title": "Generate Multimedia Creatives",
         "description": "Instantly produce ad copy with matching AI-generated visuals, professional audio and video storyboards."
-      },
-      "adSpy": {
-        "title": "Analyze Winning Ads",
-        "description": "Let our AI analyze a vast ad library to pinpoint top-performing products and the strategies making them successful."
-      },
-      "adAnalysis": {
-        "title": "Analyze Your Creatives",
-        "description": "Get an AI performance score and actionable feedback on your own ad visuals and copy before you spend a dime."
-      },
-      "videoGeneration": {
-        "title": "Produce Video Storyboards",
-        "description": "Generate complete, scene-by-scene video ad storyboards with AI-generated visuals, scripts, and audio."
       }
+    },
+    "cta": {
+      "title": "Ready to Dominate?",
+      "subtitle": "Unleash your pack leader potential. Start analyzing, creating, and winning today.",
+      "button": "Enter the Hunt"
     }
   },
   "DashboardPage": {
