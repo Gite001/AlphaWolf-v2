@@ -41,7 +41,7 @@
   },
   "HomePage": {
     "hero": {
-      "badge": "Intelligence Marketing",
+      "badge": "Marketing Intelligence",
       "title": "L'Intelligence Qui Forge les Victoires",
       "subtitle": "Votre centre de commande tout-en-un pour élaborer des stratégies, analyser et générer des campagnes gagnantes qui dominent le marché.",
       "cta": "Aller au Tableau de Bord"
@@ -83,7 +83,7 @@
   },
   "FinderPage": {
     "title": "Analyse de Publicités",
-    "description": "Scannez notre immense bibliothèque de publicités suivies. Utilisez les filtres avancés pour repérer les campagnes les plus performantes, puis lancez l'IA pour déconstruire leurs stratégies gagnantes et trouver votre prochain produit."
+    "description": "Ceci est votre terrain d'entraînement. Analysez notre base de données organisée de campagnes publicitaires à succès pour affûter vos compétences. Utilisez les filtres pour isoler des stratégies spécifiques, puis lancez l'IA pour déconstruire ce qui fait leur succès."
   },
   "TrendsPage": {
     "title": "Découverte de Produits Gagnants",
