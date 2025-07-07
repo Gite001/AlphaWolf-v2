@@ -250,15 +250,25 @@
   },
   "AdGallery": {
     "title": "Ad Library",
-    "description": "Browse successful ads for inspiration and competitive analysis.",
-    "searchPlaceholder": "Search by keyword...",
+    "description": "This is your training ground. Analyze our curated database of successful ad campaigns to hone your skills.",
+    "searchPlaceholder": "Search by keyword or description...",
     "platform": "Platform",
     "allPlatforms": "All Platforms",
     "pickDate": "Pick a date",
+    "cardView": "Card View",
+    "tableView": "Table View",
     "noAds": {
       "title": "No Ads Found",
       "description": "Try adjusting your search filters."
     }
+  },
+  "AdTable": {
+    "product": "Product",
+    "platform": "Platform",
+    "country": "Country",
+    "score": "Score",
+    "date": "Date",
+    "actions": "Actions"
   },
   "EngagementChart": {
     "title": "Engagement Snapshot",

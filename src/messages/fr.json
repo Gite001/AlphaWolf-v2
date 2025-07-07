@@ -169,7 +169,7 @@
     },
     "howItWorks": {
       "title": "Un Savoir Sans Limites",
-      "description": "Le Lexique Publicitaire n'est pas un dictionnaire avec un nombre fini de pages ; son savoir est pratiquement illimité.\\n\\nL'IA n'a pas une liste fixe de termes. Elle a été entraînée sur une quantité massive de connaissances provenant du web. Vous pouvez l'interroger sur des centaines de termes, des plus courants aux plus obscurs (ex: CTR, ROAS, Lookalike Audience...).\\n\\nSi un terme existe dans le jargon du marketing digital, notre loup IA peut le déchiffrer. La seule limite est votre curiosité."
+      "description": "Le Lexique Publicitaire n'est pas un dictionnaire avec un nombre fini de pages ; son savoir est pratiquement illimité.\n\nL'IA n'a pas une liste fixe de termes. Elle a été entraînée sur une quantité massive de connaissances provenant du web. Vous pouvez l'interroger sur des centaines de termes, des plus courants aux plus obscurs (ex: CTR, ROAS, Lookalike Audience...).\n\nSi un terme existe dans le jargon du marketing digital, notre loup IA peut le déchiffrer. La seule limite est votre curiosité."
     }
   },
   "FaqPage": {
@@ -250,15 +250,25 @@
   },
   "AdGallery": {
     "title": "Bibliothèque de Publicités",
-    "description": "Parcourez des publicités à succès pour vous inspirer et analyser la concurrence.",
-    "searchPlaceholder": "Rechercher par mot-clé...",
+    "description": "Ceci est votre terrain d'entraînement. Analysez notre base de données organisée de campagnes publicitaires à succès pour affûter vos compétences.",
+    "searchPlaceholder": "Rechercher par mot-clé ou description...",
     "platform": "Plateforme",
     "allPlatforms": "Toutes les plateformes",
     "pickDate": "Choisir une date",
+    "cardView": "Vue en Cartes",
+    "tableView": "Vue en Tableau",
     "noAds": {
       "title": "Aucune publicité trouvée",
       "description": "Essayez d'ajuster vos filtres de recherche."
     }
+  },
+  "AdTable": {
+    "product": "Produit",
+    "platform": "Plateforme",
+    "country": "Pays",
+    "score": "Score",
+    "date": "Date",
+    "actions": "Actions"
   },
   "EngagementChart": {
     "title": "Aperçu de l'Engagement",
@@ -731,7 +741,7 @@
     },
     "howAiThinks": {
       "title": "Comment l'IA \"Pense\"",
-      "content": "Il est crucial de comprendre comment AlphaWolf fournit ses analyses. L'IA (le modèle Gemini de Google) n'a pas un accès en temps réel aux données de vente ou aux analyses privées. Sa puissance vient plutôt de la **déduction et de la synthèse**.\\n\\nLe modèle a été entraîné sur une vaste partie de l'internet public. Lorsque vous lui demandez d'analyser une tendance ou un concurrent, il s'appuie sur cette immense base de connaissances pour identifier des schémas, inférer des connexions et synthétiser des informations qu'un analyste humain mettrait des mois à compiler.\\n\\n**Qui, quand et comment est-il mis à jour ?** Le modèle est créé et périodiquement mis à jour par Google, non pas selon un calendrier fixe, mais à mesure que de nouvelles versions plus puissantes deviennent disponibles. Ces mises à jour impliquent de réentraîner le modèle sur des données plus récentes et plus complètes du web public. Cette application est configurée pour utiliser en permanence la dernière version stable, vous assurant ainsi de toujours opérer avec la base de renseignements la plus actuelle disponible.\\n\\nEn résumé : **AlphaWolf ne \"connaît\" pas les réponses, il les \"déduit\" intelligemment**, agissant comme un analyste de classe mondiale avec une mémoire quasi parfaite du web public."
+      "content": "Il est crucial de comprendre comment AlphaWolf fournit ses analyses. L'IA (le modèle Gemini de Google) n'a pas un accès en temps réel aux données de vente ou aux analyses privées. Sa puissance vient plutôt de la **déduction et de la synthèse**.\n\nLe modèle a été entraîné sur une vaste partie de l'internet public. Lorsque vous lui demandez d'analyser une tendance ou un concurrent, il s'appuie sur cette immense base de connaissances pour identifier des schémas, inférer des connexions et synthétiser des informations qu'un analyste humain mettrait des mois à compiler.\n\n**Qui, quand et comment est-il mis à jour ?** Le modèle est créé et périodiquement mis à jour par Google, non pas selon un calendrier fixe, mais à mesure que de nouvelles versions plus puissantes deviennent disponibles. Ces mises à jour impliquent de réentraîner le modèle sur des données plus récentes et plus complètes du web public. Cette application est configurée pour utiliser en permanence la dernière version stable, vous assurant ainsi de toujours opérer avec la base de renseignements la plus actuelle disponible.\n\nEn résumé : **AlphaWolf ne \"connaît\" pas les réponses, il les \"déduit\" intelligemment**, agissant comme un analyste de classe mondiale avec une mémoire quasi parfaite du web public."
     },
     "tools": {
       "title": "La Meute : Votre Arsenal d'Outils",
@@ -746,7 +756,7 @@
       },
       "adSpy": {
         "title": "🏆 Analyse de Publicités",
-        "content": "L'outil 'Analyse de Publicités' est une opération de renseignement en deux phases. Il ne s'agit pas d'espionner au hasard, mais de mener une chasse ciblée.\\n\\n**1. La Traque (Votre Rôle) :** Vous êtes le chasseur. Vous utilisez la panoplie de filtres (mot-clé, score d'engagement, pays, date...) pour isoler une 'meute' de publicités qui vous intéressent dans notre vaste base de données. Vous ne partez pas à l'aveugle ; vous ciblez avec précision les campagnes qui semblent prometteuses.\\n\\n**2. La Dissection (Rôle de l'IA) :** Une fois votre sélection faite, vous lancez l'IA. Elle ne se contente pas de regarder les titres ; elle effectue une analyse approfondie du contenu complet de l'annonce—**descriptions, langage marketing et métriques d'engagement détaillées (likes, commentaires, partages, score)**—pour chaque publicité de votre sélection. Elle agit comme un data scientist, croisant toutes ces données pour trouver les schémas cachés et les tendances profondes. Elle identifie les catégories de produits qui surperforment, les angles marketing les plus efficaces et les audiences les plus réceptives. Elle vous livre ensuite un rapport de renseignement complet.\\n\\nEn résumé, vous dirigez la chasse, et l'IA s'occupe de l'autopsie pour vous fournir une stratégie prête à l'emploi."
+        "content": "L'outil 'Analyse de Publicités' est une opération de renseignement en deux phases. Il ne s'agit pas d'espionner au hasard, mais de mener une chasse ciblée.\n\n**1. La Traque (Votre Rôle) :** Vous êtes le chasseur. Vous utilisez la panoplie de filtres (mot-clé, score d'engagement, pays, date...) pour isoler une 'meute' de publicités qui vous intéressent dans notre vaste base de données. Vous ne partez pas à l'aveugle ; vous ciblez avec précision les campagnes qui semblent prometteuses.\n\n**2. La Dissection (Rôle de l'IA) :** Une fois votre sélection faite, vous lancez l'IA. Elle ne se contente pas de regarder les titres ; elle effectue une analyse approfondie du contenu complet de l'annonce—**descriptions, langage marketing et métriques d'engagement détaillées (likes, commentaires, partages, score)**—pour chaque publicité de votre sélection. Elle agit comme un data scientist, croisant toutes ces données pour trouver les schémas cachés et les tendances profondes. Elle identifie les catégories de produits qui surperforment, les angles marketing les plus efficaces et les audiences les plus réceptives. Elle vous livre ensuite un rapport de renseignement complet.\n\nEn résumé, vous dirigez la chasse, et l'IA s'occupe de l'autopsie pour vous fournir une stratégie prête à l'emploi."
       },
       "trends": {
         "title": "📈 Analyse des Tendances du Marché",
