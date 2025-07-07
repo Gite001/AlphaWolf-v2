@@ -9,7 +9,7 @@ import { ZoomIn, Facebook, Instagram, MessageCircle, Share2, ThumbsUp } from 'lu
 import { PinterestIcon, TikTokIcon } from '../icons';
 import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../ui/tooltip';
-import { Dialog, DialogContent, DialogTrigger } from '../ui/dialog';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '../ui/dialog';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
 
@@ -86,6 +86,9 @@ function AdRow({ ad, t }: { ad: Ad; t: (key: string) => string }) {
                         </TooltipContent>
                     </Tooltip>
                     <DialogContent className="max-w-3xl p-0 border-0">
+                        <DialogHeader className="sr-only">
+                            <DialogTitle>{ad.title}</DialogTitle>
+                        </DialogHeader>
                         <Image
                         src={ad.imageUrl.replace('400x400', '800x800')}
                         alt={ad.title}
