@@ -86,7 +86,7 @@ export const getAds = (): Ad[] => {
             title: template.title,
             description: template.description,
             platform: platforms[random(0, platforms.length - 1)],
-            imageUrl: '/images/ad-placeholder.png',
+            imageUrl: 'https://placehold.co/400x400.png',
             dataAiHint: template.dataAiHint,
             engagement: {
                 likes: random(5000, 500000),
