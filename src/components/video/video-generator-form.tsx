@@ -13,22 +13,15 @@ import { Loader2 } from 'lucide-react';
 import { useI18n } from '@/hooks/use-i18n';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../ui/select';
 import { VideoResults } from './video-results';
-
-const videoStyles = [
-  'Dynamic and fast-paced',
-  'Cinematic and emotional',
-  'Informative and direct',
-  'Humorous and quirky',
-  'User-generated content style',
-] as const;
+import { videoStyles } from '@/lib/types';
 
 const initialState: {
-  message: string;
   data: GenerateVideoStoryboardOutput | null;
+  error: string | null;
   errors: any;
 } = {
-  message: '',
   data: null,
+  error: null,
   errors: {},
 };
 
@@ -50,11 +43,11 @@ export function VideoGeneratorForm() {
   const [result, setResult] = useState<GenerateVideoStoryboardOutput | null>(null);
   
   useEffect(() => {
-    if (state.message && state.message !== 'Storyboard generation complete.') {
+    if (state.error) {
       toast({
         variant: 'destructive',
         title: t('Toast.errorTitle'),
-        description: state.message,
+        description: state.error,
       });
     }
     if (state.data) {
@@ -68,13 +61,7 @@ export function VideoGeneratorForm() {
   
   const formRef = useRef<HTMLFormElement>(null);
 
-  const videoStyleOptions = [
-    'Dynamic and fast-paced',
-    'Cinematic and emotional',
-    'Informative and direct',
-    'Humorous and quirky',
-    'User-generated content style',
-  ] as const;
+  const videoStyleOptions = videoStyles;
 
   return (
     <div>

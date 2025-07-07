@@ -1,15 +1,8 @@
 'use server';
 
 import { generateVideoStoryboard } from "@/ai/flows/generate-video-storyboard";
+import { videoStyles } from "@/lib/types";
 import { z } from "zod";
-
-const videoStyles = [
-  'Dynamic and fast-paced',
-  'Cinematic and emotional',
-  'Informative and direct',
-  'Humorous and quirky',
-  'User-generated content style',
-] as const;
 
 const formSchema = z.object({
   productName: z.string().min(3, 'Product name is required.'),
@@ -31,22 +24,22 @@ export async function handleVideoGeneration(prevState: any, formData: FormData) 
 
     if (!validatedFields.success) {
       return {
-        message: 'Invalid form data.',
-        errors: validatedFields.error.flatten().fieldErrors,
         data: null,
+        error: 'Invalid form data.',
+        errors: validatedFields.error.flatten().fieldErrors,
       };
     }
     
     const result = await generateVideoStoryboard(validatedFields.data);
 
     return { 
-        message: 'Storyboard generation complete.', 
         data: result,
-        errors: {} 
+        error: null,
+        errors: null, 
     };
   } catch (error) {
     console.error(error);
     const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred.';
-    return { message: `Generation failed: ${errorMessage}`, data: null, errors: {} };
+    return { data: null, error: `Generation failed: ${errorMessage}`, errors: null };
   }
 }

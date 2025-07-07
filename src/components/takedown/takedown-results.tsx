@@ -2,11 +2,9 @@
 
 import Image from 'next/image';
 import type { GenerateTakedownPlanOutput } from '@/ai/flows/generate-takedown-plan';
-import { generateVariationImage } from '@/app/generate/actions';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
-import { Skeleton } from '@/components/ui/skeleton';
-import { AlertCircle, Loader2, Target, User, Shield, ImageDown, Copy, CopyCheck } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
+import { AlertCircle, Loader2, Shield, ImageDown, Copy, CopyCheck, User } from 'lucide-react';
+import { useState } from 'react';
 import { useI18n } from '@/hooks/use-i18n';
 import { Button } from '../ui/button';
 import { useToast } from '@/hooks/use-toast';
@@ -40,26 +38,6 @@ function TakedownAngleCard({ angle }: { angle: GenerateTakedownPlanOutput['taked
     const { t } = useI18n();
     const { toast } = useToast();
     const [copied, setCopied] = useState(false);
-    const [imageUrl, setImageUrl] = useState<string | null>(null);
-    const [isGeneratingImage, setIsGeneratingImage] = useState(true);
-    const [imageError, setImageError] = useState(false);
-    
-    useEffect(() => {
-        let isCancelled = false;
-        setIsGeneratingImage(true);
-        generateVariationImage(angle.counterVisualPrompt).then(result => {
-            if (isCancelled) return;
-            if (result.error || !result.data?.imageUrl) {
-                console.error("Image generation failed:", result.error);
-                setImageError(true);
-            } else {
-                setImageUrl(result.data.imageUrl);
-            }
-            setIsGeneratingImage(false);
-        });
-
-        return () => { isCancelled = true; };
-    }, [angle.counterVisualPrompt]);
     
     const fullText = `Angle: ${angle.angleName}\n\nHeadline: ${angle.counterHeadline}\n\nBody: ${angle.counterBody}`;
 
@@ -77,17 +55,13 @@ function TakedownAngleCard({ angle }: { angle: GenerateTakedownPlanOutput['taked
     return (
         <Card className="flex flex-col bg-card/30 backdrop-blur-sm border-white/10 shadow-lg hover:shadow-primary/20 hover:-translate-y-1 transition-all duration-300">
             <div className="bg-muted/50 aspect-video w-full flex items-center justify-center overflow-hidden relative border-b border-white/10">
-                {isGeneratingImage ? (
-                    <div className="w-full h-full flex items-center justify-center bg-secondary/30">
-                        <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
-                    </div>
-                ) : imageError || !imageUrl ? (
+                {!angle.imageUrl ? (
                     <div className='text-center text-destructive p-4 flex flex-col items-center gap-2'>
                         <AlertCircle className="h-8 w-8" />
                         <p className='text-sm font-semibold'>{t('CopyResults.imageFailed')}</p>
                     </div>
                 ) : (
-                    <Image src={imageUrl} alt={angle.angleName} fill className="object-cover" />
+                    <Image src={angle.imageUrl} alt={angle.angleName} fill className="object-cover" />
                 )}
             </div>
             <CardHeader className="pb-2">
@@ -115,8 +89,8 @@ function TakedownAngleCard({ angle }: { angle: GenerateTakedownPlanOutput['taked
                 </Button>
                 <Tooltip>
                     <TooltipTrigger asChild>
-                        <Button asChild variant="outline" size="icon" disabled={!imageUrl || isGeneratingImage || imageError}>
-                            <a href={imageUrl!} download={`${angle.angleName.replace(/\s/g, '_')}_visual.png`}>
+                        <Button asChild variant="outline" size="icon" disabled={!angle.imageUrl}>
+                            <a href={angle.imageUrl!} download={`${angle.angleName.replace(/\s/g, '_')}_visual.png`}>
                                 <ImageDown className="h-4 w-4" />
                                 <span className="sr-only">{t('CopyResults.downloadImage')}</span>
                             </a>

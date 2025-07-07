@@ -18,9 +18,9 @@ export async function getWinningProductsAnalysis(prevState: any, formData: FormD
 
     if (!validatedFields.success) {
       return {
-        message: 'Invalid form data.',
-        errors: validatedFields.error.flatten().fieldErrors,
         data: null,
+        error: 'Invalid form data.',
+        errors: validatedFields.error.flatten().fieldErrors,
       };
     }
 
@@ -32,7 +32,7 @@ export async function getWinningProductsAnalysis(prevState: any, formData: FormD
     const selectedAds = allAds.filter(ad => selectedIds.includes(ad.id));
 
     if (selectedAds.length === 0) {
-        return { message: 'No matching ads found for analysis.', errors: { adIds: ['No ads found.'] }, data: null };
+        return { data: null, error: 'No matching ads found for analysis.', errors: { adIds: ['No ads found.'] } };
     }
 
     const analysisInput = {
@@ -54,10 +54,10 @@ export async function getWinningProductsAnalysis(prevState: any, formData: FormD
         throw new Error('Analysis failed to produce a valid result structure.');
     }
 
-    return { data: result, error: null, message: 'Analysis complete.' };
+    return { data: result, error: null, errors: null };
   } catch (error) {
     console.error('Error in getWinningProductsAnalysis:', error);
     const errorMessage = error instanceof Error ? error.message : 'An unexpected error occurred. Please try again.';
-    return { data: null, error: `Analysis failed: ${errorMessage}`, message: `Analysis failed: ${errorMessage}` };
+    return { data: null, error: `Analysis failed: ${errorMessage}`, errors: null };
   }
 }

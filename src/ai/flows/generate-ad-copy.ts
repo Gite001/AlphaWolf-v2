@@ -9,8 +9,8 @@
 
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
-import wav from 'wav';
 import {googleAI} from '@genkit-ai/googleai';
+import { toWav } from '@/lib/audio';
 
 const GenerateAdCopyInputSchema = z.object({
   productName: z.string().describe('The name of the product.'),
@@ -69,35 +69,6 @@ For each variation, provide:
 The tone should be engaging and tailored to the specified target audience. Ensure the keywords are naturally integrated. Your response must be in valid JSON format.
 `,
 });
-
-// Helper function from generate-audio-ad.ts
-async function toWav(
-  pcmData: Buffer,
-  channels = 1,
-  rate = 24000,
-  sampleWidth = 2
-): Promise<string> {
-  return new Promise((resolve, reject) => {
-    const writer = new wav.Writer({
-      channels,
-      sampleRate: rate,
-      bitDepth: sampleWidth * 8,
-    });
-
-    const bufs: Buffer[] = [];
-    writer.on('error', reject);
-    writer.on('data', (d) => {
-      bufs.push(d);
-    });
-    writer.on('end', () => {
-      resolve(Buffer.concat(bufs).toString('base64'));
-    });
-
-    writer.write(pcmData);
-    writer.end();
-  });
-}
-
 
 const generateAdCopyFlow = ai.defineFlow(
   {

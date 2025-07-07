@@ -15,9 +15,9 @@ import { Textarea } from '@/components/ui/textarea';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 
 const initialState = {
-  message: '',
   data: null,
-  errors: {},
+  error: null,
+  errors: null,
 };
 
 function SubmitButton() {
@@ -52,9 +52,9 @@ export function CompetitorForm() {
     }
     
     // On error
-    if (state.message && state.message !== 'Competitor analysis complete.') {
+    if (state.error) {
       // Check for the specific error to trigger Plan B
-      if (state.message.includes('requires JavaScript to display content')) {
+      if (state.error.includes('requires JavaScript to display content')) {
         setShowManualInput(true);
       } else {
         // For all other errors, show a toast
@@ -62,7 +62,7 @@ export function CompetitorForm() {
         toast({
           variant: 'destructive',
           title: t('Toast.errorTitle'),
-          description: state.message,
+          description: state.error,
         });
       }
     }

@@ -21,16 +21,10 @@ import { FinderResults } from './finder-results';
 import { Skeleton } from '../ui/skeleton';
 import { Label } from '../ui/label';
 
-type AdSpyClientProps = {
-  ads: Ad[];
-  allPlatforms: string[];
-  allCountries: string[];
-};
-
 const initialState = {
-  message: '',
   data: null,
-  errors: {},
+  error: null,
+  errors: null,
 };
 
 function AnalyzeButton({ resultCount, isPending }: { resultCount: number; isPending: boolean; }) {
@@ -81,11 +75,11 @@ export function FinderAnalysis({ ads, allPlatforms, allCountries }: AdSpyClientP
   const formRef = useRef<HTMLFormElement>(null);
 
   useEffect(() => {
-    if (state.message && state.message !== 'Analysis complete.') {
+    if (state.error) {
       toast({
         variant: 'destructive',
         title: t('Toast.errorTitle'),
-        description: state.message,
+        description: state.error,
       });
     }
   }, [state, toast, t]);

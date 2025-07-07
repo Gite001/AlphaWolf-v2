@@ -15,12 +15,12 @@ import { useI18n } from '@/hooks/use-i18n';
 type ResultState = (DefineAdTermOutput & { term: string }) | null;
 
 const initialState: {
-  message: string;
   data: ResultState;
+  error: string | null;
   errors: any;
 } = {
-  message: '',
   data: null,
+  error: null,
   errors: {},
 };
 
@@ -42,11 +42,11 @@ export function LexiconForm() {
   const [result, setResult] = useState<ResultState>(null);
   
   useEffect(() => {
-    if (state.message && state.message !== 'Definition complete.') {
+    if (state.error) {
       toast({
         variant: 'destructive',
         title: t('Toast.errorTitle'),
-        description: state.message,
+        description: state.error,
       });
     }
     if (state.data) {

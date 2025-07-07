@@ -13,12 +13,12 @@ import { useI18n } from '@/hooks/use-i18n';
 import { TakedownResults } from './takedown-results';
 
 const initialState: {
-  message: string;
   data: GenerateTakedownPlanOutput | null;
+  error: string | null;
   errors: any;
 } = {
-  message: '',
   data: null,
+  error: null,
   errors: {},
 };
 
@@ -40,11 +40,11 @@ export function TakedownForm() {
   const [result, setResult] = useState<GenerateTakedownPlanOutput | null>(null);
   
   useEffect(() => {
-    if (state.message && state.message !== 'Takedown plan generation complete.') {
+    if (state.error) {
       toast({
         variant: 'destructive',
         title: t('Toast.errorTitle'),
-        description: state.message,
+        description: state.error,
       });
     }
     if (state.data) {

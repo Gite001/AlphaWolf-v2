@@ -17,12 +17,12 @@ import { PlanResults } from './plan-results';
 import { RadioGroup, RadioGroupItem } from '../ui/radio-group';
 
 const initialState: {
-  message: string;
   data: GenerateMarketingPlanOutput | null;
+  error: string | null;
   errors: any;
 } = {
-  message: '',
   data: null,
+  error: null,
   errors: {},
 };
 
@@ -44,11 +44,11 @@ export function PlanForm() {
   const [result, setResult] = useState<GenerateMarketingPlanOutput | null>(null);
   
   useEffect(() => {
-    if (state.message && state.message !== 'Plan generation complete.') {
+    if (state.error) {
       toast({
         variant: 'destructive',
         title: t('Toast.errorTitle'),
-        description: state.message,
+        description: state.error,
       });
     }
     if (state.data) {

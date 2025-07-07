@@ -19,18 +19,18 @@ export async function handleTrendsAnalysis(prevState: any, formData: FormData) {
 
     if (!validatedFields.success) {
       return {
-        message: 'Invalid form data.',
-        errors: validatedFields.error.flatten().fieldErrors,
         data: null,
+        error: 'Invalid form data.',
+        errors: validatedFields.error.flatten().fieldErrors,
       };
     }
     
     const result = await analyzeMarketTrends(validatedFields.data);
 
-    return { message: 'Market analysis complete.', data: result, errors: {} };
+    return { data: result, error: null, errors: {} };
   } catch (error) {
     console.error(error);
     const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred.';
-    return { message: `Analysis failed: ${errorMessage}`, data: null, errors: {} };
+    return { data: null, error: `Analysis failed: ${errorMessage}`, errors: {} };
   }
 }

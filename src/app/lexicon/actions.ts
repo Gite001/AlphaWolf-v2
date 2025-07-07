@@ -17,25 +17,25 @@ export async function handleTermDefinition(prevState: any, formData: FormData) {
 
     if (!validatedFields.success) {
       return {
-        message: 'Invalid form data.',
-        errors: validatedFields.error.flatten().fieldErrors,
         data: null,
+        error: 'Invalid form data.',
+        errors: validatedFields.error.flatten().fieldErrors,
       };
     }
     
     const result = await defineAdTerm(validatedFields.data);
 
     return { 
-        message: 'Definition complete.', 
         data: {
             ...result,
             term: validatedFields.data.term,
         },
-        errors: {} 
+        error: null,
+        errors: null,
     };
   } catch (error) {
     console.error(error);
     const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred.';
-    return { message: `Generation failed: ${errorMessage}`, data: null, errors: {} };
+    return { data: null, error: `Generation failed: ${errorMessage}`, errors: null };
   }
 }

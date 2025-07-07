@@ -9,35 +9,7 @@
 
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
-
-// Re-use the fetch function from the spy tool.
-async function fetchUrlContent(url: string): Promise<string> {
-    try {
-        const response = await fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' } });
-        if (!response.ok) {
-            throw new Error(`Could not fetch URL. Status code: ${response.status}`);
-        }
-        const html = await response.text();
-        const bodyMatch = html.match(/<body[^>]*>([\s\S]*)<\/body>/i);
-        const bodyContent = bodyMatch ? bodyMatch[1].trim() : '';
-
-        if (bodyContent.length < 500 && (bodyContent.toLowerCase().includes('id="root"') || bodyContent.toLowerCase().includes('id="app"'))) {
-            throw new Error(`This page appears to require JavaScript to display content. The tool currently cannot analyze it correctly.`);
-        }
-        return html;
-    } catch (error) {
-        if (error instanceof Error) {
-            if (error.message.includes('Status code:')) {
-                 throw new Error(`The competitor's website could not be reached (Status: ${error.message.split(' ').pop()}). It may be blocking analysis tools.`);
-            }
-            if (error.message.includes('JavaScript to display content')) {
-                throw new Error("This page requires JavaScript and can't be analyzed. Try a different page.");
-            }
-        }
-        throw new Error('Failed to fetch or process the URL. The website may be down or blocking automated requests.');
-    }
-}
-
+import { fetchUrlContent } from '@/lib/network';
 
 export const GenerateTakedownPlanInputSchema = z.object({
   url: z.string().url().describe("The URL of the competitor's product page."),
@@ -54,12 +26,18 @@ const TakedownAngleSchema = z.object({
     targetAudienceSegment: z.string().describe("A specific sub-segment of the audience to poach from the competitor with this angle."),
 });
 
+// This is the final output schema, including the generated image URL.
+const TakedownAngleWithMediaSchema = TakedownAngleSchema.extend({
+    imageUrl: z.string().nullable().describe("The data URI of the generated ad visual. Null if generation failed."),
+});
+
 export const GenerateTakedownPlanOutputSchema = z.object({
   competitorProduct: z.string().describe("The name of the competitor's product identified from the page."),
   competitorBrand: z.string().describe("The name of the competitor's brand identified from the page."),
-  takedownAngles: z.array(TakedownAngleSchema).describe("An array of 3 distinct strategic counter-attack angles."),
+  takedownAngles: z.array(TakedownAngleWithMediaSchema).describe("An array of 3 distinct strategic counter-attack angles with generated visuals."),
 });
 export type GenerateTakedownPlanOutput = z.infer<typeof GenerateTakedownPlanOutputSchema>;
+
 
 export async function generateTakedownPlan(
   input: GenerateTakedownPlanInput
@@ -67,14 +45,19 @@ export async function generateTakedownPlan(
   return generateTakedownPlanFlow(input);
 }
 
-const takedownPrompt = ai.definePrompt({
-  name: 'generateTakedownPlanPrompt',
+// Prompt for just the text part of the takedown plan
+const takedownTextPrompt = ai.definePrompt({
+  name: 'generateTakedownTextPrompt',
   input: { schema: z.object({
     pageContent: z.string(),
     yourProductName: z.string(),
     locale: z.string(),
   })},
-  output: {schema: GenerateTakedownPlanOutputSchema},
+  output: {schema: z.object({
+    competitorProduct: z.string(),
+    competitorBrand: z.string(),
+    takedownAngles: z.array(TakedownAngleSchema),
+  })},
   prompt: `You are AlphaWolf, a ruthless and brilliant marketing strategist. Your mission is to analyze a competitor's product page and devise three distinct "takedown" campaign angles to dominate their market share.
 
 **Your response must be in the following language: {{{locale}}}.**
@@ -104,18 +87,48 @@ const generateTakedownPlanFlow = ai.defineFlow(
     outputSchema: GenerateTakedownPlanOutputSchema,
   },
   async (input) => {
+    // 1. Fetch competitor content
     const pageContent = await fetchUrlContent(input.url);
 
-    const {output} = await takedownPrompt({
+    // 2. Generate the text-based takedown plan
+    const {output: textPlan} = await takedownTextPrompt({
         pageContent,
         yourProductName: input.yourProductName,
         locale: input.locale,
     });
 
-    if (!output) {
-        throw new Error('The AI failed to generate a takedown plan.');
+    if (!textPlan || !textPlan.takedownAngles) {
+        throw new Error('The AI failed to generate a text-based takedown plan.');
     }
+
+    // 3. For each angle, generate the visual in parallel.
+    const anglesWithMedia = await Promise.all(
+        textPlan.takedownAngles.map(async (angle) => {
+            const imageResult = await ai.generate({
+                model: 'googleai/gemini-2.0-flash-preview-image-generation',
+                prompt: `A professional, photorealistic advertisement image. The image should be: ${angle.counterVisualPrompt}`,
+                config: {
+                    responseModalities: ['TEXT', 'IMAGE'],
+                },
+            });
+            
+            const imageUrl = imageResult.media?.url ?? null;
+            if (!imageUrl) {
+                console.error('Image generation failed for takedown angle:', angle.angleName);
+            }
+
+            return {
+                ...angle,
+                imageUrl,
+            };
+        })
+    );
     
-    return output;
+    // 4. Combine and return the full plan
+    return {
+        competitorProduct: textPlan.competitorProduct,
+        competitorBrand: textPlan.competitorBrand,
+        takedownAngles: anglesWithMedia,
+    };
   }
 );

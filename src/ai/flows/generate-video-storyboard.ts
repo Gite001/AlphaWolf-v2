@@ -8,16 +8,9 @@
  */
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
-import wav from 'wav';
 import {googleAI} from '@genkit-ai/googleai';
-
-const videoStyles = [
-  'Dynamic and fast-paced',
-  'Cinematic and emotional',
-  'Informative and direct',
-  'Humorous and quirky',
-  'User-generated content style',
-] as const;
+import { toWav } from '@/lib/audio';
+import { videoStyles } from '@/lib/types';
 
 const GenerateVideoStoryboardInputSchema = z.object({
   productName: z.string().describe('The name of the product.'),
@@ -119,27 +112,6 @@ const storyboardPrompt = ai.definePrompt({
 
 The tone should be engaging and perfectly tailored to the specified target audience and video style. Your response must be in valid JSON format.`,
 });
-
-async function toWav(
-  pcmData: Buffer,
-  channels = 1,
-  rate = 24000,
-  sampleWidth = 2
-): Promise<string> {
-  return new Promise((resolve, reject) => {
-    const writer = new wav.Writer({
-      channels,
-      sampleRate: rate,
-      bitDepth: sampleWidth * 8,
-    });
-    const bufs: Buffer[] = [];
-    writer.on('error', reject);
-    writer.on('data', (d) => bufs.push(d));
-    writer.on('end', () => resolve(Buffer.concat(bufs).toString('base64')));
-    writer.write(pcmData);
-    writer.end();
-  });
-}
 
 // The new, improved flow that orchestrates everything.
 const generateVideoStoryboardFlow = ai.defineFlow(

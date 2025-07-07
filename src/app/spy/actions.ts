@@ -22,9 +22,9 @@ export async function handleCompetitorAnalysis(prevState: any, formData: FormDat
 
     if (!validatedFields.success) {
       return {
-        message: 'Invalid form data.',
-        errors: validatedFields.error.flatten().fieldErrors,
         data: null,
+        error: 'Invalid form data.',
+        errors: validatedFields.error.flatten().fieldErrors,
       };
     }
     
@@ -33,10 +33,10 @@ export async function handleCompetitorAnalysis(prevState: any, formData: FormDat
         url: validatedFields.data.url || undefined,
     });
 
-    return { message: 'Competitor analysis complete.', data: result, errors: {} };
+    return { data: result, error: null, errors: null };
   } catch (error) {
     console.error(error);
     const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred.';
-    return { message: `Analysis failed: ${errorMessage}`, data: null, errors: {} };
+    return { data: null, error: `Analysis failed: ${errorMessage}`, errors: null };
   }
 }

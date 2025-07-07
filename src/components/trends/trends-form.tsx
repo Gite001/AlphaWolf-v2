@@ -13,8 +13,8 @@ import { TrendsResults } from './trends-results';
 import { useI18n } from '@/hooks/use-i18n';
 
 const initialState = {
-  message: '',
   data: null,
+  error: null,
   errors: {},
 };
 
@@ -36,11 +36,11 @@ export function TrendsForm() {
   const [result, setResult] = useState<AnalyzeMarketTrendsOutput | null>(null);
 
   useEffect(() => {
-    if (state.message && state.message !== 'Market analysis complete.') {
+    if (state.error) {
       toast({
         variant: 'destructive',
         title: t('Toast.errorTitle'),
-        description: state.message,
+        description: state.error,
       });
     }
     if (state.data) {

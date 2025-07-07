@@ -41,3 +41,11 @@ export type GeoData = {
 
 export const budgetLevels = ['Low', 'Medium', 'High'] as const;
 export const marketingGoals = ['Brand Awareness', 'Direct Sales', 'Lead Generation'] as const;
+
+export const videoStyles = [
+  'Dynamic and fast-paced',
+  'Cinematic and emotional',
+  'Informative and direct',
+  'Humorous and quirky',
+  'User-generated content style',
+] as const;

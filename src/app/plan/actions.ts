@@ -26,22 +26,22 @@ export async function handlePlanGeneration(prevState: any, formData: FormData) {
 
     if (!validatedFields.success) {
       return {
-        message: 'Invalid form data.',
-        errors: validatedFields.error.flatten().fieldErrors,
         data: null,
+        error: 'Invalid form data.',
+        errors: validatedFields.error.flatten().fieldErrors,
       };
     }
     
     const result = await generateMarketingPlan(validatedFields.data);
 
     return { 
-        message: 'Plan generation complete.', 
         data: result,
-        errors: {} 
+        error: null,
+        errors: null,
     };
   } catch (error) {
     console.error(error);
     const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred.';
-    return { message: `Generation failed: ${errorMessage}`, data: null, errors: {} };
+    return { data: null, error: `Generation failed: ${errorMessage}`, errors: null };
   }
 }

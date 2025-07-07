@@ -15,9 +15,9 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 import { supportedMarketplaces } from '@/lib/types';
 
 const initialState = {
-  message: '',
   data: null,
-  errors: {},
+  error: null,
+  errors: null,
 };
 
 function SubmitButton() {
@@ -38,11 +38,11 @@ export function PulseForm() {
   const [result, setResult] = useState<AnalyzeMarketplaceTrendsOutput | null>(null);
 
   useEffect(() => {
-    if (state.message && state.message !== 'Marketplace analysis complete.') {
+    if (state.error) {
       toast({
         variant: 'destructive',
         title: t('Toast.errorTitle'),
-        description: state.message,
+        description: state.error,
       });
     }
     if (state.data) {

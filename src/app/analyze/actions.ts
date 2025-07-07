@@ -23,7 +23,8 @@ export async function handleAnalysis(prevState: any, formData: FormData) {
 
     if (!validatedFields.success) {
       return {
-        message: 'Invalid form data.',
+        data: null,
+        error: 'Invalid form data.',
         errors: validatedFields.error.flatten().fieldErrors,
       };
     }
@@ -31,7 +32,7 @@ export async function handleAnalysis(prevState: any, formData: FormData) {
     const { adVisual, ...rest } = validatedFields.data;
 
     if (adVisual.size > 4 * 1024 * 1024) { // 4MB limit
-        return { message: 'Image size must be less than 4MB.', errors: { adVisual: ['Image too large'] } };
+        return { data: null, error: 'Image size must be less than 4MB.', errors: { adVisual: ['Image too large'] } };
     }
 
     const bytes = await adVisual.arrayBuffer();
@@ -45,10 +46,10 @@ export async function handleAnalysis(prevState: any, formData: FormData) {
 
     const result = await analyzeAdPerformance(analysisInput);
 
-    return { message: 'Analysis complete.', data: result, errors: {} };
+    return { data: result, error: null, errors: null };
   } catch (error) {
     console.error(error);
     const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred.';
-    return { message: `Analysis failed: ${errorMessage}`, data: null, errors: {} };
+    return { data: null, error: `Analysis failed: ${errorMessage}`, errors: null };
   }
 }

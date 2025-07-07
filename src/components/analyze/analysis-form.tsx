@@ -14,9 +14,9 @@ import { Loader2, Upload } from 'lucide-react';
 import { useI18n } from '@/hooks/use-i18n';
 
 const initialState = {
-  message: '',
   data: null,
-  errors: {},
+  error: null,
+  errors: null,
 };
 
 function SubmitButton() {
@@ -41,11 +41,11 @@ export function AnalysisForm() {
   const [result, setResult] = useState<AnalyzeAdPerformanceOutput | null>(null);
 
   useEffect(() => {
-    if (state.message && state.message !== 'Analysis complete.') {
+    if (state.error) {
       toast({
         variant: 'destructive',
         title: t('Toast.errorTitle'),
-        description: state.message,
+        description: state.error,
       });
     }
     if (state.data) {

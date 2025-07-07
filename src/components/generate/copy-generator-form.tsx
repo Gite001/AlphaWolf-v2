@@ -15,12 +15,12 @@ import { useSearchParams } from 'next/navigation';
 import { useI18n } from '@/hooks/use-i18n';
 
 const initialState: {
-  message: string;
   data: GenerateAdCopyOutput | null;
+  error: string | null;
   errors: any;
 } = {
-  message: '',
   data: null,
+  error: null,
   errors: {},
 };
 
@@ -47,11 +47,11 @@ export function CopyGeneratorForm() {
   const keywords = searchParams.get('keywords') || '';
 
   useEffect(() => {
-    if (state.message && state.message !== 'Copy generation complete.') {
+    if (state.error) {
       toast({
         variant: 'destructive',
         title: t('Toast.errorTitle'),
-        description: state.message,
+        description: state.error,
       });
     }
     if (state.data) {
