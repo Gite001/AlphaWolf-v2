@@ -4,8 +4,8 @@
  * @fileOverview AI agent for finding live ads based on a query.
  *
  * - findLiveAds - A function that fetches live ad data.
- * - FindLiveAdsInput - The input type for the findLiveAds function.
- * - FindLiveAdsOutput - The return type for the findLiveAds function.
+ * - FindLiveAdsInput - The input type for the findLiveads function.
+ * - FindLiveAdsOutput - The return type for the findLiveads function.
  */
 
 import {ai} from '@/ai/genkit';
@@ -36,14 +36,14 @@ const findLiveAdsFlow = ai.defineFlow(
     outputSchema: z.array(LiveAdSchema),
   },
   async ({ query, country }) => {
-    if (!process.env.SERPAPI_API_KEY_ADS) {
-        throw new Error("SerpAPI for Ads is not configured. Please add SERPAPI_API_KEY_ADS to your .env file.");
+    if (!process.env.SERPAPI_API_KEY) {
+        throw new Error("SerpAPI is not configured. Please add SERPAPI_API_KEY to your .env file.");
     }
     
     console.log(`Performing live ad search for: ${query} in ${country}`);
     try {
         const response: any = await getJson({
-            api_key: process.env.SERPAPI_API_KEY_ADS,
+            api_key: process.env.SERPAPI_API_KEY,
             engine: "google_ads",
             q: query,
             gl: country,
