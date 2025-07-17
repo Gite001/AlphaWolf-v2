@@ -42,12 +42,6 @@ export function AppSidebar() {
     { href: '/lexicon', label: t('AppSidebar.lexicon'), icon: BookMarked },
     { href: '/guide', label: t('AppSidebar.guide'), icon: BookOpen },
   ];
-  
-  if (!isClient) {
-    // Render a placeholder on the server to avoid hydration mismatch
-    // and prevent layout shift.
-    return <div className="hidden md:block w-[var(--sidebar-width-icon)]" />;
-  }
 
   return (
     <Sidebar>
@@ -60,7 +54,7 @@ export function AppSidebar() {
       </SidebarHeader>
       <SidebarContent>
         <SidebarMenu>
-          {menuItems.map((item) => (
+          {isClient && menuItems.map((item) => (
             <SidebarMenuItem key={item.href}>
               <Link href={item.href} legacyBehavior passHref>
                 <SidebarMenuButton
