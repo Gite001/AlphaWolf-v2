@@ -12,6 +12,20 @@ For a full breakdown of features and philosophy, please see the **"Guide"** sect
 
 ---
 
+## API Key Setup (Required for Live Trends)
+
+To enable real-time web searches in the "Product Discovery" tool, you need an API key from SerpApi.
+
+1.  **Go to [serpapi.com](https://serpapi.com/)** and sign up for a free account.
+2.  **Find your API Key:** From your SerpApi dashboard, copy your "Private API Key".
+3.  **Add the key to your `.env` file:** Open the `.env` file in the project's root directory and paste your key in, like this:
+    ```
+    SERPAPI_API_KEY=your_private_api_key_here
+    ```
+4.  Restart the application server (`npm run dev`) for the key to be recognized.
+
+---
+
 ## Getting Started
 
 To run the application on your local machine, follow these steps from the root directory of your project in the Firebase Studio terminal.

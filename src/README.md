@@ -12,6 +12,20 @@ Pour une description complète des fonctionnalités et de la philosophie, veuill
 
 ---
 
+## Configuration de la Clé API (Requis pour les Tendances en Direct)
+
+Pour activer la recherche web en temps réel dans l'outil "Découverte de Produits", vous avez besoin d'une clé API de SerpApi.
+
+1.  **Allez sur [serpapi.com](https://serpapi.com/)** et créez un compte gratuit.
+2.  **Trouvez votre Clé API :** Depuis votre tableau de bord SerpApi, copiez votre "Private API Key".
+3.  **Ajoutez la clé à votre fichier `.env` :** Ouvrez le fichier `.env` à la racine du projet et collez votre clé, comme ceci :
+    ```
+    SERPAPI_API_KEY=votre_clé_api_privée_ici
+    ```
+4.  Redémarrez le serveur de l'application (`npm run dev`) pour que la clé soit prise en compte.
+
+---
+
 ## Pour Commencer
 
 Pour lancer l'application sur votre machine locale, suivez ces étapes depuis le répertoire racine de votre projet dans le terminal de Firebase Studio.
