@@ -16,10 +16,16 @@ import Link from 'next/link';
 import { LayoutDashboard, Sparkles, FileText, LineChart, Binoculars, Trophy, BookOpen, Clapperboard, Store, Compass, BookMarked, Swords, Search } from 'lucide-react';
 import { useI18n } from '@/hooks/use-i18n';
 import { Logo } from '../logo';
+import { useEffect, useState } from 'react';
 
 export function AppSidebar() {
   const pathname = usePathname();
   const { t } = useI18n();
+  const [activePath, setActivePath] = useState('');
+
+  useEffect(() => {
+    setActivePath(pathname);
+  }, [pathname]);
 
   const menuItems = [
     { href: '/dashboard', label: t('AppSidebar.dashboard'), icon: LayoutDashboard },
@@ -52,7 +58,7 @@ export function AppSidebar() {
             <SidebarMenuItem key={item.href}>
               <Link href={item.href}>
                 <SidebarMenuButton
-                  isActive={pathname === item.href}
+                  isActive={activePath === item.href}
                   tooltip={{
                     children: item.label,
                   }}
