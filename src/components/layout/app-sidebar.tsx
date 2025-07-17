@@ -22,9 +22,13 @@ export function AppSidebar() {
   const pathname = usePathname();
   const { t } = useI18n();
   const [activePath, setActivePath] = useState('');
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
+    // This effect runs only on the client, after the component has mounted.
+    // It ensures that `pathname` is read only on the client, avoiding the mismatch.
     setActivePath(pathname);
+    setIsClient(true);
   }, [pathname]);
 
   const menuItems = [
@@ -58,7 +62,7 @@ export function AppSidebar() {
             <SidebarMenuItem key={item.href}>
               <Link href={item.href}>
                 <SidebarMenuButton
-                  isActive={activePath === item.href}
+                  isActive={isClient ? activePath === item.href : false}
                   tooltip={{
                     children: item.label,
                   }}
