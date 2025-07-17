@@ -26,7 +26,7 @@ const AdCopyTextVariationSchema = z.object({
     headline: z.string().describe('A catchy headline for the ad.'),
     body: z.string().describe('The main body text of the ad.'),
     cta: z.string().describe('A compelling call to action.'),
-    visualPrompt: z.string().describe('A detailed, descriptive prompt for an AI image generation model to create a matching visual. This prompt should describe a photorealistic scene for an advertisement, focusing on the product in context. **Do not include any text in the prompt.** The description should be vivid and appealing to the target audience.'),
+    visualPrompt: z.string().describe('A detailed, descriptive prompt for an AI image generation model to create a matching visual. This prompt should describe a professional, photorealistic scene for an advertisement, focusing on the product in context. **Do not include any text in the prompt.** The description should be vivid and appealing to the target audience.'),
 });
 
 // This is the final output schema, including media URLs.
@@ -64,7 +64,7 @@ For each variation, provide:
 1. A catchy headline.
 2. A persuasive body text.
 3. A strong call to action (CTA).
-4. A detailed, descriptive 'visualPrompt' for an image generation AI to create a matching ad visual. The prompt should describe a photorealistic scene for an advertisement, focusing on the product in context. **Do not include any text in the prompt.** The description should be vivid and appealing to the target audience.
+4. A detailed, descriptive 'visualPrompt' for an image generation AI to create a matching ad visual. The prompt should describe a professional, photorealistic scene for an advertisement, focusing on the product in context. **Do not include any text in the prompt.** The description should be vivid and appealing to the target audience.
 
 The tone should be engaging and tailored to the specified target audience. Ensure the keywords are naturally integrated. Your response must be in valid JSON format.
 `,

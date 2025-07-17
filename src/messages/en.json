@@ -28,7 +28,7 @@
     "home": "Home",
     "dashboard": "Dashboard",
     "marketingPlan": "Marketing Plan",
-    "adSpy": "Ad Analysis",
+    "winningProductFinder": "Winning Product Finder",
     "marketTrends": "Product Discovery",
     "marketplacePulse": "Marketplace Pulse",
     "competitorSpy": "Competitor Analysis",
@@ -82,7 +82,7 @@
     }
   },
   "FinderPage": {
-    "title": "Ad Analysis",
+    "title": "Winning Product Finder",
     "description": "This is your training ground. Analyze our curated database of successful ad campaigns to hone your skills. Use the filters to isolate specific strategies, then unleash the AI to deconstruct what makes them win."
   },
   "TrendsPage": {
@@ -290,7 +290,7 @@
         "description": "Analyze trends on Aliexpress or Etsy."
     },
     "finder": {
-        "label": "Analyze Winning Ads",
+        "label": "Winning Product Finder",
         "description": "Let AI analyze our ad database."
     },
     "spy": {
@@ -389,7 +389,7 @@
         "retryButton": "Retry"
     }
   },
-  "AdSpy": {
+  "WinningProductFinder": {
     "filters": {
         "title": "Intelligence Filters",
         "description": "Refine your search to pinpoint the most relevant ads.",
@@ -754,9 +754,9 @@
         "title": "🧭 The Strategic Roadmap (Marketing Plan)",
         "content": "Move from uncertainty to action. This tool acts as your personal marketing mentor. Provide details about your product, target audience, and budget, and the AI will generate a comprehensive, step-by-step marketing plan. It covers everything from audience analysis and platform strategy (your own site vs. marketplaces) to influencer marketing and a phased roadmap for launch, optimization, and scaling."
       },
-      "adSpy": {
-        "title": "🏆 Ad Analysis",
-        "content": "The 'Ad Analysis' tool is a two-phase intelligence operation. It's not about random spying, but about a targeted hunt.\n\n**1. The Hunt (Your Role):** You are the hunter. You use the array of filters (keyword, engagement score, country, date...) to isolate a 'pack' of ads that interest you from our vast database. You are not searching blindly; you are precisely targeting campaigns that look promising.\n\n**2. The Dissection (AI's Role):** Once you have your selection, you unleash the AI. It doesn't just look at titles; it performs a deep analysis of the full ad content—**descriptions, marketing language, and detailed engagement metrics (likes, comments, shares, score)**—for every ad in your selection. It acts like a data scientist, cross-referencing all this data to find hidden patterns and deep trends. It identifies which product categories are overperforming, the most effective marketing angles, and the most receptive audiences. It then delivers a complete intelligence report to you.\n\nIn short, you lead the hunt, and the AI handles the autopsy to provide you with a ready-to-use strategy."
+      "winningProductFinder": {
+        "title": "🏆 Winning Product Finder",
+        "content": "The 'Winning Product Finder' tool is a two-phase intelligence operation. It's not about random spying, but about a targeted hunt.\n\n**1. The Hunt (Your Role):** You are the hunter. You use the array of filters (keyword, engagement score, country, date...) to isolate a 'pack' of ads that interest you from our vast database. You are not searching blindly; you are precisely targeting campaigns that look promising.\n\n**2. The Dissection (AI's Role):** Once you have your selection, you unleash the AI. It doesn't just look at titles; it performs a deep analysis of the full ad content—**descriptions, marketing language, and detailed engagement metrics (likes, comments, shares, score)**—for every ad in your selection. It acts like a data scientist, cross-referencing all this data to find hidden patterns and deep trends. It identifies which product categories are overperforming, the most effective marketing angles, and the most receptive audiences. It then delivers a complete intelligence report to you.\n\nIn short, you lead the hunt, and the AI handles the autopsy to provide you with a ready-to-use strategy."
       },
       "trends": {
         "title": "📈 Market Trend Analysis",

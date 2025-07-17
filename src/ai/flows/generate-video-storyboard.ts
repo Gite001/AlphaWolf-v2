@@ -42,7 +42,7 @@ export const SceneSchema = z.object({
   visual_description: z
     .string()
     .describe(
-      'A detailed prompt for an AI image model to generate the visual for this scene. Should be descriptive and photorealistic.'
+      'A detailed prompt for an AI image model to generate the visual for this scene. Should be descriptive, professional and photorealistic.'
     ),
   duration_seconds: z
     .number()
@@ -106,7 +106,7 @@ const storyboardPrompt = ai.definePrompt({
 3.  For each scene, provide:
     *   sceneNumber: The scene number.
     *   script_narration: The voiceover text for this scene. This is a part of the larger script.
-    *   visual_description: A detailed, vivid prompt for an AI image generation model to create a matching visual. This prompt should describe a photorealistic scene, focusing on the product in context or the emotion to convey. **Do not include any text in the prompt itself.**
+    *   visual_description: A detailed, vivid prompt for an AI image generation model to create a matching visual. This prompt should describe a professional, photorealistic scene, focusing on the product in context or the emotion to convey. **Do not include any text in the prompt itself.**
     *   duration_seconds: The estimated duration of this scene in seconds. The total duration should be between 15 and 30 seconds.
 4.  Combine all script_narration parts into a single fullScript field.
 

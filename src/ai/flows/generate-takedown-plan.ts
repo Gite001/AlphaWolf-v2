@@ -22,7 +22,7 @@ const TakedownAngleSchema = z.object({
     angleName: z.string().describe("The name of the strategic angle, e.g., 'The Quality Advantage', 'The Price Disruption'."),
     counterHeadline: z.string().describe("A direct, aggressive headline that counters the competitor's message."),
     counterBody: z.string().describe("Ad copy that highlights your product's superiority and exploits the competitor's weakness."),
-    counterVisualPrompt: z.string().describe("A detailed DALL-E prompt to generate a visual that one-ups the competitor's visual. Must be photorealistic and compelling."),
+    counterVisualPrompt: z.string().describe("A detailed DALL-E prompt to generate a visual that one-ups the competitor's visual. Must be professional, photorealistic and compelling."),
     targetAudienceSegment: z.string().describe("A specific sub-segment of the audience to poach from the competitor with this angle."),
 });
 
@@ -74,7 +74,7 @@ const takedownTextPrompt = ai.definePrompt({
 2.  **Devise 3 Takedown Angles:** Create three unique strategies to counter them. For each angle:
     *   **Angle Name:** Give it a powerful name (e.g., 'The Innovation Play', 'The Unbeatable Value', 'The Superior Quality').
     *   **Counter-Ad Creative:** Write a sharp, direct **headline** and **body copy** for an ad. This copy must highlight a competitor's weakness and position *Your Product* as the superior solution.
-    *   **Counter-Visual:** Write a detailed, photorealistic prompt for an AI image generator. This visual should directly challenge or improve upon the competitor's likely imagery. Do not include text in the prompt.
+    *   **Counter-Visual:** Write a detailed, professional, and photorealistic prompt for an AI image generator. This visual should directly challenge or improve upon the competitor's likely imagery. Do not include text in the prompt.
     *   **Targeted Strike:** Identify a specific **audience segment** you can poach from the competitor with this angle (e.g., 'Price-conscious students', 'Disappointed power users').
 
 Your response must be a valid JSON object in the requested language ({{{locale}}}). Be aggressive, be strategic, be the Alpha.`,

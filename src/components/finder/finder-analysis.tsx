@@ -34,12 +34,12 @@ function AnalyzeButton({ resultCount, isPending }: { resultCount: number; isPend
       {isPending ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : (
         <Bot className="mr-2 h-5 w-5" />
       )}
-      {t('AdSpy.analyzeButton', { count: resultCount })}
+      {t('WinningProductFinder.analyzeButton', { count: resultCount })}
     </Button>
   );
 }
 
-export function FinderAnalysis({ ads, allPlatforms, allCountries }: AdSpyClientProps) {
+export function FinderAnalysis({ ads, allPlatforms, allCountries }: { ads: Ad[], allPlatforms: string[], allCountries: string[] }) {
   const { t, locale } = useI18n();
   const { toast } = useToast();
   const [state, formAction, isPending] = useActionState(getWinningProductsAnalysis, initialState);
@@ -49,7 +49,7 @@ export function FinderAnalysis({ ads, allPlatforms, allCountries }: AdSpyClientP
   const [country, setCountry] = useState('all');
   const [scoreRange, setScoreRange] = useState([60, 100]);
   const [dateRange, setDateRange] = useState<DateRange | undefined>({
-    from: subDays(new Date(), 29),
+    from: subDays(new Date(), 365),
     to: new Date(),
   });
 
@@ -65,9 +65,7 @@ export function FinderAnalysis({ ads, allPlatforms, allCountries }: AdSpyClientP
       const platformMatch = platform === 'all' || ad.platform === platform;
       const countryMatch = country === 'all' || ad.country === country;
       const scoreMatch = ad.engagement.score >= scoreRange[0] && ad.engagement.score <= scoreRange[1];
-      const dateMatch = !dateRange?.from || !dateRange?.to || (
-        adDate >= dateRange.from && adDate <= dateRange.to
-      );
+      const dateMatch = !dateRange?.from || (adDate >= dateRange.from && adDate <= (dateRange.to || new Date()));
       return searchMatch && platformMatch && countryMatch && scoreMatch && dateMatch;
     });
   }, [ads, searchTerm, platform, country, scoreRange, dateRange]);
@@ -88,15 +86,15 @@ export function FinderAnalysis({ ads, allPlatforms, allCountries }: AdSpyClientP
     <div className="space-y-8">
       <Card className="bg-card/30 backdrop-blur-sm">
         <CardHeader>
-          <CardTitle>{t('AdSpy.filters.title')}</CardTitle>
-          <CardDescription>{t('AdSpy.filters.description')}</CardDescription>
+          <CardTitle>{t('WinningProductFinder.filters.title')}</CardTitle>
+          <CardDescription>{t('WinningProductFinder.filters.description')}</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <div className="relative">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
-                placeholder={t('AdSpy.filters.keywordPlaceholder')}
+                placeholder={t('WinningProductFinder.filters.keywordPlaceholder')}
                 className="pl-10"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
@@ -104,19 +102,19 @@ export function FinderAnalysis({ ads, allPlatforms, allCountries }: AdSpyClientP
             </div>
             <Select value={platform} onValueChange={setPlatform}>
               <SelectTrigger>
-                <SelectValue placeholder={t('AdSpy.filters.platformPlaceholder')} />
+                <SelectValue placeholder={t('WinningProductFinder.filters.platformPlaceholder')} />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="all">{t('AdSpy.filters.allPlatforms')}</SelectItem>
+                <SelectItem value="all">{t('WinningProductFinder.filters.allPlatforms')}</SelectItem>
                 {allPlatforms.map(p => <SelectItem key={p} value={p}>{p}</SelectItem>)}
               </SelectContent>
             </Select>
             <Select value={country} onValueChange={setCountry}>
               <SelectTrigger>
-                <SelectValue placeholder={t('AdSpy.filters.countryPlaceholder')} />
+                <SelectValue placeholder={t('WinningProductFinder.filters.countryPlaceholder')} />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="all">{t('AdSpy.filters.allCountries')}</SelectItem>
+                <SelectItem value="all">{t('WinningProductFinder.filters.allCountries')}</SelectItem>
                 {allCountries.map(c => <SelectItem key={c} value={c}>{c}</SelectItem>)}
               </SelectContent>
             </Select>
@@ -151,7 +149,7 @@ export function FinderAnalysis({ ads, allPlatforms, allCountries }: AdSpyClientP
               </PopoverContent>
             </Popover>
             <div className="space-y-2">
-              <Label className="text-sm">{t('AdSpy.filters.scoreRangeLabel')}: {scoreRange[0]} - {scoreRange[1]}</Label>
+              <Label className="text-sm">{t('WinningProductFinder.filters.scoreRangeLabel')}: {scoreRange[0]} - {scoreRange[1]}</Label>
               <Slider
                 value={scoreRange}
                 onValueChange={setScoreRange}
@@ -170,7 +168,7 @@ export function FinderAnalysis({ ads, allPlatforms, allCountries }: AdSpyClientP
             <input type="hidden" name="locale" value={locale} />
             <input type="hidden" name="adIds" value={filteredAds.map(ad => ad.id).join(',')} />
             <div className="text-lg font-semibold">
-                {t('AdSpy.resultsCount', { count: filteredAds.length, total: ads.length })}
+                {t('WinningProductFinder.resultsCount', { count: filteredAds.length, total: ads.length })}
             </div>
             <AnalyzeButton resultCount={filteredAds.length} isPending={isPending} />
         </form>

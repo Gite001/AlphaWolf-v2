@@ -89,8 +89,8 @@ export function AdCard({ ad, t }: AdCardProps) {
                 </TooltipContent>
               </Tooltip>
               <DialogContent className="max-w-3xl p-0 border-0">
-                <DialogHeader className="sr-only">
-                  <DialogTitle>{ad.title}</DialogTitle>
+                <DialogHeader>
+                  <DialogTitle className="sr-only">{ad.title}</DialogTitle>
                 </DialogHeader>
                 <Image
                   src={ad.imageUrl.replace('400x400', '800x800')}

@@ -28,7 +28,7 @@
     "home": "Accueil",
     "dashboard": "Tableau de bord",
     "marketingPlan": "Plan Marketing",
-    "adSpy": "Analyse de Publicités",
+    "winningProductFinder": "Découverte de Produits Gagnants",
     "marketTrends": "Découverte de Produits",
     "marketplacePulse": "Pouls du Marché",
     "competitorSpy": "Analyse Concurrent",
@@ -82,11 +82,11 @@
     }
   },
   "FinderPage": {
-    "title": "Analyse de Publicités",
+    "title": "Découverte de Produits Gagnants",
     "description": "Ceci est votre terrain d'entraînement. Analysez notre base de données organisée de campagnes publicitaires à succès pour affûter vos compétences. Utilisez les filtres pour isoler des stratégies spécifiques, puis lancez l'IA pour déconstruire ce qui fait leur succès."
   },
   "TrendsPage": {
-    "title": "Découverte de Produits Gagnants",
+    "title": "Découverte de Produits Tendances",
     "description": "Demandez à notre IA de scanner l'horizon et de vous révéler les produits qui explosent en ce moment. C'est votre raccourci vers le succès.",
     "form": {
         "title": "Lancer une Mission de Découverte",
@@ -290,7 +290,7 @@
         "description": "Analysez les tendances sur Aliexpress ou Etsy."
     },
     "finder": {
-        "label": "Analyser les Publicités Gagnantes",
+        "label": "Découverte de Produits Gagnants",
         "description": "Laissez l'IA analyser notre base de données publicitaires."
     },
     "spy": {
@@ -389,7 +389,7 @@
         "retryButton": "Réessayer"
     }
   },
-   "AdSpy": {
+   "WinningProductFinder": {
     "filters": {
         "title": "Filtres de Renseignement",
         "description": "Affinez votre recherche pour repérer les publicités les plus pertinentes.",
@@ -754,9 +754,9 @@
         "title": "🧭 La Feuille de Route Stratégique (Plan Marketing)",
         "content": "Passez de l'incertitude à l'action. Cet outil agit comme votre mentor marketing personnel. Fournissez des détails sur votre produit, votre audience cible et votre budget, et l'IA générera un plan marketing complet et étape par étape. Il couvre tout, de l'analyse de l'audience et de la stratégie de plateforme (votre propre site contre les places de marché) au marketing d'influence et à une feuille de route progressive pour le lancement, l'optimisation et la croissance."
       },
-      "adSpy": {
-        "title": "🏆 Analyse de Publicités",
-        "content": "L'outil 'Analyse de Publicités' est une opération de renseignement en deux phases. Il ne s'agit pas d'espionner au hasard, mais de mener une chasse ciblée.\n\n**1. La Traque (Votre Rôle) :** Vous êtes le chasseur. Vous utilisez la panoplie de filtres (mot-clé, score d'engagement, pays, date...) pour isoler une 'meute' de publicités qui vous intéressent dans notre vaste base de données. Vous ne partez pas à l'aveugle ; vous ciblez avec précision les campagnes qui semblent prometteuses.\n\n**2. La Dissection (Rôle de l'IA) :** Une fois votre sélection faite, vous lancez l'IA. Elle ne se contente pas de regarder les titres ; elle effectue une analyse approfondie du contenu complet de l'annonce—**descriptions, langage marketing et métriques d'engagement détaillées (likes, commentaires, partages, score)**—pour chaque publicité de votre sélection. Elle agit comme un data scientist, croisant toutes ces données pour trouver les schémas cachés et les tendances profondes. Elle identifie les catégories de produits qui surperforment, les angles marketing les plus efficaces et les audiences les plus réceptives. Elle vous livre ensuite un rapport de renseignement complet.\n\nEn résumé, vous dirigez la chasse, et l'IA s'occupe de l'autopsie pour vous fournir une stratégie prête à l'emploi."
+      "winningProductFinder": {
+        "title": "🏆 Découverte de Produits Gagnants",
+        "content": "L'outil 'Découverte de Produits Gagnants' est une opération de renseignement en deux phases. Il ne s'agit pas d'espionner au hasard, mais de mener une chasse ciblée.\n\n**1. La Traque (Votre Rôle) :** Vous êtes le chasseur. Vous utilisez la panoplie de filtres (mot-clé, score d'engagement, pays, date...) pour isoler une 'meute' de publicités qui vous intéressent dans notre vaste base de données. Vous ne partez pas à l'aveugle ; vous ciblez avec précision les campagnes qui semblent prometteuses.\n\n**2. La Dissection (Rôle de l'IA) :** Une fois votre sélection faite, vous lancez l'IA. Elle ne se contente pas de regarder les titres ; elle effectue une analyse approfondie du contenu complet de l'annonce—**descriptions, langage marketing et métriques d'engagement détaillées (likes, commentaires, partages, score)**—pour chaque publicité de votre sélection. Elle agit comme un data scientist, croisant toutes ces données pour trouver les schémas cachés et les tendances profondes. Elle identifie les catégories de produits qui surperforment, les angles marketing les plus efficaces et les audiences les plus réceptives. Elle vous livre ensuite un rapport de renseignement complet.\n\nEn résumé, vous dirigez la chasse, et l'IA s'occupe de l'autopsie pour vous fournir une stratégie prête à l'emploi."
       },
       "trends": {
         "title": "📈 Analyse des Tendances du Marché",
