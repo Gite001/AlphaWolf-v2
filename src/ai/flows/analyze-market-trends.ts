@@ -48,6 +48,13 @@ const TrendingProductSchema = z.object({
     exampleProductIdeas: z.array(z.string()).describe("A list of 2-3 specific product ideas or variations within this trend."),
 });
 
+const NicheOpportunitySchema = z.object({
+    name: z.string().describe('The name of the identified niche market.'),
+    description: z.string().describe('A description of the niche and why it represents an opportunity.'),
+    targetAudience: z.string().describe('A detailed profile of the specific audience within this niche.'),
+    potentialScore: z.number().min(0).max(100).describe('A score from 0-100 representing the growth potential of this niche.'),
+});
+
 const GeoTrendPointSchema = z.object({
     country: z.string().describe('The name of the country.'),
     demandScore: z.number().min(0).max(100).describe('An estimated demand score from 0-100 for that country, where 100 is peak demand.'),
@@ -56,6 +63,7 @@ const GeoTrendPointSchema = z.object({
 const AnalyzeMarketTrendsOutputSchema = z.object({
   marketSummary: z.string().describe('An overall summary of the market landscape for this category.'),
   trendingProducts: z.array(TrendingProductSchema).describe('An array of 3-5 trending products in the category.'),
+  nicheOpportunities: z.array(NicheOpportunitySchema).describe('An array of 2-3 high-potential, underserved niche markets within the main category.'),
   opportunities: z.string().describe('Key opportunities for new sellers or products in this market.'),
   risks: z.string().describe('Potential risks or market saturation points to be aware of.'),
   geoTrend: z.array(GeoTrendPointSchema).describe('An array of the top 5-7 countries for this product category, ranked by estimated demand.'),
@@ -94,10 +102,11 @@ const prompt = ai.definePrompt({
     *   **Marketing Angle:** A proven, effective marketing angle.
     *   **Competition Level:** (Low, Medium, High) based on market saturation signals.
     *   **Example Product Ideas:** 2-3 concrete product variations.
-3.  **Opportunities:** Highlight specific, quantifiable opportunities (e.g., underserved niches, new tech adoption), **especially those identified in your web search.**
-4.  **Risks:** Identify concrete risks (e.g., supply chain issues, changing regulations, market saturation).
-5.  **Geographic Hotspots:** Identify the top 5-7 countries in the region with the highest demand. Provide an estimated demand score (0-100) based on synthesized market size and consumer behavior data.
-6.  **Hotspot Analysis:** Briefly explain the data points supporting the geographic distribution.
+3.  **Niche Opportunities**: Identify 2-3 high-potential, underserved niche markets within the main category. For each niche, provide its name, a description of the opportunity, a detailed target audience profile, and a potential score from 0-100.
+4.  **Opportunities:** Highlight specific, quantifiable opportunities (e.g., underserved niches, new tech adoption), **especially those identified in your web search.**
+5.  **Risks:** Identify concrete risks (e.g., supply chain issues, changing regulations, market saturation).
+6.  **Geographic Hotspots:** Identify the top 5-7 countries in the region with the highest demand. Provide an estimated demand score (0-100) based on synthesized market size and consumer behavior data.
+7.  **Hotspot Analysis:** Briefly explain the data points supporting the geographic distribution.
 
 **Crucial Directive:** Do not invent information. Stick to synthesizing and analyzing patterns from your knowledge base and your fresh web search results. Structure the response according to the output schema. Your response must be in valid JSON and in the requested language ({{{locale}}}).
 `,

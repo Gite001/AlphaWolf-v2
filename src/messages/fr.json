@@ -644,6 +644,10 @@
   },
   "TrendsResults": {
     "title": "Rapport de Découverte de Produits",
+    "nicheOpportunities": {
+      "title": "Opportunités de Niche",
+      "potential": "Potentiel"
+    },
     "trendingProducts": {
         "title": "Produits en Tendance"
     },
