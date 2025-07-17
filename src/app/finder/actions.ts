@@ -1,18 +1,20 @@
 'use server';
 
+import { findLiveAds } from "@/ai/flows/find-live-ads";
 import { findWinningProducts } from "@/ai/flows/find-winning-products";
-import { getAds } from "@/lib/data";
 import { z } from "zod";
 
 const formSchema = z.object({
-  adIds: z.string().min(1, 'No ads selected for analysis.'),
+  query: z.string().min(3, 'Query must be at least 3 characters.'),
+  country: z.string().min(2, 'Country code is required (e.g., us, fr).'),
   locale: z.enum(['en', 'fr']),
 });
 
-export async function getWinningProductsAnalysis(prevState: any, formData: FormData) {
+export async function getLiveAdsAnalysis(prevState: any, formData: FormData) {
   try {
     const validatedFields = formSchema.safeParse({
-      adIds: formData.get('adIds'),
+      query: formData.get('query'),
+      country: formData.get('country'),
       locale: formData.get('locale'),
     });
 
@@ -24,26 +26,27 @@ export async function getWinningProductsAnalysis(prevState: any, formData: FormD
       };
     }
 
-    const { adIds, locale } = validatedFields.data;
-    const selectedIds = adIds.split(',');
-    
-    // In a real app, you'd fetch this from a database.
-    const allAds = getAds();
-    const selectedAds = allAds.filter(ad => selectedIds.includes(ad.id));
+    const { query, country, locale } = validatedFields.data;
 
-    if (selectedAds.length === 0) {
-        return { data: null, error: 'No matching ads found for analysis.', errors: { adIds: ['No ads found.'] } };
+    const liveAds = await findLiveAds({ query, country, locale });
+    
+    if (!liveAds || liveAds.length === 0) {
+      return {
+        data: null,
+        error: 'No live ads found for this query. Try a different search term.',
+        errors: { query: ['No ads found.'] }
+      };
     }
 
     const analysisInput = {
-      ads: selectedAds.map(ad => ({
+      ads: liveAds.map(ad => ({
         title: ad.title,
         description: ad.description,
         platform: ad.platform,
-        likes: ad.engagement.likes,
-        comments: ad.engagement.comments,
-        shares: ad.engagement.shares,
-        score: ad.engagement.score,
+        likes: 0, // Live ads don't provide this data
+        comments: 0,
+        shares: 0,
+        score: ad.score,
       })),
       locale,
     };
@@ -56,7 +59,7 @@ export async function getWinningProductsAnalysis(prevState: any, formData: FormD
 
     return { data: result, error: null, errors: null };
   } catch (error) {
-    console.error('Error in getWinningProductsAnalysis:', error);
+    console.error('Error in getLiveAdsAnalysis:', error);
     const errorMessage = error instanceof Error ? error.message : 'An unexpected error occurred. Please try again.';
     return { data: null, error: `Analysis failed: ${errorMessage}`, errors: null };
   }

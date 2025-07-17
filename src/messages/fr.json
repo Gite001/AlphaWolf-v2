@@ -28,7 +28,7 @@
     "home": "Accueil",
     "dashboard": "Tableau de bord",
     "marketingPlan": "Plan Marketing",
-    "winningProductFinder": "Découverte de Produits Gagnants",
+    "winningProductFinder": "Radar Publicitaire",
     "marketTrends": "Découverte de Produits",
     "marketplacePulse": "Pouls du Marché",
     "competitorSpy": "Analyse Concurrent",
@@ -82,8 +82,12 @@
     }
   },
   "FinderPage": {
-    "title": "Découverte de Produits Gagnants",
-    "description": "Ceci est votre terrain d'entraînement. Analysez notre base de données organisée de campagnes publicitaires à succès pour affûter vos compétences. Utilisez les filtres pour isoler des stratégies spécifiques, puis lancez l'IA pour déconstruire ce qui fait leur succès."
+    "title": "Radar d'Annonces en Direct",
+    "description": "C'est votre outil de reconnaissance active. Lancez une mission pour espionner des campagnes publicitaires réelles, en cours d'exécution. Définissez votre requête de recherche, et laissez l'IA traquer les annonces actives, les analyser, et vous rapporter les catégories gagnantes et les perspectives stratégiques.",
+    "form": {
+        "title": "Lancer une Mission de Reconnaissance",
+        "description": "Définissez votre cible en fournissant une requête de recherche et un pays. L'IA trouvera les annonces en direct et les analysera pour vous."
+    }
   },
   "TrendsPage": {
     "title": "Découverte de Produits Tendances",
@@ -290,8 +294,8 @@
         "description": "Analysez les tendances sur Aliexpress ou Etsy."
     },
     "finder": {
-        "label": "Découverte de Produits Gagnants",
-        "description": "Laissez l'IA analyser notre base de données publicitaires."
+        "label": "Radar Publicitaire",
+        "description": "Espionnez les campagnes pub des concurrents."
     },
     "spy": {
         "label": "Analyser les Concurrents",
@@ -381,7 +385,7 @@
     "unknownError": "Une erreur inconnue est survenue.",
     "loading": {
         "title": "Le loup IA est à la chasse...",
-        "description": "Analyse de milliers de points de données pour trouver de l'or."
+        "description": "Analyse des données publicitaires en direct pour trouver de l'or."
     },
     "error": {
         "title": "L'analyse a échoué",
@@ -400,15 +404,29 @@
         "allCountries": "Tous les pays",
         "scoreRangeLabel": "Score d'Engagement"
     },
-    "resultsCount": "{count} publicités affichées sur {total}",
+    "resultsCount": "{count} publicités trouvées",
     "analyzeButton": "Analyser {count} pubs avec l'IA"
+  },
+  "FinderForm": {
+    "submitButton": "Chasser les Pubs en Direct",
+    "toast": {
+      "successDescription": "Votre analyse des pubs en direct est prête."
+    },
+    "query": {
+      "label": "Requête de Recherche",
+      "placeholder": "ex: 'baskets durables', 'snacks keto'"
+    },
+    "country": {
+      "label": "Code Pays",
+      "placeholder": "ex: us, fr, de"
+    }
   },
   "FinderResults": {
     "marketOverview": {
-      "title": "Aperçu du Marché"
+      "title": "Aperçu du Marché Publicitaire en Direct"
     },
     "winningCategories": {
-      "title": "Meilleures Catégories Gagnantes"
+      "title": "Meilleures Catégories Gagnantes (depuis les pubs en direct)"
     },
     "analysis": {
       "title": "Analyse :"
@@ -431,7 +449,7 @@
       "title": "Meilleurs Angles Marketing"
     },
     "exampleProducts": {
-      "title": "Exemples de Produits des Données"
+      "title": "Exemples de Titres de Pubs des Données"
     }
   },
   "CopyGeneratorForm": {

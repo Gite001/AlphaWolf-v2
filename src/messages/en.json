@@ -28,7 +28,7 @@
     "home": "Home",
     "dashboard": "Dashboard",
     "marketingPlan": "Marketing Plan",
-    "winningProductFinder": "Winning Product Finder",
+    "winningProductFinder": "Ad Radar",
     "marketTrends": "Product Discovery",
     "marketplacePulse": "Marketplace Pulse",
     "competitorSpy": "Competitor Analysis",
@@ -82,8 +82,12 @@
     }
   },
   "FinderPage": {
-    "title": "Winning Product Finder",
-    "description": "This is your training ground. Analyze our curated database of successful ad campaigns to hone your skills. Use the filters to isolate specific strategies, then unleash the AI to deconstruct what makes them win."
+    "title": "Live Ad Radar",
+    "description": "This is your active reconnaissance tool. Launch a mission to spy on real, live ad campaigns currently running. Define your search query, and let the AI hunt down active ads, analyze them, and report back with winning categories and strategic insights.",
+    "form": {
+        "title": "Launch a Reconnaissance Mission",
+        "description": "Define your target by providing a search query and country. The AI will find live ads and analyze them for you."
+    }
   },
   "TrendsPage": {
     "title": "Winning Product Discovery",
@@ -290,8 +294,8 @@
         "description": "Analyze trends on Aliexpress or Etsy."
     },
     "finder": {
-        "label": "Winning Product Finder",
-        "description": "Let AI analyze our ad database."
+        "label": "Ad Radar",
+        "description": "Spy on live competitor ad campaigns."
     },
     "spy": {
         "label": "Analyze Competitors",
@@ -381,7 +385,7 @@
     "unknownError": "An unknown error occurred.",
     "loading": {
         "title": "AI wolf is on the hunt...",
-        "description": "Analyzing thousands of data points to find gold."
+        "description": "Analyzing live ad data to find gold."
     },
     "error": {
         "title": "Analysis Failed",
@@ -389,7 +393,7 @@
         "retryButton": "Retry"
     }
   },
-  "WinningProductFinder": {
+   "WinningProductFinder": {
     "filters": {
         "title": "Intelligence Filters",
         "description": "Refine your search to pinpoint the most relevant ads.",
@@ -400,15 +404,29 @@
         "allCountries": "All Countries",
         "scoreRangeLabel": "Engagement Score"
     },
-    "resultsCount": "{count} of {total} ads shown",
+    "resultsCount": "{count} ads found",
     "analyzeButton": "Analyze {count} Ads with AI"
+  },
+  "FinderForm": {
+    "submitButton": "Hunt for Live Ads",
+    "toast": {
+      "successDescription": "Your live ad analysis is ready."
+    },
+    "query": {
+      "label": "Search Query",
+      "placeholder": "e.g., 'sustainable sneakers', 'keto snacks'"
+    },
+    "country": {
+      "label": "Country Code",
+      "placeholder": "e.g., us, fr, de"
+    }
   },
   "FinderResults": {
     "marketOverview": {
-      "title": "Market Overview"
+      "title": "Live Ad Market Overview"
     },
     "winningCategories": {
-      "title": "Top Winning Categories"
+      "title": "Top Winning Categories (from Live Ads)"
     },
     "analysis": {
       "title": "Analysis:"
@@ -431,7 +449,7 @@
       "title": "Top Marketing Angles"
     },
     "exampleProducts": {
-      "title": "Example Products from Data"
+      "title": "Example Ad Headlines from Data"
     }
   },
   "CopyGeneratorForm": {

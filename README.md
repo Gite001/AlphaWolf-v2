@@ -12,17 +12,23 @@ For a full breakdown of features and philosophy, please see the **"Guide"** sect
 
 ---
 
-## API Key Setup (Required for Live Trends)
+## API Key Setup (Required for Live Intelligence)
 
-To enable real-time web searches in the "Product Discovery" tool, you need an API key from SerpApi.
+To enable real-time web searches and live ad spying, you need API keys from SerpApi.
 
 1.  **Go to [serpapi.com](https://serpapi.com/)** and sign up for a free account.
-2.  **Find your API Key:** From your SerpApi dashboard, copy your "Private API Key".
-3.  **Add the key to your `.env` file:** Open the `.env` file in the project's root directory and paste your key in, like this:
+2.  **Find your API Keys:** From your SerpApi dashboard, you will need two keys:
+    *   **Private API Key:** For general web searches (used in "Product Discovery").
+    *   **Google Ads API Key:** For spying on live ads (used in "Winning Product Finder").
+3.  **Add the keys to your `.env` file:** Open the `.env` file in the project's root directory and paste your keys in, like this:
     ```
+    # For real-time web search in "Product Discovery"
     SERPAPI_API_KEY=your_private_api_key_here
+
+    # For live ad spying in "Winning Product Finder"
+    SERPAPI_API_KEY_ADS=your_google_ads_api_key_here
     ```
-4.  Restart the application server (`npm run dev`) for the key to be recognized.
+4.  Restart the application server (`npm run dev`) for the keys to be recognized.
 
 ---
 
