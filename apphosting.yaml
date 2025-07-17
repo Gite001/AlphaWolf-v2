@@ -5,3 +5,24 @@ runConfig:
   # Increase this value if you'd like to automatically spin up
   # more instances in response to increased traffic.
   maxInstances: 1
+  cpu: 1
+  memoryMiB: 512
+# Specifies the command to run to build your app.
+build:
+  # You can specify a command to run before the build command.
+  # For example: `npm install`
+  prebuild: npm install
+  # The command to run to build your app.
+  command: npm run build
+# Specifies the command to run to start your app.
+start:
+  command: npm run start
+# For a Node.js app, you can specify the node version to use.
+# https://firebase.google.com/docs/app-hosting/configure#build-and-start
+# node:
+#   version: 20
+# For a Python app, you can specify the python version to use.
+# python:
+#  version: 3.12
+# cpu:
+#   architecture: "ARM"
