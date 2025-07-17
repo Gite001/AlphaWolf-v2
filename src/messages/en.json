@@ -28,9 +28,10 @@
     "home": "Home",
     "dashboard": "Dashboard",
     "marketingPlan": "Marketing Plan",
-    "winningProductFinder": "Ad Radar",
-    "marketTrends": "Product Discovery",
+    "productDiscovery": "Product Discovery",
+    "marketTrends": "Market Trends",
     "marketplacePulse": "Marketplace Pulse",
+    "liveAdRadar": "Live Ad Radar",
     "competitorSpy": "Competitor Analysis",
     "campaignTakedown": "Campaign Takedown",
     "generateAd": "Generate Ad Concept",
@@ -54,9 +55,9 @@
         "title": "Build Complete Strategies",
         "description": "Generate comprehensive marketing roadmaps, from audience analysis and platform choice to a phased action plan."
       },
-      "competitorAnalysis": {
-        "title": "Analyze Markets & Competitors",
-        "description": "Deconstruct competitor websites, uncover winning products, and analyze market trends to find your next opportunity."
+      "productDiscovery": {
+        "title": "Discover Winning Products",
+        "description": "Uncover trending products and analyze market signals to find your next winning opportunity organically."
       },
       "creativeGeneration": {
         "title": "Generate Multimedia Creatives",
@@ -82,23 +83,31 @@
     }
   },
   "FinderPage": {
+    "title": "Winning Product Discovery",
+    "description": "This is your organic reconnaissance tool. Launch a mission to find popular products in any category by analyzing web search signals, not just ads. Discover what's truly selling, with or without a big ad spend.",
+    "form": {
+        "title": "Launch a Discovery Mission",
+        "description": "Define your target by providing a product category and country. The AI will analyze organic search results to identify winning products."
+    }
+  },
+  "AdRadarPage": {
     "title": "Live Ad Radar",
-    "description": "This is your active reconnaissance tool. Launch a mission to spy on real, live ad campaigns currently running. Define your search query, and let the AI hunt down active ads, analyze them, and report back with winning categories and strategic insights.",
+    "description": "This is your active reconnaissance tool. Launch a mission to spy on real, live ad campaigns currently running. Define your search query, and let the AI hunt down active ads and report back with strategic insights.",
     "form": {
         "title": "Launch a Reconnaissance Mission",
         "description": "Define your target by providing a search query and country. The AI will find live ads and analyze them for you."
     }
   },
   "TrendsPage": {
-    "title": "Winning Product Discovery",
+    "title": "Market Trend Analysis",
     "description": "Ask our AI to scan the horizon and reveal the products that are exploding right now. This is your shortcut to success.",
     "form": {
-        "title": "Launch a Discovery Mission",
+        "title": "Launch an Analysis Mission",
         "description": "Tell the AI which product category and region you're interested in. It will provide a market summary, trending products, and strategic advice."
     },
     "howItWorks": {
         "title": "How does it work?",
-        "description": "The AI leverages its vast training on public web data. By analyzing countless articles, product listings, and consumer discussions, it identifies patterns and synthesizes information to provide strategic insights on market trends, popular products, and potential risks. It does not access real-time sales data."
+        "description": "The AI leverages its vast training on public web data and performs a real-time search using SerpApi to get the latest information. By analyzing countless articles, product listings, and consumer discussions, it identifies patterns and synthesizes information to provide strategic insights on market trends, popular products, and potential risks. It does not access private sales data."
     }
   },
   "PulsePage": {
@@ -285,17 +294,13 @@
         "label": "Build a Strategy",
         "description": "Generate a full marketing roadmap."
     },
-    "trends": {
-      "label": "Find Winning Products",
-      "description": "Discover trending products in any market."
+    "discovery": {
+      "label": "Product Discovery",
+      "description": "Find winning products organically."
     },
-    "pulse": {
-        "label": "Marketplace Pulse",
-        "description": "Analyze trends on Aliexpress or Etsy."
-    },
-    "finder": {
-        "label": "Ad Radar",
-        "description": "Spy on live competitor ad campaigns."
+    "radar": {
+      "label": "Live Ad Radar",
+      "description": "Spy on real-time competitor ads."
     },
     "spy": {
         "label": "Analyze Competitors",
@@ -308,10 +313,6 @@
     "generate": {
         "label": "Generate Ad Concepts",
         "description": "Instantly create full copy and visuals."
-    },
-    "lexicon": {
-      "label": "Ads Lexicon",
-      "description": "Get clear definitions for marketing terms."
     }
   },
   "MarketSnapshot": {
@@ -393,27 +394,13 @@
         "retryButton": "Retry"
     }
   },
-   "WinningProductFinder": {
-    "filters": {
-        "title": "Intelligence Filters",
-        "description": "Refine your search to pinpoint the most relevant ads.",
-        "keywordPlaceholder": "Search by keyword...",
-        "platformPlaceholder": "Platform",
-        "allPlatforms": "All Platforms",
-        "countryPlaceholder": "Country",
-        "allCountries": "All Countries",
-        "scoreRangeLabel": "Engagement Score"
-    },
-    "resultsCount": "{count} ads found",
-    "analyzeButton": "Analyze {count} Ads with AI"
-  },
   "FinderForm": {
-    "submitButton": "Hunt for Live Ads",
+    "submitButton": "Find Winners",
     "toast": {
-      "successDescription": "Your live ad analysis is ready."
+      "successDescription": "Your winning product analysis is ready."
     },
     "query": {
-      "label": "Search Query",
+      "label": "Product Category",
       "placeholder": "e.g., 'sustainable sneakers', 'keto snacks'"
     },
     "country": {
@@ -423,10 +410,10 @@
   },
   "FinderResults": {
     "marketOverview": {
-      "title": "Live Ad Market Overview"
+      "title": "Organic Market Overview"
     },
     "winningCategories": {
-      "title": "Top Winning Categories (from Live Ads)"
+      "title": "Top Winning Categories (from Organic Search)"
     },
     "analysis": {
       "title": "Analysis:"
@@ -449,7 +436,7 @@
       "title": "Top Marketing Angles"
     },
     "exampleProducts": {
-      "title": "Example Ad Headlines from Data"
+      "title": "Example Products from Data"
     }
   },
   "CopyGeneratorForm": {
@@ -661,7 +648,7 @@
     }
   },
   "TrendsResults": {
-    "title": "Product Discovery Report",
+    "title": "Market Trend Analysis",
     "nicheOpportunities": {
       "title": "Niche Opportunities",
       "potential": "Potential"
@@ -776,9 +763,13 @@
         "title": "🧭 The Strategic Roadmap (Marketing Plan)",
         "content": "Move from uncertainty to action. This tool acts as your personal marketing mentor. Provide details about your product, target audience, and budget, and the AI will generate a comprehensive, step-by-step marketing plan. It covers everything from audience analysis and platform strategy (your own site vs. marketplaces) to influencer marketing and a phased roadmap for launch, optimization, and scaling."
       },
-      "winningProductFinder": {
-        "title": "🏆 Winning Product Finder",
-        "content": "The 'Winning Product Finder' tool is a two-phase intelligence operation. It's not about random spying, but about a targeted hunt.\n\n**1. The Hunt (Your Role):** You are the hunter. You use the array of filters (keyword, engagement score, country, date...) to isolate a 'pack' of ads that interest you from our vast database. You are not searching blindly; you are precisely targeting campaigns that look promising.\n\n**2. The Dissection (AI's Role):** Once you have your selection, you unleash the AI. It doesn't just look at titles; it performs a deep analysis of the full ad content—**descriptions, marketing language, and detailed engagement metrics (likes, comments, shares, score)**—for every ad in your selection. It acts like a data scientist, cross-referencing all this data to find hidden patterns and deep trends. It identifies which product categories are overperforming, the most effective marketing angles, and the most receptive audiences. It then delivers a complete intelligence report to you.\n\nIn short, you lead the hunt, and the AI handles the autopsy to provide you with a ready-to-use strategy."
+      "productDiscovery": {
+        "title": "🏆 Product Discovery",
+        "content": "Find what sells, with or without ads. This tool analyzes organic web search results to identify products with high consumer interest and market validation. It's designed to spot 'silent alphas'—products that succeed based on quality and demand, not just advertising budgets. Use this to find proven product ideas before your competitors do."
+      },
+      "adRadar": {
+        "title": "📡 Live Ad Radar",
+        "content": "Turn your defense into offense. This tool is your live intelligence feed on competitor advertising. Enter a search query to spy on real, active ad campaigns. The AI will hunt down these ads, analyze their performance and messaging, and report back with actionable insights on what's working for your rivals right now."
       },
       "trends": {
         "title": "📈 Market Trend Analysis",

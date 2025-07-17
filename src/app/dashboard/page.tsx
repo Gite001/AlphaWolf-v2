@@ -1,6 +1,5 @@
 import { AdGallery } from "@/components/dashboard/ad-gallery";
 import { EngagementChart } from "@/components/dashboard/engagement-chart";
-import { MarketSnapshot } from "@/components/dashboard/market-snapshot";
 import { QuickActions } from "@/components/dashboard/quick-actions";
 import { StatsCards } from "@/components/dashboard/stats-cards";
 import { getAds, getEngagementData, getStats, geoData } from "@/lib/data";
@@ -41,7 +40,6 @@ export default async function DashboardPage() {
             <QuickActions t={t} />
             <PlatformDistributionChart data={engagementData} />
             <GeoChart data={geoData} />
-            <MarketSnapshot />
         </div>
       </div>
       

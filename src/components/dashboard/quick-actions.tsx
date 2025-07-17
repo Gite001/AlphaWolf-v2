@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { FileText, ArrowRight, Binoculars, Trophy, Store, Compass, BookMarked, Swords, LineChart } from 'lucide-react';
+import { FileText, ArrowRight, Binoculars, Trophy, Store, Compass, BookMarked, Swords, LineChart, Search } from 'lucide-react';
 
 type QuickActionsProps = {
     t: (key: string) => string;
@@ -16,22 +16,16 @@ export function QuickActions({ t }: QuickActionsProps) {
             icon: Compass
         },
         {
-            href: '/trends',
-            label: t('QuickActions.trends.label'),
-            description: t('QuickActions.trends.description'),
-            icon: LineChart
-        },
-        {
-            href: '/pulse',
-            label: t('QuickActions.pulse.label'),
-            description: t('QuickActions.pulse.description'),
-            icon: Store
-        },
-        {
             href: '/finder',
-            label: t('QuickActions.finder.label'),
-            description: t('QuickActions.finder.description'),
+            label: t('QuickActions.discovery.label'),
+            description: t('QuickActions.discovery.description'),
             icon: Trophy
+        },
+        {
+            href: '/ad-radar',
+            label: t('QuickActions.radar.label'),
+            description: t('QuickActions.radar.description'),
+            icon: Search
         },
         {
             href: '/spy',
@@ -50,12 +44,6 @@ export function QuickActions({ t }: QuickActionsProps) {
             label: t('QuickActions.generate.label'),
             description: t('QuickActions.generate.description'),
             icon: FileText
-        },
-        {
-            href: '/lexicon',
-            label: t('QuickActions.lexicon.label'),
-            description: t('QuickActions.lexicon.description'),
-            icon: BookMarked
         },
     ];
 

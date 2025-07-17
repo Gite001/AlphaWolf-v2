@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
-import { ArrowRight, Sparkles, Binoculars, Compass } from 'lucide-react';
+import { ArrowRight, Sparkles, Binoculars, Compass, Trophy } from 'lucide-react';
 import Image from 'next/image';
 import { getTranslations } from '@/lib/utils';
 import { cookies } from 'next/headers';
@@ -18,10 +18,10 @@ export default async function HomePage() {
       link: '/plan',
     },
     {
-      icon: <Binoculars className="h-8 w-8 text-primary" />,
-      title: t('HomePage.features.competitorAnalysis.title'),
-      description: t('HomePage.features.competitorAnalysis.description'),
-      link: '/spy',
+      icon: <Trophy className="h-8 w-8 text-primary" />,
+      title: t('HomePage.features.productDiscovery.title'),
+      description: t('HomePage.features.productDiscovery.description'),
+      link: '/finder',
     },
     {
       icon: <Sparkles className="h-8 w-8 text-primary" />,

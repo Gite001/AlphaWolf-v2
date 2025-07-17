@@ -55,9 +55,9 @@
         "title": "Bâtir des Stratégies Complètes",
         "description": "Générez des feuilles de route marketing complètes, de l'analyse d'audience au choix de plateforme, jusqu'à un plan d'action phasé."
       },
-      "competitorAnalysis": {
-        "title": "Analyser Marchés & Concurrents",
-        "description": "Déconstruisez les sites web concurrents, découvrez des produits gagnants et analysez les tendances du marché pour trouver votre prochaine opportunité."
+      "productDiscovery": {
+        "title": "Découvrir les Produits Gagnants",
+        "description": "Découvrez des produits tendance et analysez les signaux du marché pour trouver organiquement votre prochaine opportunité gagnante."
       },
       "creativeGeneration": {
         "title": "Générer des Créas Multi-Média",
@@ -84,15 +84,15 @@
   },
   "FinderPage": {
     "title": "Découverte de Produits Gagnants",
-    "description": "Ceci est votre outil de reconnaissance organique. Lancez une mission pour trouver les produits populaires dans une catégorie, qu'ils soient activement promus ou non. L'IA analyse les signaux organiques du web pour vous révéler ce qui se vend réellement.",
+    "description": "Ceci est votre outil de reconnaissance organique. Lancez une mission pour trouver des produits populaires dans n'importe quelle catégorie en analysant les signaux de recherche web, pas seulement les publicités. Découvrez ce qui se vend vraiment, avec ou sans un gros budget publicitaire.",
     "form": {
         "title": "Lancer une Mission de Découverte",
-        "description": "Définissez votre cible en fournissant une catégorie de produit et un pays. L'IA analysera les résultats de recherche web pour vous."
+        "description": "Définissez votre cible en fournissant une catégorie de produit et un pays. L'IA analysera les résultats de recherche organique pour identifier les produits gagnants."
     }
   },
   "AdRadarPage": {
     "title": "Radar d'Annonces en Direct",
-    "description": "Lancez une mission pour espionner des campagnes publicitaires réelles, en cours d'exécution. Définissez votre requête de recherche, et laissez l'IA traquer les annonces actives, les analyser, et vous rapporter les catégories gagnantes et les perspectives stratégiques.",
+    "description": "Ceci est votre outil de reconnaissance active. Lancez une mission pour espionner des campagnes publicitaires réelles, en cours d'exécution. Définissez votre requête de recherche, et laissez l'IA traquer les annonces actives et vous rapporter des aperçus stratégiques.",
     "form": {
         "title": "Lancer une Mission de Reconnaissance",
         "description": "Définissez votre cible en fournissant une requête de recherche et un pays. L'IA trouvera les annonces en direct et les analysera pour vous."
@@ -294,17 +294,13 @@
         "label": "Bâtir une Stratégie",
         "description": "Générez une feuille de route marketing."
     },
-    "trends": {
-      "label": "Analyse du Marché",
-      "description": "Découvrez les tendances et niches."
+    "discovery": {
+      "label": "Découverte de Produits",
+      "description": "Trouvez les gagnants organiquement."
     },
-    "pulse": {
-        "label": "Pouls du Marché",
-        "description": "Analysez les tendances sur Aliexpress ou Etsy."
-    },
-    "finder": {
-        "label": "Découverte Produits",
-        "description": "Trouvez des produits qui se vendent bien."
+    "radar": {
+      "label": "Radar d'Annonces",
+      "description": "Espionnez les pubs concurrentes en direct."
     },
     "spy": {
         "label": "Analyser les Concurrents",
@@ -317,10 +313,6 @@
     "generate": {
         "label": "Générer des Concepts Publicitaires",
         "description": "Créez instantanément des textes et visuels complets."
-    },
-    "lexicon": {
-      "label": "Lexique Publicitaire",
-      "description": "Obtenez des définitions claires des termes marketing."
     }
   },
   "MarketSnapshot": {
@@ -402,20 +394,6 @@
         "retryButton": "Réessayer"
     }
   },
-   "WinningProductFinder": {
-    "filters": {
-        "title": "Filtres de Renseignement",
-        "description": "Affinez votre recherche pour repérer les publicités les plus pertinentes.",
-        "keywordPlaceholder": "Rechercher par mot-clé...",
-        "platformPlaceholder": "Plateforme",
-        "allPlatforms": "Toutes les plateformes",
-        "countryPlaceholder": "Pays",
-        "allCountries": "Tous les pays",
-        "scoreRangeLabel": "Score d'Engagement"
-    },
-    "resultsCount": "{count} publicités trouvées",
-    "analyzeButton": "Analyser {count} pubs avec l'IA"
-  },
   "FinderForm": {
     "submitButton": "Trouver les Gagnants",
     "toast": {
@@ -458,7 +436,7 @@
       "title": "Meilleurs Angles Marketing"
     },
     "exampleProducts": {
-      "title": "Exemples de Produits des Résultats"
+      "title": "Exemples de Produits des Données"
     }
   },
   "CopyGeneratorForm": {
@@ -784,9 +762,13 @@
         "title": "🧭 La Feuille de Route Stratégique (Plan Marketing)",
         "content": "Passez de l'incertitude à l'action. Cet outil agit comme votre mentor marketing personnel. Fournissez des détails sur votre produit, votre audience cible et votre budget, et l'IA générera un plan marketing complet et étape par étape. Il couvre tout, de l'analyse de l'audience et de la stratégie de plateforme (votre propre site contre les places de marché) au marketing d'influence et à une feuille de route progressive pour le lancement, l'optimisation et la croissance."
       },
-      "winningProductFinder": {
-        "title": "🏆 Découverte de Produits Gagnants",
-        "content": "L'outil 'Découverte de Produits Gagnants' est une opération de renseignement en deux phases. Il ne s'agit pas d'espionner au hasard, mais de mener une chasse ciblée.\n\n**1. La Traque (Votre Rôle) :** Vous êtes le chasseur. Vous utilisez la panoplie de filtres (mot-clé, score d'engagement, pays, date...) pour isoler une 'meute' de publicités qui vous intéressent dans notre vaste base de données. Vous ne partez pas à l'aveugle ; vous ciblez avec précision les campagnes qui semblent prometteuses.\n\n**2. La Dissection (Rôle de l'IA) :** Une fois votre sélection faite, vous lancez l'IA. Elle ne se contente pas de regarder les titres ; elle effectue une analyse approfondie du contenu complet de l'annonce—**descriptions, langage marketing et métriques d'engagement détaillées (likes, commentaires, partages, score)**—pour chaque publicité de votre sélection. Elle agit comme un data scientist, croisant toutes ces données pour trouver les schémas cachés et les tendances profondes. Elle identifie les catégories de produits qui surperforment, les angles marketing les plus efficaces et les audiences les plus réceptives. Elle vous livre ensuite un rapport de renseignement complet.\n\nEn résumé, vous dirigez la chasse, et l'IA s'occupe de l'autopsie pour vous fournir une stratégie prête à l'emploi."
+      "productDiscovery": {
+        "title": "🏆 Découverte de Produits",
+        "content": "Trouvez ce qui se vend, avec ou sans publicité. Cet outil analyse les résultats de recherche web organiques pour identifier les produits ayant un fort intérêt des consommateurs et une validation du marché. Il est conçu pour repérer les 'alphas silencieux'—des produits qui réussissent grâce à leur qualité et à la demande, et non seulement grâce aux budgets publicitaires. Utilisez-le pour trouver des idées de produits éprouvées avant vos concurrents."
+      },
+      "adRadar": {
+        "title": "📡 Radar d'Annonces en Direct",
+        "content": "Transformez votre défense en attaque. Cet outil est votre flux de renseignements en direct sur la publicité des concurrents. Entrez une requête de recherche pour espionner des campagnes publicitaires réelles et actives. L'IA traquera ces annonces, analysera leurs performances et leurs messages, et vous rapportera des informations exploitables sur ce qui fonctionne pour vos rivaux en ce moment."
       },
       "trends": {
         "title": "📈 Analyse des Tendances du Marché",
@@ -827,7 +809,7 @@
       },
       "step2": {
         "title": "2. Lancer le serveur de développement (à chaque fois)",
-        "content": "This command starts the application. You will need to run this every time you want to work on the app. The terminal must remain open while you use it."
+        "content": "Cette commande démarre l'application. Vous devrez l'exécuter chaque fois que vous voudrez travailler sur l'application. Le terminal doit rester ouvert pendant que vous l'utilisez."
       },
       "outro": "L'application sera alors disponible à l'adresse `http://localhost:9003`. Maintenez la touche `Ctrl` (ou `Cmd` sur Mac) et cliquez sur le lien pour l'ouvrir dans votre navigateur."
     }
@@ -840,4 +822,3 @@
     "shares": "Partages"
   }
 }
-```
