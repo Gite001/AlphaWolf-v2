@@ -52,7 +52,7 @@ export default async function HomePage() {
                 </Button>
               </div>
               <Image
-                src="/images/homepage-hero.png"
+                src="/images/office.png"
                 width="600"
                 height="400"
                 alt="Fictitious hero image showing a modern analytics dashboard"
