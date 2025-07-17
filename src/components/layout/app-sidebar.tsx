@@ -21,15 +21,11 @@ import { useEffect, useState } from 'react';
 export function AppSidebar() {
   const pathname = usePathname();
   const { t } = useI18n();
-  const [activePath, setActivePath] = useState('');
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    // This effect runs only on the client, after the component has mounted.
-    // It ensures that `pathname` is read only on the client, avoiding the mismatch.
-    setActivePath(pathname);
     setIsClient(true);
-  }, [pathname]);
+  }, []);
 
   const menuItems = [
     { href: '/dashboard', label: t('AppSidebar.dashboard'), icon: LayoutDashboard },
@@ -46,6 +42,11 @@ export function AppSidebar() {
     { href: '/lexicon', label: t('AppSidebar.lexicon'), icon: BookMarked },
     { href: '/guide', label: t('AppSidebar.guide'), icon: BookOpen },
   ];
+  
+  // By returning null on the server, we prevent any SSR/hydration mismatch.
+  if (!isClient) {
+    return null;
+  }
 
   return (
     <Sidebar>
@@ -60,15 +61,18 @@ export function AppSidebar() {
         <SidebarMenu>
           {menuItems.map((item) => (
             <SidebarMenuItem key={item.href}>
-              <Link href={item.href}>
+              <Link href={item.href} legacyBehavior passHref>
                 <SidebarMenuButton
-                  isActive={isClient ? activePath === item.href : false}
+                  asChild
+                  isActive={pathname === item.href}
                   tooltip={{
                     children: item.label,
                   }}
                 >
-                  <item.icon />
-                  <span>{item.label}</span>
+                  <a>
+                    <item.icon />
+                    <span>{item.label}</span>
+                  </a>
                 </SidebarMenuButton>
               </Link>
             </SidebarMenuItem>
