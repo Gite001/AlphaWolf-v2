@@ -10,6 +10,7 @@
 
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
+import { getJson } from 'serpapi';
 
 const searchWebForRecentTrends = ai.defineTool(
   {
@@ -21,13 +22,31 @@ const searchWebForRecentTrends = ai.defineTool(
     outputSchema: z.string().describe('A summary of the most relevant and recent findings from the web search.'),
   },
   async ({ query }) => {
-    // In a real-world scenario, this would call a search API (e.g., Google Search, Tavily).
-    // For this demonstration, we simulate the output of a live web search.
-    console.log(`Simulating web search for: ${query}`);
-    return `Simulated Real-Time Web Search Results for "${query}":
-- An article from two days ago highlights a sudden consumer interest in 'at-home water conservation' devices, driven by recent environmental reports.
-- A major tech blog just reviewed a new 'smart garden' system, causing a spike in social media discussion around automated home agriculture.
-- Financial news from this week indicates increased venture capital funding in the 'personalized nutrition' sector, suggesting imminent market growth.`;
+    if (!process.env.SERPAPI_API_KEY) {
+        return "SerpAPI is not configured. Please add SERPAPI_API_KEY to your .env file. Cannot perform live web search.";
+    }
+    
+    console.log(`Performing live web search for: ${query}`);
+    try {
+        const response: any = await getJson({
+            api_key: process.env.SERPAPI_API_KEY,
+            engine: "google",
+            q: query,
+        });
+
+        const organicResults = response.organic_results?.slice(0, 5) || [];
+        
+        if (organicResults.length === 0) {
+            return "No recent web search results found.";
+        }
+
+        const summaries = organicResults.map((result: any) => `Title: ${result.title}\nSnippet: ${result.snippet}\nSource: ${result.link}`).join('\n\n---\n\n');
+
+        return `Summary of Top 5 Real-Time Web Search Results for "${query}":\n\n${summaries}`;
+    } catch (error) {
+        console.error("SerpAPI search failed:", error);
+        return "Web search failed due to an external error.";
+    }
   }
 );
 
