@@ -43,9 +43,10 @@ export function AppSidebar() {
     { href: '/guide', label: t('AppSidebar.guide'), icon: BookOpen },
   ];
   
-  // By returning null on the server, we prevent any SSR/hydration mismatch.
   if (!isClient) {
-    return null;
+    // Render a placeholder on the server to avoid hydration mismatch
+    // and prevent layout shift.
+    return <div className="hidden md:block w-[var(--sidebar-width-icon)]" />;
   }
 
   return (
