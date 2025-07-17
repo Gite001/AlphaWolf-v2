@@ -108,7 +108,7 @@ export function FinderResults({ results }: FinderResultsProps) {
                 </CardContent>
                 <CardFooter>
                     <Button asChild className="w-full shadow-lg shadow-primary/20 hover:scale-105 transition-transform">
-                        <Link href={`/generate?productName=${encodeURIComponent(category.categoryName)}&productDescription=${encodeURIComponent(category.analysis)}&keywords=${encodeURIComponent(category.categoryName)}`}>
+                        <Link href={`/generate?productName=${encodeURIComponent(category.categoryName)}&productDescription=${encodeURIComponent(category.analysis)}&keywords=${encodeURIComponent(category.marketingAngles.join(','))}`}>
                             <FileText className="mr-2 h-4 w-4" />
                             {t('FinderResults.generateAdButton')}
                         </Link>
