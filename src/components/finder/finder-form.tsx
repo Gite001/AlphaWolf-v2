@@ -1,7 +1,7 @@
 'use client';
 
 import { useFormStatus } from 'react-dom';
-import { getLiveAdsAnalysis } from '@/app/finder/actions';
+import { getWinningProducts } from '@/app/finder/actions';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -37,7 +37,7 @@ function SubmitButton() {
 }
 
 export function FinderForm() {
-  const [state, formAction, isPending] = useActionState(getLiveAdsAnalysis, initialState);
+  const [state, formAction, isPending] = useActionState(getWinningProducts, initialState);
   const { toast } = useToast();
   const { t, locale } = useI18n();
   const [result, setResult] = useState<FindWinningProductsOutput | null>(null);
@@ -109,3 +109,4 @@ export function FinderForm() {
     </div>
   );
 }
+```

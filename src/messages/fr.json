@@ -28,9 +28,10 @@
     "home": "Accueil",
     "dashboard": "Tableau de bord",
     "marketingPlan": "Plan Marketing",
-    "winningProductFinder": "Radar Publicitaire",
-    "marketTrends": "Découverte de Produits",
+    "productDiscovery": "Découverte Produits",
+    "marketTrends": "Tendances Marché",
     "marketplacePulse": "Pouls du Marché",
+    "liveAdRadar": "Radar d'Annonces",
     "competitorSpy": "Analyse Concurrent",
     "campaignTakedown": "Plan de Conquête",
     "generateAd": "Générer Concept Pub",
@@ -82,23 +83,31 @@
     }
   },
   "FinderPage": {
+    "title": "Découverte de Produits Gagnants",
+    "description": "Ceci est votre outil de reconnaissance organique. Lancez une mission pour trouver les produits populaires dans une catégorie, qu'ils soient activement promus ou non. L'IA analyse les signaux organiques du web pour vous révéler ce qui se vend réellement.",
+    "form": {
+        "title": "Lancer une Mission de Découverte",
+        "description": "Définissez votre cible en fournissant une catégorie de produit et un pays. L'IA analysera les résultats de recherche web pour vous."
+    }
+  },
+  "AdRadarPage": {
     "title": "Radar d'Annonces en Direct",
-    "description": "C'est votre outil de reconnaissance active. Lancez une mission pour espionner des campagnes publicitaires réelles, en cours d'exécution. Définissez votre requête de recherche, et laissez l'IA traquer les annonces actives, les analyser, et vous rapporter les catégories gagnantes et les perspectives stratégiques.",
+    "description": "Lancez une mission pour espionner des campagnes publicitaires réelles, en cours d'exécution. Définissez votre requête de recherche, et laissez l'IA traquer les annonces actives, les analyser, et vous rapporter les catégories gagnantes et les perspectives stratégiques.",
     "form": {
         "title": "Lancer une Mission de Reconnaissance",
         "description": "Définissez votre cible en fournissant une requête de recherche et un pays. L'IA trouvera les annonces en direct et les analysera pour vous."
     }
   },
   "TrendsPage": {
-    "title": "Découverte de Produits Tendances",
+    "title": "Analyse des Tendances du Marché",
     "description": "Demandez à notre IA de scanner l'horizon et de vous révéler les produits qui explosent en ce moment. C'est votre raccourci vers le succès.",
     "form": {
-        "title": "Lancer une Mission de Découverte",
+        "title": "Lancer une Mission d'Analyse",
         "description": "Indiquez à l'IA la catégorie de produits et la région qui vous intéressent. Elle vous fournira un résumé du marché, les produits tendances et des conseils stratégiques."
     },
     "howItWorks": {
         "title": "Comment ça marche ?",
-        "description": "L'IA s'appuie sur sa vaste formation sur les données publiques du web. En analysant d'innombrables articles, listes de produits et discussions de consommateurs, elle identifie des schémas et synthétise des informations pour fournir des aperçus stratégiques sur les tendances du marché, les produits populaires et les risques potentiels. Elle n'accède pas aux données de vente en temps réel."
+        "description": "L'IA s'appuie sur sa vaste formation sur les données publiques du web et effectue une recherche en temps réel via SerpApi pour obtenir les informations les plus récentes. En analysant d'innombrables articles, listes de produits et discussions de consommateurs, elle identifie des schémas et synthétise des informations pour fournir des aperçus stratégiques sur les tendances du marché, les produits populaires et les risques potentiels. Elle n'accède pas aux données de vente privées."
     }
   },
   "PulsePage": {
@@ -286,16 +295,16 @@
         "description": "Générez une feuille de route marketing."
     },
     "trends": {
-      "label": "Trouver des Produits Gagnants",
-      "description": "Découvrez les produits tendances sur n'importe quel marché."
+      "label": "Analyse du Marché",
+      "description": "Découvrez les tendances et niches."
     },
     "pulse": {
         "label": "Pouls du Marché",
         "description": "Analysez les tendances sur Aliexpress ou Etsy."
     },
     "finder": {
-        "label": "Radar Publicitaire",
-        "description": "Espionnez les campagnes pub des concurrents."
+        "label": "Découverte Produits",
+        "description": "Trouvez des produits qui se vendent bien."
     },
     "spy": {
         "label": "Analyser les Concurrents",
@@ -385,7 +394,7 @@
     "unknownError": "Une erreur inconnue est survenue.",
     "loading": {
         "title": "Le loup IA est à la chasse...",
-        "description": "Analyse des données publicitaires en direct pour trouver de l'or."
+        "description": "Analyse des données pour trouver de l'or."
     },
     "error": {
         "title": "L'analyse a échoué",
@@ -408,12 +417,12 @@
     "analyzeButton": "Analyser {count} pubs avec l'IA"
   },
   "FinderForm": {
-    "submitButton": "Chasser les Pubs en Direct",
+    "submitButton": "Trouver les Gagnants",
     "toast": {
-      "successDescription": "Votre analyse des pubs en direct est prête."
+      "successDescription": "Votre analyse de produits est prête."
     },
     "query": {
-      "label": "Requête de Recherche",
+      "label": "Catégorie de produit",
       "placeholder": "ex: 'baskets durables', 'snacks keto'"
     },
     "country": {
@@ -423,10 +432,10 @@
   },
   "FinderResults": {
     "marketOverview": {
-      "title": "Aperçu du Marché Publicitaire en Direct"
+      "title": "Aperçu du Marché Organique"
     },
     "winningCategories": {
-      "title": "Meilleures Catégories Gagnantes (depuis les pubs en direct)"
+      "title": "Catégories Gagnantes (Analyse Organique)"
     },
     "analysis": {
       "title": "Analyse :"
@@ -449,7 +458,7 @@
       "title": "Meilleurs Angles Marketing"
     },
     "exampleProducts": {
-      "title": "Exemples de Titres de Pubs des Données"
+      "title": "Exemples de Produits des Résultats"
     }
   },
   "CopyGeneratorForm": {
@@ -661,7 +670,7 @@
     }
   },
   "TrendsResults": {
-    "title": "Rapport de Découverte de Produits",
+    "title": "Rapport sur les Tendances du Marché",
     "nicheOpportunities": {
       "title": "Opportunités de Niche",
       "potential": "Potentiel"
@@ -684,8 +693,7 @@
     "competitionLevel": {
       "title": "Niveau de Compétition",
       "Low": "Faible",
-      "Medium": "Moyen",
-      "High": "Élevé"
+      "Medium": "Élevé"
     },
     "exampleProductIdeas": {
       "title": "Idées de Produits Spécifiques"
@@ -832,3 +840,4 @@
     "shares": "Partages"
   }
 }
+```
