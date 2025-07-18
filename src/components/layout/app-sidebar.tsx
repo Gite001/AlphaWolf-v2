@@ -1,4 +1,3 @@
-
 'use client';
 
 import {
@@ -44,6 +43,13 @@ export function AppSidebar() {
     { href: '/guide', label: t('AppSidebar.guide'), icon: BookOpen },
   ];
 
+  if (!isClient) {
+    // Render a placeholder on the server to avoid hydration mismatch
+    // and prevent layout shift.
+    return <div className="hidden md:block w-[var(--sidebar-width-icon)]" />;
+  }
+
+
   return (
     <Sidebar>
       <SidebarHeader className="h-16 flex items-center justify-center">
@@ -55,21 +61,21 @@ export function AppSidebar() {
       </SidebarHeader>
       <SidebarContent>
         <SidebarMenu>
-          {isClient ? menuItems.map((item) => (
+          {menuItems.map((item) => (
             <SidebarMenuItem key={item.href}>
-              <SidebarMenuButton
-                as={Link}
-                href={item.href}
-                isActive={pathname === item.href}
-                tooltip={{
-                  children: item.label,
-                }}
-              >
-                <item.icon />
-                <span>{item.label}</span>
-              </SidebarMenuButton>
+                <SidebarMenuButton
+                  as={Link}
+                  href={item.href}
+                  isActive={pathname === item.href}
+                  tooltip={{
+                    children: item.label,
+                  }}
+                >
+                  <item.icon />
+                  <span>{item.label}</span>
+                </SidebarMenuButton>
             </SidebarMenuItem>
-          )) : null}
+          ))}
         </SidebarMenu>
       </SidebarContent>
       <SidebarFooter>
