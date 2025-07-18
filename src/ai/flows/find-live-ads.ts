@@ -37,7 +37,7 @@ const findLiveAdsFlow = ai.defineFlow(
   },
   async ({ query, country }) => {
     if (!process.env.SERPAPI_API_KEY) {
-        throw new Error("SerpAPI is not configured. Please add SERPAPI_API_KEY to your .env file.");
+        throw new Error("SerpAPI is not configured. Please add SERPAPI_API_KEY to your .env file and restart the server.");
     }
     
     console.log(`Performing live ad search for: ${query} in ${country}`);

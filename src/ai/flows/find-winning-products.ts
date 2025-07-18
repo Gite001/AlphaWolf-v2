@@ -50,7 +50,7 @@ const findWinningProductsFlow = ai.defineFlow(
   },
   async ({ query, country, locale }) => {
     if (!process.env.SERPAPI_API_KEY) {
-        throw new Error("SerpAPI is not configured. Please add SERPAPI_API_KEY to your .env file.");
+        throw new Error("SerpAPI is not configured. Please add SERPAPI_API_KEY to your .env file and restart the server.");
     }
     
     console.log(`Performing organic product search for: ${query} in ${country}`);
@@ -137,4 +137,3 @@ Result #{{@index}}:
 Your response must be a valid JSON object strictly following the output schema, in the requested language ({{{locale}}}).
 `,
 });
-```

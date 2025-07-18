@@ -23,7 +23,7 @@ const searchWebForRecentTrends = ai.defineTool(
   },
   async ({ query }) => {
     if (!process.env.SERPAPI_API_KEY) {
-        return "SerpAPI is not configured. Please add SERPAPI_API_KEY to your .env file. Cannot perform live web search.";
+        return "SerpAPI is not configured. Please add SERPAPI_API_KEY to your .env file and restart the server. Cannot perform live web search.";
     }
     
     console.log(`Performing live web search for: ${query}`);
