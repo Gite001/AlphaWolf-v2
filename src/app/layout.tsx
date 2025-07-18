@@ -44,7 +44,8 @@ export default function RootLayout({
         <I18nProvider initialLocale={locale as 'fr' | 'en'}>
             <SidebarProvider>
               <div className="flex min-h-screen">
-                <AppSidebar />
+                 <div className="hidden md:block w-[var(--sidebar-width-icon)]" />
+                 <AppSidebar />
                 <div className="flex-1 flex flex-col">
                   <AppHeader />
                   <SidebarInset>{children}</SidebarInset>
